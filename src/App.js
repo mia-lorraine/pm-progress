@@ -1,84 +1,64 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Person from './Person/Person'
 
-let defaulttextColor = 'pink';
-let defaultStyle = {
-  color:defaulttextColor
-}
-let fakeServerData = {
-  user: {
-    name:'Mias'
-  }
-};
-
-
-class Aggregate extends Component {
-render() {
-  return (
-    <div style = {{...defaultStyle, width: '40%', display: 'inline-block'}}>
-    <h2> Number Text </h2>
-    </div>
-  );
-  }
-}
-
-class Filter extends Component {
-  render() {
-    return (
-      <div style = {{defaultStyle}}>
-      <img/>
-      <input type="text"/>
-      Filter
-      </div>
-    );
-  }
-}
-
-class Playlist extends Component {
-  render() {
-    return (
-      <div style = {{...defaultStyle, display: 'inline-block',width: '25%'}}>
-        <img />
-        <h3>Playlist Name</h3>
-        <ul>
-          <li>Song 1</li>
-          <li>Song 2</li>
-          <li>Song 3</li>
-          <li>Song 4</li>
-          <li>Song 5</li>
-          <li>Song 6</li>
-          <li>Song 7</li>
-          <li>Song 8</li>
-          <li>Song 9</li>
-        </ul>
-      </div>
-
-    );
-  }
-}
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {serverData: {}}
+  state = {
+    persons: [
+      { name: 'Mia', age: 21 },
+      { name: 'Ray' , age: 20 }
+    ],
+    otherState: 'some other value'
   }
-  ComponentDidMount(){
-    this.setState({serverData: fakeServerData});
-  }
+
+//assigning a method to the button onclick. was called using this.switchNameHandler
+switchNameHandler = (newName) => {
+  // console.log('was clicked');
+ this.setState({ //this changes/overwrites other state
+   persons: [
+     { name: newName, age: 22},
+     { name: 'Ray' , age: 20 }
+   ]
+ })
+}
+//changing the name function, using state.
+nameChangedHandler = (event) => {
+  this.setState({ //this changes/overwrites other state
+    persons: [
+      { name: 'Mia Lorraine', age: 21 },
+      { name: event.target.value, age: 20 }
+    ]
+  })
+}
   render() {
+    const style = {
+      backgroundColor: 'white',
+      font: 'inherent',
+      border: '1px solid blue',
+      padding: '8px',
+      cursor: 'pointer'
+    };
+
+    
     return (
       <div className="App">
-      <img src={logo} className="App-logo" alt="logo" />
-      <h1 style = {{'font-size': '50px' }}>
-      {this.state.serverData.user
-        && this.state.serverData.user.name} Playlist
-        </h1>
-      <Aggregate/>
-      <Aggregate/>
-      <Filter></Filter>
-      <Playlist/>
-      <Playlist/>
-      <Playlist/>
+      <h1>Hi, I am a react App </h1>
+      <p> This is really working </p>
+
+      <button
+      style = {style}
+      onClick = {this.switchNameHandler.bind(this, 'Mia!!!!!')}> Switch Names </button>
+      <Person
+      name ={this.state.persons[0].name}
+      age ={this.state.persons[0].age}/>
+      <Person
+      name ={this.state.persons[1].name}
+      age ={this.state.persons[1].age}
+      click = {this.switchNameHandler.bind(this, 'Max')}
+      changed={this.nameChangedHandler}> My hobbies are dancing!
+
+      </Person>
       </div>
     );
   }
