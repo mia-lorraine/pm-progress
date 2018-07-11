@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Person from './Person/Person'
-import Form from './Form/form'
+import Person from './Person/Person';
+import Form from './Form/form';
+import TodoInput from './Todo/todoinput';
+import TodoItem from './Todo/todoitem';
 
 // class FullForm extends Component {
 //   constructor(props) {
@@ -194,35 +196,39 @@ import Form from './Form/form'
 // }
 
 
-class App extends Component {
-  state = {
-      form: [
-        {project: '', create: '', date: ''}
-      ],
-    otherState: 'some other value'
-  }
-//
-// //assigning a method to the button onclick. was called using this.switchNameHandler
-// switchNameHandler = (newName) => {
-//   // console.log('was clicked');
-//  this.setState({ //this changes/overwrites other state
-//    persons: [
-//      { name: newName, age: 22},
-//      { name: 'Ray' , age: 20 }
-//    ]
-//  })
-// }
-// //changing the name function, using state.
-// nameChangedHandler = (event) => {
-//   this.setState({ //this changes/overwrites other state
-//     persons: [
-//       { name: 'Mia Lorraine', age: 21 },
-//       { name: event.target.value, age: 20 }
-//     ]
-//
-//   })
-// }
+class App extends Component{
+  constructor(props){
+    super(props);
 
+    this.state = {
+      todos: [
+        {id: 0, text: "make dinner tonight!"},
+        {id: 1, text: "blah"},
+        {id: 2, text: "boo"}
+      ],
+      nextId: 3
+    }
+
+    this.addTodo = this.addTodo.bind(this);
+    this.removeTodo = this.removeTodo.bind(this);
+
+  }
+
+addTodo(todoText) {
+  let todos = this.state.todos.slice();
+  todos.push({id: this.state.nextId, text: todoText});
+  this.setState({
+    todos: todos,
+    nextId: ++this.state.nextId
+  });
+}
+
+removeTodo(id) {
+this.setState({
+  todos: this.state.todos.filter((todo, index) => todo.id !== id)
+
+});
+}
 // addProject = (e) => {
 //
 //   e.preventDefault();
@@ -242,6 +248,11 @@ class App extends Component {
 //   this.refs.lead.value = null;
 //   this.refs.date.value = null;
 // }
+//
+
+
+
+
 
 handleSubmit = (newNew) => {
   console.log('was clicked');
@@ -273,14 +284,15 @@ handleSubmit = (newNew) => {
       <button onClick ={this.handleSubmit}> Submit </button>
 
 
-
-       <Form
-      //onClick = {this.addProject}
-      project = {this.state.form[0].project}
-      create = {this.state.form[0].create}
-      date = {this.state.form[0].date}>
-      </Form>
-        
+      <div className = 'project-wrapper'>
+          <TodoInput todoText= '' addTodo = {this.addTodo}/>
+          <ul> {
+            this.state.todos.map((todo) => {
+              return <TodoItem todo={todo} key={todo.id} id={todo.id} removeTodo={this.removeTodo}/>
+            })
+          }
+          </ul>
+      </div>
 
 
       </div>
