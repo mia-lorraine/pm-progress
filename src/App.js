@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import './Todo/todoItem.css';
+import './Components/table.css';
 import TodoInput from './Todo/todoinput';
 import TodoItem from './Todo/todoitem';
-import './Todo/todoItem.css';
+import Table from './Components/table'
+
 
 class App extends Component{
   constructor(props){
@@ -15,7 +17,15 @@ class App extends Component{
         {id: 1, text: "push to Heroku"},
         {id: 2, text: "create new components"}
       ],
-      nextId: 3
+      nextId: 3,
+      table: [
+        {name: 'Mia' , last: 'Laurea'},
+        {name: 'Raymond', last: 'Hsu'}
+      ]
+
+
+
+
     }
     this.addTodo = this.addTodo.bind(this);
     this.removeTodo = this.removeTodo.bind(this);
@@ -31,10 +41,10 @@ addTodo(todoText) {
 }
 
 removeTodo(id) {
-    this.setState({
-        todos: this.state.todos.filter((todo, index) => todo.id !== id)
-      });
-    }
+  this.setState({
+    todos: this.state.todos.filter((todo, index) => todo.id !== id)
+  });
+}
 
   render() {
     return (
@@ -49,6 +59,9 @@ removeTodo(id) {
           }
           </ul>
       </div>
+
+      <Table/>
+
       </div>
     );
   }
