@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Person from './Person/Person';
-import Form from './Form/form';
 import TodoInput from './Todo/todoinput';
 import TodoItem from './Todo/todoitem';
 import './Todo/todoItem.css';
