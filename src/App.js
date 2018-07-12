@@ -6,6 +6,10 @@ import TodoInput from './Todo/todoinput';
 import TodoItem from './Todo/todoitem';
 import Table from './Components/table';
 import Table2 from './Components/table2';
+import NavBar from './Components/navbar'
+
+
+import { Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 
 class App extends Component{
   constructor(props){
@@ -41,6 +45,7 @@ removeTodo(id) {
   render() {
     return (
       <div className="App">
+      <NavBar/>
       <h1> New Product Introduction Tool </h1>
       <div className = 'project-wrapper'>
         <h5> Create New Project (button) </h5>

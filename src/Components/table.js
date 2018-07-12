@@ -16,8 +16,8 @@ const Table = (props) => {
       </thead>
         <tbody>
             <tr>
-              <td>  tHS IS VURRENT DATA</td>
-              <td>  </td>
+              <td> insert project name</td>
+              <td> insert status props.data.status </td>
               <td>  </td>
               </tr>
         </tbody>
