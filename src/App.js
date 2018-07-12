@@ -4,8 +4,8 @@ import './Todo/todoItem.css';
 import './Components/table.css';
 import TodoInput from './Todo/todoinput';
 import TodoItem from './Todo/todoitem';
-import Table from './Components/table'
-
+import Table from './Components/table';
+import Table2 from './Components/table2';
 
 class App extends Component{
   constructor(props){
@@ -18,14 +18,6 @@ class App extends Component{
         {id: 2, text: "create new components"}
       ],
       nextId: 3,
-      table: [
-        {name: 'Mia' , last: 'Laurea'},
-        {name: 'Raymond', last: 'Hsu'}
-      ]
-
-
-
-
     }
     this.addTodo = this.addTodo.bind(this);
     this.removeTodo = this.removeTodo.bind(this);
@@ -49,8 +41,9 @@ removeTodo(id) {
   render() {
     return (
       <div className="App">
-      <h1> BK manage prototype</h1>
+      <h1> New Product Introduction Tool </h1>
       <div className = 'project-wrapper'>
+        <h5> Create New Project (button) </h5>
           <TodoInput todoText= '' addTodo = {this.addTodo}/>
           <ul> {
             this.state.todos.map((todo) => {
@@ -59,10 +52,10 @@ removeTodo(id) {
           }
           </ul>
       </div>
-
+      <Table2/>
       <Table/>
-
       </div>
+
     );
   }
 }
