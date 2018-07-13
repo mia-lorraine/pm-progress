@@ -47,9 +47,7 @@ class App extends Component{
   render() {
     return (
       <div className="App">
-        <Tabletest
-        status={this.state.tableData &&
-        this.state.tableData.projectItem}/>
+        <Tabletest name={this.state.tableData.projectItem && this.state.tableData.projectItem.name}/>
       </div>
     );
   }
