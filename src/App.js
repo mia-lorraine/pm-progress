@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './App.css';
 
-let table_info =
-{
+let fakeTableData = {
   projectItem:  {
-    id: '1',
+    id: 1,
     name: 'Mia Laurea',
     status: 'woohoo'
   }
@@ -13,7 +12,7 @@ let table_info =
 class Tabletest extends Component {
   render() {
       return (
-    <div className = "table-container" >
+    <div className='table-container'>
         <h5>Projects</h5>
       <table>
         <thead>
@@ -34,7 +33,7 @@ class Tabletest extends Component {
           </tbody>
         </table>
       </div>
-      );
+      )
   }
 }
 class App extends Component{
@@ -43,14 +42,14 @@ class App extends Component{
     this.state = {tableData: {}}
   }
   componentDidMount(){
-      this.setState({tableData:table_info})
+      this.setState({tableData: fakeTableData});
   }
-
   render() {
     return (
       <div className="App">
-      <h1>New Product Introduction Tool</h1>
-        <Tabletest projectItem = {this.state.tableData && this.state.tableData.projectItem}/>
+        <Tabletest
+        status={this.state.tableData &&
+        this.state.tableData.projectItem}/>
       </div>
     );
   }
