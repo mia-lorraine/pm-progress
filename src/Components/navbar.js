@@ -9,10 +9,10 @@ class NavBar extends Component {
         <Layout fixedHeader>
             <Header title={<span><span style={{ color: '#ddd' }}> NPI Tool / </span><strong>BK Precision</strong></span>}>
                 <Navigation>
-                    <a href="#">Link</a>
-                    <a href="#">Link</a>
-                    <a href="#">Link</a>
-                    <a href="#">Link</a>
+                    <a href="#">Home</a>
+                    <a href="#">Purchase</a>
+                    <a href="#">Support & Service</a>
+                    <a href="#">Login</a>
                 </Navigation>
             </Header>
 

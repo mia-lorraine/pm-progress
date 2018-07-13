@@ -18,15 +18,17 @@ const Table2 = (props) => {
   </thead>
     <tbody>
         <tr>
-          <td>  tHS IS VURRENT DATA</td>
-          <td> current data </td>
+          <td> {props.projectItem.id} </td>
           <td>  </td>
-          </tr>
-          <tr> <td> hellooooooooo test </td>
-          <td> heyooooo </td>
-              <td> heyooooo </td>
-                  <td> heyooooo </td>
-           </tr>
+          <td> data </td>
+          <td> data </td>
+        </tr>
+        <tr>
+          <td> data </td>
+          <td> data</td>
+          <td> data </td>
+          <td> data </td>
+        </tr>
 
     </tbody>
   </table>

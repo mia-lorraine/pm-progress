@@ -7,39 +7,63 @@ import TodoItem from './Todo/todoitem';
 import Table from './Components/table';
 import Table2 from './Components/table2';
 import NavBar from './Components/navbar'
-
-
 import { Layout, Header, Navigation, Drawer, Content} from 'react-mdl';
 
-class App extends Component{
-  constructor(props){
-    super(props);
 
-    this.state = {
-      todos: [
-        {id: 0, text: "clean up code" },
-        {id: 1, text: "push to Heroku"},
-        {id: 2, text: "create new components"}
-      ],
-      nextId: 3,
-    }
-    this.addTodo = this.addTodo.bind(this);
-    this.removeTodo = this.removeTodo.bind(this);
+let table_info =
+{
+  projectItem:  {
+    id: '1',
+    name: 'Mia Laurea',
+    status: 'woohoo'
   }
+};
 
-addTodo(todoText) {
-  let todos = this.state.todos.slice();
-  todos.push({id: this.state.nextId, text: todoText});
-  this.setState({
-    todos: todos,
-    nextId: ++this.state.nextId
-  });
+class tabletest extends Component {
+  render() {
+      return (
+    <div className = "table-container" >
+        <h5> CURRENT PROJETS </h5>
+    <table>
+      <thead>
+        <tr>
+          <th> Project name </th>
+          <th> Status </th>
+          <th> Pending Overview </th>
+          <th> Date Started</th>
+        </tr>
+      </thead>
+        <tbody>
+            <tr>
+              <td> </td>
+              <td>  </td>
+              <td> </td>
+              <td> testing testing testing </td>
+            </tr>
+            <tr>
+              <td> data </td>
+              <td> data</td>
+              <td> data </td>
+              <td> data </td>
+            </tr>
+        </tbody>
+      </table>
+      </div>
+      );
+  }
 }
 
-removeTodo(id) {
-  this.setState({
-    todos: this.state.todos.filter((todo, index) => todo.id !== id)
-  });
+
+
+class App extends Component{
+  constructor(){
+    super();
+    this.state = {
+      tableData: {},
+  }
+
+componentDidMount(){
+    this.setState({tableData:table_info})
 }
 
   render() {
@@ -57,8 +81,8 @@ removeTodo(id) {
           }
           </ul>
       </div>
-      <Table2/>
-      <Table/>
+      <tabletest table_info = {this.state.tableData && this.state.tableData.projectItem}/>
+
       </div>
 
     );
