@@ -6,7 +6,7 @@ class Loop extends React.Component {
     let projects = [
       { product: '603B', name: 'David Holt', action: '5 action items pending', date: '05-25-2017'},
       { product:'SDL4k & SDL8k', name: 'N/A', action: '12 action items pending', date: '05-25-2017' },
-      { product: '9140 Series - Proejct Envoy', name: 'Greg VonRehder', action: '18 action items pending', date: '06-20-2017'},
+      { product: '9140 Series - Project Envoy', name: 'Greg VonRehder', action: '18 action items pending', date: '06-20-2017'},
       { product: '2680 Spectrum Analyzers', name: 'N/A', action: '14 action items pending', date: '06-21-2017'},
       { product: 'FRA8000', name: 'N/A', action: '17 action items pending', date: '10-09-2017'},
       { product: '8500B', name: 'Greg VonRehder', action: '15 action items pending', date: '05-09-2018'},
@@ -20,7 +20,6 @@ class Loop extends React.Component {
       { product:  'BA8100', name: 'David Holt', action: '18 action items pending', date: '06-04-2018'}
     ];
   return (
-
     <table>
       <thead> <h2>Current Projects</h2>
       </thead>
