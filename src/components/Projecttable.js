@@ -16,10 +16,10 @@ const Projecttable = (props) => {
         </thead>
           <tbody>
               <tr>
-                <td>{props.name}</td>
-                <td>{props.status}</td>
-                <td>test data</td>
-                <td>test data</td>
+                <td>{props.project_name}</td>
+                <td>{props.username}</td>
+                <td>{props.pending}</td>
+                <td>{props.date}</td>
               </tr>
           </tbody>
         </table>
