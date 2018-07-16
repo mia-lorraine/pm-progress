@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import './App.css';
+import Projecttable from './components/Projecttable';
+import './styles/App.css';
 
 let fakeTableData = {
   projectItem:  {
@@ -9,33 +10,6 @@ let fakeTableData = {
   }
 };
 
-class Tabletest extends Component {
-  render() {
-      return (
-    <div className='table-container'>
-        <h5>Projects</h5>
-      <table>
-        <thead>
-          <tr>
-            <th>Project name</th>
-            <th>Status</th>
-            <th>Pending Overview</th>
-            <th>Date Started</th>
-          </tr>
-        </thead>
-          <tbody>
-              <tr>
-                <td>{this.props.name}</td>
-                <td>{this.props.status}</td>
-                <td>test data</td>
-                <td>test data</td>
-              </tr>
-          </tbody>
-        </table>
-      </div>
-      )
-  }
-}
 class App extends Component{
   constructor(){
     super();
@@ -47,7 +21,7 @@ class App extends Component{
   render() {
     return (
       <div className="App">
-        <Tabletest name={this.state.tableData.projectItem && this.state.tableData.projectItem.name}/>
+        <Projecttable name={this.state.tableData.projectItem && this.state.tableData.projectItem.name}/>
       </div>
     );
   }
