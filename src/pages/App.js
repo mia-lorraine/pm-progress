@@ -12,14 +12,7 @@ let fakeServerData = {
     pending: '8 actions remaining',
     date: '05-25-2017'
   },
-  //{
-//     id: 2,
-//     project_name:'SDLk & SDLk8',
-//     username: 'n/a',
-//     pending: '12 Actions Pending',
-//     date: '05-25-2017'
-//   },
-// ],
+
   projects: {
     id: 1,
     product:'603B',

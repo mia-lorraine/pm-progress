@@ -1,4 +1,5 @@
 import React from 'react';
+import '../styles/loop.css';
 
 
 class Loop extends React.Component {
