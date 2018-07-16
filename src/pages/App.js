@@ -54,9 +54,10 @@ class App extends Component{
         name={this.state.serverData.projects && this.state.serverData.projects.name}
         date={this.state.serverData.projects && this.state.serverData.projects.date}
         pending={this.state.serverData.projects && this.state.serverData.projects.pendingItems}/>
-      <Loop/>
 
-
+      <div className='table-container'>
+        <Loop/>
+      </div>
     </div>
     );
   }

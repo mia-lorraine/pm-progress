@@ -5,6 +5,10 @@ body {
   font-family: sans-serif;
 }
 
+h2 {
+ text-align: center;
+}
+
 table {
 text-align: center;
 width: 100%;
@@ -12,7 +16,7 @@ width: 100%;
 
 tr {
   text-align: right;
-  height: 5ems;
+  height: 3em;
 }
 
 tr:nth-child(even) {
@@ -20,9 +24,12 @@ tr:nth-child(even) {
 }
 
 th {
-  text-align: right;
+  text-align: center;
+  padding: 10px;
 }
-
+td {
+  text-align: center;
+}
 
 /* Main App styles */
 .App {
