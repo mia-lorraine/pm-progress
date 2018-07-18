@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Projecttable from '../components/Projecttable';
 import Quickview from '../components/Quickview';
 import Loop from '../components/loop';
+import Button from '../components/button';
 import '../styles/App.css';
 
 let fakeServerData = {
@@ -48,10 +49,14 @@ class App extends Component{
         date={this.state.serverData.projects && this.state.serverData.projects.date}
         pending={this.state.serverData.projects && this.state.serverData.projects.pendingItems}/>
 
+
+
       <div className='table-container'>
         <Loop/>
       </div>
+      <Button/>
     </div>
+
     );
   }
 }
