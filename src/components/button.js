@@ -12,6 +12,7 @@ class Button extends React.Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
   }
 
   handleChange(event) {
@@ -21,9 +22,14 @@ class Button extends React.Component {
   }
 
   handleSubmit(event) {
-    alert('A input was submitted: ' + this.state.product + ', ' + this.state.name +', '+ this.state.date);
+    console.log('Project Data was submitted: ' + this.state.product + ', ' + this.state.name +', '+ this.state.date);
     event.preventDefault();
+
+    this.state.product = null
+    this.state.name = null
+    this.state.date = null
   }
+   
 
 render(){
     return(
