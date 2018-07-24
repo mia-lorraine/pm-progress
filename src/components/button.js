@@ -29,7 +29,7 @@ class Button extends React.Component {
     this.state.name = null
     this.state.date = null
   }
-   
+
 
 render(){
     return(
