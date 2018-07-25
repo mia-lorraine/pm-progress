@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Projecttable from '../components/Projecttable';
 import Quickview from '../components/Quickview';
 import Loop from '../components/loop';
+import Window from '../components/tab';
 import Button from '../components/button';
 import '../styles/App.css';
 
@@ -38,21 +39,22 @@ class App extends Component{
   render() {
     return (
       <div className="App">
-        <Projecttable
-        project_name = {this.state.serverData.projectItem && this.state.serverData.projectItem.project_name}
-        username = {this.state.serverData.projectItem && this.state.serverData.projectItem.username}
-        pending = {this.state.serverData.projectItem && this.state.serverData.projectItem.pending}
-        date = {this.state.serverData.projectItem && this.state.serverData.projectItem.date}/>
+
       <Quickview
         product={this.state.serverData.projects && this.state.serverData.projects.product}
         name={this.state.serverData.projects && this.state.serverData.projects.name}
         date={this.state.serverData.projects && this.state.serverData.projects.date}
         pending={this.state.serverData.projects && this.state.serverData.projects.pendingItems}/>
 
+          <div className = "tabs">
+            <Window/>
+            </div>
+              <Button/>
+
+
       <div className='table-container'>
         <Loop/>
       </div>
-      <Button/>
     </div>
 
     );
