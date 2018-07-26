@@ -19,15 +19,12 @@ class Button extends React.Component {
     this.setState({
       [event.target.name]:event.target.value
     });
+
   }
 
   handleSubmit(event) {
     console.log('Project Data was submitted: ' + this.state.product + ', ' + this.state.name +', '+ this.state.date);
     event.preventDefault();
-
-    this.state.product = null
-    this.state.name = null
-    this.state.date = null
   }
 
 
@@ -36,13 +33,26 @@ render(){
       <div className ="add-button">
       <form onSubmit={this.handleSubmit} >
       <label>
+
         Product:
-        <input type="text" value={this.state.value} name= "product" onChange={this.handleChange}/>
+        <input type="text"
+          value={this.state.value}
+          name= "product"
+          onChange={this.handleChange}/>
+
         Name:
-        <input type="text" value={this.state.name} name="name" onChange={this.handleChange}/>
+          <input type="text"
+          value={this.state.name}
+          name="name"
+          onChange={this.handleChange}/>
+
         Date:
-        <input type="text" value={this.state.date} name="date" onChange={this.handleChange} />
+          <input type="date"
+          value={this.state.date}
+          name="date"
+          onChange={this.handleChange} />
       </label>
+
       <input type="submit" value="create a project" />
       </form>
       </div>

@@ -2,15 +2,6 @@ import React from 'react';
 import { Tab, Tabs } from 'react-mdl';
 import '../styles/tab.css';
 
-//
-// function render OverviewTab() {
-//   let overviewTab = [
-//   ];
-// return overviewTab;
-// }
-//
-
-
 
 class Window extends React.Component {
       constructor(props) {
@@ -36,7 +27,7 @@ class Window extends React.Component {
             </Tabs>
           <section >
             <div className="content" activeTab = {this.state.activeTab}> Tab No. {this.state.activeTab} </div>
-            <p> let us see how this works. </p>
+            <p> static data </p>
           </section>
 </div>
 
