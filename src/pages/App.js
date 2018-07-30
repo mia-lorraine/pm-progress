@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Projecttable from '../components/Projecttable';
 import Quickview from '../components/Quickview';
-import Loop from '../components/loop';
+import Loop from '../components/Loop';
 import Window from '../components/tab';
 import Button from '../components/button';
+
 import '../styles/App.css';
 
 let fakeServerData = {
@@ -27,6 +27,19 @@ let fakeServerData = {
   }
 };
 
+let headerDefaultStyle = {
+  height: '75px',
+  width: 'auto',
+  backgroundColor: '#004a83'
+};
+
+let contentDefaultStyle = {
+  backgroundColor: '#fafafa',
+  width: '1000px',
+  border: '1px solid grey',
+  margin: '0 auto',
+  padding: '0 20px 20px 20px'
+}
 
 class App extends Component{
   constructor(){
@@ -39,6 +52,10 @@ class App extends Component{
   render() {
     return (
       <div className="App">
+        <div className="Header" style={headerDefaultStyle}></div>
+          <div className="Content" style={contentDefaultStyle}>
+        <Loop/>
+      </div>
 
       <Quickview
         product={this.state.serverData.projects && this.state.serverData.projects.product}
@@ -46,15 +63,10 @@ class App extends Component{
         date={this.state.serverData.projects && this.state.serverData.projects.date}
         pending={this.state.serverData.projects && this.state.serverData.projects.pendingItems}/>
 
+        <Button/>
           <div className = "tabs">
             <Window/>
             </div>
-              <Button/>
-
-
-      <div className='table-container'>
-        <Loop/>
-      </div>
     </div>
 
     );

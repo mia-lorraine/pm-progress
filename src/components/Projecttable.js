@@ -3,7 +3,7 @@ import '../styles/App.css';
 
 const Projecttable = (props) => {
   return (
-    <div className='table-container'>
+    <div>
         <h5>Projects</h5>
       <table>
         <thead>
