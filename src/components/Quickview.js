@@ -1,19 +1,26 @@
 import React from 'react';
-import '../styles/App.css';
 
-const Quickview = (props) => {
-
-  return (
-      <div className='projectQuickView'>
-        <h1>View a Project's Details</h1>
-          <p>Product: {props.product}</p>
-          <p>Project Manager: {props.name}</p>
-          <p>Date Initiated: {props.date}</p>
-          <p>Total Items Pending: {props.pending}</p>
-          <button>Complete Project</button>
-          <button>Cancel Project</button>
-      </div>
-    )
+class Quickview extends React.Component{
+  render() {
+    let projectItems = [
+      { id: 1, project_name: '603B', username: 'David Holt', pending: '8', date: '05-25-2017'}
+    ];
+    return (
+          <div>
+            {projectItems.map(projectItem =>(
+              <div>
+                <h3>Project Details</h3>
+                <p>Product: {projectItem.project_name}</p>
+                <p>Project Manager: {projectItem.username}</p>
+                <p>Date Initiated: {projectItem.date}</p>
+                <p>Total Items Pending: {projectItem.pending}</p>
+                <button>Complete Project</button>
+                <button>Cancel Project</button>
+              </div>
+            ))}
+          </div>
+    );
+  }
 }
 
 export default Quickview;

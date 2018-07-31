@@ -1,6 +1,7 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-class Loop extends React.Component {
+class Current extends React.Component {
   render() {
     let projects = [
       { id: 0, product: '603B', name: 'David Holt', actionPending: 5, date: '05-25-2017'},
@@ -32,7 +33,7 @@ class Loop extends React.Component {
 
       {projects.map(project => (
         <tr>
-        <td>{project.product}</td>
+        <td><NavLink to="/project-details">{project.product}</NavLink></td>
         <td>{project.name}</td>
         <td>{project.date}</td>
         <td>{project.actionPending} action items pending</td>
@@ -43,4 +44,4 @@ class Loop extends React.Component {
   }
 }
 
-export default Loop;
+export default Current;
