@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Home from '../components/Home'
-import Addproject from '../components/Addproject'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from '../components/Home';
+import Addproject from '../components/Addproject';
+import Error from '../components/Error';
 
 import '../styles/App.css';
 
@@ -26,20 +27,6 @@ let fakeServerData = {
   }
 };
 
-let headerDefaultStyle = {
-  height: '75px',
-  width: 'auto',
-  backgroundColor: '#004a83'
-};
-
-let contentDefaultStyle = {
-  backgroundColor: '#fafafa',
-  width: '1000px',
-  border: '1px solid grey',
-  margin: '0 auto',
-  padding: '0 20px 20px 20px'
-}
-
 class App extends Component{
   constructor(){
     super();
@@ -50,14 +37,13 @@ class App extends Component{
   }
   render() {
     return (
-
         <BrowserRouter>
-          <div>
-            <Route path="/" component={Home} />
-          </div>
+          <Switch>
+            <Route path="/" component={Home} exact />
+            <Route path="/add-project" component={Addproject} />
+            <Route component={Error} />
+          </Switch>
         </BrowserRouter>
-
-
     );
   }
 }
