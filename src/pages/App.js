@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Quickview from '../components/Quickview';
-import Loop from '../components/Loop';
-import Window from '../components/tab';
-import Button from '../components/button';
+import { BrowserRouter, Route } from 'react-router-dom';
+import Home from '../components/Home'
+import Addproject from '../components/Addproject'
 
 import '../styles/App.css';
 
@@ -51,23 +50,13 @@ class App extends Component{
   }
   render() {
     return (
-      <div className="App">
-        <div className="Header" style={headerDefaultStyle}></div>
-          <div className="Content" style={contentDefaultStyle}>
-        <Loop/>
-      </div>
 
-      <Quickview
-        product={this.state.serverData.projects && this.state.serverData.projects.product}
-        name={this.state.serverData.projects && this.state.serverData.projects.name}
-        date={this.state.serverData.projects && this.state.serverData.projects.date}
-        pending={this.state.serverData.projects && this.state.serverData.projects.pendingItems}/>
+        <BrowserRouter>
+          <div>
+            <Route path="/" component={Home} />
+          </div>
+        </BrowserRouter>
 
-        <Button/>
-          <div className = "tabs">
-            <Window/>
-            </div>
-    </div>
 
     );
   }
