@@ -11,7 +11,7 @@ const Projectdetails = () => {
       <div className="contentDefault">
         <Quickview/>
       </div>
-      <div className="contentDefault">
+      <div>
         <Window/>
       </div>
     </div>
