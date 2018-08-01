@@ -8,10 +8,10 @@ const Projectdetails = () => {
     <div>
       <div className="headerDefault">
         <h3 className="titleDefault"><NavLink to="/">ManageBK</NavLink></h3></div>
-      <div className="contentDefault">
+      <div className="quickviewDefault">
         <Quickview/>
       </div>
-      <div>
+      <div className="projectDetailsDefault">
         <Window/>
       </div>
     </div>

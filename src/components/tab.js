@@ -11,7 +11,6 @@ class Window extends React.Component {
         if(this.state.activeTab === 0){
           return(
             <table>
-
               <thead>
                 <tr>
                   <th>Overview</th>
