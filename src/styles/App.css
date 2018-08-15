@@ -57,3 +57,68 @@ td {
 tr:nth-child(even) {
   background-color:#eee;
 }
+
+
+.form {
+  border: 1px solid black;
+  width: 500px;
+}
+
+ .form-container {
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; }
+   .form-container .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: navy; }
+     .form-container .form label {
+      width: 300px; }
+     .form-container .form input[type=text],  .form-container .form input[type=date],
+     .form-container .form select {
+      width: 320px;
+      padding: 12px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 3px solid lightgrey;
+      color: navy;
+      background: transparent;
+      box-sizing: border-box; }
+       .form-container .form input[type=text]:focus,  .form-container .form input[type=date]:focus,
+       .form-container .form select:focus {
+        border-color: white; }
+     .form-container .form input[type=submit] {
+      border: 3px solid lightgrey;
+      background: transparent;
+      color: navy;
+      padding: 14px 20px;
+      margin: 2em 0;
+      cursor: pointer;
+      align-self: right; }
+     .form-container .form input[type=submit]:hover {
+      border-color: white;
+      background-color: white;
+      color: grey; }
+
+      .table {
+        width: 100%;
+        padding: 20px;
+        text-align: left; }
+        .table th {
+          text-transform: uppercase;
+          border-bottom: 2px solid lightgrey; }
+
+          .nav a {
+  padding: 20px;
+}
+
+.nav a {
+text-align: center;
+background: #333;
+color: white;
+
+}

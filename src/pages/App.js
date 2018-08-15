@@ -1,50 +1,77 @@
 import React, { Component } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import Home from '../components/Home';
-import Projectdetails from '../components/Projectdetails';
-import Error from '../components/Error';
+import { BrowserRouter as Router, Route} from 'react-router-dom';
+
 import '../styles/App.css';
+import axios from 'axios';
+import { Nav } from '../components/NavBar';
+import {ProjectList} from '../components/ProjectList';
+import AddProject from '../components/AddProject';
 
-let fakeServerData = {
-  projectItem: {
-    id: 1,
-    project_name: '603B',
-    username: 'David Holt',
-    pending: '8 actions remaining',
-    date: '05-25-2017'
-  },
 
-  projects: {
-    id: 1,
-    product:'603B',
-    name: 'David Holt',
-    date: '05-25-2017',
-    totalItems: 20,
-    completedItems: 15,
-    pendingItems: 5,
-    status: '1'
+class App extends Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      projects: []
+    }
+      this.addProject = this.addProject.bind(this);
   }
-};
 
-class App extends Component{
-  constructor(){
-    super();
-    this.state = {serverData: {}}
-  }
-  componentDidMount(){
-      this.setState({serverData: fakeServerData});
-  }
+
+getData(){
+axios
+.get("http://localhost:3000/db")
+.then(response => {
+  console.log(response);
+  console.log(response.data)
+  this.setState({
+    projects: response.data.projects,
+  })
+  })
+}
+
+
+addProject(newProject){
+    this.setState((prevState) => {
+      return {
+        projects: [
+          ...prevState.projects,
+          newProject
+        ]
+      }
+    });
+  }   //end of first half.
+
+countProjects(filter){
+  const {projects} = this.state;
+  return projects.filter(project => filter ? project.manager === filter : project).length;
+}
+
+
+componentDidMount() {
+  this.getData();
+}
+
   render() {
     return (
-      <div>
-        <BrowserRouter>
-          <Switch>
-            <Route path="/" component={Home} exact/>
-            <Route path="/project-details" component={Projectdetails} />
-            <Route component={Error} />
-          </Switch>
-        </BrowserRouter>
-      </div>
+      <Router>
+      <div className = "app">
+      <Nav />
+      <Route path="/list" render={(props) => (
+                            <ProjectList
+                                {...props}
+                                days={this.state.projects}
+                            />
+        )} />
+      <Route path="/add" render={(props) => (
+                            <AddProject
+                                {...props}
+                                newProject={this.addProject}
+                            />
+        )} />
+        </div>
+        </Router>
+
     );
   }
 }

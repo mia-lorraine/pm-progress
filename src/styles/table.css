@@ -2,3 +2,12 @@
   text-align: right;
   display: inline;
 }
+
+.table {
+  width: 80%;
+  margin: auto;
+}
+
+.table th {
+  font-style: uppercase;
+}
