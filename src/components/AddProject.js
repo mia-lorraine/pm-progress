@@ -51,12 +51,15 @@ const AddProject = ({newProject}) => {
           <br />
           <br />
             <h3> Manager: </h3> <br />
-              <input
-                id="date"
-                type="text"
-                required
-                ref={(input) => manager = input}
-                />
+            <select ref ={(input) => manager = input} >
+                  <option value='------'> --------  </option>
+                <option value='David Holt'> David Holt </option>
+                <option value='Greg VonRehder'> Greg VonRehder </option>
+                <option value='Ryan Roth'> Ryan Roth </option>
+                <option value='Jeremy Lo'> Jeremy Lo </option>
+                <option value='Jorg Hesser'> Jorg Hesser </option>
+                <option value='Ayumu Tokiwa'> Ayumu Tokiwa </option>
+              </select>
                 <label>
                   <br />
                   <br />

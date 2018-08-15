@@ -4,8 +4,6 @@ import {Project} from './Projects';
 import '../styles/App.css';
 import '../styles/table.css';
 
-
-
 export const ProjectList = ( {match, days}) => {
   const filter = match.params.filter;
   const projects = filter ? days.filter( project => project.manager === filter) : days;
@@ -15,12 +13,13 @@ export const ProjectList = ( {match, days}) => {
     <table class ="table">
       <thead>
         <tr>
-            <th> name </th>
-            <th> manager </th>
-            <th> date </th>
+          <th> Name</th>
+          <th> Manager </th>
+          <th> Date </th>
         </tr>
       </thead>
       <tbody>
+      
         {
           projects.map((project, i) =>
               <Project
@@ -29,6 +28,7 @@ export const ProjectList = ( {match, days}) => {
                 />
               )
         }
+
         </tbody>
       </table>
       <div className="filters">
@@ -37,7 +37,7 @@ export const ProjectList = ( {match, days}) => {
                         All
     				</Link>
                     &#9679;
-                    <Link to="/list/Greg-VonRhyder">
+                    <Link to="/list/Greg-VonRehder">
                           Greg
     				</Link>
                     &#9679;

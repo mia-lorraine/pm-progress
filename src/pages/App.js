@@ -6,6 +6,7 @@ import axios from 'axios';
 import { Nav } from '../components/NavBar';
 import {ProjectList} from '../components/ProjectList';
 import AddProject from '../components/AddProject';
+import Overview from '../components/ProjectOverview'
 
 
 class App extends Component {
@@ -22,8 +23,8 @@ getData(){
 axios
 .get("http://localhost:3000/db")
 .then(response => {
-  console.log(response);
-  console.log(response.data)
+  // console.log(response);
+  // console.log(response.data)
   this.setState({
     projects: response.data.projects,
   })
@@ -69,6 +70,12 @@ componentDidMount() {
                                 newProject={this.addProject}
                             />
         )} />
+        <Route path="/project-details" render={(props) => (
+                              <Overview
+                                  {...props}
+                                  newProject={this.addProject}
+                              />
+          )} />
         </div>
         </Router>
 

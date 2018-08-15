@@ -2,11 +2,33 @@ import React from 'react';
 import { Tab, Tabs } from 'react-mdl';
 import '../styles/tab.css';
 
-class Window extends React.Component {
+import axios from 'axios'
+
+class Overview extends React.Component {
       constructor(props) {
           super(props)
-          this.state = { activeTab: 0  }
+          this.state = {
+            activeTab: 0,
+            projectDetails: []
+            }
       }
+
+      getData(){
+        axios
+        .get("http://localhost:3000/projectDetails")
+        .then(response => {
+          console.log(response.data);
+          this.setState({
+            projectDetails: response.data.projectDetails,
+          })
+        })
+      }
+
+      componentDidMount(){
+        this.getData();
+      }
+
+
       toggleCategories(){
         if(this.state.activeTab === 0){
           return(
@@ -422,4 +444,4 @@ class Window extends React.Component {
   }
 
 
-export default Window;
+export default Overview;
