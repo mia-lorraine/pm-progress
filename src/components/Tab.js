@@ -4,7 +4,7 @@ import '../styles/tab.css';
 
 import axios from 'axios'
 
-class Tab_details extends React.Component {
+class Tdetails extends React.Component {
       constructor(props) {
           super(props)
           this.state = {
@@ -24,6 +24,7 @@ class Tab_details extends React.Component {
         })
       }
 
+
       componentDidMount(){
         this.getData();
       }
@@ -32,6 +33,7 @@ class Tab_details extends React.Component {
       toggleCategories(){
         if(this.state.activeTab === 0){
           return(
+            <form>
             <table>
               <thead>
                 <tr>
@@ -66,6 +68,7 @@ class Tab_details extends React.Component {
                 </tr>
               </tbody>
              </table>
+             </form>
           )} else if(this.state.activeTab === 1){
               return(
                 <div>
@@ -82,12 +85,11 @@ class Tab_details extends React.Component {
                       </tr>
                       <tr>
                         <td> Sample(s) including any software </td>
-                        <td><input type= "checkbox" name= "b1" value ="" checked /></td>
-                        <td><input type= "checkbox" name= "b2" value = "" checked /></td>
-                        <td><input type= "checkbox" name= "b3" value = "" checked /></td>
+                        <td><input type= "checkbox" name= "b1" value = ""  /></td>
+                        <td><input type= "checkbox" name= "b2" value = "" /></td>
+                        <td><input type= "checkbox" name= "b3" value = "" /></td>
                         <td><div className = "textbox"contenteditable="true">
-                          7/10/17- Second sample DOA, then Dave repaired.
-                          Currently working as intended <br/>
+                        <br/>
 
                         Still under Development.
                       </div></td>
@@ -103,69 +105,67 @@ class Tab_details extends React.Component {
                       <td>First Articles </td>
                       <td><input type= "checkbox" name= "b4" value ="" /> </td>
                       <td><input type= "checkbox" name= "b5" value = "" /> </td>
-                      <td><input type= "checkbox" name= "b6" value = "" checked /></td>
+                      <td><input type= "checkbox" name= "b6" value = "" /> </td>
                       <td><div className= "textbox"contenteditable="true">
-                        7/9/18 Approved with the emailed pictures and updated firmware. <br/>
-                      Still under Development.
                     </div> </td>
                   </tr>
                   <tr>
                     <td>Pricing (cost) for instrument and included accessories </td>
-                    <td><input type= "checkbox" name= "b7" value ="" checked/> </td>
-                    <td><input type= "checkbox" name= "b8" value = "" checked/> </td>
-                    <td><input type= "checkbox" name= "b9" value = "" checked /> </td>
-                    <td><div className = "textbox"contenteditable="true"> Product is under development. </div></td>
+                    <td><input type= "checkbox" name= "b7" value ="" /> </td>
+                    <td><input type= "checkbox" name= "b8" value = "" /> </td>
+                    <td><input type= "checkbox" name= "b9" value = "" /> </td>
+                    <td><div className = "textbox"contenteditable="true">  </div></td>
                   </tr>
                   <tr>
                     <td>Terms and conditions </td>
-                    <td><input type= "checkbox" name= "b10" value ="" checked/> </td>
+                    <td><input type= "checkbox" name= "b10" value ="" /> </td>
                     <td><input type= "checkbox" name= "b11" value = "" /> </td>
-                    <td><input type= "checkbox" name= "b12" value = "" checked /> </td>
-                    <td><div className = "textbox"contenteditable="true"> Product is under development.</div></td>
+                    <td><input type= "checkbox" name= "b12" value = "" /> </td>
+                    <td><div className = "textbox"contenteditable="true"> </div></td>
                   </tr>
                   <tr>
                     <td>User Manual </td>
-                    <td><input type= "checkbox" name= "b13" value ="" checked/> </td>
+                    <td><input type= "checkbox" name= "b13" value =""/> </td>
                     <td><input type= "checkbox" name= "b14" value = "" /> </td>
                     <td><input type= "checkbox" name= "b15" value = "" /> </td>
-                    <td><div className = "textbox"contenteditable="true"> Product is under development.</div></td>
+                    <td><div className = "textbox"contenteditable="true">  </div></td>
                   </tr>
                   <tr>
                     <td>Tooling: Overlay drawings, IGS files.  </td>
-                    <td><input type= "checkbox" name= "b16" value ="" checked/> </td>
-                    <td><input type= "checkbox" name= "b17" value = "" checked/> </td>
-                    <td><input type= "checkbox" name= "b18" value = "" checked /> </td>
-                    <td><div className = "textbox"contenteditable="true"> 6-11-18 -(99%) Ryan will put into Latek<br/>
-                    6-4-18 - (90%) complete, Ryan is working on it. <br/> This product is still under development.</div></td>
+                    <td><input type= "checkbox" name= "b16" value ="" /> </td>
+                    <td><input type= "checkbox" name= "b17" value = "" /> </td>
+                    <td><input type= "checkbox" name= "b18" value = "" /> </td>
+                    <td><div className = "textbox"contenteditable="true"> <br/>
+                     <br/> </div></td>
                 </tr>
                 <tr>
                   <td>Firmware upgrade instructions (if applicable)</td>
-                  <td><input type= "checkbox" name= "b19" value ="" checked/></td>
+                  <td><input type= "checkbox" name= "b19" value =""  /></td>
                   <td><input type= "checkbox" name= "b20" value = "" /></td>
-                  <td><input type= "checkbox" name= "b21" value = "" checked /></td>
-                  <td><div className = "textbox"contenteditable="true"> Product is under development.</div></td>
+                  <td><input type= "checkbox" name= "b21" value = ""   /></td>
+                  <td><div className = "textbox"contenteditable="true"> </div></td>
                 </tr>
                 <tr>
                   <td>CE declaration  </td>
-                  <td><input type= "checkbox" name= "b22" value ="" checked/> </td>
+                  <td><input type= "checkbox" name= "b22" value =""  /> </td>
                   <td><input type= "checkbox" name= "b23" value = "" /> </td>
-                  <td><input type= "checkbox" name= "b24" value = "" checked /> </td>
-                  <td><div className = "textbox"contenteditable="true"> Product is under development. </div>  </td>
+                  <td><input type= "checkbox" name= "b24" value = ""   /> </td>
+                  <td><div className = "textbox"contenteditable="true">  </div>  </td>
                 </tr>
                 <tr>
                   <td>Other approvals (if available) </td>
                   <td><input type = "checkbox" name= "b25" value ="" /> </td>
                   <td><input type = "checkbox" name= "b26" value = "" /> </td>
                   <td><input type = "checkbox" name= "b27" value = ""  /> </td>
-                  <td><div className = "textbox"contenteditable="true"> Product is under development. </div>   </td>
+                  <td><div className = "textbox"contenteditable="true">  </div>   </td>
                 </tr>
                 <tr>
                   <td>Service and calabration information, service strategy (e.g
                       board level or component level repair, does supplier provide spare parts.) </td>
                     <td><input type= "checkbox" name= "b28" value ="" /> </td>
                     <td><input type= "checkbox" name= "b29" value = "" /> </td>
-                    <td><input type= "checkbox" name= "b30" value = "" checked /> </td>
-                    <td><div className= "textbox"contenteditable="true"> Product is under development. </div>  </td>
+                    <td><input type= "checkbox" name= "b30" value = ""  /> </td>
+                    <td><div className= "textbox"contenteditable="true">  </div>  </td>
                   </tr>
                     </tbody>
                    </table>
@@ -183,8 +183,8 @@ class Tab_details extends React.Component {
                     </tr>
                     <tr>
                       <td>Result of product evaluation </td>
-                      <td><input type = "checkbox" name= "b1" value ="" checked /> </td>
-                      <td><input type = "checkbox" name= "b2" value = "" checked /> </td>
+                      <td><input type = "checkbox" name= "b1" value =""  /> </td>
+                      <td><input type = "checkbox" name= "b2" value = ""  /> </td>
                       <td>N/A </td>
                       <td><input type = "text" name = "notes"/>  </td>
                     </tr>
@@ -192,7 +192,7 @@ class Tab_details extends React.Component {
                       <td>Required functional improvements or modifications if any (specifications, features) </td>
                       <td><input type = "checkbox" name= "b3" value ="" /> </td>
                       <td><input type = "checkbox" name= "b4" value = "" /> </td>
-                      <td><input type = "checkbox" name= "b5" value = "" checked /> </td>
+                      <td><input type = "checkbox" name= "b5" value = ""  /> </td>
                       <td><input type = "text" name = "notes"/>  </td>
                     </tr>
                     <tr>
@@ -204,7 +204,7 @@ class Tab_details extends React.Component {
                     </tr>
                     <tr>
                       <td>User manual (PDF) </td>
-                      <td><input type = "checkbox" name= "b8" value ="" checked/> </td>
+                      <td><input type = "checkbox" name= "b8" value ="" /> </td>
                       <td><input type = "checkbox" name= "b9" value = "" /> </td>
                       <td>N/A </td>
                       <td><input type = "text" name = "notes"/>  </td>
@@ -213,27 +213,27 @@ class Tab_details extends React.Component {
                       <td>Required tooling/overlay modifications if any </td>
                       <td><input type = "checkbox" name= "b10" value =""/> </td>
                       <td><input type = "checkbox" name= "b11" value = "" /> </td>
-                      <td><input type = "checkbox" name= "b12" value = ""  checked/> </td>
+                      <td><input type = "checkbox" name= "b12" value = "" /> </td>
                       <td><input type = "text" name = "notes"/>  </td>
                     </tr>
                     <tr>
                       <td> Box artwork  </td>
-                      <td> <input type = "checkbox" name= "b13" value ="" checked/> </td>
-                      <td> <input type = "checkbox" name= "b14" value = "" checked/> </td>
-                      <td> <input type = "checkbox" name= "b15" value = "" checked /> </td>
+                      <td> <input type = "checkbox" name= "b13" value ="" /> </td>
+                      <td> <input type = "checkbox" name= "b14" value = "" /> </td>
+                      <td> <input type = "checkbox" name= "b15" value = ""  /> </td>
                       <td> <input type = "text" name = "notes"/>  </td>
                     </tr>
                     <tr>
                       <td>Initial purchase order (first articles) with detailed acceptance instructions  </td>
                       <td><input type = "checkbox" name= "b16" value ="" /> </td>
-                      <td><input type = "checkbox" name= "b17" value = "" checked /> </td>
+                      <td><input type = "checkbox" name= "b17" value = "" /> </td>
                       <td>N/A </td>
                       <td><input type = "text" name = "notes"/>  </td>
                     </tr>
                     <tr>
                       <td>Info what goes inside of box, inclduing packaging instructions (optional)  </td>
                       <td><input type = "checkbox" name= "b18" value ="" /> </td>
-                      <td><input type = "checkbox" name= "b19" value = "" checked /> </td>
+                      <td><input type = "checkbox" name= "b19" value = "" /> </td>
                       <td>N/A </td>
                       <td><input type = "text" name = "notes"/>  </td>
                     </tr>
@@ -293,31 +293,31 @@ class Tab_details extends React.Component {
                         </tr>
                         <tr>
                           <td>Box artwork </td>
-                          <td><input type = "checkbox" value = "complete" checked /> </td>
+                          <td><input type = "checkbox" value = "complete" /> </td>
                           <td><input type = "text"  /> </td>
                           <td><input type = "checkbox" value = "" /> does not apply </td>
                         </tr>
                         <tr>
                           <td>Overlay drawings </td>
-                          <td><input type = "checkbox" value = "complete" checked /> </td>
+                          <td><input type = "checkbox" value = "complete" /> </td>
                           <td><input type = "text"  /> </td>
                           <td></td>
                         </tr>
                         <tr>
                           <td>Tooling instructions </td>
-                          <td><input type = "checkbox" value = "complete" checked /> </td>
+                          <td><input type = "checkbox" value = "complete"/> </td>
                           <td><input type = "text"  /> </td>
                           <td><input type = "checkbox" value = "" /> does not apply </td>
                         </tr>
                         <tr>
                           <td>Tooling folder </td>
-                          <td><input type = "checkbox" value = "complete" checked /> </td>
+                          <td><input type = "checkbox" value = "complete"  /> </td>
                           <td><input type = "text"  /> </td>
                           <td></td>
                         </tr>
                         <tr>
                           <td>Photos (a valid B&K product inventory ID must be in this system) </td>
-                          <td><input type = "checkbox" value = "complete" checked /> </td>
+                          <td><input type = "checkbox" value = "complete"  /> </td>
                           <td><input type = "text"  /> </td>
                           <td></td>
                         </tr>
@@ -339,20 +339,20 @@ class Tab_details extends React.Component {
                         </tr>
                         <tr>
                           <td>Competitive Analysis/Pricing:</td>
-                          <td><input type= "checkbox" checked /></td>
+                          <td><input type= "checkbox"  /></td>
                           <td><input type= "text" /></td>
                           <td><input type= "text" /></td>
                         </tr>
                         <tr>
                           <td>Solomon Populated:</td>
-                          <td><input type="checkbox" checked/> yes </td>
+                          <td><input type="checkbox"/> yes </td>
                           <td><input type= "text" /></td>
                           <td></td>
                           <td></td>
                         </tr>
                         <tr>
                           <td>Cost and Price approved by Jorg:</td>
-                          <td><input type= "checkbox" checked/>yes</td>
+                          <td><input type= "checkbox"/>yes</td>
                           <td></td>
                           <td></td>
                           <td></td>
@@ -376,13 +376,13 @@ class Tab_details extends React.Component {
                           </tr>
                           <tr>
                             <td>Web content management system populated?</td>
-                            <td><input type = "checkbox" checked/>yes</td>
+                            <td><input type = "checkbox"  />yes</td>
                             <td></td>
                             <td>Approved by Jorg?<input type= "checkbox"/> yes </td>
                           </tr>
                           <tr>
                             <td>Inform Sefram (manual, data sheet, transfer price) </td>
-                            <td><input type="checkbox" checked /> completed </td>
+                            <td><input type="checkbox"  /> completed </td>
                             <td>Sent By: <input type="text" name = "notes"/></td>
                           </tr>
                           <tr>
@@ -445,4 +445,4 @@ class Tab_details extends React.Component {
   }
 
 
-export default Tab_details;
+export default Tdetails;

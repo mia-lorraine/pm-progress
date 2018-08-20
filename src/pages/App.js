@@ -8,7 +8,7 @@ import { Nav } from '../components/NavBar';
 import AddProject from '../components/AddProject';
 import Overview from '../components/ProjectOverview'
 import List from '../components/List'
-import Tab_details from '../components/Tab'
+import Tdetails from '../components/Tab'
 
 
 class App extends Component {
@@ -84,9 +84,8 @@ componentDidMount() {
                                 />
             )} />
             <Route path="/tab" render={(props) => (
-                                    <Tab_details
+                                    <Tdetails
                                         {...props}
-                                        newProject={this.addProject}
                                     />
                 )} />
         </div>
