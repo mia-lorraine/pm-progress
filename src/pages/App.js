@@ -4,9 +4,10 @@ import { BrowserRouter as Router, Route} from 'react-router-dom';
 import '../styles/App.css';
 import axios from 'axios';
 import { Nav } from '../components/NavBar';
-import {ProjectList} from '../components/ProjectList';
+// import {ProjectList} from '../components/ProjectList';
 import AddProject from '../components/AddProject';
 import Overview from '../components/ProjectOverview'
+import List from '../components/List'
 
 
 class App extends Component {
@@ -59,9 +60,8 @@ componentDidMount() {
       <div className = "app">
       <Nav />
       <Route path="/list" render={(props) => (
-                            <ProjectList
+                            <List
                                 {...props}
-                                days={this.state.projects}
                             />
         )} />
       <Route path="/add" render={(props) => (
