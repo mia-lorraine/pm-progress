@@ -8,6 +8,7 @@ import { Nav } from '../components/NavBar';
 import AddProject from '../components/AddProject';
 import Overview from '../components/ProjectOverview'
 import List from '../components/List'
+import Tab_details from '../components/Tab'
 
 
 class App extends Component {
@@ -76,6 +77,18 @@ componentDidMount() {
                                   newProject={this.addProject}
                               />
           )} />
+        <Route path="/project-details" render={(props) => (
+                                <Overview
+                                    {...props}
+                                    newProject={this.addProject}
+                                />
+            )} />
+            <Route path="/tab" render={(props) => (
+                                    <Tab_details
+                                        {...props}
+                                        newProject={this.addProject}
+                                    />
+                )} />
         </div>
         </Router>
 
