@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Quickview from '../components/Quickview';
-import Window from '../components/tab'
 
 const Projectdetails = () => {
   return (
@@ -12,7 +11,6 @@ const Projectdetails = () => {
         <Quickview/>
       </div>
       <div className="projectDetailsDefault">
-        <Window/>
       </div>
     </div>
 

@@ -1,10 +1,14 @@
 /* Global */
-body {
+
+* {
   margin: 0;
   padding: 0;
+}
+body {
   font-family: sans-serif;
   background-color: #e8e8e8;
 }
+/* 
 .titleDefault{
   color: white;
   margin: 0;
@@ -42,7 +46,7 @@ body {
 }
 /* Temporary Style Overrides */
 
-.headerDefault a {
+/* .headerDefault a {
   color: #fff;
 }
 
@@ -56,4 +60,4 @@ td {
 
 tr:nth-child(even) {
   background-color:#eee;
-}
+} */
