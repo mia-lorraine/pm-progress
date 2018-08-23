@@ -14,7 +14,8 @@ class Home extends React.Component {
     super(props);
     this.state = {
       projects: [],
-      show: false
+      show: false,
+      message: 'Hello'
     };
   }
   getData() {
@@ -31,13 +32,14 @@ class Home extends React.Component {
     console.log(item);
     const array = item;
     this.setState({
+      ...this.state,
       item: array
     });
   }
   showDetails = () => {
     this.setState({
       ...this.state,
-      show: !this.state.show  
+      show: !this.state.show, 
     });
   }
   componentDidMount() {
@@ -61,24 +63,28 @@ class Home extends React.Component {
               <table style={tableStyle}>
                 <tbody>
                   <tr>
-                    <td width='33%'><a style={linkStyle} onClick={()=>{
-                      this.clickMe.bind(this,item); this.showDetails(); 
-                    }} >{item.name}</a></td>
+                    <td width='33%'>
+                    <a style={linkStyle} 
+                       onClick={()=>{this.clickMe.bind(this,item); 
+                                     this.showDetails(); 
+                     }}>
+                      {item.name}
+                      </a>
+                    </td>
                     <td width='33%'>{item.manager}</td>
                     <td width='33%'>{item.date}</td>
                   </tr>
                 </tbody>
               </table>
+                <Details key={this.state.item}{...this.state.item}
+
+                  hideDetails={this.showDetails}
+                  show={this.state.show}
+                  item={item}
+                 >
+                </Details>
             </div>
           ))}
-        <Details key = {this.state.item} {...this.state.item} 
-          hideDetails={this.showDetails}
-          show={this.state.show}
-          name={this.state.projects && this.state.projects.name}
-          manager={this.state.projects.manager}
-          date={this.state.projects.date}>
-          <p>This stuff is from the Details component.</p>
-        </Details>
       </div>
     );
   }
