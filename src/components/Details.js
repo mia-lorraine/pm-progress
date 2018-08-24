@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import { Tab, Tabs } from 'react-mdl';
 
 import '../styles/tab.css'
@@ -26,7 +27,9 @@ class Details extends React.Component {
   constructor(){
     super();
     this.state = {
-      activeTab: 0
+      activeTab: 0,
+      projectDetails: []
+
     }
   }
 
@@ -35,7 +38,20 @@ class Details extends React.Component {
     }
 
 
-    toggleCategories(){
+    getData() {
+      axios
+      .get("http://localhost:3001/projectDetails")
+      .then(response => {
+        console.log(response.data);
+        var data = response.data.projectDetails
+        this.setState({
+          projectDetails: data
+        })
+      })
+    }
+
+
+    toggleCategories(project){
       if(this.state.activeTab === 0){
         return(
           <form>
@@ -60,12 +76,12 @@ class Details extends React.Component {
               </tr>
               <tr>
                 <td>General Notes: </td>
-                <td><div contenteditable="true"> This is a new handheald battery test
+                <td><div contentEditable="true"> This is a new handheald battery test
                   with data logging. Targeting the security, fire alarm and SCDA industries. Designed and built by BK.</div></td>
               </tr>
               <tr>
                 <td> Product Development Folder Link </td>
-                <td><div contenteditable="true">Common/Product Development/BK Taiwan / 603B </div></td>
+                <td><div contentEditable="true">Common/Product Development/BK Taiwan / 603B </div></td>
               </tr>
               <tr>
                 <td> Est. Completion Date </td>
@@ -93,9 +109,9 @@ class Details extends React.Component {
                       <td><input type= "checkbox" name= "b1" value = ""  /></td>
                       <td><input type= "checkbox" name= "b2" value = "" /></td>
                       <td><input type= "checkbox" name= "b3" value = "" /></td>
-                      <td><div className = "textbox"contenteditable="true">
+                      <td><div className = "textbox"contentEditable="true">
                       <br/>
-                    
+
                     </div></td>
                   </tr>
                   <tr>
@@ -110,7 +126,7 @@ class Details extends React.Component {
                     <td><input type= "checkbox" name= "b4" value ="" /> </td>
                     <td><input type= "checkbox" name= "b5" value = "" /> </td>
                     <td><input type= "checkbox" name= "b6" value = "" /> </td>
-                    <td><div className= "textbox"contenteditable="true">
+                    <td><div className= "textbox"contentEditable="true">
                   </div> </td>
                 </tr>
                 <tr>
@@ -118,28 +134,28 @@ class Details extends React.Component {
                   <td><input type= "checkbox" name= "b7" value ="" /> </td>
                   <td><input type= "checkbox" name= "b8" value = "" /> </td>
                   <td><input type= "checkbox" name= "b9" value = "" /> </td>
-                  <td><div className = "textbox"contenteditable="true">  </div></td>
+                  <td><div className = "textbox"contentEditable="true">  </div></td>
                 </tr>
                 <tr>
                   <td>Terms and conditions </td>
                   <td><input type= "checkbox" name= "b10" value ="" /> </td>
                   <td><input type= "checkbox" name= "b11" value = "" /> </td>
                   <td><input type= "checkbox" name= "b12" value = "" /> </td>
-                  <td><div className = "textbox"contenteditable="true"> </div></td>
+                  <td><div className = "textbox"contentEditable="true"> </div></td>
                 </tr>
                 <tr>
                   <td>User Manual </td>
                   <td><input type= "checkbox" name= "b13" value =""/> </td>
                   <td><input type= "checkbox" name= "b14" value = "" /> </td>
                   <td><input type= "checkbox" name= "b15" value = "" /> </td>
-                  <td><div className = "textbox"contenteditable="true">  </div></td>
+                  <td><div className = "textbox"contentEditable="true">  </div></td>
                 </tr>
                 <tr>
                   <td>Tooling: Overlay drawings, IGS files.  </td>
                   <td><input type= "checkbox" name= "b16" value ="" /> </td>
                   <td><input type= "checkbox" name= "b17" value = "" /> </td>
                   <td><input type= "checkbox" name= "b18" value = "" /> </td>
-                  <td><div className = "textbox"contenteditable="true"> <br/>
+                  <td><div className = "textbox"contentEditable="true"> <br/>
                    <br/> </div></td>
               </tr>
               <tr>
@@ -147,21 +163,21 @@ class Details extends React.Component {
                 <td><input type= "checkbox" name= "b19" value =""  /></td>
                 <td><input type= "checkbox" name= "b20" value = "" /></td>
                 <td><input type= "checkbox" name= "b21" value = ""   /></td>
-                <td><div className = "textbox"contenteditable="true"> </div></td>
+                <td><div className = "textbox"contentEditable="true"> </div></td>
               </tr>
               <tr>
                 <td>CE declaration  </td>
                 <td><input type= "checkbox" name= "b22" value =""  /> </td>
                 <td><input type= "checkbox" name= "b23" value = "" /> </td>
                 <td><input type= "checkbox" name= "b24" value = ""   /> </td>
-                <td><div className = "textbox"contenteditable="true">  </div>  </td>
+                <td><div className = "textbox"contentEditable="true">  </div>  </td>
               </tr>
               <tr>
                 <td>Other approvals (if available) </td>
                 <td><input type = "checkbox" name= "b25" value ="" /> </td>
                 <td><input type = "checkbox" name= "b26" value = "" /> </td>
                 <td><input type = "checkbox" name= "b27" value = ""  /> </td>
-                <td><div className = "textbox"contenteditable="true">  </div>   </td>
+                <td><div className = "textbox"contentEditable="true">  </div>   </td>
               </tr>
               <tr>
                 <td>Service and calabration information, service strategy (e.g
@@ -169,7 +185,7 @@ class Details extends React.Component {
                   <td><input type= "checkbox" name= "b28" value ="" /> </td>
                   <td><input type= "checkbox" name= "b29" value = "" /> </td>
                   <td><input type= "checkbox" name= "b30" value = ""  /> </td>
-                  <td><div className= "textbox"contenteditable="true">  </div>  </td>
+                  <td><div className= "textbox"contentEditable="true">  </div>  </td>
                 </tr>
                   </tbody>
                  </table>
@@ -428,16 +444,21 @@ class Details extends React.Component {
     }; //closes toggleCategories
 
 
-
+componentDidMount() {
+this.getData();
+}
 
 
   render() {
+    const {projectDetails} = this.state;
     let project = this.props.item
     if(!this.props.show) {
       return null;
     }
     return (
       <div style={backdropStyle}>
+
+      {console.log(projectDetails)};
             <ul>
                 <li>Project Name: {project.name}</li>
                 <li>Project Manager: {project.manager}</li>
@@ -456,7 +477,7 @@ class Details extends React.Component {
             <Tab>Website/Promotion</Tab>
         </Tabs>
           <section>
-            <div className="projectDetailsDefault">{this.toggleCategories()}</div>
+            <div className="projectDetailsDefault">{this.toggleCategories(project)}</div>
           </section>
         </div>
       </div>
