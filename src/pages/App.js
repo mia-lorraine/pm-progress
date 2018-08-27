@@ -8,6 +8,7 @@ import { Nav } from '../components/NavBar';
 import AddProject from '../components/AddProject';
 import Overview from '../components/ProjectOverview'
 import List from '../components/List'
+import AddRedux from '../components/AddRedux'
 import Tdetails from '../components/Tab'
 
 
@@ -15,9 +16,11 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      projects: []
+      projects: [],
+      overview: []
     }
       this.addProject = this.addProject.bind(this);
+      this.addData = this.addData.bind(this);
   }
 
 
@@ -29,6 +32,7 @@ axios
   // console.log(response.data)
   this.setState({
     projects: response.data.projects,
+    overview: response.data.overview
   })
   })
 }
@@ -43,7 +47,21 @@ addProject(newProject){
         ]
       }
     });
-  }   //end of first half.
+  }
+
+
+
+  addData(newData){
+      this.setState((prevState) => {
+        return {
+          overview: [
+            ...prevState.overview,
+            newData
+          ]
+        }
+      });
+    }
+    //end of first half.
 
 countProjects(filter){
   const {projects} = this.state;
@@ -88,6 +106,12 @@ componentDidMount() {
                                         {...props}
                                     />
                 )} />
+            <Route path="/project-overview" render={(props) => (
+                                        <AddRedux
+                                            {...props}
+                                          newData={this.addData}
+                                        />
+                    )} />
         </div>
         </Router>
 

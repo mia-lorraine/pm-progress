@@ -136,9 +136,14 @@
       "id": 15
     }
   ],
-  "projectDetails": [
+  "overview": [
     {
-    "wordtest" : "testing to see if I have data"
+      "pname": "603B",
+      "supplier": "BK",
+      "pmanager": "David Holt",
+      "gnotes": "This is a product",
+      "est_date": "2018-01-01",
+      "id": 1
     }
   ]
 }
