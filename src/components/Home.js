@@ -86,12 +86,13 @@ class Home extends React.Component {
             </div>
           ))}
 
-          <Details 
+          <Details
             key={this.state.projects.id}
             hideDetails={this.showDetails}
             show={this.state.show}
             data={this.state.data}
             state={this.state}
+            clickMe = {this.clickMe}
             />
 
       </div>
