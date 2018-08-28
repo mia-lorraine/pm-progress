@@ -27,12 +27,6 @@ class Home extends React.Component {
         });
       });
   }
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> c3e2626ab6d9fb23c5ec218722718c0c60206690
   showDetails = () => {
     this.setState({
       ...this.state,
@@ -92,7 +86,6 @@ class Home extends React.Component {
             </div>
           ))}
 
-<<<<<<< HEAD
           <Details 
             key={this.state.projects.id}
             hideDetails={this.showDetails}
@@ -100,14 +93,6 @@ class Home extends React.Component {
             data={this.state.data}
             state={this.state}
             />
-=======
-          <Details key={this.state.data}{...this.state.data}
-
-                           hideDetails={this.showDetails}
-                           show={this.state.show}
-                        
-                          />
->>>>>>> c3e2626ab6d9fb23c5ec218722718c0c60206690
 
       </div>
     );
