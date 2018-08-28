@@ -1,14 +1,35 @@
 import React from 'react';
 import axios from 'axios';
 import Details from '../components/Details';
+import '../styles/App.css';
 
 let tableStyle = {
-  width: '1000px'
+  width: '1000px',
+  backgroundColor: '#FFF',
+  margin: '0 auto',
+  border: 0,
 };
+let tableBodyStyle = {
+  fontSize: 18,
+  padding: 5,
+  height: 25,
+  fontFamily: 'Helvetica, Arial, sans-serif'
+}
+let tableSectionStyle = {
+  padding: 5,
+  height: 25
+}
 let linkStyle = {
+  color: '#0061C3',
   cursor: 'pointer'
 };
-
+let headerStyle = {
+  fontSize: 50,
+  padding: 20,
+  height: 60,
+  backgroundColor: '#02274D',
+  color: '#FFF'
+};
 class Home extends React.Component {
   constructor(props) {
     super(props);
@@ -53,12 +74,16 @@ class Home extends React.Component {
   render() {
     return (
       <div className="App">
+        <div className='Header' style={headerStyle}><p>ManageBK</p></div>
+          <div className='Content'>
+          <h4>Current Projects</h4>
+            <div className='TableWrap'></div>
         <table style={tableStyle}>
           <tbody>
             <tr>
-              <th width='33%' align='left'>Product</th>
-              <th width='33%' align='left'>Manager</th>
-              <th width='33%' align='left'>Date</th>
+              <th style={tableBodyStyle} width='33%' align='left'>Product</th>
+              <th style={tableBodyStyle} width='33%' align='left'>Manager</th>
+              <th style={tableBodyStyle} width='33%' align='left'>Date</th>
             </tr>
           </tbody>
         </table>
@@ -68,7 +93,7 @@ class Home extends React.Component {
               <table style={tableStyle}>
                 <tbody>
                   <tr>
-                    <td width='33%'>
+                    <td style={tableSectionStyle} width='33%'>
                     <a style={linkStyle}
                        onClick={()=>{this.clickMe(item);
                                      this.showDetails();
@@ -76,8 +101,8 @@ class Home extends React.Component {
                       {item.name}
                       </a>
                     </td>
-                    <td width='33%'>{item.manager}</td>
-                    <td width='33%'>{item.date}</td>
+                    <td style={tableSectionStyle} width='33%'>{item.manager}</td>
+                    <td style={tableSectionStyle} width='33%'>{item.date}</td>
                   </tr>
 
 
@@ -93,6 +118,9 @@ class Home extends React.Component {
             data={this.state.data}
             state={this.state}
             />
+      
+      
+      </div>
 
       </div>
     );
