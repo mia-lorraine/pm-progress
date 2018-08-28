@@ -92,7 +92,6 @@ class Home extends React.Component {
             show={this.state.show}
             data={this.state.data}
             state={this.state}
-            clickMe = {this.clickMe}
             />
 
       </div>

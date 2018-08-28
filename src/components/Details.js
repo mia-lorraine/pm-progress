@@ -656,6 +656,7 @@ class Details extends React.Component {
 
       <button onClick={(e) => {
           this.hideDetails(e)
+          window.location.reload()
         }}>Close</button>
 
       <div className="demo-tabs">
