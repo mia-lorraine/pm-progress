@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { BrowserRouter as Router, Route} from 'react-router-dom';
 
 import '../styles/App.css';
@@ -73,6 +74,14 @@ componentDidMount() {
   this.getData();
 }
 
+=======
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Home from '../components/Home';
+import Projectdetails from '../components/Projectdetails';
+import Error from '../components/Error';
+
+class App extends Component{
+>>>>>>> staging-2
   render() {
     return (
       <Router>
