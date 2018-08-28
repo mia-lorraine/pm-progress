@@ -131,7 +131,12 @@
     ],
     "projectDetails": [
       {
-        "Overview": "hello"
+        "id": 1,
+        "Overview_Name": "BK",
+        "Overview_Supplier": "BK",
+        "Overview_Manager": "David Holt",
+        "Overview_Notes": "This is a new handheald battery test with data logging. Targeting the security, fire alarm and SCDA industries. Designed and built by BK.",
+        "Overview_Link": "Common/Product Development/BK Taiwan/603B"
       }
     ]
   }
