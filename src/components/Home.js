@@ -28,23 +28,32 @@ class Home extends React.Component {
         });
       });
   }
-  clickMe(item){
-    console.log(item);
-    const array = item;
-    this.setState({
-      ...this.state,
-      item: array
-    });
-  }
+
+
+
   showDetails = () => {
     this.setState({
       ...this.state,
-      show: !this.state.show, 
+      show: !this.state.show,
     });
   }
+
+  clickMe(item){
+    console.log(item);
+    const getId = item.id
+    const itemVal = item
+    console.log(getId);
+    this.setState({
+      ...this.state,
+      data: itemVal,
+      grabID: getId
+    });
+  }
+
   componentDidMount() {
     this.getData();
   }
+
   render() {
     return (
       <div className="App">
@@ -64,9 +73,9 @@ class Home extends React.Component {
                 <tbody>
                   <tr>
                     <td width='33%'>
-                    <a style={linkStyle} 
-                       onClick={()=>{this.clickMe.bind(this,item); 
-                                     this.showDetails(); 
+                    <a style={linkStyle}
+                       onClick={()=>{this.clickMe(item);
+                                     this.showDetails();
                      }}>
                       {item.name}
                       </a>
@@ -74,17 +83,20 @@ class Home extends React.Component {
                     <td width='33%'>{item.manager}</td>
                     <td width='33%'>{item.date}</td>
                   </tr>
+
+
                 </tbody>
               </table>
-                <Details key={this.state.item}{...this.state.item}
-
-                  hideDetails={this.showDetails}
-                  show={this.state.show}
-                  item={item}
-                 >
-                </Details>
             </div>
           ))}
+
+          <Details key={this.state.data}{...this.state.data}
+
+                           hideDetails={this.showDetails}
+                           show={this.state.show}
+                        
+                          />
+
       </div>
     );
   }

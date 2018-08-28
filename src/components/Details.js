@@ -42,7 +42,6 @@ class Details extends React.Component {
       axios
       .get("http://localhost:3001/projectDetails")
       .then(response => {
-        console.log(response.data);
         var data = response.data.projectDetails
         this.setState({
           projectDetails: data
@@ -451,14 +450,13 @@ this.getData();
 
   render() {
     const {projectDetails} = this.state;
-    let project = this.props.item
+    let project = this.props.data
     if(!this.props.show) {
       return null;
     }
     return (
       <div style={backdropStyle}>
 
-      {console.log(projectDetails)};
             <ul>
                 <li>Project Name: {project.name}</li>
                 <li>Project Manager: {project.manager}</li>
@@ -477,7 +475,7 @@ this.getData();
             <Tab>Website/Promotion</Tab>
         </Tabs>
           <section>
-            <div className="projectDetailsDefault">{this.toggleCategories(project)}</div>
+            <div className="projectDetailsDefault">{this.toggleCategories(projectDetails)}</div>
           </section>
         </div>
       </div>
