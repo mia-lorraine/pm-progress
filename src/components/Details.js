@@ -10,7 +10,7 @@ let backdropStyle = {
   left: 0,
   right: 0,
   backgroundColor: 'rgb(255,255,255)',
-  padding: 50
+  padding: 25
 };
 let headerStyle = {
   fontSize: 50,
@@ -650,12 +650,13 @@ class Details extends React.Component {
         <li>Project Name: {project.name}</li>
         <li>Project Manager: {project.manager}</li>
         <li>Project Date: {project.date}</li>
-      </ul>
-
-      <button onClick={(e) => {
+        <li> <button onClick={(e) => {
           this.hideDetails(e)
           window.location.reload()
-        }}>Close</button>
+        }}>Close</button></li>
+      </ul>
+
+     
 
       <div className="demo-tabs">
         <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({activeTab: tabId})} ripple="ripple">

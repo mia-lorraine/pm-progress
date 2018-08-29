@@ -7,7 +7,8 @@ let tableStyle = {
   width: '1000px',
   backgroundColor: '#FFF',
   margin: '0 auto',
-  border: 0,
+  padding: 2,
+  border: 0
 };
 let tableBodyStyle = {
   fontSize: 18,
