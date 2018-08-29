@@ -20,6 +20,14 @@ body {
 .Header p {
   font-size: 40px;
   font-weight: bold;
-  margin: 10px;
   padding: 10px 5px;
+  display: inline;
+}
+
+.tabsWrapper {
+  margin-top: 25px;
+}
+
+.detailsPreview {
+  /* padding: 25px; */
 }

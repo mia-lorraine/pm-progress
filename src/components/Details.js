@@ -1,7 +1,8 @@
 import React from 'react';
-import {Tab, Tabs} from 'react-mdl';
+import { Tab, Tabs, Button } from 'react-mdl';
 
 import '../styles/tab.css'
+
 
 let backdropStyle = {
   position: 'fixed',
@@ -10,14 +11,8 @@ let backdropStyle = {
   left: 0,
   right: 0,
   backgroundColor: 'rgb(255,255,255)',
-  padding: 25
-};
-let headerStyle = {
-  fontSize: 50,
-  padding: 20,
-  height: 60,
-  backgroundColor: '#02274D',
-  color: '#FFF'
+  padding: 25,
+  marginTop: 80 
 };
 class Details extends React.Component {
   constructor() {
@@ -645,36 +640,39 @@ class Details extends React.Component {
       return null;
     }
     return (
-    <div style={backdropStyle}>
-      <ul className="detailsPreview">
-        <li>Project Name: {project.name}</li>
-        <li>Project Manager: {project.manager}</li>
-        <li>Project Date: {project.date}</li>
-        <li> <button onClick={(e) => {
-          this.hideDetails(e)
-          window.location.reload()
-        }}>Close</button></li>
-      </ul>
-
-     
-
-      <div className="demo-tabs">
-        <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({activeTab: tabId})} ripple="ripple">
-          <Tab>Overview</Tab>
-          <Tab>Request FROM Supplier</Tab>
-          <Tab>Provide TO Supplier</Tab>
-          <Tab>Documentation</Tab>
-          <Tab>Tooling, art, packaging...</Tab>
-          <Tab>Cost & Pricing
-          </Tab>
-          <Tab>Website/Promotion</Tab>
-        </Tabs>
-        <section>
-          <div className="projectDetailsDefault">{this.toggleCategories()}</div>
-        </section>
-      </div>
-    </div>);
-  }
+     <div>
+        <div className="Header"><p>ManageBK</p></div>
+            <div className="demo-tabs">
+              <div style={backdropStyle}>
+                <ul className="detailsPreview">
+                  <li><b>Project Name: </b>{project.name}</li>
+                  <li><b>Project Manager</b>: {project.manager}</li>
+                  <li><b>Project Date</b>: {project.date}</li>
+                  <li><Button raised colored>Complete Project</Button></li>
+                  <li> <Button onClick={(e) => {
+                    this.hideDetails(e)
+                    window.location.reload()
+                  }}><b>Back to Projects</b></Button></li>
+                </ul>
+                <div className="tabsWrapper">
+                  <Tabs activeTab={this.state.activeTab} onChange={(tabId) => this.setState({activeTab: tabId})} ripple="ripple">
+                    <Tab>Overview</Tab>
+                    <Tab>Request FROM Supplier</Tab>
+                    <Tab>Provide TO Supplier</Tab>
+                    <Tab>Documentation</Tab>
+                    <Tab>Tooling, art, packaging</Tab>
+                    <Tab>Cost & Pricing
+                    </Tab>
+                    <Tab>Website/Promotion</Tab>
+                  </Tabs>
+                </div>
+              <section>
+                <div className="projectDetailsDefault">{this.toggleCategories()}</div>
+              </section>
+            </div>
+          </div>
+        </div>
+      );}
 } // End of Component
 
 export default Details;

@@ -2,7 +2,15 @@ import React from 'react';
 import axios from 'axios';
 import Details from '../components/Details';
 import '../styles/App.css';
+import { Button } from 'react-mdl';
 
+const headerStyle = {
+  fontSize: 40,
+  padding: 20,
+  height: 40,
+  backgroundColor: '#02274D',
+  color: '#FFF'
+};
 let tableStyle = {
   width: '1000px',
   backgroundColor: '#FFF',
@@ -23,13 +31,6 @@ let tableSectionStyle = {
 let linkStyle = {
   color: '#0061C3',
   cursor: 'pointer'
-};
-let headerStyle = {
-  fontSize: 40,
-  padding: 20,
-  height: 40,
-  backgroundColor: '#02274D',
-  color: '#FFF'
 };
 class Home extends React.Component {
   constructor(props) {
@@ -75,7 +76,9 @@ class Home extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className='Header' style={headerStyle}><p>ManageBK</p></div>
+        <div className='Header' style={headerStyle}><p>ManageBK</p>
+          <Button raised accent ripple>Button</Button>
+        </div>
           <div className='Content'>
           <h4>Current Projects</h4>
             <div className='TableWrap'></div>
