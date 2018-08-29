@@ -24,9 +24,9 @@ let linkStyle = {
   cursor: 'pointer'
 };
 let headerStyle = {
-  fontSize: 50,
+  fontSize: 40,
   padding: 20,
-  height: 60,
+  height: 40,
   backgroundColor: '#02274D',
   color: '#FFF'
 };

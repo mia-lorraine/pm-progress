@@ -8,14 +8,21 @@ font-weight: bold;
 }
 
 .demo-tabs {
-  background-color: lightgrey;
-  height: 100%;
+  background-color: #fafafa;
+  padding: 0 10px 10px 10px;
+  /* height: 100%; */
   opacity: 0.2s;
 
 }
 .button-style {
 text-align: left;
 padding: 7px;
+}
+
+.detailsPreview li{
+  width: 25%;
+  text-decoration: none;
+  display: inline-block;
 }
 
 /* .content {
