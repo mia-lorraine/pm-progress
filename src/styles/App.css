@@ -70,9 +70,34 @@ body {
   display: inline-block;
 }
 
+.formWrap {
+  margin: 20px auto;
+ 
+}
+.form-container {
+  position: relative;
+  border-radius: 5px;
+  width: 500px;
+  height: 400px;
+  padding: 30px;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+
 table td {
   height: 20px;
 }
 .tabsWrapper {
   margin-top: 25px;
+}
+
+/* MDL Overrides */
+span.mdl-chip a {
+  color: #000;
+}
+
+.form.form.black-container input {
+  width: 100%;
+  height: 25px;
 }

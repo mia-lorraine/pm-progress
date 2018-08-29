@@ -25,15 +25,6 @@ font-weight: bold;
   display: inline-block;
 }
 
-.form-container {
-  position: relative;
-  border-radius: 5px;
-  width: 500px;
-  height: 400px;
-  margin: 20px auto;
-  padding: 30px;
-  background-color:rgba(0,0,0,.3);
-}
 
 /* .content {
 width: 100%;
