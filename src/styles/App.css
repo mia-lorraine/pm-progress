@@ -9,6 +9,48 @@ body {
   background-color: #e8e8e8;
 }
 
+.projectsContent {
+  background-color: #e8e8e8;
+}
+.projectsContent h4 {
+  margin: 20px;
+}
+.currentProjectWrap {
+    width: 1000px;
+    background-color: #FFF;
+    margin: 0 auto;
+    padding: 10px;
+    border: 0;
+    box-shadow: 9px 11px 19px -9px rgba(0,0,0,0.36);
+}
+
+.currentProjectItems li{
+  font-siz
+  display: inline-block;
+}
+
+.projectHeaderWrap{
+  padding: 5px;
+  border-bottom: 3px solid  rgb(2, 39, 77)
+}
+.projectMapWrap {
+  padding: 5px;
+  margin: 5px;
+  border-bottom: 1px solid grey;
+}
+.projectMapWrap:last-child {
+  padding: 5px;
+  margin: 5px;
+  border: 0;
+}
+.projectHeaderWrap li {
+  width: 32%;
+  display: inline-block;
+}
+.projectMapWrap li {
+  width: 32%;
+  display: inline-block;
+}
 .projectDetailsDefault {
   padding: 20px;
 }
@@ -18,11 +60,12 @@ body {
 }
 .TableWrap{
   width: 1000px;
+  margin: 5px;
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
 .Header p {
-  font-size: 40px;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 10px;
   display: inline-block;

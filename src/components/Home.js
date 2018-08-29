@@ -2,7 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Details from '../components/Details';
 import '../styles/App.css';
-import { Button } from 'react-mdl';
+import { Chip } from 'react-mdl';
 
 const headerStyle = {
   fontSize: 40,
@@ -11,15 +11,9 @@ const headerStyle = {
   backgroundColor: '#02274D',
   color: '#FFF'
 };
-let tableStyle = {
-  width: '1000px',
-  backgroundColor: '#FFF',
-  margin: '0 auto',
-  padding: 2,
-  border: 0
-};
 let tableBodyStyle = {
-  fontSize: 18,
+  fontSize: 20,
+  fontWeight: 'bold',
   padding: 5,
   height: 25,
   fontFamily: 'Helvetica, Arial, sans-serif'
@@ -79,44 +73,33 @@ class Home extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className='Header' style={headerStyle}><p>ManageBK</p>
-          <Button raised accent ripple style={buttonStyle}>Create Project</Button>
+        <div className='Header' style={headerStyle}><p>ManageBK - New Product Information Tool</p>
+          <Chip style={buttonStyle}>CREATE PROJECT</Chip>
         </div>
-          <div className='Content'>
+          <div className='projectsContent'>
           <h4>Current Projects</h4>
-            <div className='TableWrap'></div>
-        <table style={tableStyle}>
-          <tbody>
-            <tr>
-              <th style={tableBodyStyle} width='33%' align='left'>Product</th>
-              <th style={tableBodyStyle} width='33%' align='left'>Manager</th>
-              <th style={tableBodyStyle} width='33%' align='left'>Date</th>
-            </tr>
-          </tbody>
-        </table>
+        <div className="currentProjectWrap">
+        <div className="projectHeaderWrap">
+            <ul className="currentProjectItems">  
+                  <li style={tableBodyStyle} width='33%' align='left'>Product</li>
+                  <li style={tableBodyStyle} width='33%' align='left'>Manager</li>
+                  <li style={tableBodyStyle} width='33%' align='left'>Date</li>
+            </ul>
+          </div>
         {
           this.state.projects.map((item,index) => (
-            <div key={item.id}>
-              <table style={tableStyle}>
-                <tbody>
-                  <tr>
-                    <td style={tableSectionStyle} width='33%'>
-                    <a style={linkStyle}
-                       onClick={()=>{this.clickMe(item);
-                                     this.showDetails();
-                     }}>
-                      {item.name}
+              <div className="projectMapWrap">
+                    <li style={tableSectionStyle} width='33%'>
+                      <a style={linkStyle} onClick={()=>{this.clickMe(item); this.showDetails();}}>
+                        {item.name}
                       </a>
-                    </td>
-                    <td style={tableSectionStyle} width='33%'>{item.manager}</td>
-                    <td style={tableSectionStyle} width='33%'>{item.date}</td>
-                  </tr>
+                    </li>
+                    <li style={tableSectionStyle} width='33%'>{item.manager}</li>
+                    <li style={tableSectionStyle} width='33%'>{item.date}</li>
+              </div>
 
-
-                </tbody>
-              </table>
-            </div>
           ))}
+        </div>
 
           <Details
             key={this.state.projects.id}

@@ -10,7 +10,7 @@ let backdropStyle = {
   bottom: 0,
   left: 0,
   right: 0,
-  backgroundColor: 'rgb(255,255,255)',
+  backgroundColor: '#e8e8e8',
   paddingTop: 20,
   paddingLeft: 20,
   paddingRight: 20

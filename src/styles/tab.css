@@ -11,9 +11,8 @@ font-weight: bold;
   background-color: #fafafa;
   padding: 0 10px 10px 10px;
   margin-top: 15px;
-  /* height: 100%; */
   opacity: 0.2s;
-
+  box-shadow: 9px 11px 19px -9px rgba(0,0,0,0.36);
 }
 .button-style {
   text-align: left;
