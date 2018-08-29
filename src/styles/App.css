@@ -24,10 +24,13 @@ body {
 .Header p {
   font-size: 40px;
   font-weight: bold;
-  padding: px 5px 10px 5px;
-  display: inline;
+  margin-top: 10px;
+  display: inline-block;
 }
 
+table td {
+  height: 20px;
+}
 .tabsWrapper {
   margin-top: 25px;
 }

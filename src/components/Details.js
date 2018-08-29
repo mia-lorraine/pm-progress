@@ -71,14 +71,12 @@ class Details extends React.Component {
             </td>
             </tr>
             <tr>
-              <td>General Notes:
-              </td>
-              <td>   {project.ov_notes}
-            </td>
+              <td>General Notes: <input type = "text" name= "link"/></td>
+              <td>{project.ov_notes} </td>
             </tr>
             <tr>
               <td>
-                Product Development Folder Link
+                Product Development Folder Link <input type = "text" name= "link"/>
               </td>
               <td>
              {project.folder}
@@ -450,8 +448,6 @@ class Details extends React.Component {
                         )}
   }; //closes toggleCategories closes toggleCategories
 
-  componentDidMount() {}
-
   render() {
     let project = this.props.data
     if (!this.props.show) {
@@ -462,11 +458,11 @@ class Details extends React.Component {
         <div className="Header"><p>ManageBK</p></div>
       <div style={backdropStyle}>
           <ul className="detailsPreview">
-            <li>Project Name: {project.name}</li>
-            <li>Project Manager: {project.manager}</li>
-            <li>Project Date: {project.date}</li>
-            <li><Button raised colored>Complete Project</Button></li>
-            <li> <Button onClick={(e) => {
+            <li><b>Project Name</b>: {project.name}</li>
+            <li><b>Project Manager:</b> {project.manager}</li>
+            <li><b>Project Date:</b> {project.date}</li>
+            <li><Button raised>Complete Project</Button></li>
+            <li> <Button raised onClick={(e) => {
                       this.hideDetails(e)
                       window.location.reload()
                     }}><b>Back to Projects</b></Button></li>
