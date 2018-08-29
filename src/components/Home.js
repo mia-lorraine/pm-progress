@@ -6,7 +6,7 @@ import { Button } from 'react-mdl';
 
 const headerStyle = {
   fontSize: 40,
-  padding: 20,
+  padding: 10,
   height: 40,
   backgroundColor: '#02274D',
   color: '#FFF'
@@ -27,6 +27,9 @@ let tableBodyStyle = {
 let tableSectionStyle = {
   padding: 5,
   height: 25
+}
+let buttonStyle = {
+  float: 'right'
 }
 let linkStyle = {
   color: '#0061C3',
@@ -77,7 +80,7 @@ class Home extends React.Component {
     return (
       <div className="App">
         <div className='Header' style={headerStyle}><p>ManageBK</p>
-          <Button raised accent ripple>Button</Button>
+          <Button raised accent ripple style={buttonStyle}>Create Project</Button>
         </div>
           <div className='Content'>
           <h4>Current Projects</h4>

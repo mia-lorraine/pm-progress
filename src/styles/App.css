@@ -9,6 +9,10 @@ body {
   background-color: #e8e8e8;
 }
 
+.projectDetailsDefault {
+  padding: 20px;
+}
+
 .Content {
   margin-top: 20px;
 }
@@ -20,14 +24,10 @@ body {
 .Header p {
   font-size: 40px;
   font-weight: bold;
-  padding: 10px 5px;
+  padding: px 5px 10px 5px;
   display: inline;
 }
 
 .tabsWrapper {
   margin-top: 25px;
-}
-
-.detailsPreview {
-  /* padding: 25px; */
 }
