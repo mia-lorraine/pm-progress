@@ -15,5 +15,5 @@ const Projectdetails = () => {
     </div>
 
   );
-}
+};
 export default Projectdetails;
