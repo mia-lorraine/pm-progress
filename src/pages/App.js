@@ -3,6 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from '../components/Home';
 import Projectdetails from '../components/Projectdetails';
 import Error from '../components/Error';
+import Addproject from '../components/Addproject';
+
 
 class App extends Component{
   render() {
@@ -11,6 +13,7 @@ class App extends Component{
         <BrowserRouter>
           <Switch>
             <Route path="/" component={Home} exact/>
+            <Route path="/add" component={Addproject} />
             <Route path="/project-details" component={Projectdetails} />
             <Route component={Error} />
           </Switch>

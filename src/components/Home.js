@@ -3,6 +3,7 @@ import axios from 'axios';
 import Details from '../components/Details';
 import '../styles/App.css';
 import { Chip } from 'react-mdl';
+import { NavLink } from 'react-router-dom'
 
 const headerStyle = {
   fontSize: 40,
@@ -74,7 +75,7 @@ class Home extends React.Component {
     return (
       <div className="App">
         <div className='Header' style={headerStyle}><p>ManageBK - New Product Information Tool</p>
-          <Chip style={buttonStyle}>CREATE PROJECT</Chip>
+          <Chip style={buttonStyle}><NavLink to="add">CREATE PROJECT</NavLink></Chip>
         </div>
           <div className='projectsContent'>
           <h4>Current Projects</h4>
@@ -100,7 +101,7 @@ class Home extends React.Component {
 
           ))}
         </div>
-
+          {/* <Addproject /> */}
           <Details
             key={this.state.projects.id}
             hideDetails={this.showDetails}
