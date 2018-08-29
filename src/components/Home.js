@@ -4,6 +4,7 @@ import Details from '../components/Details';
 import '../styles/App.css';
 import { Chip } from 'react-mdl';
 import { NavLink } from 'react-router-dom';
+import AddProject from './Addproject'
 
 const headerStyle = {
   fontSize: 40,
@@ -75,13 +76,22 @@ class Home extends React.Component {
     return (
       <div className="App">
         <div className='Header' style={headerStyle}><p>ManageBK - New Product Information Tool</p>
-          <Chip style={buttonStyle}><NavLink to="add">CREATE PROJECT</NavLink></Chip>
+          <Chip style={buttonStyle}>
+          <NavLink
+          to="/add"
+          render={(props) => (
+                            <AddProject
+                                {...props}
+                                newProject={this.addProject}
+                            />)} > CREATE A PROJECT </NavLink>
+
+        </Chip>
         </div>
         <div className='projectsContent'>
           <h4>Current Projects</h4>
           <div className="currentProjectWrap">
             <div className="projectHeaderWrap">
-              <ul className="currentProjectItems">  
+              <ul className="currentProjectItems">
                 <li style={tableBodyStyle} width='33%' align='left'>Product</li>
                 <li style={tableBodyStyle} width='33%' align='left'>Manager</li>
                 <li style={tableBodyStyle} width='33%' align='left'>Date</li>
@@ -111,8 +121,8 @@ class Home extends React.Component {
             data={this.state.data}
             state={this.state}
           />
-      
-      
+
+
         </div>
 
       </div>

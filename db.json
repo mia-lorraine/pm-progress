@@ -1,167 +1,167 @@
 {
-    "users": [
-      {
-        "id": 0,
-        "fullName": "----------"
-      },
-      {
-        "id": 1,
-        "fullName": "Jorg Hesser"
-      },
-      {
-        "id": 2,
-        "fullName": "Greg VonRehder"
-      },
-      {
-        "id": 3,
-        "fullName": "David Holt"
-      },
-      {
-        "id": 4,
-        "fullName": "Ayumu Tokiwa"
-      },
-      {
-        "id": 5,
-        "fullName": "Jeremy Lo"
-      },
-      {
-        "id": 6,
-        "fullName": "Ryan Roth"
-      }
-    ],
-    "projects": [
-      {
-        "id": 1,
-        "name": "603B",
-        "supplier": "BK",
-        "manager": "David Holt",
-        "date": "2017-05-25",
-        "status": "1",
-        "ov_notes": "This is a handheld battery test with data logging. Targeting the security, fire alarm and SCDA industries. Designed and built by BK.",
-        "folder": "Common/Product Development/BK Taiwan/603B",
-        "est_date": "4/15/2018"
-      },
-      {
-        "id": 2,
-        "name": "SDL4k & SDL8k",
-        "supplier": "Biologic",
-        "manager": "Group",
-        "date": "2017-05-24",
-        "status": "0",
-        "ov_notes": "",
-        "folder": "",
-        "est_date": ""
-      },
-      {
-        "id": 3,
-        "name": "9140 Series - Project Envoy",
-        "supplier": "OR-X and BK Taiwan",
-        "manager": "Greg VonRehder",
-        "date": "2017-06-20",
-        "status": "0",
-        "ov_notes": "",
-        "folder": "",
-        "est_date": "2018"
-      },
-      {
-        "id": 4,
-        "name": "2680 Spectrum Analyzers",
-        "manager": "Group",
-        "date": "2017-05-25",
-        "status": "0",
-        "ov_notes": "",
-        "folder": ""
-      },
-      {
-        "id": 5,
-        "name": "FRA8000",
-        "manager": "David Holt",
-        "date": "2017-10-09",
-        "status": "0",
-        "ov_notes": "",
-        "folder": ""
-      },
-      {
-        "name": "8500B",
-        "manager": "Greg VonRehder",
-        "supplier": "Itech",
-        "date": "2018-05-09",
-        "status": "0",
-        "id": 6,
-        "ov_notes": "M:/Product Development/Itech/8500B",
-        "folder": ""
-      },
-      {
-        "name": "9160",
-        "manager": "Group",
-        "date": "2018-02-05",
-        "status": "0",
-        "id": 7,
-        "ov_notes": "",
-        "folder": ""
-      },
-      {
-        "id": 8,
-        "name": "1696B - Mason Update",
-        "manager": "Group",
-        "date": "2018-02-05",
-        "status": "0",
-        "ov_notes": "",
-        "folder": ""
-      },
-      {
-        "id": 9,
-        "name": "1785C - Mason Update",
-        "manager": "Group",
-        "date": "2018-02-05",
-        "status": "0",
-        "ov_notes": "",
-        "folder": ""
-      },
-      {
-        "id": 10,
-        "name": "MPS - ORX",
-        "manager": "Group",
-        "date": "2018-02-05",
-        "status": "0",
-        "ov_notes": "",
-        "folder": ""
-      },
-      {
-        "id": 11,
-        "name": "XLNB",
-        "manager": "Group",
-        "date": "2018-02-05",
-        "status": "0",
-        "ov_notes": "",
-        "folder": ""
-      },
-      {
-        "id": 12,
-        "name": "PVSMR",
-        "manager": "Group",
-        "date": "2018-02-05",
-        "status": "0",
-        "ov_notes": "",
-        "folder": ""
-      },
-      {
-        "id": 13,
-        "name": "3600 Series Hipot",
-        "manager": "Greg VonRehder",
-        "date": "2018-05-22",
-        "status": "0",
-        "ov_notes": "",
-        "folder": ""
-      },
-      {
-        "id": 14,
-        "name": "BA8100",
-        "manager": "David Holt",
-        "date": "2018-06-04",
-        "status": "0",
-        "ov_notes": "",
-        "folder": ""
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": 0,
+      "fullName": "----------"
+    },
+    {
+      "id": 1,
+      "fullName": "Jorg Hesser"
+    },
+    {
+      "id": 2,
+      "fullName": "Greg VonRehder"
+    },
+    {
+      "id": 3,
+      "fullName": "David Holt"
+    },
+    {
+      "id": 4,
+      "fullName": "Ayumu Tokiwa"
+    },
+    {
+      "id": 5,
+      "fullName": "Jeremy Lo"
+    },
+    {
+      "id": 6,
+      "fullName": "Ryan Roth"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "name": "603B",
+      "supplier": "BK",
+      "manager": "David Holt",
+      "date": "2017-05-25",
+      "status": "1",
+      "ov_notes": "This is a handheld battery test with data logging. Targeting the security, fire alarm and SCDA industries. Designed and built by BK.",
+      "folder": "Common/Product Development/BK Taiwan/603B",
+      "est_date": "4/15/2018"
+    },
+    {
+      "id": 2,
+      "name": "SDL4k & SDL8k",
+      "supplier": "Biologic",
+      "manager": "Group",
+      "date": "2017-05-24",
+      "status": "0",
+      "ov_notes": "",
+      "folder": "",
+      "est_date": ""
+    },
+    {
+      "id": 3,
+      "name": "9140 Series - Project Envoy",
+      "supplier": "OR-X and BK Taiwan",
+      "manager": "Greg VonRehder",
+      "date": "2017-06-20",
+      "status": "0",
+      "ov_notes": "",
+      "folder": "",
+      "est_date": "2018"
+    },
+    {
+      "id": 4,
+      "name": "2680 Spectrum Analyzers",
+      "manager": "Group",
+      "date": "2017-05-25",
+      "status": "0",
+      "ov_notes": "",
+      "folder": ""
+    },
+    {
+      "id": 5,
+      "name": "FRA8000",
+      "manager": "David Holt",
+      "date": "2017-10-09",
+      "status": "0",
+      "ov_notes": "",
+      "folder": ""
+    },
+    {
+      "name": "8500B",
+      "manager": "Greg VonRehder",
+      "supplier": "Itech",
+      "date": "2018-05-09",
+      "status": "0",
+      "id": 6,
+      "ov_notes": "M:/Product Development/Itech/8500B",
+      "folder": ""
+    },
+    {
+      "name": "9160",
+      "manager": "Group",
+      "date": "2018-02-05",
+      "status": "0",
+      "id": 7,
+      "ov_notes": "",
+      "folder": ""
+    },
+    {
+      "id": 8,
+      "name": "1696B - Mason Update",
+      "manager": "Group",
+      "date": "2018-02-05",
+      "status": "0",
+      "ov_notes": "",
+      "folder": ""
+    },
+    {
+      "id": 9,
+      "name": "1785C - Mason Update",
+      "manager": "Group",
+      "date": "2018-02-05",
+      "status": "0",
+      "ov_notes": "",
+      "folder": ""
+    },
+    {
+      "id": 10,
+      "name": "MPS - ORX",
+      "manager": "Group",
+      "date": "2018-02-05",
+      "status": "0",
+      "ov_notes": "",
+      "folder": ""
+    },
+    {
+      "id": 11,
+      "name": "XLNB",
+      "manager": "Group",
+      "date": "2018-02-05",
+      "status": "0",
+      "ov_notes": "",
+      "folder": ""
+    },
+    {
+      "id": 12,
+      "name": "PVSMR",
+      "manager": "Group",
+      "date": "2018-02-05",
+      "status": "0",
+      "ov_notes": "",
+      "folder": ""
+    },
+    {
+      "id": 13,
+      "name": "3600 Series Hipot",
+      "manager": "Greg VonRehder",
+      "date": "2018-05-22",
+      "status": "0",
+      "ov_notes": "",
+      "folder": ""
+    },
+    {
+      "id": 14,
+      "name": "BA8100",
+      "manager": "David Holt",
+      "date": "2018-06-04",
+      "status": "0",
+      "ov_notes": "",
+      "folder": ""
+    }
+  ]
+}
