@@ -53,7 +53,9 @@ body {
 .projectDetailsDefault {
   padding: 20px;
 }
-
+.create-project-wrap {
+  padding-top: 50px;
+}
 .Content {
   margin-top: 20px;
 }
@@ -76,17 +78,18 @@ body {
 }
 .form-container {
   position: relative;
-  border-radius: 5px;
   width: 500px;
-  height: 400px;
   padding: 30px;
   background-color: #fff;
   margin: 0 auto;
+  box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
 
-.form .black-container h3 {
-  padding: 0px
-
+.form-container select {
+  width: 100%;
+}
+.form.black-container p {
+  margin: 0px;
 }
 
 table td {
