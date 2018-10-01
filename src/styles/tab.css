@@ -6,7 +6,6 @@ font-weight: bold;
   margin: 20px auto 20px auto;
   width: 100%;
 }
-
 .demo-tabs {
   background-color: #fafafa;
   padding: 0 10px 10px 10px;
@@ -18,40 +17,14 @@ font-weight: bold;
   text-align: left;
   padding: 7px;
 }
-
 .detailsPreview li{
   width: 20%;
   text-decoration: none;
   display: inline-block;
 }
-
-
-/* .content {
-width: 100%;
-} */
-
-/* th {
-font-size: 20px;
-font-weight: 400;
-font-family: times;
-margin: auto;
-
-} */
-
-/* td, thead {
-padding: 20px;
-} */
-
-/* tr {
-width: 100%;
-height: 3em;
-} */
-
 input {
-  text-align: right;
-
+  text-align: left;
 }
-
 .textbox {
 background: white;
 width: auto;

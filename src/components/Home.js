@@ -4,7 +4,7 @@ import Details from '../components/Details';
 import '../styles/App.css';
 import { Chip } from 'react-mdl';
 import { NavLink } from 'react-router-dom';
-import AddProject from './Addproject'
+import AddProject from './Addproject';
 
 const headerStyle = {
   fontSize: 40,
@@ -55,7 +55,6 @@ class Home extends React.Component {
       show: !this.state.show,
     });
   }
-
   clickMe(item){
     console.log(item);
     const getId = item.id;
@@ -67,25 +66,22 @@ class Home extends React.Component {
       grabID: getId
     });
   }
-
   componentDidMount() {
     this.getData();
   }
-
   render() {
     return (
       <div className="App">
         <div className='Header' style={headerStyle}><p>ManageBK - New Product Information Tool</p>
           <Chip style={buttonStyle}>
-          <NavLink
-          to="/add"
-          render={(props) => (
-                            <AddProject
-                                {...props}
-                                newProject={this.addProject}
-                            />)} > CREATE A PROJECT </NavLink>
-
-        </Chip>
+            <NavLink
+              to="/add"
+              render={(props) => (
+                <AddProject
+                  {...props}
+                  newProject={this.addProject}
+                />)} > CREATE A PROJECT </NavLink>
+          </Chip>
         </div>
         <div className='projectsContent'>
           <h4>Current Projects</h4>
@@ -113,7 +109,6 @@ class Home extends React.Component {
 
               ))}
           </div>
-          {/* <Addproject /> */}
           <Details
             key={this.state.projects.id}
             hideDetails={this.showDetails}
@@ -121,10 +116,7 @@ class Home extends React.Component {
             data={this.state.data}
             state={this.state}
           />
-
-
         </div>
-
       </div>
     );
   }

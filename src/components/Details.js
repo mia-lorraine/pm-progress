@@ -59,9 +59,10 @@ class Details extends React.Component {
               </td>
             </tr>
             <tr>
-              <td>Supplier:
+              <td>Supplier:</td>
+              <td>
+                <input></input>
               </td>
-              <td>{project.supplier}</td>
             </tr>
             <tr>
               <td>Project Manager:
@@ -72,22 +73,26 @@ class Details extends React.Component {
             </tr>
             <tr>
               <td>General Notes: </td>
-              <td>{project.ov_notes} </td>
+              <td><input></input></td>
+              {/* <td>{project.ov_notes} </td> */}
             </tr>
             <tr>
               <td>
                 Product Development Folder Link:
               </td>
               <td>
-             {project.folder}
-
+                <input></input>
+                {/* {project.folder} */}
               </td>
             </tr>
             <tr>
               <td>
                 Est. Completion Date:
               </td>
-              <td>{project.est_date}</td>
+              <td>
+                <input></input>
+              </td>
+              {/* <td>{project.est_date}</td> */}
             </tr>
           </tbody>
         </table>

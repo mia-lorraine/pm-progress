@@ -1,5 +1,4 @@
 /* Global */
-
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +7,6 @@ body {
   font-family: sans-serif;
   background-color: #e8e8e8;
 }
-
 .projectsContent {
   background-color: #e8e8e8;
 }
@@ -16,18 +14,16 @@ body {
   margin: 20px;
 }
 .currentProjectWrap {
-    width: 1000px;
-    background-color: #FFF;
-    margin: 0 auto;
-    padding: 10px;
-    border: 0;
-    box-shadow: 9px 11px 19px -9px rgba(0,0,0,0.36);
+  width: 1000px;
+  background-color: #FFF;
+  margin: 0 auto;
+  padding: 10px;
+  border: 0;
+  box-shadow: 9px 11px 19px -9px rgba(0,0,0,0.36);
 }
-
 .currentProjectItems li{
   display: inline-block;
 }
-
 .projectHeaderWrap{
   padding: 5px;
   border-bottom: 3px solid  rgb(2, 39, 77)
@@ -64,17 +60,11 @@ body {
   margin: 5px;
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
-
 .Header p {
   font-size: 24px;
   font-weight: bold;
   margin-top: 10px;
   display: inline-block;
-}
-
-.formWrap {
-  margin: 20px auto;
-
 }
 .form-container {
   position: relative;
@@ -84,14 +74,12 @@ body {
   margin: 0 auto;
   box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
 }
-
 .form-container select {
   width: 100%;
 }
 .form.black-container p {
   margin: 0px;
 }
-
 table td {
   height: 20px;
 }
