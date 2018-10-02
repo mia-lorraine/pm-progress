@@ -2,20 +2,18 @@ import React from 'react';
 import axios from 'axios'
 import '../styles/App.css'
 
-
-const AddRedux = ({newData}) => {
-  let pname, supplier, pmanager, gnotes, est_date;
+const AddProject = ({newProject}) => {
+  let name, manager, date, status;
 
   const submit = (e) => {
       e.preventDefault();
 
       axios
-      .post('http://localhost:3000/overview', {
-      pname: pname.value,
-      supplier: supplier.value,
-      pmanager: pmanager.value,
-      gnotes: gnotes.value,
-      est_date: est_date.value
+      .post('http://localhost:3000/projects', {
+      name: name.value,
+      manager: manager.value,
+      date: date.value,
+      status: status.value
     })
       .then(response => {
         console.log(response);
@@ -23,15 +21,14 @@ const AddRedux = ({newData}) => {
       })
 
 
-      newData({
-        pname: pname.value,
-        supplier: supplier.value,
-        pmanager: pmanager.value,
-        gnotes: gnotes.value,
-        est_date: est_date.value,
+      newProject({
+        name: name.value,
+        manager: manager.value,
+        date: date.value,
+        status: status.value
 
       });
-      pname.value = supplier.value = pmanager.value = gnotes.value = est_date.value = ""
+      name.value = date.value = manager.value = status.value = '';
 
     }
 
@@ -42,28 +39,19 @@ const AddRedux = ({newData}) => {
           <br />
         </label>
         <label>
-          <h3> Project Name: </h3> <br />
+          <h3> Name: </h3> <br />
           <input
-            id = "pname"
+            id = "name"
             type = "text"
             required
-            ref={(input) => pname = input}
+            ref={(input) => name = input}
           />
           </label>
-          <label>
-            <h3> Supplier </h3> <br />
-            <input
-              id = "supplier"
-              type = "text"
-              required
-              ref={(input) => supplier = input}
-            />
-            </label>
           <label>
           <br />
           <br />
             <h3> Manager: </h3> <br />
-            <select ref ={(input) => pmanager = input} >
+            <select ref ={(input) => manager = input} >
                   <option value='------'> --------  </option>
                 <option value='David Holt'> David Holt </option>
                 <option value='Greg VonRehder'> Greg VonRehder </option>
@@ -72,29 +60,30 @@ const AddRedux = ({newData}) => {
                 <option value='Jorg Hesser'> Jorg Hesser </option>
                 <option value='Ayumu Tokiwa'> Ayumu Tokiwa </option>
               </select>
-
-              <label>
-                <h3> General Notes </h3> <br />
-                <input
-                  id = "gnotes"
-                  type = "text"
-                  required
-                  ref={(input) => gnotes = input}
-                />
-                </label>
                 <label>
                   <br />
                   <br />
-                <h3>  Estimated Completion Date: </h3>
+                <h3>  Date: </h3>
                   <br />
                   <input
-                    id = "est_date"
+                    id = "name"
                     type = "date"
                     required
-                    ref={(input) => est_date = input}
+                    ref={(input) => date = input}
                   />
                   </label>
             </label>
+            <label>
+             <br />
+              <br />
+              <h3>  Type:  </h3> <br />
+                <select ref ={(input) => status = input} >
+                      <option value='1'> Continuing </option>
+                    <option value='0'> New </option>
+                  </select>
+                </label>
+                <br />
+                <br />
                 <input type ="submit" value="SUBMIT" />
             </form>
             </div>
@@ -102,4 +91,4 @@ const AddRedux = ({newData}) => {
   );
 }
 
-export default AddRedux;
+export default AddProject;
