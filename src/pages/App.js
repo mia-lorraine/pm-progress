@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Home from '../components/Home';
-import Projectdetails from '../components/Projectdetails';
 import Error from '../components/Error';
 import Addproject from '../components/Addproject';
+import Projectdetails from '../components/Projectdetails'
 
 
 class App extends Component{
@@ -18,6 +18,7 @@ class App extends Component{
             <Route component={Error} />
           </Switch>
         </BrowserRouter>
+
       </div>
     );
   }
