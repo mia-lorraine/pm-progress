@@ -1,10 +1,10 @@
 import React from 'react';
-import '../styles/App.css';
+// import '../styles/App.css';
 
 const Projecttable = (props) => {
   return (
     <div>
-        <h5>Projects</h5>
+      <h5>Projects</h5>
       <table>
         <thead>
           <tr>
@@ -14,17 +14,17 @@ const Projecttable = (props) => {
             <th>Date Started</th>
           </tr>
         </thead>
-          <tbody>
-              <tr>
-                <td>{props.project_name}</td>
-                <td>{props.username}</td>
-                <td>{props.pending}</td>
-                <td>{props.date}</td>
-              </tr>
-          </tbody>
-        </table>
-      </div>
-  )
-}
+        <tbody>
+          <tr>
+            <td>{props.project_name}</td>
+            <td>{props.username}</td>
+            <td>{props.pending}</td>
+            <td>{props.date}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  );
+};
 
 export default Projecttable;
