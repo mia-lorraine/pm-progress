@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 import '../styles/App.css'
-import {Link} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import { Button, Grid, Row, Col, FormGroup,  Modal } from 'react-bootstrap';
 
 const AddProject = ({newProject}) => {
@@ -25,8 +25,6 @@ const AddProject = ({newProject}) => {
       name.value = date.value = manager.value = status.value = '';
 
     }
-
-
   return (
     <div className = "static-modal">
     <Modal.Dialog>
@@ -50,8 +48,7 @@ const AddProject = ({newProject}) => {
             <Col xs={2} md={2}> <b>Manager:</b></Col>
             <Col xs={2} md={2}>
             <FormGroup>
-              <select ref ={(input) => manager = input}
->
+              <select ref ={(input) => manager = input}>
                   <option value='------'> --------  </option>
                 <option value='David Holt'> David Holt </option>
                 <option value='Greg VonRehder'> Greg VonRehder </option>
@@ -94,7 +91,8 @@ const AddProject = ({newProject}) => {
                 <Button type = "submit" bsStyle="primary">
                 Submit
                 </Button>
-                  <Button onClick = {<Link to ='/'/>}>Back to Projects</Button>
+                <NavLink to ='/'>
+                  <Button >Back to Projects  </Button> </NavLink>
                 </FormGroup>
                 </Col>
                 </Row>
