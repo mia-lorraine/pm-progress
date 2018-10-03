@@ -2,36 +2,24 @@ import React from 'react';
 import axios from 'axios'
 import '../styles/App.css'
 
-const AddProject = ({newProject}) => {
+const AddProject = () => {
   let name, manager, date, status;
 
   const submit = (e) => {
       e.preventDefault();
-
       axios
-      .post('http://localhost:3000/projects', {
-      name: name.value,
-      manager: manager.value,
-      date: date.value,
-      status: status.value
+        .post('http://localhost:3001/projects', {
+        name: name.value,
+        manager: manager.value,
+        date: date.value,
+        status: status.value
     })
       .then(response => {
         console.log(response);
         console.log(response.data);
       })
-
-
-      newProject({
-        name: name.value,
-        manager: manager.value,
-        date: date.value,
-        status: status.value
-
-      });
       name.value = date.value = manager.value = status.value = '';
-
     }
-
   return (
     <div className = "form-container">
       <form onSubmit={submit} className = "form black-container">

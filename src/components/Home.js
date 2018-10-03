@@ -65,7 +65,12 @@ class Home extends React.Component {
       <Navbar>
         <Navbar.Header>
           <Navbar.Brand>
-            <a href="#home">ManageBK</a>
+            <NavLink 
+              to="/"
+              onClick={(e) => {
+                this.hideDetails(e);
+                window.location.reload();
+            }}>ManageBK</NavLink>
           </Navbar.Brand>
         </Navbar.Header>
         <Nav>
