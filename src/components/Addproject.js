@@ -7,12 +7,13 @@ const AddProject = () => {
 
   const submit = (e) => {
       e.preventDefault();
+
       axios
-        .post('http://localhost:3001/projects', {
-        name: name.value,
-        manager: manager.value,
-        date: date.value,
-        status: status.value
+      .post('http://localhost:3000/projects', {
+      name: name.value,
+      manager: manager.value,
+      date: date.value,
+      status: status.value
     })
       .then(response => {
         console.log(response);
