@@ -10,6 +10,7 @@ import Promotion from '../components/tabs/Promotion';
 
 let backdropStyle = {
   position: 'fixed',
+  overflow: 'auto',
   top: 51,
   bottom: 0,
   left: 0,
@@ -20,6 +21,9 @@ let backdropStyle = {
   paddingRight: 20
 };
 
+let tabWrapStyle = {
+  marginTop: 20
+};
 
 class Details extends React.Component {
   constructor() {
@@ -48,26 +52,31 @@ class Details extends React.Component {
     }
     return (
       <div>
-        <div className="Header"><p>ManageBK</p></div>
         <div style={backdropStyle}>
           <form>
             <Grid>
               <Row className="details-overview">
                 <Col xs={2} md={2}><b>Project Name:</b></Col>
                 <Col xs={2} md={2}>{project.name}</Col>
+                <Col xs={2} xsOffset={4} md={2} mdOffset={4}>
+                  <Button bsStyle="primary">Save Changes</Button>
+                </Col>
+                <Col xs={2} md={2}>
+                  <Button bsStyle="success">Complete Project</Button>
+                </Col>
               </Row>
               <Row className="supplier-overview">
                 <Col xs={2} md={2}><b>Supplier:</b></Col>
                 <Col xs={2} md={2}>
                   <FormGroup>
-                    <FormControl 
+                    <FormControl
                       type="text"
                       value={this.state.value}
                       placeholder="Enter text"
                       onChange={this.handleChange}>
                     </FormControl>
                   </FormGroup>
-                </Col>
+                </Col>                
               </Row>
               <Row className="manager-overview">
                 <Col xs={2} md={2}><b>Project Manager</b></Col>
@@ -81,46 +90,36 @@ class Details extends React.Component {
                   </FormGroup>
                 </Col>
               </Row>
-               <Row className="completion-overview">
+              <Row className="completion-overview">
                 <Col xs={2} md={2}><b>Est. Completion Date</b></Col>
                 <Col xs={2} md={2}>{project.est_date}</Col>
               </Row>
-              <Row className="manage-buttons">
-                <Col xs={4} md={4}>
-                  <Button bsStyle="primary">Submit</Button>
-                </Col>
-                <Col xs={4} md={4}>
-                  <Button bsStyle="success">Complete Project</Button>
-                </Col>
-                <Col xs={4} md={4}>
-                  <Button onClick={(e) => {
-                          this.hideDetails(e);
-                          window.location.reload();
-                 }}>Back to Projects</Button>
-                </Col>
-              </Row>
-              <Tabs defaultActiveKey={1} animation={false} id="uncontrolled-tab-example">
-                <Tab eventKey={1} title="Request from Supplier">
-                  <RequestFromSupplier />
-                </Tab>
-                <Tab eventKey={2} title="Provide to Supplier">
-                  <ProvideToSupplier />
-                </Tab>
-                <Tab eventKey={3} title="Documentation">
-                  <Documentation />
-                </Tab>
-                <Tab eventKey={4} title="Tooling">
-                  <Tooling /> 
-                </Tab>
-                <Tab eventKey={5} title="Pricing">
-                  <Pricing />  
-                </Tab>
-                <Tab eventKey={6} title="Promotion">
-                  <Promotion />
-                </Tab>
-              </Tabs>
             </Grid>
-      </form>
+            <div className="tabsWrap" style={tabWrapStyle}>
+              <Grid>
+                <Tabs defaultActiveKey={1} animation={false} id="project-details">
+                  <Tab eventKey={1} title="Request from Supplier" style={tabWrapStyle}>
+                    <RequestFromSupplier />
+                  </Tab>
+                  <Tab eventKey={2} title="Provide to Supplier" style={tabWrapStyle}>
+                    <ProvideToSupplier />
+                  </Tab>
+                  <Tab eventKey={3} title="Documentation" style={tabWrapStyle}>
+                    <Documentation />
+                  </Tab>
+                  <Tab eventKey={4} title="Tooling" style={tabWrapStyle}>
+                    <Tooling /> 
+                  </Tab>
+                  <Tab eventKey={5} title="Pricing" style={tabWrapStyle}>
+                    <Pricing />  
+                  </Tab>
+                  <Tab eventKey={6} title="Promotion" style={tabWrapStyle}>
+                    <Promotion />
+                  </Tab>
+                </Tabs>
+              </Grid>
+            </div>
+          </form>
         </div>
       </div>
     );
