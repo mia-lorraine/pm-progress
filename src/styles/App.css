@@ -93,11 +93,15 @@ span.mdl-chip a {
 
 tr:nth-child(even) {
   background-color:#eee;
-} 
+}
 .form.form.black-container input {
   width: 100%;
   height: 25px;
 }
+.name-addproject{
+  padding-top: 20px;
+}
+
 
 /* Bootstrap overrides */
 .navbar-default {

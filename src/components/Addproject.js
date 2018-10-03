@@ -1,7 +1,8 @@
 import React from 'react';
 import axios from 'axios'
 import '../styles/App.css'
-import { Button, Grid, Row, Col, FormGroup, FormControl, Modal } from 'react-bootstrap';
+import {Link} from 'react-router-dom'
+import { Button, Grid, Row, Col, FormGroup,  Modal } from 'react-bootstrap';
 
 const AddProject = ({newProject}) => {
   let name, manager, date, status;
@@ -21,16 +22,10 @@ const AddProject = ({newProject}) => {
         console.log(response.data);
       })
 
-      newProject({
-        name: name.value,
-        manager: manager.value,
-        date: date.value,
-        status: status.value
-
-      });
       name.value = date.value = manager.value = status.value = '';
 
     }
+
 
   return (
     <div className = "static-modal">
@@ -38,7 +33,7 @@ const AddProject = ({newProject}) => {
       <form onSubmit={submit} className = "form black-container">
       <Grid>
           <Row className = "name-addproject">
-          <Col xs={2} md={2}>Project Name:</Col>
+          <Col xs={2} md={2}> <b> Project Name:</b> </Col>
           <Col xs={2} md={2}>
           <FormGroup>
             <input
@@ -52,7 +47,7 @@ const AddProject = ({newProject}) => {
           </Col>
           </Row>
           <Row className = "manager-addproject">
-            <Col xs={2} md={2}>Manager:</Col>
+            <Col xs={2} md={2}> <b>Manager:</b></Col>
             <Col xs={2} md={2}>
             <FormGroup>
               <select ref ={(input) => manager = input}
@@ -69,12 +64,13 @@ const AddProject = ({newProject}) => {
               </Col>
               </Row>
                 <Row>
-                <Col xs={2} md={2}>Date</Col>
+                <Col xs={2} md={2}> <b> Date </b></Col>
                   <Col xs={2} md={3}>
                   <FormGroup>
                   <input
                     id = "name"
                     type = "date"
+                    placeholder="mm/dd/yyyy"
                     required
                     ref={(input) => date = input}
                   />
@@ -82,7 +78,7 @@ const AddProject = ({newProject}) => {
                   </Col>
                   </Row>
               <Row>
-            <Col xs={2} md={2}>Type:</Col>
+            <Col xs={2} md={2}><b>Type:</b></Col>
             <Col xs={2} md={2}>
               <FormGroup>
                 <select ref ={(input) => status = input} >
@@ -93,11 +89,12 @@ const AddProject = ({newProject}) => {
                   </Col>
                 </Row>
                 <Row className = "submit-addproject">
-                <Col xs={2} md={2}>
+                <Col xs={4} md={4}>
                 <FormGroup>
                 <Button type = "submit" bsStyle="primary">
                 Submit
                 </Button>
+                  <Button onClick = {<Link to ='/'/>}>Back to Projects</Button>
                 </FormGroup>
                 </Col>
                 </Row>
