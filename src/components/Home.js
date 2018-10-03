@@ -6,13 +6,6 @@ import { NavLink } from 'react-router-dom';
 import Details from '../components/Details';
 import AddProject from './Addproject';
 
-const headerStyle = {
-  fontSize: 40,
-  padding: 10,
-  height: 60,
-  backgroundColor: '#02274D',
-  color: '#FFF'
-};
 let tableBodyStyle = {
   fontSize: 20,
   fontWeight: 'bold',
@@ -23,9 +16,6 @@ let tableBodyStyle = {
 let tableSectionStyle = {
   padding: 5,
   height: 25
-};
-let buttonStyle = {
-  float: 'right'
 };
 let linkStyle = {
   color: '#0061C3',
