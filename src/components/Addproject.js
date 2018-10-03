@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios'
 import '../styles/App.css'
+import { Button, Grid, Row, Col, FormGroup, FormControl, Modal } from 'react-bootstrap';
 
 const AddProject = ({newProject}) => {
   let name, manager, date, status;
@@ -9,7 +10,7 @@ const AddProject = ({newProject}) => {
       e.preventDefault();
 
       axios
-      .post('http://localhost:3000/projects', {
+      .post('http://localhost:3001/projects', {
       name: name.value,
       manager: manager.value,
       date: date.value,
@@ -19,7 +20,6 @@ const AddProject = ({newProject}) => {
         console.log(response);
         console.log(response.data);
       })
-
 
       newProject({
         name: name.value,
@@ -33,25 +33,30 @@ const AddProject = ({newProject}) => {
     }
 
   return (
-    <div className = "form-container">
+    <div className = "static-modal">
+    <Modal.Dialog>
       <form onSubmit={submit} className = "form black-container">
-        <label>
-          <br />
-        </label>
-        <label>
-          <h3> Name: </h3> <br />
-          <input
-            id = "name"
-            type = "text"
-            required
-            ref={(input) => name = input}
-          />
-          </label>
-          <label>
-          <br />
-          <br />
-            <h3> Manager: </h3> <br />
-            <select ref ={(input) => manager = input} >
+      <Grid>
+          <Row className = "name-addproject">
+          <Col xs={2} md={2}>Project Name:</Col>
+          <Col xs={2} md={2}>
+          <FormGroup>
+            <input
+                id = "name"
+                type = "text"
+                placeholder="Enter name"
+                required
+                ref={(input) => name = input}
+                />
+                </FormGroup>
+          </Col>
+          </Row>
+          <Row className = "manager-addproject">
+            <Col xs={2} md={2}>Manager:</Col>
+            <Col xs={2} md={2}>
+            <FormGroup>
+              <select ref ={(input) => manager = input}
+>
                   <option value='------'> --------  </option>
                 <option value='David Holt'> David Holt </option>
                 <option value='Greg VonRehder'> Greg VonRehder </option>
@@ -60,32 +65,45 @@ const AddProject = ({newProject}) => {
                 <option value='Jorg Hesser'> Jorg Hesser </option>
                 <option value='Ayumu Tokiwa'> Ayumu Tokiwa </option>
               </select>
-                <label>
-                  <br />
-                  <br />
-                <h3>  Date: </h3>
-                  <br />
+              </FormGroup>
+              </Col>
+              </Row>
+                <Row>
+                <Col xs={2} md={2}>Date</Col>
+                  <Col xs={2} md={3}>
+                  <FormGroup>
                   <input
                     id = "name"
                     type = "date"
                     required
                     ref={(input) => date = input}
                   />
-                  </label>
-            </label>
-            <label>
-             <br />
-              <br />
-              <h3>  Type:  </h3> <br />
+                  </FormGroup>
+                  </Col>
+                  </Row>
+              <Row>
+            <Col xs={2} md={2}>Type:</Col>
+            <Col xs={2} md={2}>
+              <FormGroup>
                 <select ref ={(input) => status = input} >
-                      <option value='1'> Continuing </option>
-                    <option value='0'> New </option>
+                      <option value='Hardware'> Hardware </option>
+                    <option value='Software'> Software </option>
                   </select>
-                </label>
-                <br />
-                <br />
-                <input type ="submit" value="SUBMIT" />
+                  </FormGroup>
+                  </Col>
+                </Row>
+                <Row className = "submit-addproject">
+                <Col xs={2} md={2}>
+                <FormGroup>
+                <Button type = "submit" bsStyle="primary">
+                Submit
+                </Button>
+                </FormGroup>
+                </Col>
+                </Row>
+              </Grid>
             </form>
+            </Modal.Dialog>
             </div>
 
   );

@@ -56,7 +56,7 @@ class Details extends React.Component {
                 <Col xs={2} md={2}>Supplier:</Col>
                 <Col xs={2} md={2}>
                   <FormGroup>
-                    <FormControl 
+                    <FormControl
                       type="text"
                       value={this.state.value}
                       placeholder="Enter text"
