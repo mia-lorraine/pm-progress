@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button , Grid, Cell, Textfield } from 'react-mdl';
+import { Button, Grid, Row, Col, FormGroup, FormControl, Tabs, Tab } from 'react-bootstrap';
 import axios from 'axios';
 
 import '../styles/tab.css';
@@ -50,44 +50,76 @@ class Details extends React.Component {
       <div>
         <div className="Header"><p>ManageBK</p></div>
         <div style={backdropStyle}>
-          {/* <ul className="detailsPreview">
-            <li><b>Project Name</b>: {project.name}</li>
-            <li><b>Project Manager:</b> {project.manager}</li>
-            <li><b>Project Date:</b> {project.date}</li>
-            <li><Button raised>Complete Project</Button></li>
-            <li> <Button raised onClick={(e) => {
-              this.hideDetails(e);
-              window.location.reload();
-            }}><b>Back to Projects</b></Button></li>
-          </ul> */}
           <form>
-              <Grid className="details-overview">
-                  <Cell col={1}>Project Name</Cell>
-                  <Cell col={1}>{project.name}</Cell>
-              </Grid>
-              <Grid className="supplier-overview">
-                  <Cell col={1}>Supplier</Cell>
-                  <Cell col={3}><input></input></Cell>
-              </Grid>
-              <Grid className="manager-overview">
-                  <Cell col={1}>Project Manager</Cell>
-                  <Cell col={1}>{project.manager}</Cell>
-              </Grid>
-              <Grid className="general-notes-overview">
-                  <Cell col={1}>General Notes</Cell>
-                  <Cell col={3}>
-                    <Textfield onChange={() => {}} label="Enter your notes here" rows={3} style={{width: '100%'}}/>
-                  </Cell>
-              </Grid>
-              <Grid className="folder-overview">
-                  <Cell col={1}>Product Development Folder Link:</Cell>
-                  <Cell col={3}><input></input></Cell>
-              </Grid>
-              <Grid className="completion-overview">
-                  <Cell col={1}>Est. Completion Date</Cell>
-                  <Cell col={3}>{project.est_date}</Cell>
-              </Grid>
-        <Button type="submit">Submit</Button>
+            <Grid>
+              <Row className="details-overview">
+                <Col xs={2} md={2}>Project Name:</Col>
+                <Col xs={2} md={2}>{project.name}</Col>
+              </Row>
+              <Row className="supplier-overview">
+                <Col xs={2} md={2}>Supplier:</Col>
+                <Col xs={2} md={2}>
+                  <FormGroup>
+                    <FormControl 
+                      type="text"
+                      value={this.state.value}
+                      placeholder="Enter text"
+                      onChange={this.handleChange}>
+                    </FormControl>
+                  </FormGroup>
+                </Col>
+              </Row>
+              <Row className="manager-overview">
+                <Col xs={2} md={2}>Project Manager:</Col>
+                <Col xs={2} md={2}>{project.manager}</Col>
+              </Row>
+              <Row className="general-notes-overview">
+                <Col xs={2} md={2}>General Notes:</Col>
+                <Col xs={4} md={4}>
+                  <FormGroup controlId="formControlsTextarea">
+                    <FormControl componentClass="textarea" placeholder="textarea" />
+                  </FormGroup>
+                </Col>
+              </Row>
+               <Row className="completion-overview">
+                <Col xs={2} md={2}>Est. Completion Date</Col>
+                <Col xs={2} md={2}>{project.est_date}</Col>
+              </Row>
+              <Row className="manage-buttons">
+                <Col xs={4} md={4}>
+                  <Button bsStyle="primary">Submit</Button>
+                </Col>
+                <Col xs={4} md={4}>
+                  <Button bsStyle="success">Complete Project</Button>
+                </Col>
+                <Col xs={4} md={4}>
+                  <Button onClick={(e) => {
+                          this.hideDetails(e);
+                          window.location.reload();
+                 }}>Back to Projects</Button>
+                </Col>
+              </Row>
+              <Tabs defaultActiveKey={1} animation={false} id="uncontrolled-tab-example">
+                <Tab eventKey={1} title="Tab 1">
+                  Tab 1 content
+                </Tab>
+                <Tab eventKey={2} title="Tab 2">
+                  Tab 2 content
+                </Tab>
+                <Tab eventKey={3} title="Tab 3">
+                  Tab 3 content
+                </Tab>
+                <Tab eventKey={4} title="Tab 4">
+                  Tab 4 content
+                </Tab>
+                <Tab eventKey={5} title="Tab 5">
+                  Tab 5 content
+                </Tab>
+                <Tab eventKey={6} title="Tab 6">
+                  Tab 6 content
+                </Tab>
+              </Tabs>
+            </Grid>
       </form>
         </div>
       </div>

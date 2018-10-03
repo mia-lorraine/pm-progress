@@ -1,15 +1,15 @@
 import React from 'react';
 import axios from 'axios';
-import Details from '../components/Details';
 import '../styles/App.css';
-import { Chip } from 'react-mdl';
+import { Nav, NavItem, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
+import Details from '../components/Details';
 import AddProject from './Addproject';
 
 const headerStyle = {
   fontSize: 40,
   padding: 10,
-  height: 40,
+  height: 60,
   backgroundColor: '#02274D',
   color: '#FFF'
 };
@@ -72,17 +72,40 @@ class Home extends React.Component {
   render() {
     return (
       <div className="App">
-        <div className='Header' style={headerStyle}><p>ManageBK - New Product Information Tool</p>
-          <Chip style={buttonStyle}>
+      <Navbar>
+        <Navbar.Header>
+          <Navbar.Brand>
+            <a href="#home">ManageBK</a>
+          </Navbar.Brand>
+        </Navbar.Header>
+        <Nav>
+          <NavItem eventKey={1} href="#">
+          <NavLink
+              to="/add"
+              render={(props) => (
+                <AddProject
+                  {...props}
+                  newProject={this.addProject}
+                />)}>Create a Project
+            </NavLink>
+          </NavItem>
+        </Nav>
+      </Navbar>
+        {/* <div className='Header' style={headerStyle}><p>ManageBK - New Product Information Tool</p>
+          
+          <Button style={buttonStyle}>
             <NavLink
               to="/add"
               render={(props) => (
                 <AddProject
                   {...props}
                   newProject={this.addProject}
-                />)} > CREATE A PROJECT </NavLink>
-          </Chip>
-        </div>
+                />)}>Create a Project
+            </NavLink>
+          </Button>
+
+
+        </div> */}
         <div className='projectsContent'>
           <h4>Current Projects</h4>
           <div className="currentProjectWrap">
