@@ -2,7 +2,11 @@ import React from 'react';
 import { Button, Grid, Row, Col, FormGroup, FormControl, Tabs, Tab } from 'react-bootstrap';
 import axios from 'axios';
 import RequestFromSupplier from '../components/tabs/RequestFromSupplier';
-import '../styles/tab.css';
+import ProvideToSupplier from '../components/tabs/ProvideToSupplier';
+import Documentation from '../components/tabs/Documentation';
+import Tooling from '../components/tabs/Tooling';
+import Pricing from '../components/tabs/Pricing';
+import Promotion from '../components/tabs/Promotion';
 
 let backdropStyle = {
   position: 'fixed',
@@ -49,11 +53,11 @@ class Details extends React.Component {
           <form>
             <Grid>
               <Row className="details-overview">
-                <Col xs={2} md={2}>Project Name:</Col>
+                <Col xs={2} md={2}><b>Project Name:</b></Col>
                 <Col xs={2} md={2}>{project.name}</Col>
               </Row>
               <Row className="supplier-overview">
-                <Col xs={2} md={2}>Supplier:</Col>
+                <Col xs={2} md={2}><b>Supplier:</b></Col>
                 <Col xs={2} md={2}>
                   <FormGroup>
                     <FormControl 
@@ -66,11 +70,11 @@ class Details extends React.Component {
                 </Col>
               </Row>
               <Row className="manager-overview">
-                <Col xs={2} md={2}>Project Manager:</Col>
+                <Col xs={2} md={2}><b>Project Manager</b></Col>
                 <Col xs={2} md={2}>{project.manager}</Col>
               </Row>
               <Row className="general-notes-overview">
-                <Col xs={2} md={2}>General Notes:</Col>
+                <Col xs={2} md={2}><b>General Notes</b></Col>
                 <Col xs={4} md={4}>
                   <FormGroup controlId="formControlsTextarea">
                     <FormControl componentClass="textarea" placeholder="textarea" />
@@ -78,7 +82,7 @@ class Details extends React.Component {
                 </Col>
               </Row>
                <Row className="completion-overview">
-                <Col xs={2} md={2}>Est. Completion Date</Col>
+                <Col xs={2} md={2}><b>Est. Completion Date</b></Col>
                 <Col xs={2} md={2}>{project.est_date}</Col>
               </Row>
               <Row className="manage-buttons">
@@ -100,19 +104,19 @@ class Details extends React.Component {
                   <RequestFromSupplier />
                 </Tab>
                 <Tab eventKey={2} title="Provide to Supplier">
-                  Tab 2 content
+                  <ProvideToSupplier />
                 </Tab>
                 <Tab eventKey={3} title="Documentation">
-                  Tab 3 content
+                  <Documentation />
                 </Tab>
                 <Tab eventKey={4} title="Tooling">
-                  Tab 4 content
+                  <Tooling /> 
                 </Tab>
                 <Tab eventKey={5} title="Pricing">
-                  Tab 5 content
+                  <Pricing />  
                 </Tab>
                 <Tab eventKey={6} title="Promotion">
-                  Tab 6 content
+                  <Promotion />
                 </Tab>
               </Tabs>
             </Grid>
