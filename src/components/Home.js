@@ -82,7 +82,7 @@ class Home extends React.Component {
         </Nav>
       </Navbar>
         {/* <div className='Header' style={headerStyle}><p>ManageBK - New Product Information Tool</p>
-          
+
           <Button style={buttonStyle}>
             <NavLink
               to="/add"
