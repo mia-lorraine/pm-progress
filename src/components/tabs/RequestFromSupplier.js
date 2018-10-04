@@ -125,7 +125,7 @@ class RequestFromSupplier extends Component {
             </Col>
         </Row>
         <Row>
-            <Col xs={3} md={3}>irmware upgrade instructions (if applicable)</Col>
+            <Col xs={3} md={3}>Firmware upgrade instructions (if applicable)</Col>
             <Col xs={2} md={2}>
                 <Checkbox></Checkbox> 
             </Col>

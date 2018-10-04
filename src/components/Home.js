@@ -1,25 +1,19 @@
 import React from 'react';
 import axios from 'axios';
 import '../styles/App.css';
-import { Nav, NavItem, Navbar } from 'react-bootstrap';
+import { Grid, Table, Nav, NavItem, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import Details from '../components/Details';
 import AddProject from './Addproject';
 
-let tableBodyStyle = {
-  fontSize: 20,
-  fontWeight: 'bold',
-  padding: 5,
-  height: 25,
-  fontFamily: 'Helvetica, Arial, sans-serif'
-};
-let tableSectionStyle = {
-  padding: 5,
-  height: 25
-};
 let linkStyle = {
   color: '#0061C3',
   cursor: 'pointer'
+};
+
+let headerStyle = {
+  background: '#02274d',
+  color: '#fff'
 };
 class Home extends React.Component {
   constructor(props) {
@@ -62,71 +56,56 @@ class Home extends React.Component {
   render() {
     return (
       <div className="App">
-      <Navbar>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <NavLink 
-              to="/"
-              onClick={(e) => {
-                this.hideDetails(e);
-                window.location.reload();
-            }}>ManageBK</NavLink>
-          </Navbar.Brand>
-        </Navbar.Header>
-        <Nav>
-          <NavItem eventKey={1} href="#">
-          <NavLink
-              to="/add"
-              render={(props) => (
-                <AddProject
-                  {...props}
-                  newProject={this.addProject}
-                />)}>Create a Project
-            </NavLink>
-          </NavItem>
-        </Nav>
-      </Navbar>
-        {/* <div className='Header' style={headerStyle}><p>ManageBK - New Product Information Tool</p>
-
-          <Button style={buttonStyle}>
-            <NavLink
-              to="/add"
-              render={(props) => (
-                <AddProject
-                  {...props}
-                  newProject={this.addProject}
-                />)}>Create a Project
-            </NavLink>
-          </Button>
-
-
-        </div> */}
+        <Navbar>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <NavLink 
+                to="/"
+                onClick={(e) => {
+                  this.hideDetails(e);
+                  window.location.reload();
+                }}>ManageBK</NavLink>
+            </Navbar.Brand>
+          </Navbar.Header>
+          <Nav>
+            <NavItem eventKey={1} href="#">
+              <NavLink
+                to="/add"
+                render={(props) => (
+                  <AddProject
+                    {...props}
+                    newProject={this.addProject}
+                  />)}>Create a Project
+              </NavLink>
+            </NavItem>
+          </Nav>
+        </Navbar>
         <div className='projectsContent'>
-          <h4>Current Projects</h4>
-          <div className="currentProjectWrap">
-            <div className="projectHeaderWrap">
-              <ul className="currentProjectItems">
-                <li style={tableBodyStyle} width='33%' align='left'>Product</li>
-                <li style={tableBodyStyle} width='33%' align='left'>Manager</li>
-                <li style={tableBodyStyle} width='33%' align='left'>Date</li>
-              </ul>
-            </div>
-            {
-              this.state.projects.map((item,index) => (
-                <div className="projectMapWrap">
-                  <li style={tableSectionStyle} width='33%'>
-                    <a style={linkStyle} onClick={()=>{
-                      this.clickMe(item); this.showDetails();
-                    }}>
-                      {item.name}
-                    </a>
-                  </li>
-                  <li style={tableSectionStyle} width='33%'>{item.manager}</li>
-                  <li style={tableSectionStyle} width='33%'>{item.date}</li>
-                </div>
-
-              ))}
-          </div>
+          {/* <h4>Current Projects</h4> */}
+          <Grid>
+          <Grid>
+            <Table striped bordered condensed hover>
+              <thead>
+                  <tr>
+                    <th style={headerStyle}>Product</th>
+                    <th style={headerStyle}>Manager</th>
+                    <th style={headerStyle}>Date</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {this.state.projects.map((item,index) => (
+                    <tr>
+                      <td>
+                        <a style={linkStyle} onClick={()=>{this.clickMe(item); this.showDetails();}}>{item.name}</a>
+                      </td>
+                      <td>{item.manager}</td>
+                      <td>{item.date}</td>  
+                    </tr>
+                  ))}
+                  </tbody>
+              </Table>
+            </Grid>
+          </Grid>
           <Details
             key={this.state.projects.id}
             hideDetails={this.showDetails}
