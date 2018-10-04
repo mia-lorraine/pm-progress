@@ -4,7 +4,7 @@ import '../styles/App.css';
 import { Grid, Table, Nav, NavItem, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import Details from '../components/Details';
-import AddProject from './Addproject';
+import AddProject from '../components/Addproject';
 
 let linkStyle = {
   color: '#0061C3',
