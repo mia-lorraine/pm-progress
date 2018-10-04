@@ -7,9 +7,9 @@ body {
   font-family: sans-serif;
   background-color: #e8e8e8;
 }
-.projectsContent {
+/* .projectsContent {
   background-color: #e8e8e8;
-}
+} */
 .projectsContent h4 {
   margin: 20px;
 }
@@ -109,4 +109,10 @@ tr:nth-child(even) {
 }
 .navbar-default .navbar-brand  {
   color: #fff;
+}
+.tab-content .row {
+  padding: 5px 0;
+}
+.tab-content .row .checkbox {
+  margin: 0;
 }
