@@ -30,7 +30,8 @@ class Details extends React.Component {
     super();
     this.state = {
       activeTab: 0,
-      projects: []
+      projects: [],
+      completed: []
     };
   }
   hideDetails = (e) => {
@@ -44,6 +45,16 @@ class Details extends React.Component {
   }
   handleChange(event, project) {
     [event.target.name] = event.target.value;
+  }
+
+  completed(project) {
+    console.log({project});
+
+    this.setState = {
+      completed: [...project]
+    }
+
+
   }
   render() {
     let project = this.props.data;
@@ -63,7 +74,7 @@ class Details extends React.Component {
                     <Button bsStyle="primary">Save Changes</Button>
                   </Col>
                   <Col xs={2} md={2}>
-                    <Button bsStyle="success">Complete Project</Button>
+                    <Button bsStyle="success" onClick = {this.completed(project)}> Complete Project</Button>
                   </Col>
                 </Row>
                 <Row className="supplier-overview">
@@ -77,7 +88,7 @@ class Details extends React.Component {
                         onChange={this.handleChange}>
                       </FormControl>
                     </FormGroup>
-                  </Col>                
+                  </Col>
                 </Row>
                 <Row className="manager-overview">
                   <Col xs={2} md={2}><b>Project Manager</b></Col>
@@ -109,10 +120,10 @@ class Details extends React.Component {
                       <Documentation />
                     </Tab>
                     <Tab eventKey={4} title="Tooling" style={tabWrapStyle}>
-                      <Tooling /> 
+                      <Tooling />
                     </Tab>
                     <Tab eventKey={5} title="Pricing" style={tabWrapStyle}>
-                      <Pricing />  
+                      <Pricing />
                     </Tab>
                     <Tab eventKey={6} title="Promotion" style={tabWrapStyle}>
                       <Promotion />
