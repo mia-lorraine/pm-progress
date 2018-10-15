@@ -6,21 +6,13 @@ import { NavLink } from 'react-router-dom';
 import Details from '../components/Details';
 import AddProject from '../components/Addproject';
 
-let linkStyle = {
-  color: '#0061C3',
-  cursor: 'pointer'
-};
-
-let headerStyle = {
-  background: '#02274d',
-  color: '#fff'
-};
 class Home extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       projects: [],
-      show: false,
+      completed: [],
+      show: false
     };
   }
   getData() {
@@ -30,6 +22,17 @@ class Home extends React.Component {
         const data = res.data;
         this.setState({
           projects: data
+
+        });
+      });
+  }
+  getCompleted() {
+    axios
+      .get('http://localhost:3001/completed')
+      .then(res => {
+        const data = res.data;
+        this.setState({
+          completed: data
         });
       });
   }
@@ -52,6 +55,7 @@ class Home extends React.Component {
   }
   componentDidMount() {
     this.getData();
+    this.getCompleted();
   }
   render() {
     return (
@@ -81,22 +85,22 @@ class Home extends React.Component {
           </Nav>
         </Navbar>
         <div className='projectsContent'>
-          {/* <h4>Current Projects</h4> */}
+          <h4>Current Projects</h4>
           <Grid>
           <Grid>
             <Table striped bordered condensed hover>
               <thead>
                   <tr>
-                    <th style={headerStyle}>Product</th>
-                    <th style={headerStyle}>Manager</th>
-                    <th style={headerStyle}>Date</th>
+                    <th className="headerStyle">Product</th>
+                    <th className="headerStyle">Manager</th>
+                    <th className="headerStyle">Date</th>
                   </tr>
               </thead>
               <tbody>
                   {this.state.projects.map((item,index) => (
                     <tr>
                       <td>
-                        <a style={linkStyle} onClick={()=>{this.clickMe(item); this.showDetails();}}>{item.name}</a>
+                        <a className="linkStyle" onClick={()=>{this.clickMe(item); this.showDetails();}}>{item.name}</a>
                       </td>
                       <td>{item.manager}</td>
                       <td>{item.date}</td>  
@@ -113,6 +117,35 @@ class Home extends React.Component {
             data={this.state.data}
             state={this.state}
           />
+          <h4>Completed Projects</h4>
+          <Grid>
+          <Grid>
+            <Table striped bordered condensed hover>
+              <thead>
+                  <tr>
+                    <th className="headerStyle">Product</th>
+                    <th className="headerStyle">Status</th>
+                    <th className="headerStyle">Date Started</th>
+                    <th className="headerStyle">Date Completed / Cancelled</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  {this.state.completed.map((item,index) => (
+                    <tr>
+                      <td>
+                        <a classNamme="linkStyle" onClick={()=>{this.clickMe(item); this.showDetails();}}>{item.name}</a>
+                      </td>
+                      <td>
+                        {item.status === 1 ? 'Completed' : 'Cancelled'}
+                      </td>
+                      <td>{item.date}</td>  
+                      <td>{item.dateCompleted}</td>  
+                    </tr>
+                  ))}
+                  </tbody>
+              </Table>
+            </Grid>
+          </Grid>
         </div>
       </div>
     );

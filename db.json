@@ -163,5 +163,28 @@
       "ov_notes": "",
       "folder": ""
     }
+  ],
+  "completed":  [
+    {
+      "id": 1,
+      "name": "BA6010 & BA6011 Battery Analyzer",
+      "status": 2,
+      "date": "2017-05-17",
+      "dateCompleted": "2017-05-25"
+    },
+    {
+      "id": 2,
+      "name": "DAS240-BAT",
+      "status": 1,
+      "date": "2017-06-20",
+      "dateCompleted": "2018-05-07"
+    },
+    {
+      "id": 3,
+      "name": "9103 and 9104",
+      "status": 1,
+      "date": "2017-02-24",
+      "dateCompleted": "2017-06-19"
+    }
   ]
 }
