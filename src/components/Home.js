@@ -87,26 +87,28 @@ class Home extends React.Component {
         <div className='projectsContent'>
           <h4>Current Projects</h4>
           <Grid>
-          <Grid>
-            <Table striped bordered condensed hover>
-              <thead>
+            <Grid>
+              <Table striped bordered condensed hover>
+                <thead>
                   <tr>
                     <th className="headerStyle">Product</th>
                     <th className="headerStyle">Manager</th>
                     <th className="headerStyle">Date</th>
                   </tr>
-              </thead>
-              <tbody>
+                </thead>
+                <tbody>
                   {this.state.projects.map((item,index) => (
                     <tr>
                       <td>
-                        <a className="linkStyle" onClick={()=>{this.clickMe(item); this.showDetails();}}>{item.name}</a>
+                        <a className="linkStyle" onClick={()=>{
+                          this.clickMe(item); this.showDetails();
+                        }}>{item.name}</a>
                       </td>
                       <td>{item.manager}</td>
                       <td>{item.date}</td>  
                     </tr>
                   ))}
-                  </tbody>
+                </tbody>
               </Table>
             </Grid>
           </Grid>
@@ -119,21 +121,23 @@ class Home extends React.Component {
           />
           <h4>Completed Projects</h4>
           <Grid>
-          <Grid>
-            <Table striped bordered condensed hover>
-              <thead>
+            <Grid>
+              <Table striped bordered condensed hover>
+                <thead>
                   <tr>
                     <th className="headerStyle">Product</th>
                     <th className="headerStyle">Status</th>
                     <th className="headerStyle">Date Started</th>
                     <th className="headerStyle">Date Completed / Cancelled</th>
                   </tr>
-              </thead>
-              <tbody>
+                </thead>
+                <tbody>
                   {this.state.completed.map((item,index) => (
                     <tr>
                       <td>
-                        <a classNamme="linkStyle" onClick={()=>{this.clickMe(item); this.showDetails();}}>{item.name}</a>
+                        <a classNamme="linkStyle" onClick={()=>{
+                          this.clickMe(item); this.showDetails();
+                        }}>{item.name}</a>
                       </td>
                       <td>
                         {item.status === 1 ? 'Completed' : 'Cancelled'}
@@ -142,7 +146,7 @@ class Home extends React.Component {
                       <td>{item.dateCompleted}</td>  
                     </tr>
                   ))}
-                  </tbody>
+                </tbody>
               </Table>
             </Grid>
           </Grid>
