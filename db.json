@@ -44,7 +44,7 @@
       "supplier": "BK",
       "manager": "David Holt",
       "date": "2017-05-25",
-      "status": "1",
+      "status": "2",
       "generalNotes": "This is a handheld battery test with data logging. Targeting the security, fire alarm and SCDA industries. Designed and built by BK.",
       "folder": "Common/Product Development/BK Taiwan/603B",
       "estimatedDate": "4/15/2018"
@@ -55,7 +55,7 @@
       "supplier": "Biologic",
       "manager": "Group",
       "date": "2017-05-24",
-      "status": "0",
+      "status": "2",
       "generalNotes": "",
       "folder": "",
       "estimatedDate": ""
@@ -66,7 +66,7 @@
       "supplier": "OR-X and BK Taiwan",
       "manager": "Greg VonRehder",
       "date": "2017-06-20",
-      "status": "0",
+      "status": "2",
       "generalNotes": "",
       "folder": "",
       "estimatedDate": "2018"
@@ -76,7 +76,7 @@
       "name": "2680 Spectrum Analyzers",
       "manager": "Group",
       "date": "2017-05-25",
-      "status": "0",
+      "status": "2",
       "generalNotes": "",
       "folder": ""
     },
@@ -85,7 +85,7 @@
       "name": "FRA8000",
       "manager": "David Holt",
       "date": "2017-10-09",
-      "status": "0",
+      "status": "2",
       "generalNotes": "",
       "folder": ""
     },
@@ -94,7 +94,7 @@
       "manager": "Greg VonRehder",
       "supplier": "Itech",
       "date": "2018-05-09",
-      "status": "0",
+      "status": "2",
       "id": 6,
       "generalNotes": "M:/Product Development/Itech/8500B",
       "folder": ""
@@ -103,7 +103,7 @@
       "name": "9160",
       "manager": "Group",
       "date": "2018-02-05",
-      "status": "0",
+      "status": "2",
       "id": 7,
       "generalNotes": "",
       "folder": ""
@@ -113,7 +113,7 @@
       "name": "1696B - Mason Update",
       "manager": "Group",
       "date": "2018-02-05",
-      "status": "0",
+      "status": "2",
       "generalNotes": "",
       "folder": ""
     },
@@ -122,7 +122,7 @@
       "name": "1785C - Mason Update",
       "manager": "Group",
       "date": "2018-02-05",
-      "status": "0",
+      "status": "2",
       "generalNotes": "",
       "folder": ""
     },
@@ -131,7 +131,7 @@
       "name": "MPS - ORX",
       "manager": "Group",
       "date": "2018-02-05",
-      "status": "0",
+      "status": "2",
       "generalNotes": "",
       "folder": ""
     },
@@ -140,7 +140,7 @@
       "name": "XLNB",
       "manager": "Group",
       "date": "2018-02-05",
-      "status": "0",
+      "status": "2",
       "generalNotes": "",
       "folder": ""
     },
@@ -149,7 +149,7 @@
       "name": "PVSMR",
       "manager": "Group",
       "date": "2018-02-05",
-      "status": "0",
+      "status": "2",
       "generalNotes": "",
       "folder": ""
     },
@@ -158,7 +158,7 @@
       "name": "3600 Series Hipot",
       "manager": "Greg VonRehder",
       "date": "2018-05-22",
-      "status": "0",
+      "status": "2",
       "generalNotes": "",
       "folder": ""
     },
@@ -167,7 +167,7 @@
       "name": "BA8100",
       "manager": "David Holt",
       "date": "2018-06-04",
-      "status": "0",
+      "status": "2",
       "generalNotes": "",
       "folder": ""
     },
@@ -195,24 +195,10 @@
   "completed": [
     {
       "id": 1,
-      "name": "BA6010 & BA6011 Battery Analyzer",
-      "status": 2,
-      "date": "2017-05-17",
-      "dateCompleted": "2017-05-25"
-    },
-    {
-      "id": 2,
-      "name": "DAS240-BAT",
+      "name": "603B",
       "status": 1,
-      "date": "2017-06-20",
-      "dateCompleted": "2018-05-07"
-    },
-    {
-      "id": 3,
-      "name": "9103 and 9104",
-      "status": 1,
-      "date": "2017-02-24",
-      "dateCompleted": "2017-06-19"
+      "date": "2017-05-25",
+      "dateCompleted": "10/17/2018"
     }
   ]
 }
