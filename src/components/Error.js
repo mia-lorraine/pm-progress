@@ -5,7 +5,7 @@ const Error = () => {
     <div>
       This is an error page.
     </div>
-  )
-}
+  );
+};
 
 export default Error;
