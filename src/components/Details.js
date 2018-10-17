@@ -30,16 +30,11 @@ class Details extends React.Component {
     super();
     this.state = {
       activeTab: 0,
-<<<<<<< HEAD
-      projects: [],
-      completed: []
-=======
       projects: [
         {
           progress: {}
         }
       ]
->>>>>>> remotes/origin/master
     };
   }
   hideDetails = (e) => {
@@ -60,7 +55,7 @@ class Details extends React.Component {
 
     this.setState = {
       completed: [...project]
-    }
+    };
 
 
   }
@@ -88,20 +83,8 @@ class Details extends React.Component {
                 <Row className="supplier-overview">
                   <Col xs={2} md={2}><b>Supplier:</b></Col>
                   <Col xs={2} md={2}>
-<<<<<<< HEAD
-                    <FormGroup>
-                      <FormControl
-                        type="text"
-                        value={this.state.value}
-                        placeholder="Enter text"
-                        onChange={this.handleChange}>
-                      </FormControl>
-                    </FormGroup>
-                  </Col>
-=======
                     {project.supplier}
                   </Col>                
->>>>>>> remotes/origin/master
                 </Row>
                 <Row className="manager-overview">
                   <Col xs={2} md={2}><b>Project Manager:</b></Col>
@@ -112,7 +95,7 @@ class Details extends React.Component {
                   <Col xs={4} md={4}>
                     <FormGroup controlId="formControlsTextarea">
                       <FormControl componentClass="textarea" placeholder="Enter your notes here">
-                      {project.generalNotes}
+                        {project.generalNotes}
                       </FormControl>
                     </FormGroup>
                   </Col>
@@ -145,8 +128,8 @@ class Details extends React.Component {
                     </Tab>
                   </Tabs>
                 </Grid>
-                </div>
-              </form>
+              </div>
+            </form>
           </div>
         </div>
       </div>
