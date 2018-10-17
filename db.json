@@ -37,9 +37,9 @@
       "manager": "David Holt",
       "date": "2017-05-25",
       "status": "1",
-      "ov_notes": "This is a handheld battery test with data logging. Targeting the security, fire alarm and SCDA industries. Designed and built by BK.",
+      "generalNotes": "This is a handheld battery test with data logging. Targeting the security, fire alarm and SCDA industries. Designed and built by BK.",
       "folder": "Common/Product Development/BK Taiwan/603B",
-      "est_date": "4/15/2018"
+      "estimatedDate": "4/15/2018"
     },
     {
       "id": 2,
@@ -48,9 +48,9 @@
       "manager": "Group",
       "date": "2017-05-24",
       "status": "0",
-      "ov_notes": "",
+      "generalNotes": "",
       "folder": "",
-      "est_date": ""
+      "estimatedDate": ""
     },
     {
       "id": 3,
@@ -59,9 +59,9 @@
       "manager": "Greg VonRehder",
       "date": "2017-06-20",
       "status": "0",
-      "ov_notes": "",
+      "generalNotes": "",
       "folder": "",
-      "est_date": "2018"
+      "estimatedDate": "2018"
     },
     {
       "id": 4,
@@ -69,7 +69,7 @@
       "manager": "Group",
       "date": "2017-05-25",
       "status": "0",
-      "ov_notes": "",
+      "generalNotes": "",
       "folder": ""
     },
     {
@@ -78,7 +78,7 @@
       "manager": "David Holt",
       "date": "2017-10-09",
       "status": "0",
-      "ov_notes": "",
+      "generalNotes": "",
       "folder": ""
     },
     {
@@ -88,7 +88,7 @@
       "date": "2018-05-09",
       "status": "0",
       "id": 6,
-      "ov_notes": "M:/Product Development/Itech/8500B",
+      "generalNotes": "M:/Product Development/Itech/8500B",
       "folder": ""
     },
     {
@@ -97,7 +97,7 @@
       "date": "2018-02-05",
       "status": "0",
       "id": 7,
-      "ov_notes": "",
+      "generalNotes": "",
       "folder": ""
     },
     {
@@ -106,7 +106,7 @@
       "manager": "Group",
       "date": "2018-02-05",
       "status": "0",
-      "ov_notes": "",
+      "generalNotes": "",
       "folder": ""
     },
     {
@@ -115,7 +115,7 @@
       "manager": "Group",
       "date": "2018-02-05",
       "status": "0",
-      "ov_notes": "",
+      "generalNotes": "",
       "folder": ""
     },
     {
@@ -124,7 +124,7 @@
       "manager": "Group",
       "date": "2018-02-05",
       "status": "0",
-      "ov_notes": "",
+      "generalNotes": "",
       "folder": ""
     },
     {
@@ -133,7 +133,7 @@
       "manager": "Group",
       "date": "2018-02-05",
       "status": "0",
-      "ov_notes": "",
+      "generalNotes": "",
       "folder": ""
     },
     {
@@ -142,7 +142,7 @@
       "manager": "Group",
       "date": "2018-02-05",
       "status": "0",
-      "ov_notes": "",
+      "generalNotes": "",
       "folder": ""
     },
     {
@@ -151,7 +151,7 @@
       "manager": "Greg VonRehder",
       "date": "2018-05-22",
       "status": "0",
-      "ov_notes": "",
+      "generalNotes": "",
       "folder": ""
     },
     {
@@ -160,11 +160,31 @@
       "manager": "David Holt",
       "date": "2018-06-04",
       "status": "0",
-      "ov_notes": "",
+      "generalNotes": "",
       "folder": ""
+    },
+    {
+      "name": "Joe Donuts",
+      "supplier": "BK",
+      "manager": "Greg VonRehder",
+      "date": "2018-10-16",
+      "estimatedDate": "2018-10-31",
+      "generalNotes": "I want donuts.",
+      "id": 15,
+      "progress": {
+        "requestFromSupplier01a": 1,
+        "requestFromSupplier01b": 1,
+        "requestFromSupplier01c": 1,
+        "requestFromSupplier01-notes": "We have some notes here.",
+        "requestFromSupplier02-link": "This is the supplier link.",
+        "requestFromSupplier03a": 0,
+        "requestFromSupplier03b": 0,
+        "requestFromSupplier03c": 1,
+        "requestFromSupplier03-notes": "We have some notes here."
+      }
     }
   ],
-  "completed":  [
+  "completed": [
     {
       "id": 1,
       "name": "BA6010 & BA6011 Battery Analyzer",

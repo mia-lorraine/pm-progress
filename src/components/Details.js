@@ -30,7 +30,11 @@ class Details extends React.Component {
     super();
     this.state = {
       activeTab: 0,
-      projects: []
+      projects: [
+        {
+          progress: {}
+        }
+      ]
     };
   }
   hideDetails = (e) => {
@@ -69,38 +73,33 @@ class Details extends React.Component {
                 <Row className="supplier-overview">
                   <Col xs={2} md={2}><b>Supplier:</b></Col>
                   <Col xs={2} md={2}>
-                    <FormGroup>
-                      <FormControl
-                        type="text"
-                        value={this.state.value}
-                        placeholder="Enter text"
-                        onChange={this.handleChange}>
-                      </FormControl>
-                    </FormGroup>
+                    {project.supplier}
                   </Col>                
                 </Row>
                 <Row className="manager-overview">
-                  <Col xs={2} md={2}><b>Project Manager</b></Col>
+                  <Col xs={2} md={2}><b>Project Manager:</b></Col>
                   <Col xs={2} md={2}>{project.manager}</Col>
                 </Row>
                 <Row className="general-notes-overview">
-                  <Col xs={2} md={2}><b>General Notes</b></Col>
+                  <Col xs={2} md={2}><b>General Notes:</b></Col>
                   <Col xs={4} md={4}>
                     <FormGroup controlId="formControlsTextarea">
-                      <FormControl componentClass="textarea" placeholder="Enter your notes here" />
+                      <FormControl componentClass="textarea" placeholder="Enter your notes here">
+                      {project.generalNotes}
+                      </FormControl>
                     </FormGroup>
                   </Col>
                 </Row>
                 <Row className="completion-overview">
-                  <Col xs={2} md={2}><b>Est. Completion Date</b></Col>
-                  <Col xs={2} md={2}>{project.est_date}</Col>
+                  <Col xs={2} md={2}><b>Estimated Completion: </b></Col>
+                  <Col xs={2} md={2}>{project.estimatedDate}</Col>
                 </Row>
               </Grid>
               <div className="tabsWrap" style={tabWrapStyle}>
                 <Grid>
                   <Tabs defaultActiveKey={1} animation={false} id="project-details">
                     <Tab eventKey={1} title="Request from Supplier" style={tabWrapStyle}>
-                      <RequestFromSupplier />
+                      <RequestFromSupplier progress={this.state.projects.progress}/>
                     </Tab>
                     <Tab eventKey={2} title="Provide to Supplier" style={tabWrapStyle}>
                       <ProvideToSupplier />
