@@ -59,15 +59,24 @@ class Details extends React.Component {
 
   console.log(project.id, project.name, project.status, project.date)
 
+ const timestamp = Date.now()
+
+ const stamp = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp);
+  console.log(stamp);
+
+
     axios
     .post('http://localhost:3001/completed', {
       id: project.id,
       name: project.name,
-      status: project.status,
-      date: project.date
+      status: 1,
+      date: project.date,
+      dateCompleted: stamp
     })
+
+    window.location.reload()//insert page reload
   }
-  
+
   render() {
     let project = this.props.data;
     if (!this.props.show) {
