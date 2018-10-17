@@ -54,11 +54,20 @@ class Details extends React.Component {
     console.log({project});
 
     this.setState = {
-      completed: [...project]
+      completed: [...project],
     };
 
+  console.log(project.id, project.name, project.status, project.date)
 
+    axios
+    .post('http://localhost:3001/completed', {
+      id: project.id,
+      name: project.name,
+      status: project.status,
+      date: project.date
+    })
   }
+  
   render() {
     let project = this.props.data;
     if (!this.props.show) {
@@ -77,7 +86,9 @@ class Details extends React.Component {
                     <Button bsStyle="primary">Save Changes</Button>
                   </Col>
                   <Col xs={2} md={2}>
-                    <Button bsStyle="success" onClick = {this.completed(project)}> Complete Project</Button>
+                    <Button bsStyle="success" onClick = {(e) => {
+                      e.preventDefault();
+                      this.completed(project)}}> Complete Project</Button>
                   </Col>
                 </Row>
                 <Row className="supplier-overview">
