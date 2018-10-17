@@ -16,7 +16,7 @@ class RequestFromSupplier extends Component {
         <Row>
             <Col xs={3} md={3}>Samples(s) including any software</Col>
             <Col xs={2} md={2}> 
-            {console.log(this.props.progress)}
+            {console.log(this.props.progress.requestFromSupplier01a)}
                 <Checkbox></Checkbox> 
             </Col>
             <Col xs={2} md={2}>
