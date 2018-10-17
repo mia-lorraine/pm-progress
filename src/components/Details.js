@@ -50,7 +50,7 @@ class Details extends React.Component {
     [event.target.name] = event.target.value;
   }
 
-  completed(project) {
+  completed(project) {                                                                                   
     console.log({project});
 
     this.setState = {
@@ -130,6 +130,7 @@ class Details extends React.Component {
                   <Tabs defaultActiveKey={1} animation={false} id="project-details">
                     <Tab eventKey={1} title="Request from Supplier" style={tabWrapStyle}>
                       <RequestFromSupplier progress={this.state.projects.progress}/>
+                      {console.log(project.progress)}
                     </Tab>
                     <Tab eventKey={2} title="Provide to Supplier" style={tabWrapStyle}>
                       <ProvideToSupplier />
