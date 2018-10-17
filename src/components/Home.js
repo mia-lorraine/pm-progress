@@ -135,7 +135,7 @@ class Home extends React.Component {
                   {this.state.completed.map((item,index) => (
                     <tr>
                       <td>
-                        <a classNamme="linkStyle" onClick={()=>{
+                        <a className="linkStyle" onClick={()=>{
                           this.clickMe(item); this.showDetails();
                         }}>{item.name}</a>
                       </td>
