@@ -5,27 +5,28 @@ class RequestFromSupplier extends Component {
     constructor(props){
         super(props)
         this.state = {
-            progress: this.props.progress
+            supplierRequest01a: this.props.progress.requestFromSupplier01a,
+            // requestFromSupplier01a: true
+
         }
         
-        
-
         this.handleChange.bind(this);
     }
 
     
 
-    handleChange(boolData){ 
-  // console.log(boolData)  console.log("clicked")
-  
-    console.log(!boolData)
-    this.setState({
-    requestFromSupplier01a: !boolData
-    })
+    handleChange(){ 
+    console.log(!this.state.supplierRequest01a)
 
+    this.setState({
+        supplierRequest01a: !this.state.supplierRequest01a
+    })
+    
+   
     }
+
   render() {
-    var boolData = this.state.progress.requestFromSupplier01a
+    // var boolData = this.state.progress.requestFromSupplier01a
     return (
       <div>
        <Grid>
@@ -38,10 +39,9 @@ class RequestFromSupplier extends Component {
         </Row>
         <Row>
             <Col xs={3} md={3}>Samples(s) including any software</Col>
-            <Col xs={2} md={2}> 
-            {console.log(this.state.progress)}
+            <Col xs={2} md={2}>         
             
-            <Checkbox onChange = {this.handleChange} checked={boolData}></Checkbox> 
+            <Checkbox onChange ={() =>  {this.handleChange()}} checked={this.state.supplierRequest01a}></Checkbox> 
 
             </Col>
             <Col xs={2} md={2}>
