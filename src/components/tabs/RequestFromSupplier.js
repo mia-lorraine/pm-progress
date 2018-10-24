@@ -2,20 +2,30 @@ import React, { Component } from 'react';
 import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
 
 class RequestFromSupplier extends Component {
-    constructor(){
-        super()
-        this.state = this.props
+    constructor(props){
+        super(props)
+        this.state = {
+            progress: this.props.progress
+        }
+        
+        
+
+        this.handleChange.bind(this);
     }
-    handleChange() {
 
-        var data = this.props.progress
-        var checkboxtest = this.props.progress.requestFromSupplier01a 
+    
 
-        this.setState({
-          checkboxtest: !data.requestFromSupplier01a
-        })
+    handleChange(boolData){ 
+  // console.log(boolData)  console.log("clicked")
+  
+    console.log(!boolData)
+    this.setState({
+    requestFromSupplier01a: !boolData
+    })
+
     }
   render() {
+    var boolData = this.state.progress.requestFromSupplier01a
     return (
       <div>
        <Grid>
@@ -29,10 +39,10 @@ class RequestFromSupplier extends Component {
         <Row>
             <Col xs={3} md={3}>Samples(s) including any software</Col>
             <Col xs={2} md={2}> 
-            {/* {console.log(this.props.progress.requestFromSupplier01a)} */}
-            {this.props.progress.requestFromSupplier01a === 1 ? <Checkbox checked onChange = {this.handleChange()}></Checkbox> : <Checkbox ></Checkbox>}
+            {console.log(this.state.progress)}
+            
+            <Checkbox onChange = {this.handleChange} checked={boolData}></Checkbox> 
 
-                {/* <Checkbox></Checkbox>  */}
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox></Checkbox>

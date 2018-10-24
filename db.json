@@ -172,7 +172,7 @@
       "generalNotes": "I want donuts.",
       "id": 15,
       "progress": {
-        "requestFromSupplier01a": 1,
+        "requestFromSupplier01a": true,
         "requestFromSupplier01b": 1,
         "requestFromSupplier01c": 1,
         "requestFromSupplier01-notes": "We have some notes here.",
