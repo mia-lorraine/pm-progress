@@ -171,7 +171,8 @@
       "estimatedDate": "2018-10-31",
       "generalNotes": "I want donuts.",
       "id": 15,
-      "progress": {
+      "progress": [{
+        "progressId": 15,
         "requestFromSupplier01a": true,
         "requestFromSupplier01b": 1,
         "requestFromSupplier01c": 1,
@@ -181,7 +182,7 @@
         "requestFromSupplier03b": 0,
         "requestFromSupplier03c": 1,
         "requestFromSupplier03-notes": "We have some notes here."
-      }
+      }]
     }
   ],
   "completed": [
