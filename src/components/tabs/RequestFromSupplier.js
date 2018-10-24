@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
+import Axios from 'axios';
 
 class RequestFromSupplier extends Component {
     constructor(props){
@@ -12,8 +13,6 @@ class RequestFromSupplier extends Component {
         this.handleChange =  this.handleChange.bind(this);
     }
 
-    
-
     handleChange(){ 
     console.log(!this.state.supplierRequest01a)
 
@@ -22,7 +21,16 @@ class RequestFromSupplier extends Component {
     })
     
 
-    }
+    axios.post('http://localhost:3001/projects/progress', {
+        requestFromSupplier01a: this.setState.supplierRequest01a.value
+      })
+      .then(response => {
+        console.log(response);
+        console.log(response.data);
+      });
+    requestFromSupplier01a.value = ''
+  };
+
 
   render() {
     return (
