@@ -5,12 +5,11 @@ class RequestFromSupplier extends Component {
     constructor(props){
         super(props)
         this.state = {
-            supplierRequest01a: this.props.progress.requestFromSupplier01a,
-            // requestFromSupplier01a: true
+            supplierRequest01a: this.props.progress.requestFromSupplier01a
 
         }
         
-        this.handleChange.bind(this);
+        this.handleChange =  this.handleChange.bind(this);
     }
 
     
@@ -22,11 +21,10 @@ class RequestFromSupplier extends Component {
         supplierRequest01a: !this.state.supplierRequest01a
     })
     
-   
+
     }
 
   render() {
-    // var boolData = this.state.progress.requestFromSupplier01a
     return (
       <div>
        <Grid>
