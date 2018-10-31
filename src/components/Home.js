@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import '../styles/App.css';
-import { Grid, Table, Nav, NavItem, Navbar } from 'react-bootstrap';
+import { Grid, Table, Button } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import Details from '../components/Details';
 import AddProject from '../components/Addproject';
@@ -60,7 +60,18 @@ class Home extends React.Component {
   render() {
     return (
       <div className="App">
-        <Navbar>
+
+        <Button>
+          <NavLink to="/add" render={(props) => (
+              <AddProject {...props} newProject={this.addProject} 
+              />)}>Create a Project
+          </NavLink>
+        </Button>
+
+
+
+
+        {/* <Navbar>
           <Navbar.Header>
             <Navbar.Brand>
               <NavLink 
@@ -83,7 +94,7 @@ class Home extends React.Component {
               </NavLink>
             </NavItem>
           </Nav>
-        </Navbar>
+        </Navbar> */}
         <div className='projectsContent'>
           <h4>Current Projects</h4>
           <Grid>
@@ -98,7 +109,7 @@ class Home extends React.Component {
                 </thead>
                 <tbody>
                   {this.state.projects.map((item,index) => (
-                    <tr>
+                    <tr key={index}>
                       <td>
                         <a className="linkStyle" onClick={()=>{
                           this.clickMe(item); this.showDetails();
@@ -133,7 +144,7 @@ class Home extends React.Component {
                 </thead>
                 <tbody>
                   {this.state.completed.map((item,index) => (
-                    <tr>
+                    <tr key={index}>
                       <td>
                         <a className="linkStyle" onClick={()=>{
                           this.clickMe(item); this.showDetails();

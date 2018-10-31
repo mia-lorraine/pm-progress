@@ -20,11 +20,9 @@ let backdropStyle = {
   paddingLeft: 20,
   paddingRight: 20
 };
-
 let tabWrapStyle = {
   marginTop: 20
 };
-
 class Details extends React.Component {
   constructor() {
     super();
@@ -49,22 +47,16 @@ class Details extends React.Component {
   handleChange(event, project) {
     [event.target.name] = event.target.value;
   }
-
   completed(project) {                                                                                   
     console.log({project});
-
     this.setState = {
       completed: [...project],
     };
-
   console.log(project.id, project.name, project.status, project.date)
-
  const timestamp = Date.now()
 
  const stamp = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp);
   console.log(stamp);
-
-
     axios
     .post('http://localhost:3001/completed', {
       id: project.id,
@@ -73,10 +65,8 @@ class Details extends React.Component {
       date: project.date,
       dateCompleted: stamp
     })
-
-    window.location.reload()//insert page reload
+    window.location.reload() //insert page reload
   }
-
   render() {
     let project = this.props.data;
     if (!this.props.show) {

@@ -1,37 +1,29 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
-import Axios from 'axios';
+import axios from 'axios';
 
 class RequestFromSupplier extends Component {
     constructor(props){
         super(props)
         this.state = {
-            supplierRequest01a: this.props.progress.requestFromSupplier01a
-
+            supplierRequest01a: false
         }
-        
-        this.handleChange =  this.handleChange.bind(this);
+        this.handleChange = this.handleChange.bind(this);
     }
-
-    handleChange(){ 
-    console.log(!this.state.supplierRequest01a)
-
-    this.setState({
-        supplierRequest01a: !this.state.supplierRequest01a
-    })
-    
-
-    axios.post('http://localhost:3001/projects/progress', {
-        requestFromSupplier01a: this.setState.supplierRequest01a.value
+    handleChange(e) {
+        this.setState({
+            supplierRequest01a: e.target.supplierRequest01a
+        })
+    let r = this.state.supplierRequest01a
+    axios.post('http://localhost:3001/projects', {
+        p_requestFromSupplier01a: r
       })
       .then(response => {
         console.log(response);
         console.log(response.data);
       });
-    requestFromSupplier01a.value = ''
-  };
-
-
+        r = ''
+    };
   render() {
     return (
       <div>
@@ -46,9 +38,8 @@ class RequestFromSupplier extends Component {
         <Row>
             <Col xs={3} md={3}>Samples(s) including any software</Col>
             <Col xs={2} md={2}>         
-            
-            <Checkbox onChange ={() =>  {this.handleChange()}} checked={this.state.supplierRequest01a}></Checkbox> 
-
+                <Checkbox onChange={this.handleChange} checked={this.state.supplierRequest01a}>
+                    </Checkbox> 
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox></Checkbox>

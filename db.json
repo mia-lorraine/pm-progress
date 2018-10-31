@@ -179,17 +179,19 @@
       "estimatedDate": "2018-10-31",
       "generalNotes": "I want donuts.",
       "id": 15,
-      "progress": {
-        "requestFromSupplier01a": true,
-        "requestFromSupplier01b": 1,
-        "requestFromSupplier01c": 1,
-        "requestFromSupplier01-notes": "We have some notes here.",
-        "requestFromSupplier02-link": "This is the supplier link.",
-        "requestFromSupplier03a": 0,
-        "requestFromSupplier03b": 0,
-        "requestFromSupplier03c": 1,
-        "requestFromSupplier03-notes": "We have some notes here."
-      }
+      "p_requestFromSupplier01a": 1,
+      "p_requestFromSupplier01b": 1,
+      "p_requestFromSupplier01c": 0,
+      "p_requestFromSupplier01_notes": "We have some notes here.",
+      "p_requestFromSupplier02_link": "This is the supplier link.",
+      "p_requestFromSupplier03a": 0,
+      "p_requestFromSupplier03b": 0,
+      "p_requestFromSupplier03c": 1,
+      "p_requestFromSupplier03_notes": "We have some notes here."
+    },
+    {
+      "p_requestFromSupplier01a": false,
+      "id": 16
     }
   ],
   "completed": [
