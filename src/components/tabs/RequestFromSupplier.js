@@ -17,20 +17,14 @@ class RequestFromSupplier extends Component {
         this.setState({
             supplierRequest01a: !this.state.supplierRequest01a
         })
-
-        let r = !this.state.supplierRequest01a
-        axios.patch(`http://localhost:3001/projects/${this.props.progress.id}`, {
-                p_requestFromSupplier01a: r
-              })
-              .then(response => {
-                console.log(response.data.p_requestFromSupplier01a);
-              });
-              r = ''   
             }
 
    
-     submit() {                     
-        let r = !this.state.supplierRequest01a
+     submit(e) {  
+
+         e.preventDefault();
+         
+        let r = this.state.supplierRequest01a
         axios.patch(`http://localhost:3001/projects/${this.props.progress.id}`, {
                 p_requestFromSupplier01a: r
               })
@@ -45,8 +39,10 @@ class RequestFromSupplier extends Component {
   render() {
     return (
       <div>
-           <form onSubmit={this.submit}>
+           <form onSubmit={this.submit.bind(this)}>
        <Grid>
+       <Row> <Button type = " submit"  value ="Submit"> Submit information </Button> </Row>
+
         <Row>
             <Col xs={3} md={3}><b>Item</b></Col>
             <Col xs={2} md={2}><b>Requested</b></Col>
@@ -59,12 +55,10 @@ class RequestFromSupplier extends Component {
             <Col xs={2} md={2}>   
            
                 <Checkbox onChange={this.handleChange} checked={this.state.supplierRequest01a}>
-                    </Checkbox> 
-                    <Button type = " submit"  value ="Submit"> Submit information </Button>
-                 
+                    </Checkbox>
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox onChange={this.handleChange} checked={this.state.supplierRequest01b}></Checkbox>
+                <Checkbox onChange={this.handleChange2} checked={this.state.supplierRequest01b}></Checkbox>
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox><Glyphicon glyph="exclamation-sign" /></Checkbox>
