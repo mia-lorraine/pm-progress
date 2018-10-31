@@ -119,7 +119,7 @@ class Details extends React.Component {
                 <Grid>
                   <Tabs defaultActiveKey={1} animation={false} id="project-details">
                     <Tab eventKey={1} title="Request from Supplier" style={tabWrapStyle}>
-                      <RequestFromSupplier progress = {project.progress}/>
+                      <RequestFromSupplier progress = {project}/>
                     </Tab>
                     <Tab eventKey={2} title="Provide to Supplier" style={tabWrapStyle}>
                       <ProvideToSupplier />
