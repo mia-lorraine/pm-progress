@@ -1,38 +1,51 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
+import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon, Button} from 'react-bootstrap';
 import axios from 'axios';
 
 class RequestFromSupplier extends Component {
     constructor(props){
         super(props)
         this.state = {
-            supplierRequest01a: this.props.progress.p_requestFromSupplier01a,
-            supplierRequest01b: this.props.progress.p_requestFromSupplier01b
+            supplierRequest01a: this.props.progress.p_requestFromSupplier01a
         }
         this.handleChange = this.handleChange.bind(this);
     }
+
+
+
     handleChange(e) {
-        
         this.setState({
-            supplierRequest01a: e.target.supplierRequest01a,
-            supplierRequest01b: !this.state.supplierRequest01b
+            supplierRequest01a: !this.state.supplierRequest01a
         })
-    var r = !this.state.supplierRequest01a
-    var m = !this.state.supplierRequest01b
-    axios.patch(`http://localhost:3001/projects/${this.props.progress.id}`, {
-        p_requestFromSupplier01a: r,
-        p_requestFromSupplier01b: m
-      })
-      .then(response => {
-        console.log(response.data.p_requestFromSupplier01a);
-      });
-        r = this.setState.supplierRequest01a
-        m = this.setState.supplierRequest01b
+
+        let r = !this.state.supplierRequest01a
+        axios.patch(`http://localhost:3001/projects/${this.props.progress.id}`, {
+                p_requestFromSupplier01a: r
+              })
+              .then(response => {
+                console.log(response.data.p_requestFromSupplier01a);
+              });
+              r = ''   
+            }
+
+   
+     submit() {                     
+        let r = !this.state.supplierRequest01a
+        axios.patch(`http://localhost:3001/projects/${this.props.progress.id}`, {
+                p_requestFromSupplier01a: r
+              })
+              .then(response => {
+                console.log(response.data.p_requestFromSupplier01a);
+              });
+              r = ''
+            }
         
-    };
+
+
   render() {
     return (
       <div>
+           <form onSubmit={this.submit}>
        <Grid>
         <Row>
             <Col xs={3} md={3}><b>Item</b></Col>
@@ -43,9 +56,12 @@ class RequestFromSupplier extends Component {
         </Row>
         <Row>
             <Col xs={3} md={3}>Samples(s) including any software</Col>
-            <Col xs={2} md={2}>       
+            <Col xs={2} md={2}>   
+           
                 <Checkbox onChange={this.handleChange} checked={this.state.supplierRequest01a}>
                     </Checkbox> 
+                    <Button type = " submit"  value ="Submit"> Submit information </Button>
+                 
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox onChange={this.handleChange} checked={this.state.supplierRequest01b}></Checkbox>
@@ -222,6 +238,7 @@ class RequestFromSupplier extends Component {
             </Col>
         </Row>
        </Grid> 
+       </form>
       </div>
     )
   }
