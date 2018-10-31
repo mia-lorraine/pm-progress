@@ -5,11 +5,9 @@ import Error from '../components/Error';
 import Addproject from '../components/Addproject';
 import Projectdetails from '../components/Projectdetails'
 
-
 class App extends Component{
   render() {
     return (
-      <div>
         <BrowserRouter>
           <Switch>
             <Route path="/" component={Home} exact/>
@@ -18,8 +16,6 @@ class App extends Component{
             <Route component={Error} />
           </Switch>
         </BrowserRouter>
-
-      </div>
     );
   }
 }
