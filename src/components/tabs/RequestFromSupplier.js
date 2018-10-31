@@ -6,32 +6,38 @@ class RequestFromSupplier extends Component {
     constructor(props){
         super(props)
         this.state = {
-            supplierRequest01a: this.props.progress.p_requestFromSupplier01a
+            supplierRequest01a: this.props.progress.p_requestFromSupplier01a,
+            s2: this.props.progress.p_requestFromSupplier01b
         }
         this.handleChange = this.handleChange.bind(this);
+        this.handleChange2 = this.handleChange2.bind(this);
     }
-
-
 
     handleChange(e) {
         this.setState({
-            supplierRequest01a: !this.state.supplierRequest01a
+            supplierRequest01a: !this.state.supplierRequest01a,
         })
             }
 
-   
-     submit(e) {  
+    handleChange2(e) {
+         this.setState({
+           s2: !this.state.s2
+                })
+                    }
 
+     submit(e) {  
          e.preventDefault();
          
         let r = this.state.supplierRequest01a
+        let t = this.state.s2
         axios.patch(`http://localhost:3001/projects/${this.props.progress.id}`, {
-                p_requestFromSupplier01a: r
+                p_requestFromSupplier01a: r,
+                p_requestFromSupplier01b: t
               })
               .then(response => {
-                console.log(response.data.p_requestFromSupplier01a);
+                console.log(response.data);
               });
-              r = ''
+              r = t = ''
             }
         
 
@@ -58,7 +64,7 @@ class RequestFromSupplier extends Component {
                     </Checkbox>
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox onChange={this.handleChange2} checked={this.state.supplierRequest01b}></Checkbox>
+                <Checkbox onChange={this.handleChange2} checked={this.state.s2}></Checkbox>
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox><Glyphicon glyph="exclamation-sign" /></Checkbox>
