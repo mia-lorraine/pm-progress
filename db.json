@@ -179,6 +179,7 @@
       "estimatedDate": "2018-10-31",
       "generalNotes": "I want donuts.",
       "id": 15,
+<<<<<<< HEAD
       "p_requestFromSupplier01a": 1,
       "p_requestFromSupplier01b": 1,
       "p_requestFromSupplier01c": 0,
@@ -192,6 +193,20 @@
     {
       "p_requestFromSupplier01a": false,
       "id": 16
+=======
+      "progress": [{
+        "progressId": 15,
+        "requestFromSupplier01a": true,
+        "requestFromSupplier01b": 1,
+        "requestFromSupplier01c": 1,
+        "requestFromSupplier01-notes": "We have some notes here.",
+        "requestFromSupplier02-link": "This is the supplier link.",
+        "requestFromSupplier03a": 0,
+        "requestFromSupplier03b": 0,
+        "requestFromSupplier03c": 1,
+        "requestFromSupplier03-notes": "We have some notes here."
+      }]
+>>>>>>> 85ae9594dbc298b01cae5ff5fd5d7d9a0d71e756
     }
   ],
   "completed": [

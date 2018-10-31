@@ -10,6 +10,7 @@ class RequestFromSupplier extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
     }
+<<<<<<< HEAD
     handleChange(e) {
         this.setState({
             supplierRequest01a: e.target.supplierRequest01a
@@ -24,6 +25,32 @@ class RequestFromSupplier extends Component {
       });
         r = ''
     };
+=======
+
+    handleChange(){ 
+    console.log(!this.state.supplierRequest01a)
+
+    this.setState({
+        supplierRequest01a: !this.state.supplierRequest01a
+    })
+   }
+
+   postData(){
+       axios
+       .post('http://localhost:3001/projects/$this.props.progress.id', {
+           supplierRequest01a: !this.state.supplierRequest01a
+       })
+       .then(response => {
+           console.log(response)
+       })
+   }
+
+   componentWillUpdate(){
+       this.postData()
+   }
+
+
+>>>>>>> 85ae9594dbc298b01cae5ff5fd5d7d9a0d71e756
   render() {
     return (
       <div>
