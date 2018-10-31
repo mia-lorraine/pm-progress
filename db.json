@@ -179,7 +179,7 @@
       "estimatedDate": "2018-10-31",
       "generalNotes": "I want donuts.",
       "id": 15,
-      "p_requestFromSupplier01a": true,
+      "p_requestFromSupplier01a": false,
       "p_requestFromSupplier01b": true,
       "p_requestFromSupplier01c": false,
       "p_requestFromSupplier01_notes": "We have some notes here.",
