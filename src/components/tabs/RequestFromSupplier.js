@@ -99,7 +99,7 @@ class RequestFromSupplier extends Component {
     handleChange3(e) {this.setState({supplierRequest01c: !this.state.supplierRequest01c})}
     handleChange4(e) {this.setState({supplierRequest01_notes: e.target.value})}
     handleChange5(e) {this.setState({supplierRequest02_link: e.target.value})}
-    handleChange6(e) {this.setState({supplierRequest03b: !this.state.supplierRequest03a})}
+    handleChange6(e) {this.setState({supplierRequest03a: !this.state.supplierRequest03a})}
     handleChange7(e) {this.setState({supplierRequest03b: !this.state.supplierRequest03b})}
     handleChange8(e) {this.setState({supplierRequest03c: !this.state.supplierRequest03c})}
     handleChange9(e) {this.setState({supplierRequest03_notes: e.target.value})}
@@ -239,7 +239,6 @@ class RequestFromSupplier extends Component {
       <div>
            <form onSubmit={this.handleSubmit}>
        <Grid>
-       <Row><Button type= "submit" value ="Submit">Submit information</Button></Row>
         <Row>
             <Col xs={3} md={3}><b>Item</b></Col>
             <Col xs={2} md={2}><b>Requested</b></Col>
@@ -579,6 +578,11 @@ class RequestFromSupplier extends Component {
                     />
                 </FormGroup>
             </Col>
+        </Row>
+        <Row>
+            <Col xs={6} mdOffset={5}>
+                <Button bsStyle="info" type= "submit" value ="Submit">Save Changes</Button>
+            </Col> 
         </Row>
        </Grid> 
        </form>

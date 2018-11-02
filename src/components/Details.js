@@ -118,22 +118,22 @@ class Details extends React.Component {
                 <Grid>
                   <Tabs defaultActiveKey={1} animation={false} id="project-details">
                     <Tab eventKey={1} title="Request from Supplier" style={tabWrapStyle}>
-                      <RequestFromSupplier progress = {project}/>
+                      <RequestFromSupplier progress={project}/>
                     </Tab>
                     <Tab eventKey={2} title="Provide to Supplier" style={tabWrapStyle}>
-                      <ProvideToSupplier />
+                      <ProvideToSupplier progress={project}/>
                     </Tab>
                     <Tab eventKey={3} title="Documentation" style={tabWrapStyle}>
-                      <Documentation />
+                      <Documentation progress={project}/>
                     </Tab>
                     <Tab eventKey={4} title="Tooling" style={tabWrapStyle}>
-                      <Tooling />
+                      <Tooling progress={project}/>
                     </Tab>
                     <Tab eventKey={5} title="Pricing" style={tabWrapStyle}>
-                      <Pricing />
+                      <Pricing progress={project}/>
                     </Tab>
                     <Tab eventKey={6} title="Promotion" style={tabWrapStyle}>
-                      <Promotion />
+                      <Promotion progress={project}/>
                     </Tab>
                   </Tabs>
                 </Grid>
