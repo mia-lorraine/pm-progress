@@ -140,54 +140,99 @@ class RequestFromSupplier extends Component {
 
     handleSubmit(e) {  
         e.preventDefault(); 
-                let a = this.state.supplierRequest01a
-                let b = this.state.supplierRequest01b
-                let c = this.state.supplierRequest01c
-                let d = this.state.supplierRequest01_notes
-                let e2 = this.state.supplierRequest02_link
-                let f = this.state.supplierRequest03a
-                let g = this.state.supplierRequest03b
-                let h = this.state.supplierRequest03c
-                let i = this.state.supplierRequest03_notes
-                let j = this.state.supplierRequest04a
-                let k = this.state.supplierRequest04b
-                let l = this.state.supplierRequest04c
-                let m = this.state.supplierRequest04_notes
-                let n = this.state.supplierRequest05a
-                let o = this.state.supplierRequest05b
-                let p = this.state.supplierRequest05c
-                let q = this.state.supplierRequest05_notes
-                let r = this.state.supplierRequest06a
-                let s = this.state.supplierRequest06b
-                let t = this.state.supplierRequest06c
-                let u = this.state.supplierRequest06_notes
+                let a01 = this.state.supplierRequest01a
+                let a02 = this.state.supplierRequest01b
+                let a03 = this.state.supplierRequest01c
+                let a04 = this.state.supplierRequest01_notes
+                let a05 = this.state.supplierRequest02_link
+                let a06 = this.state.supplierRequest03a
+                let a07 = this.state.supplierRequest03b
+                let a08 = this.state.supplierRequest03c
+                let a09 = this.state.supplierRequest03_notes
+                let a10 = this.state.supplierRequest04a
+                let a11 = this.state.supplierRequest04b
+                let a12 = this.state.supplierRequest04c
+                let a13 = this.state.supplierRequest04_notes
+                let a14 = this.state.supplierRequest05a
+                let a15 = this.state.supplierRequest05b
+                let a16 = this.state.supplierRequest05c
+                let a17 = this.state.supplierRequest05_notes
+                let a18 = this.state.supplierRequest06a
+                let a19 = this.state.supplierRequest06b
+                let a20 = this.state.supplierRequest06c
+                let a21 = this.state.supplierRequest06_notes
+                let a22 = this.state.supplierRequest07a
+                let a23 = this.state.supplierRequest07b
+                let a24 = this.state.supplierRequest07c
+                let a25 = this.state.supplierRequest07_notes
+                let a26 = this.state.supplierRequest08a
+                let a27 = this.state.supplierRequest08b
+                let a28 = this.state.supplierRequest08c
+                let a29 = this.state.supplierRequest08_notes
+                let a30 = this.state.supplierRequest09a
+                let a31 = this.state.supplierRequest09b
+                let a32 = this.state.supplierRequest09c
+                let a33 = this.state.supplierRequest09_notes
+                let a34 = this.state.supplierRequest10a
+                let a35 = this.state.supplierRequest10b
+                let a36 = this.state.supplierRequest10c
+                let a37 = this.state.supplierRequest10_notes
+                let a38 = this.state.supplierRequest11a
+                let a39 = this.state.supplierRequest11b
+                let a40 = this.state.supplierRequest11c
+                let a41 = this.state.supplierRequest11_notes
+
         axios.patch(`http://localhost:3001/projects/${this.props.progress.id}`, {
-                p_requestFromSupplier01a: a,
-                p_requestFromSupplier01b: b,
-                p_requestFromSupplier01c: c,
-                p_requestFromSupplier01_notes: d,
-                p_requestFromSupplier02_link: e2,
-                p_requestFromSupplier03a: f,
-                p_requestFromSupplier03b: g,
-                p_requestFromSupplier03c: h,
-                p_requestFromSupplier03_notes: i,
-                p_requestFromSupplier04a: j,
-                p_requestFromSupplier04b: k,
-                p_requestFromSupplier04c: l,
-                p_requestFromSupplier04_notes: m,
-                p_requestFromSupplier05a: n,
-                p_requestFromSupplier05b: o,
-                p_requestFromSupplier05c: p,
-                p_requestFromSupplier05_notes: q,
-                p_requestFromSupplier06a: r,
-                p_requestFromSupplier06b: s,
-                p_requestFromSupplier06c: t,
-                p_requestFromSupplier06_notes: u
+                p_requestFromSupplier01a: a01,
+                p_requestFromSupplier01b: a02,
+                p_requestFromSupplier01c: a03,
+                p_requestFromSupplier01_notes: a04,
+                p_requestFromSupplier02_link: a05,
+                p_requestFromSupplier03a: a06,
+                p_requestFromSupplier03b: a07,
+                p_requestFromSupplier03c: a08,
+                p_requestFromSupplier03_notes: a09,
+                p_requestFromSupplier04a: a10,
+                p_requestFromSupplier04b: a11,
+                p_requestFromSupplier04c: a12,
+                p_requestFromSupplier04_notes: a13,
+                p_requestFromSupplier05a: a14,
+                p_requestFromSupplier05b: a15,
+                p_requestFromSupplier05c: a16,
+                p_requestFromSupplier05_notes: a17,
+                p_requestFromSupplier06a: a18,
+                p_requestFromSupplier06b: a19,
+                p_requestFromSupplier06c: a20,
+                p_requestFromSupplier06_notes: a21,
+                p_requestFromSupplier07a: a22,
+                p_requestFromSupplier07b: a23,
+                p_requestFromSupplier07c: a24,
+                p_requestFromSupplier07_notes: a25,
+                p_requestFromSupplier08a: a26,
+                p_requestFromSupplier08b: a27,
+                p_requestFromSupplier08c: a28,
+                p_requestFromSupplier08_notes: a29,
+                p_requestFromSupplier09a: a30,
+                p_requestFromSupplier09b: a31,
+                p_requestFromSupplier09c: a32,
+                p_requestFromSupplier09_notes: a33,
+                p_requestFromSupplier10a: a34,
+                p_requestFromSupplier10b: a35,
+                p_requestFromSupplier10c: a36,
+                p_requestFromSupplier10_notes: a37,
+                p_requestFromSupplier11a: a38,
+                p_requestFromSupplier11b: a39,
+                p_requestFromSupplier11c: a40,
+                p_requestFromSupplier11_notes: a41
               })
               .then(response => {
                 console.log(response.data);
               });
-              a = b = c = d = e2 = f = g = h = i = k = l = m = n = o = p = q = r = s = t = u = ''
+              a01 = a02 = a03 = a04 = a05 = a06 = a07 = a08 = a09 = a10 =
+              a11 = a12 = a13 = a14 = a15 = a16 = a17 = a18 = a19 = a20 =
+              a21 = a22 = a23 = a24 = a25 = a26 = a27 = a28 = a29 = a30 =
+              a31 = a32 = a33 = a34 = a35 = a36 = a37 = a38 = a39 = a40 =
+              a41 = ''
             }
   render() {
     return (
@@ -195,7 +240,6 @@ class RequestFromSupplier extends Component {
            <form onSubmit={this.handleSubmit}>
        <Grid>
        <Row><Button type= "submit" value ="Submit">Submit information</Button></Row>
-
         <Row>
             <Col xs={3} md={3}><b>Item</b></Col>
             <Col xs={2} md={2}><b>Requested</b></Col>
@@ -225,177 +269,315 @@ class RequestFromSupplier extends Component {
                 </Checkbox>
             </Col>
             <Col xs={3} md={3}>
-                  <FormGroup controlId="formControlsTextarea">
+                <FormGroup controlId="formControlsTextarea01">
                     <FormControl 
                     onChange={this.handleChange4}
                     value={this.state.supplierRequest01_notes}
                     componentClass="textarea" 
                     placeholder="Enter your notes here" 
                     />
-                  </FormGroup>
+                </FormGroup>
             </Col>
         </Row>
         <Row>
             <Col xs={3} md={3}>Link to Eval Results Report:</Col>
             <Col xs={9} md={9}>
-                <FormControl
-                 
-                  type="text"
-                  placeholder="Link goes here"> 
-               </FormControl> 
+                <FormGroup controlId="formControlsTextarea02">
+                    <FormControl 
+                    onChange={this.handleChange5}
+                    value={this.state.supplierRequest02_link}
+                    type="text" 
+                    placeholder="Eval Results Report link here" 
+                    />
+                </FormGroup>
             </Col>
         </Row>
         <Row>
             <Col xs={3} md={3}>First Articles</Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox> 
+                <Checkbox 
+                    onChange={this.handleChange6} 
+                    checked={this.state.supplierRequest03a}>
+                </Checkbox>
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox>
+                <Checkbox 
+                    onChange={this.handleChange7} 
+                    checked={this.state.supplierRequest03b}>
+                </Checkbox>
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox><Glyphicon glyph="exclamation-sign" /></Checkbox>
+                <Checkbox
+                    onChange={this.handleChange8} 
+                    checked={this.state.supplierRequest03c}>
+                    <Glyphicon glyph="exclamation-sign" />
+                </Checkbox>
             </Col>
             <Col xs={3} md={3}>
-                  <FormGroup controlId="formControlsTextarea">
-                    <FormControl componentClass="textarea" placeholder="Enter your notes here" />
-                  </FormGroup>
+                <FormGroup controlId="formControlsTextarea03">
+                    <FormControl 
+                    onChange={this.handleChange9}
+                    value={this.state.supplierRequest03_notes}
+                    componentClass="textarea" 
+                    placeholder="Enter your notes here" 
+                    />
+                </FormGroup>
             </Col>
         </Row>
-        <Row>
+        <Row> 
             <Col xs={3} md={3}>Pricing (our cost) for instrument and included accessories</Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox> 
+                <Checkbox 
+                    onChange={this.handleChange10} 
+                    checked={this.state.supplierRequest04a}>
+                </Checkbox> 
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox>
+                <Checkbox 
+                    onChange={this.handleChange11} 
+                    checked={this.state.supplierRequest04b}>
+                </Checkbox>
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox><Glyphicon glyph="exclamation-sign" /></Checkbox>
+                <Checkbox
+                    onChange={this.handleChange12} 
+                    checked={this.state.supplierRequest04c}>
+                    <Glyphicon glyph="exclamation-sign" />
+                </Checkbox>
             </Col>
             <Col xs={3} md={3}>
-                  <FormGroup controlId="formControlsTextarea">
-                    <FormControl componentClass="textarea" placeholder="Enter your notes here" />
-                  </FormGroup>
+                <FormGroup controlId="formControlsTextarea04">
+                    <FormControl 
+                    onChange={this.handleChange13}
+                    value={this.state.supplierRequest04_notes}
+                    componentClass="textarea" 
+                    placeholder="Enter your notes here" 
+                    />
+                </FormGroup>
             </Col>
         </Row>
         <Row>
             <Col xs={3} md={3}>Terms and conditions (MOQ, payment terms, prepayment of some components)</Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox> 
+                <Checkbox 
+                    onChange={this.handleChange14} 
+                    checked={this.state.supplierRequest05a}>
+                </Checkbox> 
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox>
+                <Checkbox 
+                    onChange={this.handleChange15} 
+                    checked={this.state.supplierRequest05b}>
+                </Checkbox>
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox><Glyphicon glyph="exclamation-sign" /></Checkbox>
+                <Checkbox
+                    onChange={this.handleChange16} 
+                    checked={this.state.supplierRequest05c}>
+                    <Glyphicon glyph="exclamation-sign" />
+                </Checkbox>
             </Col>
             <Col xs={3} md={3}>
-                  <FormGroup controlId="formControlsTextarea">
-                    <FormControl componentClass="textarea" placeholder="Enter your notes here" />
-                  </FormGroup>
+                <FormGroup controlId="formControlsTextarea05">
+                    <FormControl 
+                    onChange={this.handleChange17}
+                    value={this.state.supplierRequest05_notes}
+                    componentClass="textarea" 
+                    placeholder="Enter your notes here" 
+                    />
+                </FormGroup>
             </Col>
         </Row>
         <Row>
             <Col xs={3} md={3}>User manual (in word format), programming manuals, etc.</Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox> 
+                <Checkbox 
+                    onChange={this.handleChange18} 
+                    checked={this.state.supplierRequest06a}>
+                </Checkbox>  
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox>
+                 <Checkbox 
+                    onChange={this.handleChange19} 
+                    checked={this.state.supplierRequest06b}>
+                </Checkbox> 
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox><Glyphicon glyph="exclamation-sign" /></Checkbox>
+                <Checkbox
+                    onChange={this.handleChange20} 
+                    checked={this.state.supplierRequest06c}>
+                    <Glyphicon glyph="exclamation-sign" />
+                </Checkbox>
             </Col>
             <Col xs={3} md={3}>
-                  <FormGroup controlId="formControlsTextarea">
-                    <FormControl componentClass="textarea" placeholder="Enter your notes here" />
-                  </FormGroup>
+                <FormGroup controlId="formControlsTextarea06">
+                    <FormControl 
+                    onChange={this.handleChange21}
+                    value={this.state.supplierRequest06_notes}
+                    componentClass="textarea" 
+                    placeholder="Enter your notes here" 
+                    />
+                </FormGroup>
             </Col>
         </Row>
         <Row>
             <Col xs={3} md={3}>Tooling: overlay drawings, IGS files</Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox> 
+                <Checkbox 
+                    onChange={this.handleChange22} 
+                    checked={this.state.supplierRequest07a}>
+                </Checkbox>  
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox>
+                <Checkbox 
+                    onChange={this.handleChange23} 
+                    checked={this.state.supplierRequest07a}>
+                </Checkbox>  
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox><Glyphicon glyph="exclamation-sign" /></Checkbox>
+                <Checkbox
+                    onChange={this.handleChange24} 
+                    checked={this.state.supplierRequest07c}>
+                    <Glyphicon glyph="exclamation-sign" />
+                </Checkbox>
             </Col>
             <Col xs={3} md={3}>
-                  <FormGroup controlId="formControlsTextarea">
-                    <FormControl componentClass="textarea" placeholder="Enter your notes here" />
-                  </FormGroup>
+                <FormGroup controlId="formControlsTextarea07">
+                    <FormControl 
+                    onChange={this.handleChange25}
+                    value={this.state.supplierRequest07_notes}
+                    componentClass="textarea" 
+                    placeholder="Enter your notes here" 
+                    />
+                </FormGroup>
             </Col>
         </Row>
         <Row>
             <Col xs={3} md={3}>Firmware upgrade instructions (if applicable)</Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox> 
+                <Checkbox 
+                    onChange={this.handleChange26} 
+                    checked={this.state.supplierRequest08a}>
+                </Checkbox>  
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox>
+                <Checkbox 
+                    onChange={this.handleChange27} 
+                    checked={this.state.supplierRequest08b}>
+                </Checkbox> 
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox>
+                <Checkbox
+                    onChange={this.handleChange28} 
+                    checked={this.state.supplierRequest08c}>
+                    <Glyphicon glyph="exclamation-sign" />
+                </Checkbox>
             </Col>
             <Col xs={3} md={3}>
-                  <FormGroup controlId="formControlsTextarea">
-                    <FormControl componentClass="textarea" placeholder="Enter your notes here" />
-                  </FormGroup>
+                <FormGroup controlId="formControlsTextarea08">
+                    <FormControl 
+                    onChange={this.handleChange29}
+                    value={this.state.supplierRequest08_notes}
+                    componentClass="textarea" 
+                    placeholder="Enter your notes here" 
+                    />
+                </FormGroup>
             </Col>
         </Row>
         <Row>
             <Col xs={3} md={3}>CE declaration</Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox> 
+                <Checkbox 
+                    onChange={this.handleChange30} 
+                    checked={this.state.supplierRequest09a}>
+                </Checkbox> 
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox>
+                <Checkbox 
+                    onChange={this.handleChange31} 
+                    checked={this.state.supplierRequest09b}>
+                </Checkbox>
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox><Glyphicon glyph="exclamation-sign" /></Checkbox>
+                <Checkbox
+                    onChange={this.handleChange32} 
+                    checked={this.state.supplierRequest09c}>
+                    <Glyphicon glyph="exclamation-sign" />
+                </Checkbox>
             </Col>
             <Col xs={3} md={3}>
-                  <FormGroup controlId="formControlsTextarea">
-                    <FormControl componentClass="textarea" placeholder="Enter your notes here" />
-                  </FormGroup>
+                <FormGroup controlId="formControlsTextarea09">
+                    <FormControl 
+                    onChange={this.handleChange33}
+                    value={this.state.supplierRequest09_notes}
+                    componentClass="textarea" 
+                    placeholder="Enter your notes here" 
+                    />
+                </FormGroup>
             </Col>
         </Row>
         <Row>
             <Col xs={3} md={3}>Other approvals (UL, CSA, VDE...)</Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox> 
+                <Checkbox 
+                    onChange={this.handleChange34} 
+                    checked={this.state.supplierRequest10a}>
+                </Checkbox>  
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox>
+                <Checkbox 
+                    onChange={this.handleChange35} 
+                    checked={this.state.supplierRequest10b}>
+                </Checkbox> 
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox>
+                <Checkbox
+                    onChange={this.handleChange36} 
+                    checked={this.state.supplierRequest10c}>
+                    <Glyphicon glyph="exclamation-sign" />
+                </Checkbox>
             </Col>
             <Col xs={3} md={3}>
-                  <FormGroup controlId="formControlsTextarea">
-                    <FormControl componentClass="textarea" placeholder="Enter your notes here" />
-                  </FormGroup>
+                <FormGroup controlId="formControlsTextarea10">
+                    <FormControl 
+                    onChange={this.handleChange37}
+                    value={this.state.supplierRequest10_notes}
+                    componentClass="textarea" 
+                    placeholder="Enter your notes here" 
+                    />
+                </FormGroup>
             </Col>
         </Row>
         <Row>
             <Col xs={3} md={3}>Service and calibration information, service strategy (e.g. board level or component level repair, does supplier provide spare parts</Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox> 
+                <Checkbox 
+                    onChange={this.handleChange38} 
+                    checked={this.state.supplierRequest11a}>
+                </Checkbox>   
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox></Checkbox>
+                <Checkbox 
+                    onChange={this.handleChange39} 
+                    checked={this.state.supplierRequest11b}>
+                </Checkbox>  
             </Col>
             <Col xs={2} md={2}>
-                <Checkbox><Glyphicon glyph="exclamation-sign" /></Checkbox>
+            <Checkbox
+                    onChange={this.handleChange40} 
+                    checked={this.state.supplierRequest11c}>
+                    <Glyphicon glyph="exclamation-sign" />
+                </Checkbox>
             </Col>
             <Col xs={3} md={3}>
-                  <FormGroup controlId="formControlsTextarea">
-                    <FormControl componentClass="textarea" placeholder="Enter your notes here" />
-                  </FormGroup>
+                <FormGroup controlId="formControlsTextarea10">
+                    <FormControl 
+                    onChange={this.handleChange41}
+                    value={this.state.supplierRequest11_notes}
+                    componentClass="textarea" 
+                    placeholder="Enter your notes here" 
+                    />
+                </FormGroup>
             </Col>
         </Row>
        </Grid> 
