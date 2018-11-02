@@ -76,7 +76,6 @@ class Details extends React.Component {
       <div>
         <div style={backdropStyle}>
           <div className="backdropWrap">
-            <form>
               <Grid>
                 <Row className="details-overview">
                   <Col xs={2} md={2}><b>Project Name:</b></Col>
@@ -139,7 +138,6 @@ class Details extends React.Component {
                   </Tabs>
                 </Grid>
               </div>
-            </form>
           </div>
         </div>
       </div>
