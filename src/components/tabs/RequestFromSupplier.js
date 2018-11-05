@@ -48,97 +48,97 @@ class RequestFromSupplier extends Component {
             supplierRequest11c: this.props.progress.p_requestFromSupplier11c,
             supplierRequest11_notes: this.props.progress.p_requestFromSupplier11_notes
         }
-        // So sloppy, i know -_-
-        this.handleSubmit=this.handleSubmit.bind(this);
-        this.handleChange=this.handleChange.bind(this);
-        this.handleChange2=this.handleChange2.bind(this);
-        this.handleChange3=this.handleChange3.bind(this);
-        this.handleChange4=this.handleChange4.bind(this);
-        this.handleChange5=this.handleChange5.bind(this);
-        this.handleChange6=this.handleChange6.bind(this);
-        this.handleChange7=this.handleChange7.bind(this);
-        this.handleChange8=this.handleChange8.bind(this);
-        this.handleChange9=this.handleChange9.bind(this);
-        this.handleChange10=this.handleChange10.bind(this);
-        this.handleChange11=this.handleChange11.bind(this);
-        this.handleChange12=this.handleChange12.bind(this);
-        this.handleChange13=this.handleChange13.bind(this);
-        this.handleChange14=this.handleChange14.bind(this);
-        this.handleChange15=this.handleChange15.bind(this);
-        this.handleChange16=this.handleChange16.bind(this);
-        this.handleChange17=this.handleChange17.bind(this);
-        this.handleChange18=this.handleChange18.bind(this);
-        this.handleChange19=this.handleChange19.bind(this);
-        this.handleChange20=this.handleChange20.bind(this);
-        this.handleChange21=this.handleChange21.bind(this);
-        this.handleChange22=this.handleChange22.bind(this);
-        this.handleChange23=this.handleChange23.bind(this);
-        this.handleChange24=this.handleChange24.bind(this);
-        this.handleChange25=this.handleChange25.bind(this);
-        this.handleChange26=this.handleChange26.bind(this);
-        this.handleChange27=this.handleChange27.bind(this);
-        this.handleChange28=this.handleChange28.bind(this);
-        this.handleChange29=this.handleChange29.bind(this);
-        this.handleChange30=this.handleChange30.bind(this);
-        this.handleChange31=this.handleChange31.bind(this);
-        this.handleChange32=this.handleChange32.bind(this);
-        this.handleChange33=this.handleChange33.bind(this);
-        this.handleChange34=this.handleChange34.bind(this);
-        this.handleChange35=this.handleChange35.bind(this);
-        this.handleChange36=this.handleChange36.bind(this);
-        this.handleChange37=this.handleChange37.bind(this);
-        this.handleChange38=this.handleChange38.bind(this);
-        this.handleChange39=this.handleChange39.bind(this);
-        this.handleChange40=this.handleChange40.bind(this);
-        this.handleChange41=this.handleChange41.bind(this);
+        // So sloppy, i know -_- We really need consolidation.
+        this.rs_handleSubmit=this.rs_handleSubmit.bind(this);
+        this.rs_handleChange=this.rs_handleChange.bind(this);
+        this.rs_handleChange2=this.rs_handleChange2.bind(this);
+        this.rs_handleChange3=this.rs_handleChange3.bind(this);
+        this.rs_handleChange4=this.rs_handleChange4.bind(this);
+        this.rs_handleChange5=this.rs_handleChange5.bind(this);
+        this.rs_handleChange6=this.rs_handleChange6.bind(this);
+        this.rs_handleChange7=this.rs_handleChange7.bind(this);
+        this.rs_handleChange8=this.rs_handleChange8.bind(this);
+        this.rs_handleChange9=this.rs_handleChange9.bind(this);
+        this.rs_handleChange10=this.rs_handleChange10.bind(this);
+        this.rs_handleChange11=this.rs_handleChange11.bind(this);
+        this.rs_handleChange12=this.rs_handleChange12.bind(this);
+        this.rs_handleChange13=this.rs_handleChange13.bind(this);
+        this.rs_handleChange14=this.rs_handleChange14.bind(this);
+        this.rs_handleChange15=this.rs_handleChange15.bind(this);
+        this.rs_handleChange16=this.rs_handleChange16.bind(this);
+        this.rs_handleChange17=this.rs_handleChange17.bind(this);
+        this.rs_handleChange18=this.rs_handleChange18.bind(this);
+        this.rs_handleChange19=this.rs_handleChange19.bind(this);
+        this.rs_handleChange20=this.rs_handleChange20.bind(this);
+        this.rs_handleChange21=this.rs_handleChange21.bind(this);
+        this.rs_handleChange22=this.rs_handleChange22.bind(this);
+        this.rs_handleChange23=this.rs_handleChange23.bind(this);
+        this.rs_handleChange24=this.rs_handleChange24.bind(this);
+        this.rs_handleChange25=this.rs_handleChange25.bind(this);
+        this.rs_handleChange26=this.rs_handleChange26.bind(this);
+        this.rs_handleChange27=this.rs_handleChange27.bind(this);
+        this.rs_handleChange28=this.rs_handleChange28.bind(this);
+        this.rs_handleChange29=this.rs_handleChange29.bind(this);
+        this.rs_handleChange30=this.rs_handleChange30.bind(this);
+        this.rs_handleChange31=this.rs_handleChange31.bind(this);
+        this.rs_handleChange32=this.rs_handleChange32.bind(this);
+        this.rs_handleChange33=this.rs_handleChange33.bind(this);
+        this.rs_handleChange34=this.rs_handleChange34.bind(this);
+        this.rs_handleChange35=this.rs_handleChange35.bind(this);
+        this.rs_handleChange36=this.rs_handleChange36.bind(this);
+        this.rs_handleChange37=this.rs_handleChange37.bind(this);
+        this.rs_handleChange38=this.rs_handleChange38.bind(this);
+        this.rs_handleChange39=this.rs_handleChange39.bind(this);
+        this.rs_handleChange40=this.rs_handleChange40.bind(this);
+        this.rs_handleChange41=this.rs_handleChange41.bind(this);
 
     }
-    // So sloppy, i know -_-
-    handleChange(e) {this.setState({supplierRequest01a: !this.state.supplierRequest01a})}
-    handleChange2(e) {this.setState({supplierRequest01b: !this.state.supplierRequest01b})}
-    handleChange3(e) {this.setState({supplierRequest01c: !this.state.supplierRequest01c})}
-    handleChange4(e) {this.setState({supplierRequest01_notes: e.target.value})}
-    handleChange5(e) {this.setState({supplierRequest02_link: e.target.value})}
-    handleChange6(e) {this.setState({supplierRequest03a: !this.state.supplierRequest03a})}
-    handleChange7(e) {this.setState({supplierRequest03b: !this.state.supplierRequest03b})}
-    handleChange8(e) {this.setState({supplierRequest03c: !this.state.supplierRequest03c})}
-    handleChange9(e) {this.setState({supplierRequest03_notes: e.target.value})}
-    handleChange10(e) {this.setState({supplierRequest04a: !this.state.supplierRequest04a})}
-    handleChange11(e) {this.setState({supplierRequest04b: !this.state.supplierRequest04b})}
-    handleChange12(e) {this.setState({supplierRequest04c: !this.state.supplierRequest04c})}
-    handleChange13(e) {this.setState({supplierRequest04_notes: e.target.value})}
-    handleChange14(e) {this.setState({supplierRequest05a: !this.state.supplierRequest05a})}
-    handleChange15(e) {this.setState({supplierRequest05b: !this.state.supplierRequest05b})}
-    handleChange16(e) {this.setState({supplierRequest05c: !this.state.supplierRequest05c})}
-    handleChange17(e) {this.setState({supplierRequest05_notes: e.target.value})}
-    handleChange18(e) {this.setState({supplierRequest06a: !this.state.supplierRequest06a})}
-    handleChange19(e) {this.setState({supplierRequest06b: !this.state.supplierRequest06b})}
-    handleChange20(e) {this.setState({supplierRequest06c: !this.state.supplierRequest06c})}
-    handleChange21(e) {this.setState({supplierRequest06_notes: e.target.value})}
-    handleChange22(e) {this.setState({supplierRequest07a: !this.state.supplierRequest07a})}
-    handleChange23(e) {this.setState({supplierRequest07b: !this.state.supplierRequest07b})}
-    handleChange24(e) {this.setState({supplierRequest07c: !this.state.supplierRequest07c})}
-    handleChange25(e) {this.setState({supplierRequest07_notes: e.target.value})}
-    handleChange26(e) {this.setState({supplierRequest08a: !this.state.supplierRequest08a})}
-    handleChange27(e) {this.setState({supplierRequest08b: !this.state.supplierRequest08b})}
-    handleChange28(e) {this.setState({supplierRequest08c: !this.state.supplierRequest08c})}
-    handleChange29(e) {this.setState({supplierRequest08_notes: e.target.value})}
-    handleChange30(e) {this.setState({supplierRequest09a: !this.state.supplierRequest09a})}
-    handleChange31(e) {this.setState({supplierRequest09b: !this.state.supplierRequest09b})}
-    handleChange32(e) {this.setState({supplierRequest09c: !this.state.supplierRequest09c})}
-    handleChange33(e) {this.setState({supplierRequest09_notes: e.target.value})}
-    handleChange34(e) {this.setState({supplierRequest10a: !this.state.supplierRequest10a})}
-    handleChange35(e) {this.setState({supplierRequest10b: !this.state.supplierRequest10b})}
-    handleChange36(e) {this.setState({supplierRequest10c: !this.state.supplierRequest10c})}
-    handleChange37(e) {this.setState({supplierRequest10_notes: e.target.value})}
-    handleChange38(e) {this.setState({supplierRequest11a: !this.state.supplierRequest11a})}
-    handleChange39(e) {this.setState({supplierRequest11b: !this.state.supplierRequest11b})}
-    handleChange40(e) {this.setState({supplierRequest11c: !this.state.supplierRequest11c})}
-    handleChange41(e) {this.setState({supplierRequest11_notes: e.target.value})}
+    // So sloppy, i know -_- We really need consolidation.
+    rs_handleChange(e) {this.setState({supplierRequest01a: !this.state.supplierRequest01a})}
+    rs_handleChange2(e) {this.setState({supplierRequest01b: !this.state.supplierRequest01b})}
+    rs_handleChange3(e) {this.setState({supplierRequest01c: !this.state.supplierRequest01c})}
+    rs_handleChange4(e) {this.setState({supplierRequest01_notes: e.target.value})}
+    rs_handleChange5(e) {this.setState({supplierRequest02_link: e.target.value})}
+    rs_handleChange6(e) {this.setState({supplierRequest03a: !this.state.supplierRequest03a})}
+    rs_handleChange7(e) {this.setState({supplierRequest03b: !this.state.supplierRequest03b})}
+    rs_handleChange8(e) {this.setState({supplierRequest03c: !this.state.supplierRequest03c})}
+    rs_handleChange9(e) {this.setState({supplierRequest03_notes: e.target.value})}
+    rs_handleChange10(e) {this.setState({supplierRequest04a: !this.state.supplierRequest04a})}
+    rs_handleChange11(e) {this.setState({supplierRequest04b: !this.state.supplierRequest04b})}
+    rs_handleChange12(e) {this.setState({supplierRequest04c: !this.state.supplierRequest04c})}
+    rs_handleChange13(e) {this.setState({supplierRequest04_notes: e.target.value})}
+    rs_handleChange14(e) {this.setState({supplierRequest05a: !this.state.supplierRequest05a})}
+    rs_handleChange15(e) {this.setState({supplierRequest05b: !this.state.supplierRequest05b})}
+    rs_handleChange16(e) {this.setState({supplierRequest05c: !this.state.supplierRequest05c})}
+    rs_handleChange17(e) {this.setState({supplierRequest05_notes: e.target.value})}
+    rs_handleChange18(e) {this.setState({supplierRequest06a: !this.state.supplierRequest06a})}
+    rs_handleChange19(e) {this.setState({supplierRequest06b: !this.state.supplierRequest06b})}
+    rs_handleChange20(e) {this.setState({supplierRequest06c: !this.state.supplierRequest06c})}
+    rs_handleChange21(e) {this.setState({supplierRequest06_notes: e.target.value})}
+    rs_handleChange22(e) {this.setState({supplierRequest07a: !this.state.supplierRequest07a})}
+    rs_handleChange23(e) {this.setState({supplierRequest07b: !this.state.supplierRequest07b})}
+    rs_handleChange24(e) {this.setState({supplierRequest07c: !this.state.supplierRequest07c})}
+    rs_handleChange25(e) {this.setState({supplierRequest07_notes: e.target.value})}
+    rs_handleChange26(e) {this.setState({supplierRequest08a: !this.state.supplierRequest08a})}
+    rs_handleChange27(e) {this.setState({supplierRequest08b: !this.state.supplierRequest08b})}
+    rs_handleChange28(e) {this.setState({supplierRequest08c: !this.state.supplierRequest08c})}
+    rs_handleChange29(e) {this.setState({supplierRequest08_notes: e.target.value})}
+    rs_handleChange30(e) {this.setState({supplierRequest09a: !this.state.supplierRequest09a})}
+    rs_handleChange31(e) {this.setState({supplierRequest09b: !this.state.supplierRequest09b})}
+    rs_handleChange32(e) {this.setState({supplierRequest09c: !this.state.supplierRequest09c})}
+    rs_handleChange33(e) {this.setState({supplierRequest09_notes: e.target.value})}
+    rs_handleChange34(e) {this.setState({supplierRequest10a: !this.state.supplierRequest10a})}
+    rs_handleChange35(e) {this.setState({supplierRequest10b: !this.state.supplierRequest10b})}
+    rs_handleChange36(e) {this.setState({supplierRequest10c: !this.state.supplierRequest10c})}
+    rs_handleChange37(e) {this.setState({supplierRequest10_notes: e.target.value})}
+    rs_handleChange38(e) {this.setState({supplierRequest11a: !this.state.supplierRequest11a})}
+    rs_handleChange39(e) {this.setState({supplierRequest11b: !this.state.supplierRequest11b})}
+    rs_handleChange40(e) {this.setState({supplierRequest11c: !this.state.supplierRequest11c})}
+    rs_handleChange41(e) {this.setState({supplierRequest11_notes: e.target.value})}
 
 
 
-    handleSubmit(e) {  
+    rs_handleSubmit(e) {  
         e.preventDefault(); 
                 let a01 = this.state.supplierRequest01a
                 let a02 = this.state.supplierRequest01b
@@ -237,7 +237,7 @@ class RequestFromSupplier extends Component {
   render() {
     return (
       <div>
-           <form onSubmit={this.handleSubmit}>
+           <form onSubmit={this.rs_handleSubmit}>
        <Grid>
         <Row>
             <Col xs={3} md={3}><b>Item</b></Col>

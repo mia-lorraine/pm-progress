@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
-
+import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon, Button } from 'react-bootstrap';
+import axios from 'axios';
 
 class ProvideToSupplier extends Component {
   constructor(props){
@@ -8,7 +8,6 @@ class ProvideToSupplier extends Component {
       this.state = {
           supplierProvide01a: this.props.progress.p_provideToSupplier01a,
           supplierProvide01b: this.props.progress.p_provideToSupplier01b,
-          supplierProvide01c: this.props.progress.p_provideToSupplier01c,
           supplierProvide01_notes: this.props.progress.p_provideToSupplier01_notes,
           supplierProvide02a: this.props.progress.p_provideToSupplier02a,
           supplierProvide02b: this.props.progress.p_provideToSupplier02b,
@@ -39,43 +38,34 @@ class ProvideToSupplier extends Component {
           supplierProvide08c: this.props.progress.p_provideToSupplier08c,
           supplierProvide08_notes: this.props.progress.p_provideToSupplier08_notes
       }
-      this.handleSubmit=this.handleSubmit.bind(this);
-        this.handleChange=this.handleChange.bind(this);
-        this.handleChange2=this.handleChange2.bind(this);
-        this.handleChange3=this.handleChange3.bind(this);
-        this.handleChange4=this.handleChange4.bind(this);
-        this.handleChange5=this.handleChange5.bind(this);
-        this.handleChange6=this.handleChange6.bind(this);
-        this.handleChange7=this.handleChange7.bind(this);
-        this.handleChange8=this.handleChange8.bind(this);
-        this.handleChange9=this.handleChange9.bind(this);
-        this.handleChange10=this.handleChange10.bind(this);
-        this.handleChange11=this.handleChange11.bind(this);
-        this.handleChange12=this.handleChange12.bind(this);
-        this.handleChange13=this.handleChange13.bind(this);
-        this.handleChange14=this.handleChange14.bind(this);
-        this.handleChange15=this.handleChange15.bind(this);
-        this.handleChange16=this.handleChange16.bind(this);
-        this.handleChange17=this.handleChange17.bind(this);
-        this.handleChange18=this.handleChange18.bind(this);
-        this.handleChange19=this.handleChange19.bind(this);
-        this.handleChange20=this.handleChange20.bind(this);
-        this.handleChange21=this.handleChange21.bind(this);
-        this.handleChange22=this.handleChange22.bind(this);
-        this.handleChange23=this.handleChange23.bind(this);
-        this.handleChange24=this.handleChange24.bind(this);
-        this.handleChange25=this.handleChange25.bind(this);
-        this.handleChange26=this.handleChange26.bind(this);
-        this.handleChange27=this.handleChange27.bind(this);
-        this.handleChange28=this.handleChange28.bind(this);
-        this.handleChange29=this.handleChange29.bind(this);
-        this.handleChange30=this.handleChange30.bind(this);
-        this.handleChange31=this.handleChange31.bind(this);
-        this.handleChange32=this.handleChange32.bind(this);
+        this.ps_handleSubmit=this.ps_handleSubmit.bind(this);
+        this.ps_handleChange=this.ps_handleChange.bind(this);
+        this.ps_handleChange2=this.ps_handleChange2.bind(this);
+        this.ps_handleChange3=this.ps_handleChange3.bind(this);
     }
+    ps_handleChange(e) {this.setState({supplierProvide01a: !this.state.supplierProvide01a})}
+    ps_handleChange2(e) {this.setState({supplierProvide01b: !this.state.supplierProvide01b})}
+    ps_handleChange3(e) {this.setState({supplierProvide01_notes: e.target.value})}
+    
+    ps_handleSubmit(e) {  
+      e.preventDefault(); 
+              let b01 = this.state.supplierProvide01a
+              let b02 = this.state.supplierProvide01b
+              let b03 = this.state.supplierProvide01_notes
+              axios.patch(`http://localhost:3001/projects/${this.props.progress.id}`, {
+                p_provideToSupplier01a: b01,
+                p_provideToSupplier01b: b02,
+                p_provideToSupplier01_notes: b03
+              })
+              .then(response => {
+                console.log(response.data);
+              });
+              b01 = b02 = b03 = ''
+            }
   render() {
     return (
       <div>
+        <form onSubmit={this.ps_handleSubmit}>
         <Grid>
           <Row>
             <Col xs={3} md={3}><b>Item</b></Col>
@@ -87,18 +77,29 @@ class ProvideToSupplier extends Component {
           <Row>
             <Col xs={3} md={3}>Result of product evaluation</Col>
             <Col xs={2} md={2}>
-              <Checkbox></Checkbox> 
+              <Checkbox 
+                    onChange={this.ps_handleChange} 
+                    checked={this.state.supplierProvide01a}>
+              </Checkbox>
             </Col>
             <Col xs={2} md={2}>
-              <Checkbox></Checkbox>
+            <Checkbox 
+                    onChange={this.ps_handleChange2} 
+                    checked={this.state.supplierProvide01b}>
+              </Checkbox>
             </Col>
             <Col xs={2} md={2}>
               <p>N/A</p>
             </Col>
             <Col xs={3} md={3}>
-              <FormGroup controlId="formControlsTextarea">
-                <FormControl componentClass="textarea" placeholder="Enter your notes here" />
-              </FormGroup>
+                <FormGroup controlId="formControlsTextarea01">
+                    <FormControl 
+                    onChange={this.ps_handleChange3}
+                    value={this.state.supplierProvide01_notes}
+                    componentClass="textarea" 
+                    placeholder="Enter your notes here" 
+                    />
+                </FormGroup>
             </Col>
           </Row>
           <Row>
@@ -220,7 +221,13 @@ class ProvideToSupplier extends Component {
               </FormGroup>
             </Col>
           </Row>
+          <Row>
+            <Col xs={6} mdOffset={5}>
+                <Button bsStyle="info" type= "submit" value ="Submit">Save Changes</Button>
+            </Col> 
+        </Row>
         </Grid>
+        </form>
       </div>
     );
   }
