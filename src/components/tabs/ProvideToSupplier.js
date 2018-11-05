@@ -83,7 +83,7 @@ class ProvideToSupplier extends Component {
               </Checkbox>
             </Col>
             <Col xs={2} md={2}>
-            <Checkbox 
+              <Checkbox 
                     onChange={this.ps_handleChange2} 
                     checked={this.state.supplierProvide01b}>
               </Checkbox>
@@ -105,10 +105,16 @@ class ProvideToSupplier extends Component {
           <Row>
             <Col xs={3} md={3}>Required functional improvements or modifications if any (specifications, features)</Col>
             <Col xs={2} md={2}>
-              <Checkbox></Checkbox> 
+              <Checkbox 
+                    onChange={this.ps_handleChange4} 
+                    checked={this.state.supplierProvide02a}>
+              </Checkbox>
             </Col>
             <Col xs={2} md={2}>
-              <Checkbox></Checkbox>
+              <Checkbox 
+                    onChange={this.ps_handleChange5} 
+                    checked={this.state.supplierProvide02b}>
+              </Checkbox>
             </Col>
             <Col xs={2} md={2}>
               <Checkbox><Glyphicon glyph="exclamation-sign" /></Checkbox>
@@ -126,7 +132,7 @@ class ProvideToSupplier extends Component {
             </Col>
             <Col xs={2} md={2}>
               <Checkbox></Checkbox>
-            </Col>
+            </Col> p
             <Col xs={2} md={2}>
               <p>N/A</p>
             </Col>
