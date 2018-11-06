@@ -280,7 +280,14 @@
       "p_tooling04_link": "M:/Some Folder Link/Folder here",
       "p_tooling05a": true,
       "p_tooling05_review": "Ahmad",
-      "p_tooling06_notes": "These are some notes here."
+      "p_tooling06_notes": "These are some notes here.",
+      "pricing01a": true,
+      "pricing01_review": "Reviewer A",
+      "pricing01_link": "Files URL here",
+      "pricing01_notes": "Notes here",
+      "pricing02a": true,
+      "pricing02_review": "Reviewer B",
+      "pricing03a": true
     }
   ],
   "completed": [
