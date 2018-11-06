@@ -89,8 +89,8 @@ class ProvideToSupplier extends Component {
     ps_handleChange24(e) {this.setState({supplierProvide07_notes: e.target.value})}
     ps_handleChange25(e) {this.setState({supplierProvide08a: !this.state.supplierProvide08a})}
     ps_handleChange26(e) {this.setState({supplierProvide08b: !this.state.supplierProvide08b})}
-    ps_handleChange27(e) {this.setState({supplierProvide08_notes: e.target.value})}
-
+    ps_handleChange27(e) {this.setState({supplierProvide08_notes: e.target.value})
+    }
     ps_handleSubmit(e) {  
       e.preventDefault(); 
               let b01 = this.state.supplierProvide01a

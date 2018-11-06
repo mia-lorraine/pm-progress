@@ -74,7 +74,8 @@ class Documentation extends Component {
     do_handleChange19(e) {this.setState({documentation02h: !this.state.documentation02h})}
     do_handleChange20(e) {this.setState({documentation02i: !this.state.documentation02i})}
     do_handleChange21(e) {this.setState({documentation02_link: e.target.value})}
-    do_handleChange22(e) {this.setState({documentation02_notes: e.target.value})}
+    do_handleChange22(e) {this.setState({documentation02_notes: e.target.value})
+    }
     do_handleSubmit(e) {  
       e.preventDefault(); 
               let c01 = this.state.documentation01a

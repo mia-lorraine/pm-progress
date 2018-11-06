@@ -91,7 +91,6 @@ class RequestFromSupplier extends Component {
         this.rs_handleChange39=this.rs_handleChange39.bind(this);
         this.rs_handleChange40=this.rs_handleChange40.bind(this);
         this.rs_handleChange41=this.rs_handleChange41.bind(this);
-
     }
     // So sloppy, i know -_- We really need consolidation.
     rs_handleChange(e) {this.setState({supplierRequest01a: !this.state.supplierRequest01a})}
@@ -134,10 +133,8 @@ class RequestFromSupplier extends Component {
     rs_handleChange38(e) {this.setState({supplierRequest11a: !this.state.supplierRequest11a})}
     rs_handleChange39(e) {this.setState({supplierRequest11b: !this.state.supplierRequest11b})}
     rs_handleChange40(e) {this.setState({supplierRequest11c: !this.state.supplierRequest11c})}
-    rs_handleChange41(e) {this.setState({supplierRequest11_notes: e.target.value})}
-
-
-
+    rs_handleChange41(e) {this.setState({supplierRequest11_notes: e.target.value})
+    }
     rs_handleSubmit(e) {  
         e.preventDefault(); 
                 let a01 = this.state.supplierRequest01a
