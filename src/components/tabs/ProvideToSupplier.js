@@ -409,7 +409,7 @@ class ProvideToSupplier extends Component {
             <Col xs={6} mdOffset={5}>
                 <Button bsStyle="info" type= "submit" value ="Submit">Save Changes</Button>
             </Col> 
-        </Row>
+          </Row>
         </Grid>
         </form>
       </div>
