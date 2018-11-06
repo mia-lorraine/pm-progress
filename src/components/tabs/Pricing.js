@@ -41,13 +41,13 @@ class Pricing extends Component {
                 let e06 = this.state.pricing02_review
                 let e07 = this.state.pricing03a
                 axios.patch(`http://localhost:3001/projects/${this.props.progress.id}`, {
-                    pricing01a: e01,    
-                    pricing01_review: e02,
-                    pricing01_link: e03,
-                    pricing01_notes: e04,
-                    pricing02a: e05,
-                    pricing02_review: e06,
-                    pricing03a: e07
+                    p_pricing01a: e01,    
+                    p_pricing01_review: e02,
+                    p_pricing01_link: e03,
+                    p_pricing01_notes: e04,
+                    p_pricing02a: e05,
+                    p_pricing02_review: e06,
+                    p_pricing03a: e07
                 })
                 .then(response => {
                   console.log(response.data);
