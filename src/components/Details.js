@@ -7,6 +7,8 @@ import Documentation from '../components/tabs/Documentation';
 import Tooling from '../components/tabs/Tooling';
 import Pricing from '../components/tabs/Pricing';
 import Promotion from '../components/tabs/Promotion';
+import SaveButton from '../components/tabs/SaveButton';
+
 
 let backdropStyle = {
   position: 'fixed',
@@ -81,7 +83,7 @@ class Details extends React.Component {
                   <Col xs={2} md={2}><b>Project Name:</b></Col>
                   <Col xs={2} md={2}>{project.name}</Col>
                   <Col xs={2} xsOffset={4} md={2} mdOffset={4}>
-                    <Button bsStyle="primary">Save Changes</Button>
+                    <SaveButton bsStyle="complete" progress = {project}>Save Changes</SaveButton>
                   </Col>
                   <Col xs={2} md={2}>
                     <Button bsStyle="success" onClick = {(e) => {
