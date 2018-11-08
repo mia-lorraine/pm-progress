@@ -68,7 +68,8 @@ class Details extends React.Component {
     window.location.reload() //insert page reload
   }
   render() {
-    let project = this.props.data;
+    let project = this.props.data
+    let tabName = "Request From Supplier"
     if (!this.props.show) {
       return null;
     }
@@ -118,7 +119,7 @@ class Details extends React.Component {
                 <Grid>
                   <Tabs defaultActiveKey={1} animation={false} id="project-details">
                     <Tab eventKey={1} title="Request from Supplier" style={tabWrapStyle}>
-                      <RequestFromSupplier progress={project}/>
+                      <RequestFromSupplier title={tabName} progress={project}/>
                     </Tab>
                     <Tab eventKey={2} title="Provide to Supplier" style={tabWrapStyle}>
                       <ProvideToSupplier progress={project}/>

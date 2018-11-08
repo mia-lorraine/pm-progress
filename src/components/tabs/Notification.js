@@ -1,17 +1,19 @@
-import React, { Component } from 'react';
-// import {Alert} from 'react-bootstrap';
+import React from 'react';
+import { Alert } from 'react-bootstrap';
 
-class AlertMe extends Component {
-    render(){
-        return(
-            <div>
-               <div class="alert alert-success" role="alert">
-                 This is a success alert—check it out!
-                </div>
-            </div>
-        );
-    }
+let saveChangesAlert = {
+    position: 'fixed',
+    bottom: 0,
+    right: 50
 }
 
+const AlertMe = () => {
+  return (
+        <Alert style={saveChangesAlert} bsStyle="success">
+            <strong>Changes Saved!</strong><br />
+            Your progress for has been saved.
+        </Alert>
+  )
+}
 
 export default AlertMe;

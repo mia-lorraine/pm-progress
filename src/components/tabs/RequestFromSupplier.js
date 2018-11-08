@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon, Button, Alert} from 'react-bootstrap';
+import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon, Button } from 'react-bootstrap';
 import axios from 'axios';
 import AlertMe from './Notification';
 
@@ -47,7 +47,8 @@ class RequestFromSupplier extends Component {
             supplierRequest11a: this.props.progress.p_requestFromSupplier11a,
             supplierRequest11b: this.props.progress.p_requestFromSupplier11b,
             supplierRequest11c: this.props.progress.p_requestFromSupplier11c,
-            supplierRequest11_notes: this.props.progress.p_requestFromSupplier11_notes
+            supplierRequest11_notes: this.props.progress.p_requestFromSupplier11_notes,
+            showAlert: false
         }
         // So sloppy, i know -_- We really need consolidation.
         this.rs_handleSubmit=this.rs_handleSubmit.bind(this);
@@ -135,8 +136,9 @@ class RequestFromSupplier extends Component {
     rs_handleChange38(e) {this.setState({supplierRequest11a: !this.state.supplierRequest11a})}
     rs_handleChange39(e) {this.setState({supplierRequest11b: !this.state.supplierRequest11b})}
     rs_handleChange40(e) {this.setState({supplierRequest11c: !this.state.supplierRequest11c})}
-    rs_handleChange41(e) {this.setState({supplierRequest11_notes: e.target.value})
-    }
+    rs_handleChange41(e) {this.setState({supplierRequest11_notes: e.target.value})}
+
+
     rs_handleSubmit(e) {  
         e.preventDefault();
                 let a01 = this.state.supplierRequest01a
@@ -232,9 +234,17 @@ class RequestFromSupplier extends Component {
               a21 = a22 = a23 = a24 = a25 = a26 = a27 = a28 = a29 = a30 =
               a31 = a32 = a33 = a34 = a35 = a36 = a37 = a38 = a39 = a40 =
               a41 = '';
-            }
+            
+              // Callback function for Save changes
+              const showSaveAlert = () => {
+                  this.setState({showAlert: !this.state.showAlert});
+              }
+              showSaveAlert();
+              setTimeout(showSaveAlert, 4000)
+   }
 
   render() {
+  
     return (
       <div>
            <form onSubmit={this.rs_handleSubmit}> 
@@ -547,6 +557,7 @@ class RequestFromSupplier extends Component {
                 </FormGroup>
             </Col>
         </Row>
+            
         <Row>
             <Col xs={3} md={3}>Service and calibration information, service strategy (e.g. board level or component level repair, does supplier provide spare parts</Col>
             <Col xs={2} md={2}>
@@ -582,10 +593,10 @@ class RequestFromSupplier extends Component {
         <Row>
             <Col xs={6} mdOffset={5}>
                 <Button bsStyle="info" type= "submit" value ="Submit">Save Changes</Button>
-                { <Button onChange = {this.alertMe} /> ? <AlertMe/> : '' }
             </Col> 
         </Row>
        </Grid> 
+        {this.state.showAlert ? <AlertMe /> : '' }
        </form>
       </div>
     )
