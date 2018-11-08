@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon, Button} from 'react-bootstrap';
+import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon, Button, Alert} from 'react-bootstrap';
 import axios from 'axios';
+import AlertMe from './Notification';
 
 class RequestFromSupplier extends Component {
     constructor(props){
@@ -91,6 +92,7 @@ class RequestFromSupplier extends Component {
         this.rs_handleChange39=this.rs_handleChange39.bind(this);
         this.rs_handleChange40=this.rs_handleChange40.bind(this);
         this.rs_handleChange41=this.rs_handleChange41.bind(this);
+        // this.alertMe=this.alertMe.bind(this);
     }
     // So sloppy, i know -_- We really need consolidation.
     rs_handleChange(e) {this.setState({supplierRequest01a: !this.state.supplierRequest01a})}
@@ -136,7 +138,7 @@ class RequestFromSupplier extends Component {
     rs_handleChange41(e) {this.setState({supplierRequest11_notes: e.target.value})
     }
     rs_handleSubmit(e) {  
-        e.preventDefault(); 
+        e.preventDefault();
                 let a01 = this.state.supplierRequest01a
                 let a02 = this.state.supplierRequest01b
                 let a03 = this.state.supplierRequest01c
@@ -229,12 +231,13 @@ class RequestFromSupplier extends Component {
               a11 = a12 = a13 = a14 = a15 = a16 = a17 = a18 = a19 = a20 =
               a21 = a22 = a23 = a24 = a25 = a26 = a27 = a28 = a29 = a30 =
               a31 = a32 = a33 = a34 = a35 = a36 = a37 = a38 = a39 = a40 =
-              a41 = ''
+              a41 = '';
             }
+
   render() {
     return (
       <div>
-           <form onSubmit={this.rs_handleSubmit}>
+           <form onSubmit={this.rs_handleSubmit}> 
        <Grid>
         <Row>
             <Col xs={3} md={3}><b>Item</b></Col>
@@ -579,6 +582,7 @@ class RequestFromSupplier extends Component {
         <Row>
             <Col xs={6} mdOffset={5}>
                 <Button bsStyle="info" type= "submit" value ="Submit">Save Changes</Button>
+                { <Button onChange = {this.alertMe} /> ? <AlertMe/> : '' }
             </Col> 
         </Row>
        </Grid> 
