@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Grid, Row, Col, Checkbox, FormGroup, FormControl } from 'react-bootstrap';
 import axios from 'axios';
+import SavedChanges from './SavedChanges';
 
 class Tooling extends Component {
     constructor(props) {
@@ -17,7 +18,8 @@ class Tooling extends Component {
             tooling04_link: this.props.progress.p_tooling04_link,
             tooling05a: this.props.progress.p_tooling05a,
             tooling05_review: this.props.progress.p_tooling05_review,
-            tooling06_notes: this.props.progress.p_tooling06_notes
+            tooling06_notes: this.props.progress.p_tooling06_notes,
+            showAlert: false
         }
         this.to_handleSubmit=this.to_handleSubmit.bind(this);
         this.to_handleChange=this.to_handleChange.bind(this);
@@ -78,6 +80,12 @@ class Tooling extends Component {
                   console.log(response.data);
                 });
                 d01 = d02 = d03 = d04 = d05 = d06 = d07 = d08 = d09 = d10 = d11 = d12 = ''
+                 // Callback for Save Changes
+                let showSaveAlert = () => {
+                this.setState({showAlert: !this.state.showAlert});
+                }
+                showSaveAlert();
+                setTimeout(showSaveAlert, 4000)
               }
     render() {
     return (
@@ -212,6 +220,7 @@ class Tooling extends Component {
             </Col> 
             </Row>
           </Grid>
+          {this.state.showAlert ? <SavedChanges /> : '' }
           </form>
       </div>
     )

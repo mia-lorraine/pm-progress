@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon, Button } from 'react-bootstrap';
 import axios from 'axios';
+import SavedChanges from './SavedChanges';
 
 class ProvideToSupplier extends Component {
   constructor(props){
@@ -32,7 +33,8 @@ class ProvideToSupplier extends Component {
           supplierProvide07_notes: this.props.progress.p_provideToSupplier07_notes,
           supplierProvide08a: this.props.progress.p_provideToSupplier08a,
           supplierProvide08b: this.props.progress.p_provideToSupplier08b,
-          supplierProvide08_notes: this.props.progress.p_provideToSupplier08_notes
+          supplierProvide08_notes: this.props.progress.p_provideToSupplier08_notes,
+          showAlert: false
       }
         this.ps_handleSubmit=this.ps_handleSubmit.bind(this);
         this.ps_handleChange=this.ps_handleChange.bind(this);
@@ -155,7 +157,14 @@ class ProvideToSupplier extends Component {
               });
               b01 = b02 = b03 = b04 = b05 = b06 = b07 = b08 = b09 = b10 = b11 = b12 = b13 = b14 = 
               b15 = b16 = b17 = b18 = b19 = b20 = b21 = b22 = b23 = b24 = b25 = b26 = b27 = ''
-            }
+
+              // Callback for Save Changes
+              let showSaveAlert = () => {
+              this.setState({showAlert: !this.state.showAlert});
+              }
+              showSaveAlert();
+              setTimeout(showSaveAlert, 4000)
+              }
   render() {
     return (
       <div>
@@ -411,6 +420,7 @@ class ProvideToSupplier extends Component {
             </Col> 
           </Row>
         </Grid>
+        {this.state.showAlert ? <SavedChanges /> : '' }
         </form>
       </div>
     );

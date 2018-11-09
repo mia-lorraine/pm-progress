@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Grid, Row, Col, Checkbox, FormGroup, FormControl } from 'react-bootstrap';
 import axios from 'axios';
+import SavedChanges from './SavedChanges';
 
 class Documentation extends Component {
   constructor(props) {
@@ -27,7 +28,8 @@ class Documentation extends Component {
       documentation02h: this.props.progress.p_documentation02h,
       documentation02i: this.props.progress.p_documentation02i,
       documentation02_link: this.props.progress.p_documentation02_link,
-      documentation02_notes: this.props.progress.p_documentation02_notes
+      documentation02_notes: this.props.progress.p_documentation02_notes,
+      showAlert: false
     }
     this.do_handleSubmit=this.do_handleSubmit.bind(this);
     this.do_handleChange=this.do_handleChange.bind(this);
@@ -129,7 +131,15 @@ class Documentation extends Component {
               });
               c01 = c02 = c03 = c04 = c05 = c06 = c07 = c08 = c09 = c10 = c11 = c12 = c13 = c14 = 
               c15 = c16 = c17 = c18 = c19 = c20 = c21 = c22 = ''
-            }
+
+              // Callback for Save Changes
+              let showSaveAlert = () => {
+              this.setState({showAlert: !this.state.showAlert});
+              }
+              showSaveAlert();
+              setTimeout(showSaveAlert, 4000)
+              }
+          
   render() {
     return (
       <div>
@@ -282,6 +292,7 @@ class Documentation extends Component {
             </Col> 
           </Row>
         </Grid>
+        {this.state.showAlert ? <SavedChanges /> : '' }
         </form>
       </div>
     );

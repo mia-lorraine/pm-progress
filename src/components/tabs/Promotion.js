@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
 import axios from 'axios';
+import SavedChanges from './SavedChanges';
 
 class Promotion extends Component {
   constructor(props) {
@@ -22,7 +23,8 @@ class Promotion extends Component {
       promotion07a: this.props.progress.p_promotion07a,
       promotion07_review: this.props.progress.p_promotion07_review,
       promotion07b: this.props.progress.p_promotion07b,
-      promotion08_notes: this.props.progress.p_promotion08_notes
+      promotion08_notes: this.props.progress.p_promotion08_notes,
+      showAlert: false
     }
     this.po_handleSubmit=this.po_handleSubmit.bind(this);
     this.po_handleChange=this.po_handleChange.bind(this);
@@ -103,6 +105,13 @@ class Promotion extends Component {
         console.log(response.data);
       });
       f01 = f02 = f03 = f04 = f05 = f06 = f07 = f08 = f09 = f10 = f11 = f12 = f13 = f14 = f15 = f16 = f17 = ''
+
+      // Callback for Save Changes
+      let showSaveAlert = () => {
+      this.setState({showAlert: !this.state.showAlert});
+      }
+      showSaveAlert();
+      setTimeout(showSaveAlert, 4000)
     }
   render() {
     return (
@@ -144,7 +153,7 @@ class Promotion extends Component {
             </Col>
             <Col xs={2} xsOffset={2} md={2} mdOffset={2}>
                 <Checkbox
-                    onChange={this.pr_handleChange4} 
+                    onChange={this.po_handleChange4} 
                     checked={this.state.pricing02b}>
                     Approved by David?
                     <Glyphicon glyph="exclamation-sign" />
@@ -174,7 +183,7 @@ class Promotion extends Component {
             <Col xs={3} md={3}>Live on website</Col>
             <Col xs={2} md={2}>
                 <Checkbox
-                    onChange={this.pr_handleChange7} 
+                    onChange={this.po_handleChange7} 
                     checked={this.state.pricing04a}>
                     <Glyphicon glyph="exclamation-sign" />
                 </Checkbox>
@@ -277,6 +286,7 @@ class Promotion extends Component {
                 <Button bsStyle="info" type= "submit" value ="Submit">Save Changes</Button>
             </Col> 
           </Row>
+          {this.state.showAlert ? <SavedChanges /> : '' }
         </form>
       </div>
     );

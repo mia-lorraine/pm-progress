@@ -232,9 +232,8 @@ class RequestFromSupplier extends Component {
               a21 = a22 = a23 = a24 = a25 = a26 = a27 = a28 = a29 = a30 =
               a31 = a32 = a33 = a34 = a35 = a36 = a37 = a38 = a39 = a40 =
               a41 = '';
-            
               // Callback for Save Changes
-              const showSaveAlert = () => {
+              let showSaveAlert = () => {
                   this.setState({showAlert: !this.state.showAlert});
               }
               showSaveAlert();
@@ -436,7 +435,7 @@ class RequestFromSupplier extends Component {
             <Col xs={2} md={2}>
                 <Checkbox 
                     onChange={this.rs_handleChange23} 
-                    checked={this.state.supplierRequest07a}>
+                    checked={this.state.supplierRequest07b}>
                 </Checkbox>  
             </Col>
             <Col xs={2} md={2}>

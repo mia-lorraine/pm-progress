@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
 import axios from 'axios';
+import SavedChanges from './SavedChanges';
 
 class Pricing extends Component {
     constructor(props) {
@@ -12,7 +13,8 @@ class Pricing extends Component {
             pricing01_notes: this.props.progress.p_pricing01_notes,
             pricing02a: this.props.progress.p_pricing02a,
             pricing02_review: this.props.progress.p_pricing02_review,
-            pricing03a: this.props.progress.p_pricing03a
+            pricing03a: this.props.progress.p_pricing03a,
+            showAlert: false
         }
         this.pr_handleSubmit=this.pr_handleSubmit.bind(this);
         this.pr_handleChange=this.pr_handleChange.bind(this);
@@ -53,6 +55,12 @@ class Pricing extends Component {
                   console.log(response.data);
                 });
                 e01 = e02 = e03 = e04 = e05 = e06 = e07 = ''
+                // Callback for Save Changes
+                let showSaveAlert = () => {
+                this.setState({showAlert: !this.state.showAlert});
+                }
+                showSaveAlert();
+                setTimeout(showSaveAlert, 4000)
               }
     render() {
     return (
@@ -145,6 +153,7 @@ class Pricing extends Component {
             </Col> 
             </Row>
         </Grid>
+        {this.state.showAlert ? <SavedChanges /> : '' }
         </form>
       </div>
     )
