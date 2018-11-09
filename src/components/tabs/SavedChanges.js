@@ -1,19 +1,19 @@
 import React from 'react';
 import { Alert } from 'react-bootstrap';
 
-let saveChangesAlert = {
+let saveChangesAlertPosition = {
     position: 'fixed',
     bottom: 0,
     right: 50
 }
 
-const AlertMe = () => {
+const SavedChanges = () => {
   return (
-        <Alert style={saveChangesAlert} bsStyle="success">
+        <Alert style={saveChangesAlertPosition} bsStyle="success">
             <strong>Changes Saved!</strong><br />
             Your progress for has been saved.
         </Alert>
   )
 }
 
-export default AlertMe;
+export default SavedChanges;

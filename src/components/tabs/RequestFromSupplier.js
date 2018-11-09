@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon, Button } from 'react-bootstrap';
 import axios from 'axios';
-import AlertMe from './Notification';
+import SavedChanges from './SavedChanges';
 
 class RequestFromSupplier extends Component {
     constructor(props){
@@ -93,7 +93,6 @@ class RequestFromSupplier extends Component {
         this.rs_handleChange39=this.rs_handleChange39.bind(this);
         this.rs_handleChange40=this.rs_handleChange40.bind(this);
         this.rs_handleChange41=this.rs_handleChange41.bind(this);
-        // this.alertMe=this.alertMe.bind(this);
     }
     // So sloppy, i know -_- We really need consolidation.
     rs_handleChange(e) {this.setState({supplierRequest01a: !this.state.supplierRequest01a})}
@@ -137,7 +136,6 @@ class RequestFromSupplier extends Component {
     rs_handleChange39(e) {this.setState({supplierRequest11b: !this.state.supplierRequest11b})}
     rs_handleChange40(e) {this.setState({supplierRequest11c: !this.state.supplierRequest11c})}
     rs_handleChange41(e) {this.setState({supplierRequest11_notes: e.target.value})}
-
 
     rs_handleSubmit(e) {  
         e.preventDefault();
@@ -235,16 +233,14 @@ class RequestFromSupplier extends Component {
               a31 = a32 = a33 = a34 = a35 = a36 = a37 = a38 = a39 = a40 =
               a41 = '';
             
-              // Callback function for Save changes
+              // Callback for Save Changes
               const showSaveAlert = () => {
                   this.setState({showAlert: !this.state.showAlert});
               }
               showSaveAlert();
               setTimeout(showSaveAlert, 4000)
    }
-
   render() {
-  
     return (
       <div>
            <form onSubmit={this.rs_handleSubmit}> 
@@ -260,19 +256,19 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>Samples(s) including any software</Col>
             <Col xs={2} md={2}>   
                 <Checkbox 
-                    onChange={this.handleChange} 
+                    onChange={this.rs_handleChange} 
                     checked={this.state.supplierRequest01a}>
                 </Checkbox>
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange2} 
+                    onChange={this.rs_handleChange2} 
                     checked={this.state.supplierRequest01b}>
                 </Checkbox>
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox
-                    onChange={this.handleChange3} 
+                    onChange={this.rs_handleChange3} 
                     checked={this.state.supplierRequest01c}>
                     <Glyphicon glyph="exclamation-sign" />
                 </Checkbox>
@@ -280,7 +276,7 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>
                 <FormGroup controlId="formControlsTextarea01">
                     <FormControl 
-                    onChange={this.handleChange4}
+                    onChange={this.rs_handleChange4}
                     value={this.state.supplierRequest01_notes}
                     componentClass="textarea" 
                     placeholder="Enter your notes here" 
@@ -293,7 +289,7 @@ class RequestFromSupplier extends Component {
             <Col xs={9} md={9}>
                 <FormGroup controlId="formControlsTextarea02">
                     <FormControl 
-                    onChange={this.handleChange5}
+                    onChange={this.rs_handleChange5}
                     value={this.state.supplierRequest02_link}
                     type="text" 
                     placeholder="Eval Results Report link here" 
@@ -305,19 +301,19 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>First Articles</Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange6} 
+                    onChange={this.rs_handleChange6} 
                     checked={this.state.supplierRequest03a}>
                 </Checkbox>
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange7} 
+                    onChange={this.rs_handleChange7} 
                     checked={this.state.supplierRequest03b}>
                 </Checkbox>
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox
-                    onChange={this.handleChange8} 
+                    onChange={this.rs_handleChange8} 
                     checked={this.state.supplierRequest03c}>
                     <Glyphicon glyph="exclamation-sign" />
                 </Checkbox>
@@ -325,7 +321,7 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>
                 <FormGroup controlId="formControlsTextarea03">
                     <FormControl 
-                    onChange={this.handleChange9}
+                    onChange={this.rs_handleChange9}
                     value={this.state.supplierRequest03_notes}
                     componentClass="textarea" 
                     placeholder="Enter your notes here" 
@@ -337,19 +333,19 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>Pricing (our cost) for instrument and included accessories</Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange10} 
+                    onChange={this.rs_handleChange10} 
                     checked={this.state.supplierRequest04a}>
                 </Checkbox> 
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange11} 
+                    onChange={this.rs_handleChange11} 
                     checked={this.state.supplierRequest04b}>
                 </Checkbox>
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox
-                    onChange={this.handleChange12} 
+                    onChange={this.rs_handleChange12} 
                     checked={this.state.supplierRequest04c}>
                     <Glyphicon glyph="exclamation-sign" />
                 </Checkbox>
@@ -357,7 +353,7 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>
                 <FormGroup controlId="formControlsTextarea04">
                     <FormControl 
-                    onChange={this.handleChange13}
+                    onChange={this.rs_handleChange13}
                     value={this.state.supplierRequest04_notes}
                     componentClass="textarea" 
                     placeholder="Enter your notes here" 
@@ -369,19 +365,19 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>Terms and conditions (MOQ, payment terms, prepayment of some components)</Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange14} 
+                    onChange={this.rs_handleChange14} 
                     checked={this.state.supplierRequest05a}>
                 </Checkbox> 
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange15} 
+                    onChange={this.rs_handleChange15} 
                     checked={this.state.supplierRequest05b}>
                 </Checkbox>
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox
-                    onChange={this.handleChange16} 
+                    onChange={this.rs_handleChange16} 
                     checked={this.state.supplierRequest05c}>
                     <Glyphicon glyph="exclamation-sign" />
                 </Checkbox>
@@ -389,7 +385,7 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>
                 <FormGroup controlId="formControlsTextarea05">
                     <FormControl 
-                    onChange={this.handleChange17}
+                    onChange={this.rs_handleChange17}
                     value={this.state.supplierRequest05_notes}
                     componentClass="textarea" 
                     placeholder="Enter your notes here" 
@@ -401,19 +397,19 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>User manual (in word format), programming manuals, etc.</Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange18} 
+                    onChange={this.rs_handleChange18} 
                     checked={this.state.supplierRequest06a}>
                 </Checkbox>  
             </Col>
             <Col xs={2} md={2}>
                  <Checkbox 
-                    onChange={this.handleChange19} 
+                    onChange={this.rs_handleChange19} 
                     checked={this.state.supplierRequest06b}>
                 </Checkbox> 
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox
-                    onChange={this.handleChange20} 
+                    onChange={this.rs_handleChange20} 
                     checked={this.state.supplierRequest06c}>
                     <Glyphicon glyph="exclamation-sign" />
                 </Checkbox>
@@ -421,7 +417,7 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>
                 <FormGroup controlId="formControlsTextarea06">
                     <FormControl 
-                    onChange={this.handleChange21}
+                    onChange={this.rs_handleChange21}
                     value={this.state.supplierRequest06_notes}
                     componentClass="textarea" 
                     placeholder="Enter your notes here" 
@@ -433,19 +429,19 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>Tooling: overlay drawings, IGS files</Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange22} 
+                    onChange={this.rs_handleChange22} 
                     checked={this.state.supplierRequest07a}>
                 </Checkbox>  
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange23} 
+                    onChange={this.rs_handleChange23} 
                     checked={this.state.supplierRequest07a}>
                 </Checkbox>  
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox
-                    onChange={this.handleChange24} 
+                    onChange={this.rs_handleChange24} 
                     checked={this.state.supplierRequest07c}>
                     <Glyphicon glyph="exclamation-sign" />
                 </Checkbox>
@@ -453,7 +449,7 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>
                 <FormGroup controlId="formControlsTextarea07">
                     <FormControl 
-                    onChange={this.handleChange25}
+                    onChange={this.rs_handleChange25}
                     value={this.state.supplierRequest07_notes}
                     componentClass="textarea" 
                     placeholder="Enter your notes here" 
@@ -465,19 +461,19 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>Firmware upgrade instructions (if applicable)</Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange26} 
+                    onChange={this.rs_handleChange26} 
                     checked={this.state.supplierRequest08a}>
                 </Checkbox>  
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange27} 
+                    onChange={this.rs_handleChange27} 
                     checked={this.state.supplierRequest08b}>
                 </Checkbox> 
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox
-                    onChange={this.handleChange28} 
+                    onChange={this.rs_handleChange28} 
                     checked={this.state.supplierRequest08c}>
                     <Glyphicon glyph="exclamation-sign" />
                 </Checkbox>
@@ -485,7 +481,7 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>
                 <FormGroup controlId="formControlsTextarea08">
                     <FormControl 
-                    onChange={this.handleChange29}
+                    onChange={this.rs_handleChange29}
                     value={this.state.supplierRequest08_notes}
                     componentClass="textarea" 
                     placeholder="Enter your notes here" 
@@ -497,19 +493,19 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>CE declaration</Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange30} 
+                    onChange={this.rs_handleChange30} 
                     checked={this.state.supplierRequest09a}>
                 </Checkbox> 
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange31} 
+                    onChange={this.rs_handleChange31} 
                     checked={this.state.supplierRequest09b}>
                 </Checkbox>
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox
-                    onChange={this.handleChange32} 
+                    onChange={this.rs_handleChange32} 
                     checked={this.state.supplierRequest09c}>
                     <Glyphicon glyph="exclamation-sign" />
                 </Checkbox>
@@ -529,19 +525,19 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>Other approvals (UL, CSA, VDE...)</Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange34} 
+                    onChange={this.rs_handleChange34} 
                     checked={this.state.supplierRequest10a}>
                 </Checkbox>  
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange35} 
+                    onChange={this.rs_handleChange35} 
                     checked={this.state.supplierRequest10b}>
                 </Checkbox> 
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox
-                    onChange={this.handleChange36} 
+                    onChange={this.rs_handleChange36} 
                     checked={this.state.supplierRequest10c}>
                     <Glyphicon glyph="exclamation-sign" />
                 </Checkbox>
@@ -549,7 +545,7 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>
                 <FormGroup controlId="formControlsTextarea10">
                     <FormControl 
-                    onChange={this.handleChange37}
+                    onChange={this.rs_handleChange37}
                     value={this.state.supplierRequest10_notes}
                     componentClass="textarea" 
                     placeholder="Enter your notes here" 
@@ -562,19 +558,19 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>Service and calibration information, service strategy (e.g. board level or component level repair, does supplier provide spare parts</Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange38} 
+                    onChange={this.rs_handleChange38} 
                     checked={this.state.supplierRequest11a}>
                 </Checkbox>   
             </Col>
             <Col xs={2} md={2}>
                 <Checkbox 
-                    onChange={this.handleChange39} 
+                    onChange={this.rs_handleChange39} 
                     checked={this.state.supplierRequest11b}>
                 </Checkbox>  
             </Col>
             <Col xs={2} md={2}>
             <Checkbox
-                    onChange={this.handleChange40} 
+                    onChange={this.rs_handleChange40} 
                     checked={this.state.supplierRequest11c}>
                     <Glyphicon glyph="exclamation-sign" />
                 </Checkbox>
@@ -582,7 +578,7 @@ class RequestFromSupplier extends Component {
             <Col xs={3} md={3}>
                 <FormGroup controlId="formControlsTextarea10">
                     <FormControl 
-                    onChange={this.handleChange41}
+                    onChange={this.rs_handleChange41}
                     value={this.state.supplierRequest11_notes}
                     componentClass="textarea" 
                     placeholder="Enter your notes here" 
@@ -596,7 +592,7 @@ class RequestFromSupplier extends Component {
             </Col> 
         </Row>
        </Grid> 
-        {this.state.showAlert ? <AlertMe /> : '' }
+        {this.state.showAlert ? <SavedChanges /> : '' }
        </form>
       </div>
     )
