@@ -400,13 +400,6 @@
       "status": 1,
       "date": "2017-05-25",
       "dateCompleted": "10/17/2018"
-    },
-    {
-      "id": 15,
-      "name": "Test Project",
-      "status": 1,
-      "date": "2018-10-16",
-      "dateCompleted": "11/14/2018"
     }
   ]
 }
