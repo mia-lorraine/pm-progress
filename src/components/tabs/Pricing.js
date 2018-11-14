@@ -33,6 +33,11 @@ class Pricing extends Component {
         pr_handleChange5(e) {this.setState({pricing02a: !this.state.pricing02a})}
         pr_handleChange6(e) {this.setState({pricing02_review: e.target.value})}
         pr_handleChange7(e) {this.setState({pricing03a: !this.state.pricing03a})
+
+
+        var array_data = this.props.pricingData;
+        const result = array_data.filter(item => item.originID === this.props.progress.id);
+        console.log(result)
         }
         pr_handleSubmit(e) {  
             e.preventDefault(); 
@@ -64,6 +69,8 @@ class Pricing extends Component {
                 setTimeout(showSaveAlert, 4000)
               }
     render() {
+        console.log(this.props)
+        var pData= this.props.pricingData
     return (
       <div>
         <form onSubmit={this.pr_handleSubmit}>
@@ -154,11 +161,11 @@ class Pricing extends Component {
             </Col> 
             </Row>
             <Row>
-            <li>Product Notes:</li>
-            <h3>BK Model Number: <p>{console.log(this.props.pricingData)}</p></h3>
+            <h3>BK Model Number: <p>{console.log(pData[0].id)}</p></h3>
             <li>Vendor Model Number:</li>
             <li>Description: </li>
             <li>Direct Cost: </li>
+            <li>Product Notes:</li>
             <li>Country of Origin: </li>
             <li>US List Price:</li>
             <li>Price Class: </li>

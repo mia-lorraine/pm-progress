@@ -404,8 +404,8 @@
   ],
   "pricing": [
     {
-      "id": 0,
-      "id_match": 2,
+      "id": 1,
+      "originID": 2,
       "bk_modelno": "SDL-600-150",
       "product_notes": "",
       "vendor": "SDL-600-150",
@@ -423,7 +423,27 @@
       "Initial Order Qty": "",
       "arrival_date": "",
       "arrival_qty": ""
-
+    },
+    {
+      "id": 2,
+      "originID": 4,
+      "bk_modelno": "SDL-600-150",
+      "product_notes": "",
+      "vendor": "SDL-600-150",
+      "desc": "4KW 3U Programmable DC Electronic Load",
+      "country": 1,
+      "price": "",
+      "price_class": 2,
+      "product_class": 4,
+      "warranty": 3,
+      "material": 4,
+      "priority_class": "B",
+      "serial_ID": 531,
+      "AC_line": 1,
+      "Minimum Order Quantity": "",
+      "Initial Order Qty": "",
+      "arrival_date": "",
+      "arrival_qty": ""
     }
   ]
 }

@@ -41,9 +41,11 @@ class Home extends React.Component {
       .get('http://localhost:3001/pricing')
       .then(res => {
         const data = res.data;
+        console.log(data)
         this.setState({
           pricing: data
         });
+      
       });
   }
   clickMe(item){
