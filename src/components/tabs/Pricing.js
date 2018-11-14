@@ -152,6 +152,23 @@ class Pricing extends Component {
                 <Button bsStyle="info" type= "submit" value ="Submit">Save Changes</Button>
             </Col> 
             </Row>
+            <Row><h3>BK Model Number</h3>
+            <li>Product Notes:</li>
+            <li>Vendor Model Number:</li>
+            <li>Description: </li>
+            <li>Direct Cost: </li>
+            <li>Country of Origin: </li>
+            <li>US List Price:</li>
+            <li>Product Class:</li>
+            <li>Warranty:</li>
+            <li>Material Type: </li>
+            <li>Priority Class: </li>
+            <li>Unique Serial ID #: </li>
+            <li>AC Line Configuration:</li>
+            <li>Minimum Order Quantity:</li>
+            <li>Initial Order Qty:</li>
+            <li>First Article Arrival Date: </li>
+            <li>First Article Quantity: </li></Row>
         </Grid>
         {this.state.showAlert ? <SavedChanges /> : '' }
         </form>
