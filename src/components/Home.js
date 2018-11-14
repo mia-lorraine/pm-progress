@@ -22,7 +22,6 @@ class Home extends React.Component {
         const data = res.data;
         this.setState({
           projects: data
-
         });
       });
   }
@@ -36,12 +35,6 @@ class Home extends React.Component {
         });
       });
   }
-  showDetails = () => {
-    this.setState({
-      ...this.state,
-      show: !this.state.show,
-    });
-  }
   clickMe(item){
    // console.log(item);
     const getId = item.id;
@@ -50,7 +43,8 @@ class Home extends React.Component {
     this.setState({
       ...this.state,
       data: itemVal,
-      grabID: getId
+      grabID: getId,
+      show: !this.state.show
     });
   }
   componentDidMount() {
@@ -100,8 +94,8 @@ class Home extends React.Component {
                   {this.state.projects.map((item,index) => (
                     <tr key={index}>
                       <td>
-                        <a className="linkStyle" onClick={()=>{
-                          this.clickMe(item); this.showDetails();
+                        <a  className="linkStyle" 
+                            onClick={()=>{this.clickMe(item);
                         }}>{item.name}</a>
                       </td>
                       <td>{item.manager}</td>
@@ -136,7 +130,7 @@ class Home extends React.Component {
                     <tr key={index}>
                       <td>
                         <a className="linkStyle" onClick={()=>{
-                          this.clickMe(item); this.showDetails();
+                          this.clickMe(item);
                         }}>{item.name}</a>
                       </td>
                       <td>
