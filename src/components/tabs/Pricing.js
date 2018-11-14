@@ -14,8 +14,9 @@ class Pricing extends Component {
             pricing02a: this.props.progress.p_pricing02a,
             pricing02_review: this.props.progress.p_pricing02_review,
             pricing03a: this.props.progress.p_pricing03a,
-            showAlert: false
-        }
+            testarrayprice: this.props.pricingData,
+            showAlert: false,
+       }
         this.pr_handleSubmit=this.pr_handleSubmit.bind(this);
         this.pr_handleChange=this.pr_handleChange.bind(this);
         this.pr_handleChange2=this.pr_handleChange2.bind(this);
@@ -152,13 +153,15 @@ class Pricing extends Component {
                 <Button bsStyle="info" type= "submit" value ="Submit">Save Changes</Button>
             </Col> 
             </Row>
-            <Row><h3>BK Model Number</h3>
+            <Row>
             <li>Product Notes:</li>
+            <h3>BK Model Number: <p>{console.log(this.props.pricingData)}</p></h3>
             <li>Vendor Model Number:</li>
             <li>Description: </li>
             <li>Direct Cost: </li>
             <li>Country of Origin: </li>
             <li>US List Price:</li>
+            <li>Price Class: </li>
             <li>Product Class:</li>
             <li>Warranty:</li>
             <li>Material Type: </li>
@@ -168,7 +171,8 @@ class Pricing extends Component {
             <li>Minimum Order Quantity:</li>
             <li>Initial Order Qty:</li>
             <li>First Article Arrival Date: </li>
-            <li>First Article Quantity: </li></Row>
+            <li>First Article Quantity: </li>
+            </Row>
         </Grid>
         {this.state.showAlert ? <SavedChanges /> : '' }
         </form>

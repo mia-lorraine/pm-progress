@@ -12,6 +12,7 @@ class Home extends React.Component {
     this.state = {
       projects: [],
       completed: [],
+      pricing: [],
       show: false
     };
   }
@@ -35,6 +36,16 @@ class Home extends React.Component {
         });
       });
   }
+  getPricing() {
+    axios
+      .get('http://localhost:3001/pricing')
+      .then(res => {
+        const data = res.data;
+        this.setState({
+          pricing: data
+        });
+      });
+  }
   clickMe(item){
    // console.log(item);
     const getId = item.id;
@@ -50,7 +61,9 @@ class Home extends React.Component {
   componentDidMount() {
     this.getData();
     this.getCompleted();
+    this.getPricing();
   }
+
   render() {
     return (
       <div className="App">
@@ -111,6 +124,7 @@ class Home extends React.Component {
             hideDetails={this.showDetails}
             show={this.state.show}
             data={this.state.data}
+            pricing={this.state.pricing}
             state={this.state}
           />
           <h4>Completed Projects</h4>

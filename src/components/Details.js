@@ -32,6 +32,11 @@ class Details extends React.Component {
         {
           progress: {}
         }
+      ],
+      pricing: [
+        {
+          pricingData: {}
+        }
       ]
     };
   }
@@ -69,6 +74,7 @@ class Details extends React.Component {
   }
   render() {
     let project = this.props.data
+    let pricing = this.props.pricing
     let tabName = "Request From Supplier"
     if (!this.props.show) {
       return null;
@@ -131,7 +137,7 @@ class Details extends React.Component {
                       <Tooling progress={project}/>
                     </Tab>
                     <Tab eventKey={5} title="Pricing" style={tabWrapStyle}>
-                      <Pricing progress={project}/>
+                      <Pricing progress={project} pricingData = {pricing}/>
                     </Tab>
                     <Tab eventKey={6} title="Promotion" style={tabWrapStyle}>
                       <Promotion progress={project}/>
