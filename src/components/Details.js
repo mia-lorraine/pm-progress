@@ -27,13 +27,7 @@ class Details extends React.Component {
   constructor() {
     super();
     this.state = {
-      activeTab: 0,
-      projects: [
-        {
-          progress: {}
-        }
-      ],
-      completed: []
+      activeTab: 0
     };
   }
   hideDetails = (e) => {
@@ -51,16 +45,25 @@ class Details extends React.Component {
   }
   completed(project) {
     let allProjects = this.props.state.projects // Give me all current projects.
-    console.log(allProjects) // 14
-
+    console.log(allProjects.length) // 14
     let projectIndex = allProjects.indexOf(project) // Give me the index of what I just clicked
     let splicedObject = allProjects.splice(projectIndex , 1) // Splice that index; Only 1 object.
-    
+    console.log(splicedObject)
+    console.log(allProjects.length) // 13
+  
+
+    // let results = allProjects.filter(result => result.index > 3 ) // Give me a new array excluding what I clicked
+    // console.log(results)
+
+    // this.setState({
+    //   projects: results
+    // })
+
+
     let completedProjects = this.props.state.completed // Give me the completed projects.
     completedProjects.push(splicedObject)
-    console.log(allProjects) // 13
                                                                                      
-    this.setState = ({
+    this.setState({
       completed: [...project],
     });
     const timestamp = Date.now()
@@ -73,7 +76,7 @@ class Details extends React.Component {
         date: project.date,
         dateCompleted: stamp
       })
-      window.location.reload()
+      // window.location.reload()
   }
   render() {
     let project = this.props.data

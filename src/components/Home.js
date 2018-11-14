@@ -19,21 +19,22 @@ class Home extends React.Component {
     axios
       .get('http://localhost:3001/projects')
       .then(res => {
-        const data = res.data;
+        const projects = res.data;
         this.setState({
-          projects: data
+          projects
         });
       });
-  }
-  getCompleted() {
     axios
       .get('http://localhost:3001/completed')
       .then(res => {
-        const data = res.data;
+        const completed = res.data;
         this.setState({
-          completed: data
+          completed
         });
       });
+    this.setState({
+      show: false
+    })
   }
   clickMe(item){
     const getId = item.id;
@@ -44,10 +45,9 @@ class Home extends React.Component {
       grabID: getId,
       show: !this.state.show
     });
-  }
+  } 
   componentDidMount() {
     this.getData();
-    this.getCompleted();
   }
   render() {
     return (
@@ -104,6 +104,7 @@ class Home extends React.Component {
               </Table>
             </Grid>
           </Grid>
+          <button onclick={this.spliceStuff}>Splice Stuff</button>
           <Details
             key={this.state.projects.id}
             hideDetails={this.showDetails}
