@@ -138,7 +138,6 @@ class Details extends React.Component {
                     </Tab>
                     <Tab eventKey={5} title="Pricing" style={tabWrapStyle}>
                       <Pricing progress={project} pricingData = {pricing}/>
-                      {console.log(this.state.pricingData)}
                     </Tab>
                     <Tab eventKey={6} title="Promotion" style={tabWrapStyle}>
                       <Promotion progress={project}/>

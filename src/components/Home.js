@@ -41,13 +41,13 @@ class Home extends React.Component {
       .get('http://localhost:3001/pricing')
       .then(res => {
         const data = res.data;
-        console.log(data)
         this.setState({
-          pricing: data
-        });
-      
+          pricing: data          
       });
-  }
+      console.log(data) }
+  
+        )}
+
   clickMe(item){
    // console.log(item);
     const getId = item.id;

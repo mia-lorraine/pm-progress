@@ -71,6 +71,8 @@ class Pricing extends Component {
     render() {
         console.log(this.props)
         var pData= this.props.pricingData
+        var projectID = this.props.progress.id
+        const index = 0
     return (
       <div>
         <form onSubmit={this.pr_handleSubmit}>
@@ -161,7 +163,18 @@ class Pricing extends Component {
             </Col> 
             </Row>
             <Row>
-            <h3>BK Model Number: <p>{console.log(pData[0].id)}</p></h3>
+                {console.log(pData.length)}
+
+
+
+                {/* {index < pData.length ? <h1>true</h1> : <h1>false</h1>} */}
+
+                {for (let index = 0; index < pData.length; index++)}
+
+               {pData.map((item,index) => (
+                    <h1>hey {item.serial_ID}</h1>
+               ))}
+            <h3>BK Model Number: </h3>
             <li>Vendor Model Number:</li>
             <li>Description: </li>
             <li>Direct Cost: </li>
@@ -187,5 +200,4 @@ class Pricing extends Component {
     )
   }
 }
-
 export default Pricing;
