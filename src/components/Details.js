@@ -45,27 +45,34 @@ class Details extends React.Component {
   }
   completed(project) {
     let allProjects = this.props.state.projects // Give me all current projects.
-    console.log(allProjects.length) // 14
+    // console.log(allProjects.length) // 14
     let projectIndex = allProjects.indexOf(project) // Give me the index of what I just clicked
     let splicedObject = allProjects.splice(projectIndex , 1) // Splice that index; Only 1 object.
-    console.log(splicedObject)
-    console.log(allProjects.length) // 13
+    let newProjects = allProjects.filter(newProject => newProject.id !== splicedObject.id)
+    let jsonStuff = JSON.stringify(splicedObject.id)
+
+    document.getElementById("idSplice").innerHTML = jsonStuff
   
 
-    // let results = allProjects.filter(result => result.index > 3 ) // Give me a new array excluding what I clicked
-    // console.log(results)
 
-    // this.setState({
-    //   projects: results
-    // })
+    // console.log(splicedObject)
+    // console.log(allProjects.length) // 13
+    // console.log(newProjects)
 
-
-    let completedProjects = this.props.state.completed // Give me the completed projects.
-    completedProjects.push(splicedObject)
+    // let completedProjects = this.props.state.completed // Give me the completed projects.
+    // completedProjects.push(splicedObject)
                                                                                      
     this.setState({
-      completed: [...project],
+      projects: newProjects,
+      completed: [...project]
     });
+
+    // axios.delete('http://localhost:3001/projects/' + splicedObject.id)
+    // .then(res => {
+    //   console.log(res);
+    //   console.log(res.data);
+    // })
+
     const timestamp = Date.now()
     const stamp = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp);
       axios
@@ -151,6 +158,7 @@ class Details extends React.Component {
                     </Tab>
                   </Tabs>
                 </Grid>
+                <p id="idSplice"></p>
               </div>
           </div>
         </div>
