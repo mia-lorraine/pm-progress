@@ -14,7 +14,7 @@ class Pricing extends Component {
             pricing02a: this.props.progress.p_pricing02a,
             pricing02_review: this.props.progress.p_pricing02_review,
             pricing03a: this.props.progress.p_pricing03a,
-            testarrayprice: this.props.pricingData,
+            getPricing: this.props.pricingData,
             showAlert: false,
        }
         this.pr_handleSubmit=this.pr_handleSubmit.bind(this);
@@ -68,11 +68,19 @@ class Pricing extends Component {
                 showSaveAlert();
                 setTimeout(showSaveAlert, 4000)
               }
-    render() {
-        console.log(this.props)
-        var pData= this.props.pricingData
-        var projectID = this.props.progress.id
-        const index = 0
+
+    render() { 
+        var index = 0;
+
+        for (index = 0; index < this.props.pricingData.length; index ++){
+            var pData= this.props.pricingData[index].originID
+
+            var projectID = this.props.progress.id
+            console.log(this.props.pricingData[index])
+        }
+
+        console.log(pData, projectID)
+
     return (
       <div>
         <form onSubmit={this.pr_handleSubmit}>
@@ -163,18 +171,10 @@ class Pricing extends Component {
             </Col> 
             </Row>
             <Row>
-                {console.log(pData.length)}
-
-
-
-                {/* {index < pData.length ? <h1>true</h1> : <h1>false</h1>} */}
-
-                {for (let index = 0; index < pData.length; index++)}
-
-               {pData.map((item,index) => (
-                    <h1>hey {item.serial_ID}</h1>
-               ))}
-            <h3>BK Model Number: </h3>
+    
+              {pData === projectID ? this.props.pricingData.map((item, index) => 
+            <div key = {index}>
+            <h3>BK Model Number: {item.bk_modelno} </h3>
             <li>Vendor Model Number:</li>
             <li>Description: </li>
             <li>Direct Cost: </li>
@@ -192,6 +192,11 @@ class Pricing extends Component {
             <li>Initial Order Qty:</li>
             <li>First Article Arrival Date: </li>
             <li>First Article Quantity: </li>
+            </div>)
+            
+            :
+            <h1> sowwy, didn't work </h1> }
+
             </Row>
         </Grid>
         {this.state.showAlert ? <SavedChanges /> : '' }

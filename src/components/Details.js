@@ -34,9 +34,7 @@ class Details extends React.Component {
         }
       ],
       pricing: [
-        // {
-        //   pricingData: {}
-        // }
+       
       ]
     };
   }

@@ -45,7 +45,6 @@ class Home extends React.Component {
           pricing: data          
       });
       console.log(data) }
-  
         )}
 
   clickMe(item){
