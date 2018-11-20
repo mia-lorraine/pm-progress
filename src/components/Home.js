@@ -110,6 +110,8 @@ class Home extends React.Component {
             show={this.state.show}
             data={this.state.data}
             state={this.state}
+            projects={this.state.projects}
+            completed={this.state.completed}
           />
           <h4>Completed Projects</h4>
           <Grid>

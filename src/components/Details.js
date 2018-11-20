@@ -44,9 +44,22 @@ class Details extends React.Component {
     [e.target.name] = e.target.value;
   }
   completed(project) {
-    let allProjects = this.props.state.projects // Give me all current projects.
-    // let projectIndex = allProjects.indexOf(project) // Give me the index of what I just click
-    console.log(project.name)
+    // Delete this project from Current projects.
+    const currentProjects = this.props.projects
+    const selectedProject = project
+    currentProjects.splice(selectedProject, 1)
+
+    console.log(currentProjects)
+    
+    // Take the project we are passing in and add to end of Completed projects.
+    const currentCompleted = this.props.completed
+    currentCompleted.push(project)
+
+    this.setState({
+      completed: currentCompleted
+    })
+
+    console.log(currentCompleted)
     // this.setState({
     //   projects: newProjects,
     //   completed: [...project]
