@@ -49,22 +49,23 @@ class Details extends React.Component {
     const selectedProject = project
     currentProjects.splice(selectedProject, 1)
 
-    console.log(currentProjects)
-    
     // Take the project we are passing in and add to end of Completed projects.
     const currentCompleted = this.props.completed
     currentCompleted.push(project)
 
     this.setState({
+      projects: currentProjects,
       completed: currentCompleted
     })
 
-    console.log(currentCompleted)
-    // this.setState({
-    //   projects: newProjects,
-    //   completed: [...project]
-    // });
+    // Delete the project from current projects.
+    axios.delete(`http://localhost:3001/projects/${selectedProject.id}`)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+    })
 
+    // Post the latest completed projects list.
     const timestamp = Date.now()
     const stamp = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp);
       axios
@@ -74,8 +75,8 @@ class Details extends React.Component {
         status: 1,
         date: project.date,
         dateCompleted: stamp
-      })
-      // window.location.reload()
+    })
+      window.location.reload() // Still need to get rid of those reload.
   }
   render() {
     let project = this.props.data
