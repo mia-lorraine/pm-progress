@@ -177,28 +177,27 @@ class Pricing extends Component {
             </Col> 
             </Row>
             <Row>
-            
                 {data.map((item, index) => 
                 <div key = {index}> 
-                <h3>BK Model Number: {item.bk_modelno} </h3>
-                <li><b>Product Notes:</b> {item.product_notes} </li>
-                <li><b>Vendor Model Number: </b>{item.vendor} </li>
-                <li><b>Description: </b>{item.desc} </li>
-                  <li><b>Direct Cost: </b>{item.direct_cost}</li>
-             <li><b>Product Notes:</b> {item.product_notes}</li>
-             <li><b>Country of Origin: </b>{item.country}</li>
-             <li><b>US List Price: </b>{item.price} </li>
-            <li><b>Price Class: </b>{item.price_class}</li>
-             <li><b>Product Class: </b>{item.product_class} </li>
-              <li><b>Warranty: </b>{item.warranty} </li>
-             <li><b>Material Type: </b>{item.material}</li>
-             <li><b>Priority Class: </b>{item.priority_class}</li>
-               <li><b>Unique Serial ID #: </b>{item.serial_ID}</li>
-               <li><b>AC Line Configuration:</b> {item.AC_line} </li>
-                <li><b>Minimum Order Quantity:</b>{item.min_ord_qty}</li>
-                <li><b>Initial Order Qty: </b>{item.ini_ord_qty}</li>        
-                <li><b>First Article Arrival Date: </b>{item.arrival_date} </li>
-                <li><b>First Article Quantity: </b> {item.arrival_qty}</li>
+                    <h3>BK Model Number: {item.bk_modelno} </h3>
+                    <li><b>Product Notes:</b> {item.product_notes} </li>
+                    <li><b>Vendor Model Number: </b>{item.vendor} </li>
+                    <li><b>Description: </b>{item.desc} </li>
+                    <li><b>Direct Cost: </b>{item.direct_cost}</li>
+                    <li><b>Product Notes:</b> {item.product_notes}</li>
+                    <li><b>Country of Origin: </b>{item.country}</li>
+                    <li><b>US List Price: </b>{item.price} </li>
+                    <li><b>Price Class: </b>{item.price_class}</li>
+                    <li><b>Product Class: </b>{item.product_class} </li>
+                    <li><b>Warranty: </b>{item.warranty} </li>
+                    <li><b>Material Type: </b>{item.material}</li>
+                    <li><b>Priority Class: </b>{item.priority_class}</li>
+                    <li><b>Unique Serial ID #: </b>{item.serial_ID}</li>
+                    <li><b>AC Line Configuration:</b> {item.AC_line} </li>
+                    <li><b>Minimum Order Quantity:</b>{item.min_ord_qty}</li>
+                    <li><b>Initial Order Qty: </b>{item.ini_ord_qty}</li>        
+                    <li><b>First Article Arrival Date: </b>{item.arrival_date} </li>
+                    <li><b>First Article Quantity: </b> {item.arrival_qty}</li>
                 </div>
                 )}
             </Row>

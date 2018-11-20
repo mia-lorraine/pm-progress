@@ -33,19 +33,12 @@ class Details extends React.Component {
           progress: {}
         }
       ],
-<<<<<<< HEAD
-      pricing: [
-       
-      ]
-=======
-      completed: []
->>>>>>> 4aade1fdd805b905b8c9b1957ec2711db887a653
+      pricing: []
     };
   }
   hideDetails = (e) => {
     this.props.hideDetails && this.props.hideDetails(e);
   }
-  // Where is this being applied?
   changeData(project){
     axios
       .post(`http://localhost:3001/projects/${this.props.getId}`, {
@@ -57,14 +50,11 @@ class Details extends React.Component {
   }
   completed(project) {
     let allProjects = this.props.state.projects // Give me all current projects.
-    console.log(allProjects) // 14
-
     let projectIndex = allProjects.indexOf(project) // Give me the index of what I just clicked
     let splicedObject = allProjects.splice(projectIndex , 1) // Splice that index; Only 1 object.
     
     let completedProjects = this.props.state.completed // Give me the completed projects.
     completedProjects.push(splicedObject)
-    console.log(allProjects) // 13
                                                                                      
     this.setState = ({
       completed: [...project],
