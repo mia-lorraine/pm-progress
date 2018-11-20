@@ -74,12 +74,17 @@ class Pricing extends Component {
 
         for (index = 0; index < this.props.pricingData.length; index ++){
             var pData= this.props.pricingData[index].originID
-
             var projectID = this.props.progress.id
-            console.log(this.props.pricingData[index])
+            console.log(pData, projectID)
+    
         }
 
-        console.log(pData, projectID)
+        function isData(pricing) {
+            return pricing.originID === projectID;
+        }
+        var data = this.props.pricingData.filter(isData);
+
+        console.log(data)
 
     return (
       <div>
@@ -171,31 +176,32 @@ class Pricing extends Component {
             </Col> 
             </Row>
             <Row>
-    
+              
               {pData === projectID ? this.props.pricingData.map((item, index) => 
             <div key = {index}>
             <h3>BK Model Number: {item.bk_modelno} </h3>
-            <li>Vendor Model Number:</li>
-            <li>Description: </li>
+            <li>Vendor Model Number: {item.vendor} </li>
+            <li>Description: {item.desc} </li>
             <li>Direct Cost: </li>
-            <li>Product Notes:</li>
-            <li>Country of Origin: </li>
-            <li>US List Price:</li>
-            <li>Price Class: </li>
-            <li>Product Class:</li>
-            <li>Warranty:</li>
-            <li>Material Type: </li>
-            <li>Priority Class: </li>
-            <li>Unique Serial ID #: </li>
-            <li>AC Line Configuration:</li>
-            <li>Minimum Order Quantity:</li>
-            <li>Initial Order Qty:</li>
-            <li>First Article Arrival Date: </li>
-            <li>First Article Quantity: </li>
+            <li>Product Notes: {item.product_notes}</li>
+            <li>Country of Origin: {item.country}</li>
+            <li>US List Price: </li>
+            <li>Price Class: {item.price_class}</li>
+            <li>Product Class: {item.product_class} </li>
+            <li>Warranty: {item.warranty} </li>
+            <li>Material Type: {item.material}</li>
+            <li>Priority Class: {item.priority_class}</li>
+            <li>Unique Serial ID #: {item.serial_ID}</li>
+            <li>AC Line Configuration: {item.AC_line} </li>
+            <li>Minimum Order Quantity:{item.min_ord_qty}</li>
+            <li>Initial Order Qty: {item.ini_ord_qty}</li>
+            <li>First Article Arrival Date: {item.arrival_date} </li>
+            <li>First Article Quantity: {item.arrival_qty}</li>
             </div>)
             
             :
-            <h1> sowwy, didn't work </h1> }
+            <h1> sowwy, didn't work </h1> 
+        }
 
             </Row>
         </Grid>
