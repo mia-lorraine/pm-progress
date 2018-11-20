@@ -48,10 +48,8 @@ class Home extends React.Component {
         )}
 
   clickMe(item){
-   // console.log(item);
     const getId = item.id;
     const itemVal = item;
-    //console.log(getId);
     this.setState({
       ...this.state,
       data: itemVal,

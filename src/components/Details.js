@@ -33,42 +33,53 @@ class Details extends React.Component {
           progress: {}
         }
       ],
+<<<<<<< HEAD
       pricing: [
        
       ]
+=======
+      completed: []
+>>>>>>> 4aade1fdd805b905b8c9b1957ec2711db887a653
     };
   }
   hideDetails = (e) => {
     this.props.hideDetails && this.props.hideDetails(e);
   }
+  // Where is this being applied?
   changeData(project){
     axios
       .post(`http://localhost:3001/projects/${this.props.getId}`, {
         name: project.name.value
       });
   }
-  handleChange(event, project) {
-    [event.target.name] = event.target.value;
+  handleChange(e) {
+    [e.target.name] = e.target.value;
   }
-  completed(project) {                                                                                   
-    console.log({project});
-    this.setState = {
-      completed: [...project],
-    };
-  console.log(project.id, project.name, project.status, project.date)
- const timestamp = Date.now()
+  completed(project) {
+    let allProjects = this.props.state.projects // Give me all current projects.
+    console.log(allProjects) // 14
 
- const stamp = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp);
-  console.log(stamp);
-    axios
-    .post('http://localhost:3001/completed', {
-      id: project.id,
-      name: project.name,
-      status: 1,
-      date: project.date,
-      dateCompleted: stamp
-    })
-    window.location.reload() //insert page reload
+    let projectIndex = allProjects.indexOf(project) // Give me the index of what I just clicked
+    let splicedObject = allProjects.splice(projectIndex , 1) // Splice that index; Only 1 object.
+    
+    let completedProjects = this.props.state.completed // Give me the completed projects.
+    completedProjects.push(splicedObject)
+    console.log(allProjects) // 13
+                                                                                     
+    this.setState = ({
+      completed: [...project],
+    });
+    const timestamp = Date.now()
+    const stamp = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp);
+      axios
+      .post('http://localhost:3001/completed', {
+        id: project.id,
+        name: project.name,
+        status: 1,
+        date: project.date,
+        dateCompleted: stamp
+      })
+      window.location.reload()
   }
   render() {
     let project = this.props.data
@@ -89,9 +100,11 @@ class Details extends React.Component {
                     {/* <SaveButton bsStyle="complete" progress = {project}>Save Changes</SaveButton> */}
                   </Col>
                   <Col xs={2} md={2}>
-                    <Button bsStyle="success" onClick = {(e) => {
-                      e.preventDefault();
-                      this.completed(project)}}> Complete Project</Button>
+                    <Button 
+                      bsStyle="success" 
+                      onClick ={(e) => {e.preventDefault();this.completed(project)}}> 
+                      Complete Project
+                    </Button>
                   </Col>
                 </Row>
                 <Row className="supplier-overview">
