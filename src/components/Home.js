@@ -60,7 +60,6 @@ class Home extends React.Component {
   } 
   componentDidMount() {
     this.getData();
-    this.getCompleted();
     this.getPricing();
   }
 
