@@ -45,33 +45,12 @@ class Details extends React.Component {
   }
   completed(project) {
     let allProjects = this.props.state.projects // Give me all current projects.
-    // console.log(allProjects.length) // 14
-    let projectIndex = allProjects.indexOf(project) // Give me the index of what I just clicked
-    let splicedObject = allProjects.splice(projectIndex , 1) // Splice that index; Only 1 object.
-    let newProjects = allProjects.filter(newProject => newProject.id !== splicedObject.id)
-    let jsonStuff = JSON.stringify(splicedObject.id)
-
-    document.getElementById("idSplice").innerHTML = jsonStuff
-  
-
-
-    // console.log(splicedObject)
-    // console.log(allProjects.length) // 13
-    // console.log(newProjects)
-
-    // let completedProjects = this.props.state.completed // Give me the completed projects.
-    // completedProjects.push(splicedObject)
-                                                                                     
-    this.setState({
-      projects: newProjects,
-      completed: [...project]
-    });
-
-    // axios.delete('http://localhost:3001/projects/' + splicedObject.id)
-    // .then(res => {
-    //   console.log(res);
-    //   console.log(res.data);
-    // })
+    // let projectIndex = allProjects.indexOf(project) // Give me the index of what I just click
+    console.log(project.name)
+    // this.setState({
+    //   projects: newProjects,
+    //   completed: [...project]
+    // });
 
     const timestamp = Date.now()
     const stamp = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp);
@@ -97,6 +76,8 @@ class Details extends React.Component {
           <div className="backdropWrap">
               <Grid>
                 <Row className="details-overview">
+
+                  <p id="test"></p>
                   <Col xs={2} md={2}><b>Project Name:</b></Col>
                   <Col xs={2} md={2}>{project.name}</Col>
                   <Col xs={2} xsOffset={4} md={2} mdOffset={4}>
@@ -158,7 +139,6 @@ class Details extends React.Component {
                     </Tab>
                   </Tabs>
                 </Grid>
-                <p id="idSplice"></p>
               </div>
           </div>
         </div>

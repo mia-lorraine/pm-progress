@@ -92,7 +92,7 @@ class Home extends React.Component {
                   {this.state.projects.map((item,index) => (
                     <tr key={index}>
                       <td>
-                        <a  className="linkStyle" 
+                        <a className="linkStyle" 
                             onClick={()=>{this.clickMe(item);
                         }}>{item.name}</a>
                       </td>
@@ -104,7 +104,6 @@ class Home extends React.Component {
               </Table>
             </Grid>
           </Grid>
-          <button onclick={this.spliceStuff}>Splice Stuff</button>
           <Details
             key={this.state.projects.id}
             hideDetails={this.showDetails}
