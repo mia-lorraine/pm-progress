@@ -84,6 +84,7 @@ class Pricing extends Component {
         }
         var data = this.props.pricingData.filter(isData);
 
+
         console.log(data)
 
     return (
@@ -176,33 +177,30 @@ class Pricing extends Component {
             </Col> 
             </Row>
             <Row>
-              
-              {pData === projectID ? this.props.pricingData.map((item, index) => 
-            <div key = {index}>
-            <h3>BK Model Number: {item.bk_modelno} </h3>
-            <li>Vendor Model Number: {item.vendor} </li>
-            <li>Description: {item.desc} </li>
-            <li>Direct Cost: </li>
-            <li>Product Notes: {item.product_notes}</li>
-            <li>Country of Origin: {item.country}</li>
-            <li>US List Price: </li>
-            <li>Price Class: {item.price_class}</li>
-            <li>Product Class: {item.product_class} </li>
-            <li>Warranty: {item.warranty} </li>
-            <li>Material Type: {item.material}</li>
-            <li>Priority Class: {item.priority_class}</li>
-            <li>Unique Serial ID #: {item.serial_ID}</li>
-            <li>AC Line Configuration: {item.AC_line} </li>
-            <li>Minimum Order Quantity:{item.min_ord_qty}</li>
-            <li>Initial Order Qty: {item.ini_ord_qty}</li>
-            <li>First Article Arrival Date: {item.arrival_date} </li>
-            <li>First Article Quantity: {item.arrival_qty}</li>
-            </div>)
             
-            :
-            <h1> sowwy, didn't work </h1> 
-        }
-
+                {data.map((item, index) => 
+                <div key = {index}> 
+                <h3>BK Model Number: {item.bk_modelno} </h3>
+                <li><b>Product Notes:</b> {item.product_notes} </li>
+                <li><b>Vendor Model Number: </b>{item.vendor} </li>
+                <li><b>Description: </b>{item.desc} </li>
+                  <li><b>Direct Cost: </b>{item.direct_cost}</li>
+             <li><b>Product Notes:</b> {item.product_notes}</li>
+             <li><b>Country of Origin: </b>{item.country}</li>
+             <li><b>US List Price: </b>{item.price} </li>
+            <li><b>Price Class: </b>{item.price_class}</li>
+             <li><b>Product Class: </b>{item.product_class} </li>
+              <li><b>Warranty: </b>{item.warranty} </li>
+             <li><b>Material Type: </b>{item.material}</li>
+             <li><b>Priority Class: </b>{item.priority_class}</li>
+               <li><b>Unique Serial ID #: </b>{item.serial_ID}</li>
+               <li><b>AC Line Configuration:</b> {item.AC_line} </li>
+                <li><b>Minimum Order Quantity:</b>{item.min_ord_qty}</li>
+                <li><b>Initial Order Qty: </b>{item.ini_ord_qty}</li>        
+                <li><b>First Article Arrival Date: </b>{item.arrival_date} </li>
+                <li><b>First Article Quantity: </b> {item.arrival_qty}</li>
+                </div>
+                )}
             </Row>
         </Grid>
         {this.state.showAlert ? <SavedChanges /> : '' }
