@@ -20,21 +20,22 @@ class Home extends React.Component {
     axios
       .get('http://localhost:3001/projects')
       .then(res => {
-        const data = res.data;
+        const projects = res.data;
         this.setState({
-          projects: data
+          projects
         });
       });
-  }
-  getCompleted() {
     axios
       .get('http://localhost:3001/completed')
       .then(res => {
-        const data = res.data;
+        const completed = res.data;
         this.setState({
-          completed: data
+          completed
         });
       });
+    this.setState({
+      show: false
+    })
   }
   getPricing() {
     axios
@@ -56,7 +57,7 @@ class Home extends React.Component {
       grabID: getId,
       show: !this.state.show
     });
-  }
+  } 
   componentDidMount() {
     this.getData();
     this.getCompleted();
@@ -106,7 +107,7 @@ class Home extends React.Component {
                   {this.state.projects.map((item,index) => (
                     <tr key={index}>
                       <td>
-                        <a  className="linkStyle" 
+                        <a className="linkStyle" 
                             onClick={()=>{this.clickMe(item);
                         }}>{item.name}</a>
                       </td>
@@ -125,6 +126,8 @@ class Home extends React.Component {
             data={this.state.data}
             pricing={this.state.pricing}
             state={this.state}
+            projects={this.state.projects}
+            completed={this.state.completed}
           />
           <h4>Completed Projects</h4>
           <Grid>
