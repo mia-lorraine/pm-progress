@@ -9,11 +9,13 @@ const PricingForm = () => {
   product_class, warranty, material, priority_class, serial_ID, AC_line, min_ord_qty,
   ini_ord_qty, arrival_date, arrival_qty;
 
+  console.log(this.props.grabID)
   const submit = (e) => {
     e.preventDefault();
 
     axios
       .post('http://localhost:3001/pricing', {
+        originID: "",
         bk_modelno: bk_modelno.value,
         product_notes: product_notes.value,
         vendor: vendor.value,

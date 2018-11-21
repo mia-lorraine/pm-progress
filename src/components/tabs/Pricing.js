@@ -36,10 +36,9 @@ class Pricing extends Component {
         pr_handleChange6(e) {this.setState({pricing02_review: e.target.value})}
         pr_handleChange7(e) {this.setState({pricing03a: !this.state.pricing03a})
 
-
         var array_data = this.props.pricingData;
         const result = array_data.filter(item => item.originID === this.props.progress.id);
-        console.log(result)
+        // console.log(result)
         }
         pr_handleSubmit(e) {  
             e.preventDefault(); 
@@ -78,16 +77,12 @@ class Pricing extends Component {
             var pData= this.props.pricingData[index].originID
             var projectID = this.props.progress.id
             console.log(pData, projectID)
-    
         }
-
         function isData(pricing) {
             return pricing.originID === projectID;
         }
         var data = this.props.pricingData.filter(isData);
-
-
-        console.log(data)
+        // console.log(data)
 
     return (
       <div>
@@ -95,9 +90,8 @@ class Pricing extends Component {
         <NavLink
                 to="/pricing"
                 render={(props) => (
-                  <PricingForm
-                    {...props}
-                    newProject={this.addProject}
+                  <PricingForm {...props}
+                  grabID = {pData}
                   />)}>Create a new Pricing Product
               </NavLink>
        <Grid>

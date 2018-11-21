@@ -393,7 +393,6 @@
       "p_promotion08_notes": "These are the section notes."
     }
   ],
-
   "completed": [
     {
       "id": 1,
@@ -562,7 +561,7 @@
       "ini_ord_qty": "",
       "arrival_date": "",
       "arrival_qty": ""
-    }, 
+    },
     {
       "id": 2,
       "originID": 2,
@@ -584,7 +583,7 @@
       "ini_ord_qty": "",
       "arrival_date": "",
       "arrival_qty": ""
-    }, 
+    },
     {
       "id": 2,
       "originID": 4,
@@ -650,7 +649,7 @@
       "ini_ord_qty": "",
       "arrival_date": "",
       "arrival_qty": ""
-    }, 
+    },
     {
       "id": 2,
       "originID": 4,
@@ -870,6 +869,28 @@
       "ini_ord_qty": "",
       "arrival_date": "",
       "arrival_qty": ""
+    },
+    {
+      "originID": "",
+      "bk_modelno": ".",
+      "product_notes": ".",
+      "vendor": ".",
+      "desc": ".",
+      "direct_cost": ".",
+      "country": ".",
+      "price": ".",
+      "price_class": "",
+      "product_class": ".",
+      "warranty": ".",
+      "material": ".",
+      "priority_class": ".",
+      "serial_ID": ".",
+      "AC_line": ".",
+      "min_ord_qty": "",
+      "ini_ord_qty": ".",
+      "arrival_date": "",
+      "arrival_qty": ".",
+      "id": 3
     }
   ]
 }
