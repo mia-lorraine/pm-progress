@@ -2,6 +2,7 @@ import React from 'react';
 import { Nav, NavItem, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import AddProject from '../components/Addproject';
+import PricingForm from './tabs/PricingForm';
 
 const Navigation = () => {
   return (
@@ -23,6 +24,16 @@ const Navigation = () => {
               to="/add"
               render={(props) => (
                 <AddProject
+                  {...props}
+                  newProject={this.addProject}
+                />)}>Create a Project
+            </NavLink>
+          </NavItem>
+          <NavItem eventKey={2} href="#">
+            <NavLink
+              to="/pricing"
+              render={(props) => (
+                <PricingForm
                   {...props}
                   newProject={this.addProject}
                 />)}>Create a Project

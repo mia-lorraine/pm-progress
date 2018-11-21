@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 import SavedChanges from './SavedChanges';
+import PricingForm from './PricingForm';
 
 class Pricing extends Component {
     constructor(props) {
@@ -90,6 +92,14 @@ class Pricing extends Component {
     return (
       <div>
         <form onSubmit={this.pr_handleSubmit}>
+        <NavLink
+                to="/pricing"
+                render={(props) => (
+                  <PricingForm
+                    {...props}
+                    newProject={this.addProject}
+                  />)}>Create a new Pricing Product
+              </NavLink>
        <Grid>
         <Row>
             <Col xs={3} md={3}><b>Item</b></Col>
