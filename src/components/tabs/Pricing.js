@@ -38,7 +38,7 @@ class Pricing extends Component {
 
         var array_data = this.props.pricingData;
         const result = array_data.filter(item => item.originID === this.props.progress.id);
-        // console.log(result)
+        console.log(result)
         }
         pr_handleSubmit(e) {  
             e.preventDefault(); 
@@ -82,18 +82,18 @@ class Pricing extends Component {
             return pricing.originID === projectID;
         }
         var data = this.props.pricingData.filter(isData);
-        // console.log(data)
-
+        // console.log(data) 
     return (
       <div>
         <form onSubmit={this.pr_handleSubmit}>
         <NavLink
-                to="/pricing"
-                render={(props) => (
-                  <PricingForm {...props}
-                  grabID = {pData}
-                  />)}>Create a new Pricing Product
-              </NavLink>
+              to="/pricing"
+              render={(props) => (
+                <PricingForm
+                  {...props}
+                  pricing={this.newPricingID}
+                />)}>Create a Pricing Project
+            </NavLink>
        <Grid>
         <Row>
             <Col xs={3} md={3}><b>Item</b></Col>

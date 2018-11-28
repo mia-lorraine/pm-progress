@@ -9,13 +9,14 @@ const PricingForm = () => {
   product_class, warranty, material, priority_class, serial_ID, AC_line, min_ord_qty,
   ini_ord_qty, arrival_date, arrival_qty;
 
-  console.log(this.props.grabID)
+
+  console.log(this.newPricingID)
   const submit = (e) => {
     e.preventDefault();
 
     axios
       .post('http://localhost:3001/pricing', {
-        originID: "",
+        originID: this.props.originID,
         bk_modelno: bk_modelno.value,
         product_notes: product_notes.value,
         vendor: vendor.value,
@@ -42,6 +43,7 @@ const PricingForm = () => {
     bk_modelno.value = product_notes.value = desc.value = direct_cost.value = vendor.value = country.value = price.value = price_class.value = product_class.value =
     warranty.value = material.value = priority_class.value = serial_ID.value = AC_line.value = min_ord_qty.value =
     ini_ord_qty.value = arrival_date.value = arrival_qty.value = '';
+
   };
   return (
     <div className = "static-modal">

@@ -29,16 +29,6 @@ const Navigation = () => {
                 />)}>Create a Project
             </NavLink>
           </NavItem>
-          <NavItem eventKey={2} href="#">
-            <NavLink
-              to="/pricing"
-              render={(props) => (
-                <PricingForm
-                  {...props}
-                  newProject={this.addProject}
-                />)}>Create a Project
-            </NavLink>
-          </NavItem>
         </Nav>
       </Navbar>
     </div>

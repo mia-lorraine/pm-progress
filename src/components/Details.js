@@ -8,6 +8,7 @@ import Tooling from '../components/tabs/Tooling';
 import Pricing from '../components/tabs/Pricing';
 import Promotion from '../components/tabs/Promotion';
 
+
 let backdropStyle = {
   position: 'fixed',
   overflow: 'auto',
@@ -152,7 +153,7 @@ class Details extends React.Component {
                       <Tooling progress={project}/>
                     </Tab>
                     <Tab eventKey={5} title="Pricing" style={tabWrapStyle}>
-                      <Pricing progress={project} pricingData = {pricing}/>
+                    <Pricing progress={project} pricingData = {pricing}/>
                     </Tab>
                     <Tab eventKey={6} title="Promotion" style={tabWrapStyle}>
                       <Promotion progress={project}/>
