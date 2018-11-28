@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { Button, Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
 import axios from 'axios';
-import { NavLink } from 'react-router-dom';
 import SavedChanges from './SavedChanges';
-import PricingForm from './PricingForm';
+// import PricingForm from './PricingForm';
+import AddModal from './Modal'
 
 class Pricing extends Component {
     constructor(props) {
@@ -18,6 +18,7 @@ class Pricing extends Component {
             pricing03a: this.props.progress.p_pricing03a,
             getPricing: this.props.pricingData,
             showAlert: false,
+            isOpen: false,
        }
         this.pr_handleSubmit=this.pr_handleSubmit.bind(this);
         this.pr_handleChange=this.pr_handleChange.bind(this);
@@ -27,6 +28,7 @@ class Pricing extends Component {
         this.pr_handleChange5=this.pr_handleChange5.bind(this);
         this.pr_handleChange6=this.pr_handleChange6.bind(this);
         this.pr_handleChange7=this.pr_handleChange7.bind(this);
+        this.toggleModal=this.toggleModal.bind(this);
         }
         pr_handleChange(e) {this.setState({pricing01a: !this.state.pricing01a})}
         pr_handleChange2(e) {this.setState({pricing01_review: e.target.value})}
@@ -40,6 +42,16 @@ class Pricing extends Component {
         const result = array_data.filter(item => item.originID === this.props.progress.id);
         // console.log(result)
         }
+
+
+        toggleModal = () => {
+            console.log("click")
+            this.setState({
+                isOpen: !this.state.isOpen
+              });
+        }
+
+
         pr_handleSubmit(e) {  
             e.preventDefault(); 
                 let e01 = this.state.pricing01a
@@ -89,14 +101,21 @@ class Pricing extends Component {
     return (
       <div>
         <form onSubmit={this.pr_handleSubmit}>
-        <NavLink
+        <Button onClick = {this.toggleModal}> Create a New Project </Button>
+        
+        <div><AddModal show={this.state.isOpen}
+          onClose={this.toggleModal}>
+          Here's some content for the modal
+        </AddModal>
+        </div>
+        {/* <NavLin
               to="/pricing"
               render={(props) => (
                 <PricingForm
                 {...props}
                   getID = {this.props}
                 />)}>Create a Pricing Project
-            </NavLink>
+            </NavLink> */}
        <Grid>
         <Row>
             <Col xs={3} md={3}><b>Item</b></Col>
