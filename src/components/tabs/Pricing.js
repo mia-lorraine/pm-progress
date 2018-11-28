@@ -103,10 +103,12 @@ class Pricing extends Component {
         <form onSubmit={this.pr_handleSubmit}>
         <Button onClick = {this.toggleModal}> Create a New Project </Button>
         
-        <div><AddModal show={this.state.isOpen}
-          onClose={this.toggleModal}>
-          Here's some content for the modal
-        </AddModal>
+        <div>
+            
+            { this.state.isOpen ? 
+            <AddModal show={this.state.isOpen}
+                     onClose={this.toggleModal}/> : 'Error.'}
+         
         </div>
         {/* <NavLin
               to="/pricing"
