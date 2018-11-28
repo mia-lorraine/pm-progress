@@ -1,22 +1,26 @@
-import React from 'react';
+import React  from 'react';
 import axios from 'axios';
 import '../../styles/App.css';
 import { NavLink } from 'react-router-dom';
 import { Button, Grid, Row, Col, FormGroup,  Modal } from 'react-bootstrap';
 
-const PricingForm = () => {
-  let bk_modelno, product_notes, vendor, desc, direct_cost, country, price, price_class,
-  product_class, warranty, material, priority_class, serial_ID, AC_line, min_ord_qty,
-  ini_ord_qty, arrival_date, arrival_qty;
+let bk_modelno, product_notes, vendor, desc, direct_cost, country, price, price_class,
+product_class, warranty, material, priority_class, serial_ID, AC_line, min_ord_qty,
+ini_ord_qty, arrival_date, arrival_qty;
 
-
-  console.log(this.newPricingID)
-  const submit = (e) => {
+class PricingForm extends React.Component {
+  constructor(props){
+    super(props);
+      this.state= {
+        grabID: this.props.getID
+      }
+    }
+  submit = (e) => {
     e.preventDefault();
 
     axios
       .post('http://localhost:3001/pricing', {
-        originID: this.props.originID,
+        originID: "",
         bk_modelno: bk_modelno.value,
         product_notes: product_notes.value,
         vendor: vendor.value,
@@ -43,12 +47,13 @@ const PricingForm = () => {
     bk_modelno.value = product_notes.value = desc.value = direct_cost.value = vendor.value = country.value = price.value = price_class.value = product_class.value =
     warranty.value = material.value = priority_class.value = serial_ID.value = AC_line.value = min_ord_qty.value =
     ini_ord_qty.value = arrival_date.value = arrival_qty.value = '';
-
   };
+  render(){
+    console.log(this.state.grabID)
   return (
     <div className = "static-modal">
       <Modal.Dialog>
-        <form onSubmit={submit} className="form black-container">
+        <form onSubmit={this.submit} className="form black-container">
           <Grid>
             <Row className = "name-addproject">
               <Col xs={2} md={2}> <b> Project Name:</b> </Col>
@@ -308,8 +313,8 @@ const PricingForm = () => {
         </form>
       </Modal.Dialog>
     </div>
-
-  );
-};
+    )
+  };
+}
 
 export default PricingForm;

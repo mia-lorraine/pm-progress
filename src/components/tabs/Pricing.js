@@ -38,7 +38,7 @@ class Pricing extends Component {
 
         var array_data = this.props.pricingData;
         const result = array_data.filter(item => item.originID === this.props.progress.id);
-        console.log(result)
+        // console.log(result)
         }
         pr_handleSubmit(e) {  
             e.preventDefault(); 
@@ -70,13 +70,16 @@ class Pricing extends Component {
                 setTimeout(showSaveAlert, 4000)
               }
 
+              componentWillMount(){
+                  console.log(this.props)
+              }
     render() { 
         var index = 0;
 
         for (index = 0; index < this.props.pricingData.length; index ++){
-            var pData= this.props.pricingData[index].originID
+            // var pData= this.props.pricingData[index].originID
             var projectID = this.props.progress.id
-            console.log(pData, projectID)
+            // console.log(pData, projectID)
         }
         function isData(pricing) {
             return pricing.originID === projectID;
@@ -90,8 +93,8 @@ class Pricing extends Component {
               to="/pricing"
               render={(props) => (
                 <PricingForm
-                  {...props}
-                  pricing={this.newPricingID}
+                {...props}
+                  getID = {projectID}
                 />)}>Create a Pricing Project
             </NavLink>
        <Grid>
