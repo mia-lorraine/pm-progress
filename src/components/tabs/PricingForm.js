@@ -11,9 +11,6 @@ ini_ord_qty, arrival_date, arrival_qty;
 class PricingForm extends React.Component {
   constructor(props){
     super(props);
-      this.state= {
-        grabID: this.props.getID
-      }
     }
   submit = (e) => {
     e.preventDefault();
@@ -49,7 +46,7 @@ class PricingForm extends React.Component {
     ini_ord_qty.value = arrival_date.value = arrival_qty.value = '';
   };
   render(){
-    console.log(this.state.grabID)
+    console.log(this.props.getID.originID)
   return (
     <div className = "static-modal">
       <Modal.Dialog>

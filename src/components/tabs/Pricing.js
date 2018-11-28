@@ -94,7 +94,7 @@ class Pricing extends Component {
               render={(props) => (
                 <PricingForm
                 {...props}
-                  getID = {projectID}
+                  getID = {this.props}
                 />)}>Create a Pricing Project
             </NavLink>
        <Grid>
