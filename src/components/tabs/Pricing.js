@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import { Button, Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
 import axios from 'axios';
 import SavedChanges from './SavedChanges';
-// import PricingForm from './PricingForm';
-import AddModal from './Modal'
+import AddProductModal from './Modal'
 
 class Pricing extends Component {
     constructor(props) {
@@ -42,16 +41,11 @@ class Pricing extends Component {
         const result = array_data.filter(item => item.originID === this.props.progress.id);
         // console.log(result)
         }
-
-
         toggleModal = () => {
-            console.log("click")
             this.setState({
                 isOpen: !this.state.isOpen
               });
         }
-
-
         pr_handleSubmit(e) {  
             e.preventDefault(); 
                 let e01 = this.state.pricing01a
@@ -102,13 +96,9 @@ class Pricing extends Component {
       <div>
         <form onSubmit={this.pr_handleSubmit}>
         <Button onClick = {this.toggleModal}> Create a New Project </Button>
-        
         <div>
-            
-            { this.state.isOpen ? 
-            <AddModal show={this.state.isOpen}
-                     onClose={this.toggleModal}/> : 'Error.'}
-         
+            {this.state.isOpen ? 
+            <AddProductModal show={this.state.isOpen}/> : 'Error.'}
         </div>
         {/* <NavLin
               to="/pricing"
