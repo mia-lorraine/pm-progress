@@ -294,7 +294,7 @@ class PricingForm extends React.Component {
             <Row className="submit-addproject">
               <Col xs={5} md={5}>
                 <FormGroup>
-                  <NavLink to='/'><Button >Back to Projects</Button></NavLink>
+                  <NavLink to='/'><Button onClick={this.props.handleClose}>Back to Projects</Button></NavLink>
                 </FormGroup>
               </Col>
               <Col xs={5} md={5}>

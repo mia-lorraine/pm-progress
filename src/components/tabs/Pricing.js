@@ -190,8 +190,6 @@ class Pricing extends Component {
                         show={this.state.showModal} 
                         handleClose={this.hideModal}
                     >
-                        <p>Add a Product</p>
-                        <p>Product form will go here.</p>
                     </Modal>
                 
                 </main>
