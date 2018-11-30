@@ -44,7 +44,7 @@ const AddProject = () => {
                 </FormGroup>
               </Col>
             </Row>
-            <Row className = "supplieer-addproject">
+            <Row className = "supplier-addproject">
               <Col xs={2} md={2}> <b>Supplier:</b> </Col>
               <Col xs={10} sm={7} md={4}>
                 <FormGroup>

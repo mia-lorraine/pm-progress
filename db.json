@@ -86,7 +86,8 @@
       "p_documentation01_notes": "5/24/17: Original Biologic manual was in very good condition. Fixed a minor amount of grammar. Reviewing again\n11/12/18[JP]: Waiting for specs",
       "p_tooling01a": true,
       "p_tooling02a": true,
-      "p_tooling03a": true
+      "p_tooling03a": true,
+      "p_pricing03a": false
     },
     {
       "id": 3,
@@ -393,7 +394,6 @@
       "p_promotion08_notes": "These are the section notes."
     }
   ],
-
   "completed": [
     {
       "id": 1,
@@ -562,7 +562,7 @@
       "ini_ord_qty": "",
       "arrival_date": "",
       "arrival_qty": ""
-    }, 
+    },
     {
       "id": 2,
       "originID": 2,
@@ -584,7 +584,7 @@
       "ini_ord_qty": "",
       "arrival_date": "",
       "arrival_qty": ""
-    }, 
+    },
     {
       "id": 2,
       "originID": 4,
@@ -650,7 +650,7 @@
       "ini_ord_qty": "",
       "arrival_date": "",
       "arrival_qty": ""
-    }, 
+    },
     {
       "id": 2,
       "originID": 4,
@@ -870,6 +870,28 @@
       "ini_ord_qty": "",
       "arrival_date": "",
       "arrival_qty": ""
+    },
+    {
+      "originID": "",
+      "bk_modelno": "ProjectTesting",
+      "product_notes": "BK1",
+      "vendor": "BK2",
+      "desc": "la",
+      "direct_cost": "500",
+      "country": "USA",
+      "price": "20",
+      "price_class": "2",
+      "product_class": "1",
+      "warranty": "3",
+      "material": "2",
+      "priority_class": "2",
+      "serial_ID": "2",
+      "AC_line": "2",
+      "min_ord_qty": "2",
+      "ini_ord_qty": "2",
+      "arrival_date": "2018-12-31",
+      "arrival_qty": "G",
+      "id": 3
     }
   ]
 }

@@ -2,6 +2,7 @@ import React from 'react';
 import { Nav, NavItem, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import AddProject from '../components/Addproject';
+import PricingForm from './tabs/PricingForm';
 
 const Navigation = () => {
   return (
