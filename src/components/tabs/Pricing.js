@@ -98,14 +98,6 @@ class Pricing extends Component {
     return (
       <div>
         <form onSubmit={this.pr_handleSubmit}>
-        {/* <NavLin
-              to="/pricing"
-              render={(props) => (
-                <PricingForm
-                {...props}
-                  getID = {this.props}
-                />)}>Create a Pricing Project
-            </NavLink> */}
        <Grid>
         <Row>
             <Col xs={3} md={3}><b>Item</b></Col>
@@ -181,20 +173,6 @@ class Pricing extends Component {
                     <Glyphicon glyph="exclamation-sign" />
                 </Checkbox>
             </Col>
-          </Row>
-          <Row>
-            <Col xs={2} md={2}>
-
-                <main>
-                    <Modal 
-                        show={this.state.showModal} 
-                        handleClose={this.hideModal}
-                    >
-                    </Modal>
-                
-                </main>
-            
-            </Col>
             </Row>
             <Row>
                 <Col xs={6} mdOffset={5}>
@@ -241,6 +219,17 @@ class Pricing extends Component {
         </Grid>
         {this.state.showAlert ? <SavedChanges /> : '' }
         </form>
+        <Row>
+            <Col xs={2} md={2}>
+                <main>
+                    <Modal 
+                        show={this.state.showModal} 
+                        handleClose={this.hideModal}
+                    >
+                    </Modal>
+                </main>
+            </Col>
+        </Row>
       </div>
     )
   }
