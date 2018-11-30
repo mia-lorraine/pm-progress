@@ -1,0 +1,7 @@
+.pricingProduct {
+    width: 30%;
+    display: inline-block;
+    list-style-type: none;    
+    padding: 5px;
+    margin: 10px;
+}

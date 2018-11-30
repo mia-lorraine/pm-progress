@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import { Button, Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
+import { Button, Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon, Panel } from 'react-bootstrap';
 import axios from 'axios';
 import SavedChanges from './SavedChanges';
-import AddProductModal from './Modal'
+import Modal from './Modal';
+import '../../styles/Pricing.css'
+import '../../styles/Modal.css';
 
 class Pricing extends Component {
     constructor(props) {
@@ -17,7 +19,7 @@ class Pricing extends Component {
             pricing03a: this.props.progress.p_pricing03a,
             getPricing: this.props.pricingData,
             showAlert: false,
-            isOpen: false,
+            showModal: false,
        }
         this.pr_handleSubmit=this.pr_handleSubmit.bind(this);
         this.pr_handleChange=this.pr_handleChange.bind(this);
@@ -43,8 +45,13 @@ class Pricing extends Component {
         }
         toggleModal = () => {
             this.setState({
-                isOpen: !this.state.isOpen
+                showModal: !this.state.showModal
               });
+        }
+        hideModal = () => {
+            this.setState({
+                showModal: !this.state.showModal
+            });
         }
         pr_handleSubmit(e) {  
             e.preventDefault(); 
@@ -75,10 +82,6 @@ class Pricing extends Component {
                 showSaveAlert();
                 setTimeout(showSaveAlert, 4000)
               }
-
-              componentWillMount(){
-                  console.log(this.props)
-              }
     render() { 
         var index = 0;
 
@@ -95,11 +98,6 @@ class Pricing extends Component {
     return (
       <div>
         <form onSubmit={this.pr_handleSubmit}>
-        <Button onClick = {this.toggleModal}> Create a New Project </Button>
-        <div>
-            {this.state.isOpen ? 
-            <AddProductModal show={this.state.isOpen}/> : 'Error.'}
-        </div>
         {/* <NavLin
               to="/pricing"
               render={(props) => (
@@ -186,36 +184,59 @@ class Pricing extends Component {
           </Row>
           <Row>
             <Col xs={2} md={2}>
-              <Button bsStyle="primary">Create Product</Button>
+
+                <main>
+                    <Modal 
+                        show={this.state.showModal} 
+                        handleClose={this.hideModal}
+                    >
+                        <p>Add a Product</p>
+                        <p>Product form will go here.</p>
+                    </Modal>
+                
+                </main>
+            
             </Col>
-          </Row>
-          <Row>
-            <Col xs={6} mdOffset={5}>
-                <Button bsStyle="info" type= "submit" value ="Submit">Save Changes</Button>
-            </Col> 
+            </Row>
+            <Row>
+                <Col xs={6} mdOffset={5}>
+                    <Button bsStyle="info" type= "submit" value ="Submit">Save Changes</Button>
+                </Col> 
+            </Row>
+                <hr />
+            <Row>
+                <Col xs={6} mdOffset={5}>
+                <Button bsStyle="primary" onClick={this.toggleModal}>Create Product</Button>
+                </Col> 
             </Row>
             <Row>
                 {data.map((item, index) => 
-                <div key = {index}> 
-                    <h3>BK Model Number: {item.bk_modelno} </h3>
-                    <li><b>Product Notes:</b> {item.product_notes} </li>
-                    <li><b>Vendor Model Number: </b>{item.vendor} </li>
-                    <li><b>Description: </b>{item.desc} </li>
-                    <li><b>Direct Cost: </b>{item.direct_cost}</li>
-                    <li><b>Product Notes:</b> {item.product_notes}</li>
-                    <li><b>Country of Origin: </b>{item.country}</li>
-                    <li><b>US List Price: </b>{item.price} </li>
-                    <li><b>Price Class: </b>{item.price_class}</li>
-                    <li><b>Product Class: </b>{item.product_class} </li>
-                    <li><b>Warranty: </b>{item.warranty} </li>
-                    <li><b>Material Type: </b>{item.material}</li>
-                    <li><b>Priority Class: </b>{item.priority_class}</li>
-                    <li><b>Unique Serial ID #: </b>{item.serial_ID}</li>
-                    <li><b>AC Line Configuration:</b> {item.AC_line} </li>
-                    <li><b>Minimum Order Quantity:</b>{item.min_ord_qty}</li>
-                    <li><b>Initial Order Qty: </b>{item.ini_ord_qty}</li>        
-                    <li><b>First Article Arrival Date: </b>{item.arrival_date} </li>
-                    <li><b>First Article Quantity: </b> {item.arrival_qty}</li>
+                <div className="pricingProduct" key={index}> 
+                    <Panel>
+                        <Panel.Heading>
+                            <Panel.Title componentClass="h3">Model Number: {item.bk_modelno}</Panel.Title>
+                        </Panel.Heading>
+                        <Panel.Body>
+                                <li><b>Product Notes:</b> {item.product_notes}</li>
+                                <li><b>Vendor Model Number: </b>{item.vendor}</li>
+                                <li><b>Description: </b>{item.desc}</li>
+                                <li><b>Direct Cost: </b>{item.direct_cost}</li>
+                                <li><b>Product Notes:</b> {item.product_notes}</li>
+                                <li><b>Country of Origin: </b>{item.country}</li>
+                                <li><b>US List Price: </b>{item.price}</li>
+                                <li><b>Price Class: </b>{item.price_class}</li>
+                                <li><b>Product Class: </b>{item.product_class} </li>
+                                <li><b>Warranty: </b>{item.warranty}</li>
+                                <li><b>Material Type: </b>{item.material}</li>
+                                <li><b>Priority Class: </b>{item.priority_class}</li>
+                                <li><b>Unique Serial ID #: </b>{item.serial_ID}</li>
+                                <li><b>AC Line Configuration:</b>{item.AC_line}</li>
+                                <li><b>Minimum Order Quantity:</b>{item.min_ord_qty}</li>
+                                <li><b>Initial Order Qty: </b>{item.ini_ord_qty}</li>        
+                                <li><b>First Article Arrival Date: </b>{item.arrival_date}</li>
+                                <li><b>First Article Quantity: </b>{item.arrival_qty}</li>
+                        </Panel.Body>
+                    </Panel>
                 </div>
                 )}
             </Row>

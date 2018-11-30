@@ -46,7 +46,6 @@ class PricingForm extends React.Component {
     ini_ord_qty.value = arrival_date.value = arrival_qty.value = '';
   };
   render(){
-    console.log(this.props.getID.originID)
   return (
     <div className = "static-modal">
       <Modal.Dialog>

@@ -86,7 +86,8 @@
       "p_documentation01_notes": "5/24/17: Original Biologic manual was in very good condition. Fixed a minor amount of grammar. Reviewing again\n11/12/18[JP]: Waiting for specs",
       "p_tooling01a": true,
       "p_tooling02a": true,
-      "p_tooling03a": true
+      "p_tooling03a": true,
+      "p_pricing03a": false
     },
     {
       "id": 3,
