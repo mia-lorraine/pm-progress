@@ -5,6 +5,8 @@ import { Grid, Table, Navbar, Nav, NavItem } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 import Details from '../components/Details';
 import AddProject from '../components/Addproject';
+import Navigation from '../components/Navigation';
+
 
 class Home extends React.Component {
   constructor(props) {
@@ -66,33 +68,10 @@ class Home extends React.Component {
   render() {
     return (
       <div className="App">
-        <Navbar>
-          <Navbar.Header>
-            <Navbar.Brand>
-              <NavLink 
-                to="/"
-                onClick={(e) => {
-                  this.hideDetails(e);
-                  window.location.reload();
-                }}>ManageBK</NavLink>
-            </Navbar.Brand>
-          </Navbar.Header>
-          <Nav>
-            <NavItem eventKey={1} href="#">
-              <NavLink
-                to="/add"
-                render={(props) => (
-                  <AddProject
-                    {...props}
-                    newProject={this.addProject}
-                  />)}>Create a Project
-              </NavLink>
-            </NavItem>
-          </Nav>
-        </Navbar>
+        <Navigation />
         <div className='projectsContent'>
-          <h4>Current Projects</h4>
           <Grid>
+          <h4>Current Projects</h4>
             <Grid>
               <Table striped bordered condensed hover>
                 <thead>
@@ -128,8 +107,8 @@ class Home extends React.Component {
             projects={this.state.projects}
             completed={this.state.completed}
           />
-          <h4>Completed Projects</h4>
           <Grid>
+          <h4>Completed Projects</h4>
             <Grid>
               <Table striped bordered condensed hover>
                 <thead>

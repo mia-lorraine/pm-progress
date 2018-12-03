@@ -1,0 +1,21 @@
+.npiNav {
+    height: 50px;
+    color: #fff;
+    background: #02274d;
+}
+.npiNav img {
+    display: inline-block;
+    padding-top: 10px;
+}
+.npiNav button {
+    float: right;
+    margin-top: 10px;
+    border-radius: 20px;
+    color: #11301f;
+}
+
+.npiSubHeading {
+    display: block;
+    font-size: 18px;
+    margin-top: 10px;
+}
