@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import '../styles/App.css';
 import { NavLink } from 'react-router-dom';
 import { Button, Grid, Row, Col, FormGroup,  Modal } from 'react-bootstrap';
+import Navigation from '../components/Navigation';
+import '../styles/App.css';
 
 const AddProject = () => {
   let name, supplier, manager, date, estimatedDate, generalNotes;
@@ -27,8 +28,9 @@ const AddProject = () => {
   };
   return (
     <div className = "static-modal">
+      <Navigation />
       <Modal.Dialog>
-        <form onSubmit={submit} className="form black-container">
+        <form onSubmit={submit}>
           <Grid>
             <Row className = "name-addproject">
               <Col xs={2} md={2}> <b> Project Name:</b> </Col>
@@ -126,9 +128,7 @@ const AddProject = () => {
               </Col>
               <Col xs={5} md={5}>
                 <FormGroup>
-                  <Button type="submit" bsStyle="primary">
-                Submit
-                  </Button>
+                  <Button type="submit" bsStyle="primary">Submit</Button>
                 </FormGroup>
               </Col>
             </Row>
