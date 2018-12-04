@@ -1,8 +1,9 @@
 import React from 'react';
 import axios from 'axios';
-import '../styles/App.css';
 import { NavLink } from 'react-router-dom';
 import { Button, Grid, Row, Col, FormGroup,  Modal } from 'react-bootstrap';
+import Navigation from '../components/Navigation';
+import '../styles/App.css';
 
 const AddProject = () => {
   let name, supplier, manager, date, estimatedDate, generalNotes;
@@ -27,6 +28,7 @@ const AddProject = () => {
   };
   return (
     <div className = "static-modal">
+      <Navigation />
       <Modal.Dialog>
         <form onSubmit={submit} className="form black-container">
           <Grid>
