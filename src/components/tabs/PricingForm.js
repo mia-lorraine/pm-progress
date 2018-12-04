@@ -9,9 +9,10 @@ product_class, warranty, material, priority_class, serial_ID, AC_line, min_ord_q
 ini_ord_qty, arrival_date, arrival_qty;
 
 class PricingForm extends React.Component {
-  constructor(props){
-    super(props);
-    }
+  // Not needed yet.
+  // constructor(props){
+  //   super(props);
+  //   }
   submit = (e) => {
     e.preventDefault();
 

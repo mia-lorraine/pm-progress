@@ -7,23 +7,8 @@ import Documentation from '../components/tabs/Documentation';
 import Tooling from '../components/tabs/Tooling';
 import Pricing from '../components/tabs/Pricing';
 import Promotion from '../components/tabs/Promotion';
+import '../styles/Details.css';
 
-
-let backdropStyle = {
-  position: 'fixed',
-  overflow: 'auto',
-  top: 51,
-  bottom: 0,
-  left: 0,
-  right: 0,
-  backgroundColor: '#fff',
-  paddingTop: 20,
-  paddingLeft: 20,
-  paddingRight: 20
-};
-let tabWrapStyle = {
-  marginTop: 20
-};
 class Details extends React.Component {
   constructor() {
     super();
@@ -92,17 +77,13 @@ class Details extends React.Component {
       return null;
     }
     return (
-      <div>
-        <div style={backdropStyle}>
+      <div className="projectDetails">
           <div className="backdropWrap">
               <Grid>
                 <Row className="details-overview">
-
-                  <p id="test"></p>
                   <Col xs={2} md={2}><b>Project Name:</b></Col>
                   <Col xs={2} md={2}>{project.name}</Col>
                   <Col xs={2} xsOffset={4} md={2} mdOffset={4}>
-                    {/* <SaveButton bsStyle="complete" progress = {project}>Save Changes</SaveButton> */}
                   </Col>
                   <Col xs={2} md={2}>
                     <Button 
@@ -126,8 +107,9 @@ class Details extends React.Component {
                   <Col xs={2} md={2}><b>General Notes:</b></Col>
                   <Col xs={4} md={4}>
                     <FormGroup controlId="formControlsTextarea">
-                      <FormControl componentClass="textarea" placeholder="Enter your notes here">
-                        {project.generalNotes}
+                      <FormControl componentClass="textarea" 
+                                   placeholder="Enter your notes here"
+                                   value={project.generalNotes}>
                       </FormControl>
                     </FormGroup>
                   </Col>
@@ -137,32 +119,33 @@ class Details extends React.Component {
                   <Col xs={2} md={2}>{project.estimatedDate}</Col>
                 </Row>
               </Grid>
-              <div className="tabsWrap" style={tabWrapStyle}>
+              <div className="tabsWrap">
                 <Grid>
-                  <Tabs defaultActiveKey={1} animation={false} id="project-details">
-                    <Tab eventKey={1} title="Request from Supplier" style={tabWrapStyle}>
-                      <RequestFromSupplier title={tabName} progress={project}/>
-                    </Tab>
-                    <Tab eventKey={2} title="Provide to Supplier" style={tabWrapStyle}>
-                      <ProvideToSupplier progress={project}/>
-                    </Tab>
-                    <Tab eventKey={3} title="Documentation" style={tabWrapStyle}>
-                      <Documentation progress={project}/>
-                    </Tab>
-                    <Tab eventKey={4} title="Tooling" style={tabWrapStyle}>
-                      <Tooling progress={project}/>
-                    </Tab>
-                    <Tab eventKey={5} title="Pricing" style={tabWrapStyle}>
-                    <Pricing progress={project} pricingData = {pricing}/>
-                    </Tab>
-                    <Tab eventKey={6} title="Promotion" style={tabWrapStyle}>
-                      <Promotion progress={project}/>
-                    </Tab>
-                  </Tabs>
+                  <div className="tabsWrap">
+                    <Tabs defaultActiveKey={1} animation={false} id="project-details">
+                      <Tab eventKey={1} title="Request from Supplier" className="tabsWrap">
+                        <RequestFromSupplier title={tabName} progress={project}/>
+                      </Tab>
+                      <Tab eventKey={2} title="Provide to Supplier" className="tabsWrap">
+                        <ProvideToSupplier progress={project}/>
+                      </Tab>
+                      <Tab eventKey={3} title="Documentation" className="tabsWrap">
+                        <Documentation progress={project}/>
+                      </Tab>
+                      <Tab eventKey={4} title="Tooling" className="tabsWrap">
+                        <Tooling progress={project}/>
+                      </Tab>
+                      <Tab eventKey={5} title="Pricing" className="tabsWrap">
+                      <Pricing progress={project} pricingData = {pricing}/>
+                      </Tab>
+                      <Tab eventKey={6} title="Promotion" className="tabsWrap">
+                        <Promotion progress={project}/>
+                      </Tab>
+                    </Tabs>
+                  </div>
                 </Grid>
               </div>
           </div>
-        </div>
       </div>
     );
   }

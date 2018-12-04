@@ -1,10 +1,7 @@
 import React from 'react';
-import '../styles/Navigation.css';
-
 import { Grid, Row, Col, Button, Glyphicon } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import AddProject from '../components/Addproject';
-import PricingForm from './tabs/PricingForm';
+import '../styles/Navigation.css';
 
 const Navigation = () => {
   return (
@@ -13,7 +10,7 @@ const Navigation = () => {
         <Row>
           <Col xs={3} sm={3} md={3}>
             <a href="/">
-              <img src="https://s3-us-west-1.amazonaws.com/bkpmedia/images/bk-logo-white.png"></img>
+              <img src="https://s3-us-west-1.amazonaws.com/bkpmedia/images/bk-logo-white.png" alt="BK NPI Tool"></img>
             </a>
           </Col>
           <Col xs={3} sm={6} md={6}>

@@ -41,7 +41,7 @@ class Pricing extends Component {
 
         var array_data = this.props.pricingData;
         const result = array_data.filter(item => item.originID === this.props.progress.id);
-        // console.log(result)
+        console.log(result)
         }
         toggleModal = () => {
             this.setState({
