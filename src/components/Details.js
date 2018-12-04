@@ -8,7 +8,6 @@ import Tooling from '../components/tabs/Tooling';
 import Pricing from '../components/tabs/Pricing';
 import Promotion from '../components/tabs/Promotion';
 
-
 let backdropStyle = {
   position: 'fixed',
   overflow: 'auto',
@@ -126,8 +125,9 @@ class Details extends React.Component {
                   <Col xs={2} md={2}><b>General Notes:</b></Col>
                   <Col xs={4} md={4}>
                     <FormGroup controlId="formControlsTextarea">
-                      <FormControl componentClass="textarea" placeholder="Enter your notes here">
-                        {project.generalNotes}
+                      <FormControl componentClass="textarea" 
+                                   placeholder="Enter your notes here"
+                                   value={project.generalNotes}>
                       </FormControl>
                     </FormGroup>
                   </Col>
