@@ -9,7 +9,7 @@ let saveChangesAlertPosition = {
 
 const SavedChanges = () => {
   return (
-        <Alert style={saveChangesAlertPosition} bsStyle="success">
+        <Alert style={saveChangesAlertPosition} className="savedChangesAlert" bsStyle="success">
             <strong>Changes Saved!</strong><br />
             Your progress for has been saved.
         </Alert>
