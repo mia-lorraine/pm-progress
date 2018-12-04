@@ -20,7 +20,11 @@ const Navigation = () => {
             <b className="npiSubHeading">New Product Introduction Tool</b>
           </Col>
           <Col xsOffset={6} mdOffset={6}>
-            <Button bsSize="small" bsStyle="success"><Glyphicon glyph="plus" /> <b>ADD PROJECT</b></Button>
+          <NavLink to='/add'>
+            <Button bsSize="small" bsStyle="success"><Glyphicon glyph="plus" />
+              <b>ADD PROJECT</b>
+            </Button>
+          </NavLink>
           </Col>
         </Row>
       </Grid>

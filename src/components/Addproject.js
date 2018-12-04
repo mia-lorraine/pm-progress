@@ -30,7 +30,7 @@ const AddProject = () => {
     <div className = "static-modal">
       <Navigation />
       <Modal.Dialog>
-        <form onSubmit={submit} className="form black-container">
+        <form onSubmit={submit}>
           <Grid>
             <Row className = "name-addproject">
               <Col xs={2} md={2}> <b> Project Name:</b> </Col>
@@ -128,9 +128,7 @@ const AddProject = () => {
               </Col>
               <Col xs={5} md={5}>
                 <FormGroup>
-                  <Button type="submit" bsStyle="primary">
-                Submit
-                  </Button>
+                <DelayLink to='/' delay={800}><Button type="submit" bsStyle="primary">Submit</Button></DelayLink>
                 </FormGroup>
               </Col>
             </Row>

@@ -1,12 +1,9 @@
 import React from 'react';
 import axios from 'axios';
 import '../styles/App.css';
-import { Grid, Table, Navbar, Nav, NavItem } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
+import { Grid, Table } from 'react-bootstrap';
 import Details from '../components/Details';
-import AddProject from '../components/Addproject';
 import Navigation from '../components/Navigation';
-
 
 class Home extends React.Component {
   constructor(props) {
