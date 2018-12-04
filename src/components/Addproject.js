@@ -128,7 +128,7 @@ const AddProject = () => {
               </Col>
               <Col xs={5} md={5}>
                 <FormGroup>
-                <DelayLink to='/' delay={800}><Button type="submit" bsStyle="primary">Submit</Button></DelayLink>
+                  <Button type="submit" bsStyle="primary">Submit</Button>
                 </FormGroup>
               </Col>
             </Row>
