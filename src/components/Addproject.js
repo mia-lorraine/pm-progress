@@ -1,11 +1,13 @@
 import React from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
-import { Button, Grid, Row, Col, FormGroup } from 'react-bootstrap';
+import { Button, Grid, Row, Col, FormGroup, Alert } from 'react-bootstrap';
 import Navigation from '../components/Navigation';
 import '../styles/App.css';
+import Success from './Success';
 
 let name, supplier, manager, date, estimatedDate, generalNotes;
+
 
 class AddProject extends React.Component {
   constructor(){
@@ -16,7 +18,7 @@ class AddProject extends React.Component {
 
     this.submit=this.submit.bind(this)
   }
-  
+   
 submit(e){
     e.preventDefault();
    
@@ -47,15 +49,33 @@ submit(e){
   return (
     <div>
     <Navigation />
+
     {this.state.show === false 
-        ? <p> Project has been submitted :) </p>
-      : 
+        ?  
+    <div className= "projectConfirmation"> 
+    <Grid>
+    <Alert bsStyle = "success">
+    <Row>
+      <Col>
+    <h1> Project Submitted </h1>
+    <Success/>
+        </Col>
+        <Col>
+    <p>
+           Go back home to see your new project.
+    </p>
+        </Col>
+    </Row>
+    </Alert>
+    </Grid>
+   </div>
+    :
     <div className="addProjectContainer">
         <form onSubmit={this.submit}>
             <Grid>
             <Row className="name-addproject">
               <Col xs={2} md={2}><b>Project Name:</b></Col>
-              <Col xs={12} sm={10} md={10}>
+              <Col xs={12} sm={10} md ={10}>
                 <FormGroup>
                   <input
                     id = "name"
