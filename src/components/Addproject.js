@@ -16,7 +16,7 @@ class AddProject extends React.Component {
 
     this.submit=this.submit.bind(this)
   }
- 
+  
 submit(e){
     e.preventDefault();
    
@@ -47,11 +47,11 @@ submit(e){
   return (
     <div>
     <Navigation />
-    <div className="addProjectContainer">
-        <form onSubmit={this.submit}>
-        {this.state.show === false 
+    {this.state.show === false 
         ? <p> Project has been submitted :) </p>
       : 
+    <div className="addProjectContainer">
+        <form onSubmit={this.submit}>
             <Grid>
             <Row className="name-addproject">
               <Col xs={2} md={2}><b>Project Name:</b></Col>
@@ -143,19 +143,20 @@ submit(e){
                 </FormGroup>
               </Col>
             </Row>
-         
-        <Row className="submit-addproject">
+         </Grid>
+        </form>
+      </div>
+        }
+        <Grid>
+          <Row className="submit-addproject">
               <Col sm={4} md={4} smOffset={4}mdOffset={4}>
                 <FormGroup>
                   <NavLink to='/'><Button bsStyle="info" className="backToProjectsButton">Back to Projects</Button></NavLink>
                 </FormGroup>
               </Col>
-            </Row> 
-            </Grid>
-        }
-        </form>
-      </div>
-    </div>
+            </Row>
+            </Grid> 
+            </div>
 
     );
   }
