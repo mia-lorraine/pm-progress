@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon, Panel } from 'react-bootstrap';
+import { Button, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon, Panel } from 'react-bootstrap';
 import axios from 'axios';
 import SavedChanges from './SavedChanges';
 import Modal from './Modal';
