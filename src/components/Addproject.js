@@ -5,11 +5,25 @@ import { Button, Grid, Row, Col, FormGroup } from 'react-bootstrap';
 import Navigation from '../components/Navigation';
 import '../styles/App.css';
 
-const AddProject = () => {
-  let name, supplier, manager, date, estimatedDate, generalNotes;
+let name, supplier, manager, date, estimatedDate, generalNotes;
 
-  const submit = (e) => {
+class AddProject extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      show: true
+    }
+
+    this.submit=this.submit.bind(this)
+  }
+  
+submit(e){
     e.preventDefault();
+   
+    this.setState({
+      show: !this.state.show
+    })
+
 
     axios
       .post('http://localhost:3001/projects', {
@@ -25,13 +39,20 @@ const AddProject = () => {
         console.log(response.data);
       });
     name.value = supplier.value = date.value = estimatedDate.value = manager.value = generalNotes.value = '';
+
   };
+
+  render(){
+    console.log(this.state.show)
   return (
     <div>
     <Navigation />
+    {this.state.show === false 
+        ? <p> Project has been submitted :) </p>
+      : 
     <div className="addProjectContainer">
-        <form onSubmit={submit}>
-          <Grid>
+        <form onSubmit={this.submit}>
+            <Grid>
             <Row className="name-addproject">
               <Col xs={2} md={2}><b>Project Name:</b></Col>
               <Col xs={12} sm={10} md={10}>
@@ -115,13 +136,6 @@ const AddProject = () => {
                 </FormGroup>
               </Col>
             </Row>
-            <Row className="submit-addproject">
-              <Col sm={4} md={4} smOffset={4}mdOffset={4}>
-                <FormGroup>
-                  <NavLink to='/'><Button bsStyle="info" className="backToProjectsButton">Back to Projects</Button></NavLink>
-                </FormGroup>
-              </Col>
-            </Row>
             <Row>
             <Col sm={4} md={4} smOffset={4}mdOffset={4}>
                 <FormGroup>
@@ -129,17 +143,22 @@ const AddProject = () => {
                 </FormGroup>
               </Col>
             </Row>
-          </Grid>
-
-
-
-
-
+         </Grid>
         </form>
       </div>
-    </div>
+        }
+        <Grid>
+          <Row className="submit-addproject">
+              <Col sm={4} md={4} smOffset={4}mdOffset={4}>
+                <FormGroup>
+                  <NavLink to='/'><Button bsStyle="info" className="backToProjectsButton">Back to Projects</Button></NavLink>
+                </FormGroup>
+              </Col>
+            </Row>
+            </Grid> 
+            </div>
 
-  );
-};
-
+    );
+  }
+}
 export default AddProject;
