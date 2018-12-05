@@ -174,14 +174,11 @@ class Pricing extends Component {
             </Col>
             </Row>
             <Row>
-                <Col xs={6} mdOffset={5}>
+                <Col xs={6} md={3}>
                     <Button bsStyle="primary" type= "submit" value ="Submit">Save Changes</Button>
                 </Col> 
-            </Row>
-                <hr />
-            <Row>
-                <Col xs={6} mdOffset={5}>
-                <Button bsStyle="primary" onClick={this.toggleModal}>Create Product</Button>
+                <Col xs={6} md={3}>
+                    <Button bsStyle="primary" onClick={this.toggleModal}>Create Product</Button>
                 </Col> 
             </Row>
             <Row>
@@ -217,7 +214,6 @@ class Pricing extends Component {
             </Row>
         {this.state.showAlert ? <SavedChanges /> : '' }
         </form>
-        <Row>
             <Col xs={2} md={2}>
                 <main>
                     <Modal 
@@ -227,7 +223,6 @@ class Pricing extends Component {
                     </Modal>
                 </main>
             </Col>
-        </Row>
       </div>
     )
   }
