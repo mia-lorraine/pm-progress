@@ -48,7 +48,7 @@ class PricingForm extends React.Component {
   };
   render(){
   return (
-    <div className = "static-modal">
+    <div className="static-modal">
       <Modal.Dialog>
         <form onSubmit={this.submit} className="form black-container">
           <Grid>

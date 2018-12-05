@@ -1,12 +1,19 @@
+#tabs-details {
+    background-color:#fff;
+}
 .projectDetails {
     position: absolute;
+    display: block;
+    height: 100%;
     top: 0;
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: #ffffff;
+    background-color: #eee;
     padding: 20px 20px 0 20px;
 }
 .tabsWrap {
+    background-color: #fff;
     margin-top: 20px;
+    padding: 10px;
 }

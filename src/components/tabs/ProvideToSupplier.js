@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon, Button } from 'react-bootstrap';
+import { Row, Col, Checkbox, FormGroup, FormControl, Glyphicon, Button } from 'react-bootstrap';
 import axios from 'axios';
 import SavedChanges from './SavedChanges';
 
@@ -169,7 +169,6 @@ class ProvideToSupplier extends Component {
     return (
       <div>
         <form onSubmit={this.ps_handleSubmit}>
-        <Grid>
           <Row>
             <Col xs={3} md={3}><b>Item</b></Col>
             <Col xs={2} md={2}><b>Submitted</b></Col>
@@ -416,10 +415,9 @@ class ProvideToSupplier extends Component {
           </Row>
           <Row>
             <Col xs={6} mdOffset={5}>
-                <Button bsStyle="info" type= "submit" value ="Submit">Save Changes</Button>
+                <Button bsStyle="primary" type="submit" value="Submit">Save Changes</Button>
             </Col> 
           </Row>
-        </Grid>
         {this.state.showAlert ? <SavedChanges /> : '' }
         </form>
       </div>

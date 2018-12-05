@@ -78,13 +78,11 @@ class Details extends React.Component {
     }
     return (
       <div className="projectDetails">
-          <div className="backdropWrap">
               <Grid>
                 <Row className="details-overview">
                   <Col xs={2} md={2}><b>Project Name:</b></Col>
                   <Col xs={2} md={2}>{project.name}</Col>
-                  <Col xs={2} xsOffset={4} md={2} mdOffset={4}>
-                  </Col>
+                  <Col xs={2} xsOffset={4} md={2} mdOffset={4}></Col>
                   <Col xs={2} md={2}>
                     <Button 
                       bsStyle="success" 
@@ -97,7 +95,14 @@ class Details extends React.Component {
                   <Col xs={2} md={2}><b>Supplier:</b></Col>
                   <Col xs={2} md={2}>
                     {project.supplier}
-                  </Col>                
+                  </Col>
+                  <Col xs={2} md={2} mdOffset={10}>
+                    <Button 
+                      bsStyle="info" 
+                      onClick ={(e) => {e.preventDefault();this.completed(project)}}> 
+                      Back to Projects
+                    </Button> 
+                    </Col>               
                 </Row>
                 <Row className="manager-overview">
                   <Col xs={2} md={2}><b>Project Manager:</b></Col>
@@ -119,10 +124,10 @@ class Details extends React.Component {
                   <Col xs={2} md={2}>{project.estimatedDate}</Col>
                 </Row>
               </Grid>
-              <div className="tabsWrap">
+              <div className="tabsContainer">
                 <Grid>
                   <div className="tabsWrap">
-                    <Tabs defaultActiveKey={1} animation={false} id="project-details">
+                    <Tabs defaultActiveKey={1} animation={false} id="tabs-details">
                       <Tab eventKey={1} title="Request from Supplier" className="tabsWrap">
                         <RequestFromSupplier title={tabName} progress={project}/>
                       </Tab>
@@ -145,7 +150,6 @@ class Details extends React.Component {
                   </div>
                 </Grid>
               </div>
-          </div>
       </div>
     );
   }
