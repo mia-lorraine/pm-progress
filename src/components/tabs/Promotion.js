@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, Grid, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
+import { Button, Row, Col, Checkbox, FormGroup, FormControl, Glyphicon } from 'react-bootstrap';
 import axios from 'axios';
 import SavedChanges from './SavedChanges';
 
@@ -117,7 +117,6 @@ class Promotion extends Component {
     return (
       <div>
         <form onSubmit={this.po_handleSubmit}>
-        <Grid>
           <Row>
             <Col xs={3} md={3}><b>Item</b></Col>
             <Col xs={2} md={2}><b>Reviewed / Completed</b></Col>
@@ -280,10 +279,9 @@ class Promotion extends Component {
                 </FormGroup>
             </Col>
           </Row>
-        </Grid>
           <Row>
             <Col xs={6} mdOffset={5}>
-                <Button bsStyle="info" type= "submit" value ="Submit">Save Changes</Button>
+                <Button bsStyle="primary" type= "submit" value ="Submit">Save Changes</Button>
             </Col> 
           </Row>
           {this.state.showAlert ? <SavedChanges /> : '' }

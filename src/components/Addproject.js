@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { NavLink } from 'react-router-dom';
-import { Button, Grid, Row, Col, FormGroup,  Modal } from 'react-bootstrap';
+import { Button, Grid, Row, Col, FormGroup } from 'react-bootstrap';
 import Navigation from '../components/Navigation';
 import '../styles/App.css';
 
@@ -27,42 +27,40 @@ const AddProject = () => {
     name.value = supplier.value = date.value = estimatedDate.value = manager.value = generalNotes.value = '';
   };
   return (
-    <div className = "static-modal">
-      <Navigation />
-      <Modal.Dialog>
+    <div>
+    <Navigation />
+    <div className="addProjectContainer">
         <form onSubmit={submit}>
           <Grid>
-            <Row className = "name-addproject">
-              <Col xs={2} md={2}> <b> Project Name:</b> </Col>
-              <Col xs={10} sm={7} md={4}>
+            <Row className="name-addproject">
+              <Col xs={2} md={2}><b>Project Name:</b></Col>
+              <Col xs={12} sm={10} md={10}>
                 <FormGroup>
                   <input
                     id = "name"
                     type = "text"
                     placeholder="Enter name"
-                    required
                     ref={(input) => name = input}
+                    required
                   />
                 </FormGroup>
               </Col>
             </Row>
-            <Row className = "supplier-addproject">
+            <Row className="supplier-addproject">
               <Col xs={2} md={2}> <b>Supplier:</b> </Col>
-              <Col xs={10} sm={7} md={4}>
+              <Col xs={4} sm={4} md={4}>
                 <FormGroup>
                   <input
-                    id = "supplier"
-                    type = "text"
+                    id="supplier"
+                    type="text"
                     placeholder="Enter supplier here"
-                    required
                     ref={(input) => supplier = input}
+                    required
                   />
                 </FormGroup>
               </Col>
-            </Row>
-            <Row className="manager-addproject">
-              <Col xs={2} md={2}> <b>Manager:</b></Col>
-              <Col xs={10} sm={7} md={4}>
+              <Col xs={2} md={2}><b>Manager:</b></Col>
+              <Col xs={4} sm={4} md={4}>
                 <FormGroup>
                   <select ref ={(input) => manager = input}>
                     <option value='------'> --------  </option>
@@ -79,37 +77,34 @@ const AddProject = () => {
               </Col>
             </Row>
             <Row>
-              <Col xs={2} md={2}> <b> Date </b></Col>
-              <Col xs={10} sm={7} md={4}>
+              <Col xs={2} md={2}><b>Date:</b></Col>
+              <Col xs={4} sm={4} md={4}>
                 <FormGroup>
                   <input
-                    id = "name"
-                    type = "date"
+                    id="name"
+                    type="date"
                     placeholder="mm/dd/yyyy"
-                    required
                     ref={(input) => date = input}
+                    required
                   />
                 </FormGroup>
               </Col>
-            </Row>
-            <Row>
-              <Col xs={2} md={2}> <b> Estimated Completed Date </b></Col>
-              <Col xs={10} sm={7} md={4}>
+              <Col xs={2} md={2}><b>Estimated Completion:</b></Col>
+              <Col xs={4} sm={4} md={4}>
                 <FormGroup>
                   <input
-                    id = "estimatedCompletedDate"
-                    type = "date"
+                    id="estimatedCompletedDate"
+                    type="date"
                     placeholder="mm/dd/yyyy"
-                    required
                     ref={(input) => estimatedDate = input}
+                    required
                   />
                 </FormGroup>
               </Col>
             </Row>
-            <br />
             <Row className = "generalnotes-addproject">
-              <Col xs={2} md={2}> <b> General Notes:</b> </Col>
-              <Col xs={10} sm={7} md={4}>
+              <Col xs={2} md={2}><b>General Notes:</b></Col>
+              <Col xs={10} sm={10} md={10}>
                 <FormGroup>
                   <input
                     id = "generalNotes-form"
@@ -121,20 +116,27 @@ const AddProject = () => {
               </Col>
             </Row>
             <Row className="submit-addproject">
-              <Col xs={5} md={5}>
+              <Col sm={4} md={4} smOffset={4}mdOffset={4}>
                 <FormGroup>
-                  <NavLink to='/'><Button >Back to Projects</Button></NavLink>
+                  <NavLink to='/'><Button bsStyle="info" className="backToProjectsButton">Back to Projects</Button></NavLink>
                 </FormGroup>
               </Col>
-              <Col xs={5} md={5}>
+            </Row>
+            <Row>
+            <Col sm={4} md={4} smOffset={4}mdOffset={4}>
                 <FormGroup>
-                  <Button type="submit" bsStyle="primary">Submit</Button>
+                  <Button type="submit" bsStyle="primary" className="addSubmitButton">Submit</Button>
                 </FormGroup>
               </Col>
             </Row>
           </Grid>
+
+
+
+
+
         </form>
-      </Modal.Dialog>
+      </div>
     </div>
 
   );

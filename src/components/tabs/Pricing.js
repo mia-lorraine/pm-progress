@@ -98,7 +98,6 @@ class Pricing extends Component {
     return (
       <div>
         <form onSubmit={this.pr_handleSubmit}>
-       <Grid>
         <Row>
             <Col xs={3} md={3}><b>Item</b></Col>
             <Col xs={2} md={2}><b>Completed</b></Col>
@@ -176,7 +175,7 @@ class Pricing extends Component {
             </Row>
             <Row>
                 <Col xs={6} mdOffset={5}>
-                    <Button bsStyle="info" type= "submit" value ="Submit">Save Changes</Button>
+                    <Button bsStyle="primary" type= "submit" value ="Submit">Save Changes</Button>
                 </Col> 
             </Row>
                 <hr />
@@ -187,7 +186,7 @@ class Pricing extends Component {
             </Row>
             <Row>
                 {data.map((item, index) => 
-                <div className="pricingProduct" key={index}> 
+                <Col xs={12} sm={6} md={6} key={index}>
                     <Panel>
                         <Panel.Heading>
                             <Panel.Title componentClass="h3">Model Number: {item.bk_modelno}</Panel.Title>
@@ -213,10 +212,9 @@ class Pricing extends Component {
                                 <li><b>First Article Quantity: </b>{item.arrival_qty}</li>
                         </Panel.Body>
                     </Panel>
-                </div>
+                </Col>
                 )}
             </Row>
-        </Grid>
         {this.state.showAlert ? <SavedChanges /> : '' }
         </form>
         <Row>
