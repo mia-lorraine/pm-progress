@@ -1,7 +1,24 @@
+/* Save Changes Alert */
+.savedChangesAlert {
+  opacity: 1;
+  animation: savedChangesOpacity 0.5s ease-in-out;
+  animation-direction: alternate;
+}
+@keyframes savedChangesOpacity {
+  0% {
+    opacity: 0;
+    transform: translate(50px, 0)
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Project Confirmation Animation */
 svg {
-    width: 100px;
-    display: block;
-    margin: 0 auto;
+  width: 100px;
+  display: block;
+  margin: 0 auto;
 }
 .path {
   stroke-dasharray: 1000;
@@ -27,10 +44,10 @@ p {
   font-size: 1.25em;
 }
 p .success {
-    color: #73AF55;
+  color: #73AF55;
 }
 p .error {
-    color: #D06079;
+  color: #D06079;
 }
   
 @-webkit-keyframes dash {
