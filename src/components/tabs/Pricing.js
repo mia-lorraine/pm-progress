@@ -6,7 +6,7 @@ import Modal from './Modal';
 import '../../styles/Pricing.css'
 import '../../styles/Modal.css';
 
-class Pricing extends Component {
+class Pricing extends Component { 
     constructor(props) {
         super(props)
         this.state = {
@@ -20,7 +20,7 @@ class Pricing extends Component {
             getPricing: this.props.pricingData,
             showAlert: false,
             showModal: false,
-       }
+        }
         this.pr_handleSubmit=this.pr_handleSubmit.bind(this);
         this.pr_handleChange=this.pr_handleChange.bind(this);
         this.pr_handleChange2=this.pr_handleChange2.bind(this);
