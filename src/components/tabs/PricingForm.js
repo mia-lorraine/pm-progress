@@ -46,6 +46,9 @@ class PricingForm extends React.Component {
     warranty.value = material.value = priority_class.value = serial_ID.value = AC_line.value = min_ord_qty.value =
     ini_ord_qty.value = arrival_date.value = arrival_qty.value = '';
   };
+  componentDidMount() {
+    console.log(this.props.projectOrigin)
+  }
   render(){
   return (
     <div className="static-modal">

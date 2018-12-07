@@ -106,7 +106,7 @@ class Home extends React.Component {
             state={this.state}
             projects={this.state.projects}
             completed={this.state.completed}
-            id={this.state.selectedId}
+            projectId={this.state.selectedId}
             projectName={this.state.selectedName}
           />
           <Grid>

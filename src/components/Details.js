@@ -73,7 +73,7 @@ class Details extends React.Component {
     window.location.reload()
   }
   showMeProject() {
-    const a = this.props.projectName
+    const a = this.props.projectId
     console.log(a)
   }
 
@@ -162,7 +162,7 @@ class Details extends React.Component {
                     <Tooling progress={project}/>
                   </Tab>
                   <Tab eventKey={5} title="Pricing" className="tabsWrapInner">
-                    <Pricing progress={project} pricingData={pricing} origin={this.state.selectProject}/>
+                    <Pricing progress={project} pricingData={pricing} origin={this.props.projectId}/>
                   </Tab>
                   <Tab eventKey={6} title="Promotion" className="tabsWrapInner">
                     <Promotion progress={project}/>

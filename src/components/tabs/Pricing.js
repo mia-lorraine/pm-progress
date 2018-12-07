@@ -20,7 +20,6 @@ class Pricing extends Component {
             getPricing: this.props.pricingData,
             showAlert: false,
             showModal: false,
-            originProduct: this.props.origin
         }
         this.pr_handleSubmit=this.pr_handleSubmit.bind(this);
         this.pr_handleChange=this.pr_handleChange.bind(this);
@@ -42,16 +41,9 @@ class Pricing extends Component {
         pr_handleChange7(e) {this.setState({pricing03a: !this.state.pricing03a})}
 
         showOriginProduct() {
-            const b = this.props.origin;
+            const b = this.props.progress.id;
             console.log(b);
         }
-
-        // const allPricing = this.props.pricingData;
-
-
-        // const result = allPricing.filter(item => item.originID === this.props.progress.id);
-        // console.log(result)
-        
         toggleModal = () => {
             this.setState({
                 showModal: !this.state.showModal
@@ -92,19 +84,14 @@ class Pricing extends Component {
                 setTimeout(showSaveAlert, 4000)
               }
     render() { 
-
-
         var index = 0;
         for (index = 0; index < this.props.pricingData.length; index ++){
-            // var pData= this.props.pricingData[index].originID
-            var projectID = this.props.progress.id
-            // console.log(pData, projectID)
+            var projectId = this.props.progress.id
         }
         function isData(pricing) {
-            return pricing.originID === projectID;
+            return pricing.originId === projectId;
         }
         var data = this.props.pricingData.filter(isData);
-        // console.log(data) 
     return (
       <div>
         <form onSubmit={this.pr_handleSubmit}>
@@ -229,7 +216,8 @@ class Pricing extends Component {
         </form>
             <Col xs={2} md={2}>
                 <main>
-                    <Modal 
+                    <Modal
+                        originId={this.props.origin}
                         show={this.state.showModal} 
                         handleClose={this.hideModal}
                     >
