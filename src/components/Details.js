@@ -21,7 +21,7 @@ class Details extends React.Component {
         }
       ],
       pricing: [],
-      selectedProject: this.props.state.selected
+      selectedProject: this.props.projectName
     };
     this.showMeProject = this.showMeProject.bind(this);
   }
@@ -162,7 +162,7 @@ class Details extends React.Component {
                     <Tooling progress={project}/>
                   </Tab>
                   <Tab eventKey={5} title="Pricing" className="tabsWrapInner">
-                    <Pricing progress={project} pricingData={pricing} origin={project.name}/>
+                    <Pricing progress={project} pricingData={pricing} origin={this.state.selectProject}/>
                   </Tab>
                   <Tab eventKey={6} title="Promotion" className="tabsWrapInner">
                     <Promotion progress={project}/>

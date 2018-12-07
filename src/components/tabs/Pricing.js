@@ -31,6 +31,7 @@ class Pricing extends Component {
         this.pr_handleChange6=this.pr_handleChange6.bind(this);
         this.pr_handleChange7=this.pr_handleChange7.bind(this);
         this.toggleModal=this.toggleModal.bind(this);
+        this.showOriginProduct=this.showOriginProduct.bind(this);
         }
         pr_handleChange(e) {this.setState({pricing01a: !this.state.pricing01a})}
         pr_handleChange2(e) {this.setState({pricing01_review: e.target.value})}
@@ -38,20 +39,19 @@ class Pricing extends Component {
         pr_handleChange4(e) {this.setState({pricing01_notes: e.target.value})}
         pr_handleChange5(e) {this.setState({pricing02a: !this.state.pricing02a})}
         pr_handleChange6(e) {this.setState({pricing02_review: e.target.value})}
-        pr_handleChange7(e) {this.setState({pricing03a: !this.state.pricing03a})
+        pr_handleChange7(e) {this.setState({pricing03a: !this.state.pricing03a})}
 
-        
-        const originStuff = this.state.originProduct
-        console.log(originStuff);
-
-        const allPricing = this.props.pricingData;
-        console.log(allPricing);
-
-
-        console.log(this.props.origin)
-        const result = allPricing.filter(item => item.originID === this.props.progress.id);
-        console.log(result)
+        showOriginProduct() {
+            const b = this.props.origin;
+            console.log(b);
         }
+
+        // const allPricing = this.props.pricingData;
+
+
+        // const result = allPricing.filter(item => item.originID === this.props.progress.id);
+        // console.log(result)
+        
         toggleModal = () => {
             this.setState({
                 showModal: !this.state.showModal
@@ -189,7 +189,10 @@ class Pricing extends Component {
                 </Col> 
                 <Col xs={6} md={3}>
                     <Button bsStyle="primary" onClick={this.toggleModal}>Create Product</Button>
-                </Col> 
+                </Col>
+                <Col xs={6} md={3}>
+                    <Button bsStyle="warning" onClick={this.showOriginProduct}>Show Origin Product</Button>
+                </Col>  
             </Row>
             <Row>
                 {data.map((item, index) => 
