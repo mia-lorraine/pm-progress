@@ -11,8 +11,8 @@ import Promotion from '../components/tabs/Promotion';
 import '../styles/Details.css';
 
 class Details extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       activeTab: 0,
       projects: [
@@ -20,9 +20,12 @@ class Details extends React.Component {
           progress: {}
         }
       ],
-      pricing: []
+      pricing: [],
+      selectedProject: this.props.state.selected
     };
+    this.showMeProject = this.showMeProject.bind(this);
   }
+
   hideDetails = (e) => {
     this.props.hideDetails && this.props.hideDetails(e);
   }
@@ -40,23 +43,19 @@ class Details extends React.Component {
     const currentProjects = this.props.projects
     const selectedProject = project
     currentProjects.splice(selectedProject, 1)
-
     // Take the project we are passing in and add to end of Completed projects.
     const currentCompleted = this.props.completed
     currentCompleted.push(project)
-
     this.setState({
       projects: currentProjects,
       completed: currentCompleted
     })
-
     // Delete the project from current projects.
     axios.delete(`http://localhost:3001/projects/${selectedProject.id}`)
       .then(res => {
         console.log(res);
         console.log(res.data);
     })
-
     // Post the latest completed projects list.
     const timestamp = Date.now()
     const stamp = new Intl.DateTimeFormat('en-US', {year: 'numeric', month: '2-digit',day: '2-digit'}).format(timestamp);
@@ -73,18 +72,26 @@ class Details extends React.Component {
   backToProjects() {
     window.location.reload()
   }
+  showMeProject() {
+    const a = this.props.state.selected
+    console.log(a)
+  }
+
   render() {
     let project = this.props.data
     let pricing = this.props.pricing
     let tabName = "Request From Supplier"
+  
     if (!this.props.show) {
       return null;
     }
     return (
       <div className="projectDetails">
         <div className="detailsArea">
+      
           <Grid>
             <Row className="details-overview">
+            <p></p>
               <Col xs={2} md={2}><b>Project Name:</b></Col>
               <Col xs={2} md={2}>{project.name}</Col>
               <Col xs={2} xsOffset={4} md={2} mdOffset={4}></Col>
@@ -94,6 +101,12 @@ class Details extends React.Component {
                   className="completeProjectButton" 
                   onClick ={(e) => {e.preventDefault();this.completed(project)}}> 
                   Complete Project
+                </Button>
+                <Button 
+                  bsStyle="warning"
+                  className="completeProjectButton" 
+                  onClick={this.showMeProject}> 
+                  Show Me the Project!
                 </Button>
               </Col>
             </Row>
@@ -150,7 +163,7 @@ class Details extends React.Component {
                     <Tooling progress={project}/>
                   </Tab>
                   <Tab eventKey={5} title="Pricing" className="tabsWrapInner">
-                  <Pricing progress={project} pricingData = {pricing}/>
+                    <Pricing progress={project} pricingData={pricing} origin={project.name}/>
                   </Tab>
                   <Tab eventKey={6} title="Promotion" className="tabsWrapInner">
                     <Promotion progress={project}/>

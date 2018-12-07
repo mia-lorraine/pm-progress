@@ -20,6 +20,7 @@ class Pricing extends Component {
             getPricing: this.props.pricingData,
             showAlert: false,
             showModal: false,
+            originProduct: this.props.origin
         }
         this.pr_handleSubmit=this.pr_handleSubmit.bind(this);
         this.pr_handleChange=this.pr_handleChange.bind(this);
@@ -39,8 +40,16 @@ class Pricing extends Component {
         pr_handleChange6(e) {this.setState({pricing02_review: e.target.value})}
         pr_handleChange7(e) {this.setState({pricing03a: !this.state.pricing03a})
 
-        var array_data = this.props.pricingData;
-        const result = array_data.filter(item => item.originID === this.props.progress.id);
+        
+        const originStuff = this.state.originProduct
+        console.log(originStuff);
+
+        const allPricing = this.props.pricingData;
+        console.log(allPricing);
+
+
+        console.log(this.props.origin)
+        const result = allPricing.filter(item => item.originID === this.props.progress.id);
         console.log(result)
         }
         toggleModal = () => {
@@ -83,8 +92,9 @@ class Pricing extends Component {
                 setTimeout(showSaveAlert, 4000)
               }
     render() { 
-        var index = 0;
 
+
+        var index = 0;
         for (index = 0; index < this.props.pricingData.length; index ++){
             // var pData= this.props.pricingData[index].originID
             var projectID = this.props.progress.id

@@ -130,7 +130,6 @@ table {
   margin: 0;
 }
 
-
  /* Buttons */
 .backToProjectsButton {
   vertical-align: top;
@@ -146,7 +145,6 @@ table {
   width: 100%;
 }
 
-
 /* Pricing children products */
 .pricingProduct {
   width: 30%;
@@ -161,7 +159,6 @@ table {
   font-size: 40px;
   display: block;
   width: 100%;
-
 }
 @keyframes opac
 {from{opacity:0} to{opacity:1}}
@@ -175,4 +172,7 @@ table {
   margin-top: 10px;
   text-align: center;
 }
-
+.form.black-container {
+  margin: 0;
+  padding: 0;
+}

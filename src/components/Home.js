@@ -44,18 +44,20 @@ class Home extends React.Component {
         this.setState({
           pricing: data          
       });
-      console.log(data) }
-        )}
-
+    }
+  )}
+  // Our project is established here.
   clickMe(item){
-    const getId = item.id;
-    const itemVal = item;
+    let getId = item.id;
+    let getName = item.name
+    let itemVal = item;
     this.setState({
       ...this.state,
       data: itemVal,
       grabID: getId,
       show: !this.state.show
     });
+    console.log(getName);
   } 
   componentDidMount() {
     this.getData();
@@ -103,6 +105,7 @@ class Home extends React.Component {
             state={this.state}
             projects={this.state.projects}
             completed={this.state.completed}
+            selected={this.state.grabId}
           />
           <Grid>
           <h4>Completed Projects</h4>
