@@ -73,7 +73,7 @@ class Details extends React.Component {
     window.location.reload()
   }
   showMeProject() {
-    const a = this.props.state.selected
+    const a = this.props.projectName
     console.log(a)
   }
 
@@ -88,7 +88,6 @@ class Details extends React.Component {
     return (
       <div className="projectDetails">
         <div className="detailsArea">
-      
           <Grid>
             <Row className="details-overview">
             <p></p>

@@ -54,7 +54,8 @@ class Home extends React.Component {
     this.setState({
       ...this.state,
       data: itemVal,
-      grabID: getId,
+      selectedName: getName,
+      selectedId: getId,
       show: !this.state.show
     });
     console.log(getName);
@@ -105,7 +106,8 @@ class Home extends React.Component {
             state={this.state}
             projects={this.state.projects}
             completed={this.state.completed}
-            selected={this.state.grabId}
+            id={this.state.selectedId}
+            projectName={this.state.selectedName}
           />
           <Grid>
           <h4>Completed Projects</h4>
