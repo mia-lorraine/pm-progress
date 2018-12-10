@@ -64,7 +64,6 @@ class Home extends React.Component {
     this.getData();
     this.getPricing();
   }
-
   render() {
     return (
       <div className="App">

@@ -176,3 +176,7 @@ table {
   margin: 0;
   padding: 0;
 }
+
+.pricingFormButton {
+  width: 100%;
+}

@@ -9,9 +9,9 @@ product_class, warranty, material, priority_class, serial_ID, AC_line, min_ord_q
 ini_ord_qty, arrival_date, arrival_qty;
 
 class PricingForm extends React.Component {
-  // constructor(props){
-    // super(props);
-    // }
+  constructor(props) {
+    super(props);
+  }
   submit = (e) => {
     let projectOriginId = this.props.originId
     e.preventDefault();
@@ -51,16 +51,15 @@ class PricingForm extends React.Component {
   }
   render(){
   return (
-    <div className="static-modal">
-      <Modal.Dialog>
-        <form onSubmit={this.submit} className="form black-container">
+    <div className="pricingModalForm">
+        <form onSubmit={this.submit}>
             <Row>
-              <Col xs={6} md={6}><b>Parent Series / Project:</b></Col>
-              <Col xs={6} md={6}> {this.props.originName}</Col>
+              <Col xs={1} md={1}><b>Parent Series / Project:</b></Col>
+              <Col xs={4} md={4}> {this.props.originName}</Col>
             </Row>
             <Row className="name-addproject">
-              <Col xs={2} md={2}> <b> BK Model Number:</b> </Col>
-              <Col xs={10} md={10}>
+              <Col xs={2} sm={1} md={1}> <b> BK Model Number:</b> </Col>
+              <Col xs={4} md={4}>
                 <FormGroup>
                   <input
                     id = "name"
@@ -71,36 +70,8 @@ class PricingForm extends React.Component {
                   />
                 </FormGroup>
               </Col>
-            </Row>
-            <Row>
-            <Col xs={2} md={2}><b>Description</b></Col>
-              <Col xs={10} md={10}>
-                <FormGroup>
-                  <input
-                    id = "name"
-                    type = "text"
-                    placeholder="Enter description"
-                    required
-                    ref={(input) => desc = input}
-                  />
-                </FormGroup>
-              </Col>
-            </Row>
-              <Col xs={2} md={2}> <b>Supplier:</b> </Col>
+            <Col xs={2} sm={1} md={1}> <b> Vendor Model Number: </b></Col>
               <Col xs={4} md={4}>
-                <FormGroup>
-                  <input
-                    id = "supplier"
-                    type = "text"
-                    placeholder="Enter supplier"
-                    required
-                    ref={(input) => product_notes = input}
-                  />
-                </FormGroup>
-              </Col>
-            <Row className="manager-addproject">
-              <Col xs={2} md={2}> <b> Vendor: </b></Col>
-              <Col xxs={4} md={4}>
                  <FormGroup>
                   <input
                     id = "vendor"
@@ -113,7 +84,33 @@ class PricingForm extends React.Component {
               </Col>
             </Row>
             <Row>
-              <Col xs={2} md={2}> <b> Direct Cost </b></Col>
+            <Col xs={2} sm={1} md={1}><b>Description</b></Col>
+              <Col xs={9} md={9}>
+                <FormGroup>
+                  <input
+                    id = "name"
+                    type = "text"
+                    placeholder="Enter description"
+                    required
+                    ref={(input) => desc = input}
+                  />
+                </FormGroup>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={2} sm={1} md={1}> <b>Supplier:</b> </Col>
+              <Col xs={4} md={4}>
+                <FormGroup>
+                  <input
+                    id = "supplier"
+                    type = "text"
+                    placeholder="Enter supplier"
+                    required
+                    ref={(input) => product_notes = input}
+                  />
+                </FormGroup>
+              </Col>
+            <Col xs={2} sm={1} md={1}> <b> Direct Cost </b></Col>
               <Col xs={4} md={4}>
                 <FormGroup>
                   <input
@@ -122,10 +119,12 @@ class PricingForm extends React.Component {
                     placeholder="Enter cost"
                     required
                     ref={(input) => direct_cost = input}
-                  />
-                </FormGroup>
-              </Col>
-              <Col xs={2} md={2}> <b> Country:</b> </Col>
+                    />
+                  </FormGroup>
+                </Col>
+              </Row>
+              <Row>
+              <Col xs={2} sm={1} md={1}> <b> Country:</b> </Col>
               <Col xs={4} md={4}>
                 <FormGroup>
                   <input
@@ -136,9 +135,8 @@ class PricingForm extends React.Component {
                   />
                 </FormGroup>
               </Col>
-              </Row>
-              <Row>
-              <Col xs={2} md={2}> <b> Price: </b> </Col>
+              
+              <Col xs={2} sm={1} md={1}> <b> Price: </b> </Col>
               <Col xs={4} md={4}>
                 <FormGroup>
                   <input
@@ -149,7 +147,9 @@ class PricingForm extends React.Component {
                   />
                 </FormGroup>
               </Col>
-              <Col xs={2} md={2}> <b> Price Class: </b> </Col>
+              </Row>
+              <Row>
+              <Col xs={2} sm={1} md={1}> <b> Price Class: </b> </Col>
               <Col xs={4} md={4}>
                 <FormGroup>
                   <input
@@ -160,9 +160,7 @@ class PricingForm extends React.Component {
                   />
                 </FormGroup>
               </Col>
-              </Row>
-              <Row>
-              <Col xs={2} md={2}> <b> Product Class: </b> </Col>
+              <Col xs={2} sm={1} md={1}> <b> Product Class: </b> </Col>
               <Col xs={4} md={4}>
                 <FormGroup>
                   <input
@@ -173,31 +171,37 @@ class PricingForm extends React.Component {
                   />
                 </FormGroup>
               </Col>
-              <Col xs={2} md={2}> <b> Warranty: </b> </Col>
-              <Col xs={4} md={4}>
-                <FormGroup>
-                  <input
-                    id = "warranty"
-                    type = "text"
-                    placeholder="Enter Warranty"
-                    ref={(input) => warranty = input}
-                  />
-                </FormGroup>
-              </Col>
               </Row>
-              <Col xs={2} md={2}> <b> Material: </b> </Col>
-              <Col xs={4} md={4}>
-                <FormGroup>
-                  <input
-                    id = "material"
-                    type = "text"
-                    placeholder="Enter Material"
-                    ref={(input) => material = input}
-                  />
-                </FormGroup>
-              </Col>
+
+              <Row>
+                <Col xs={2} sm={1} md={1}>  <b> Warranty: </b> </Col>
+                <Col xs={4} md={4}>
+                  <FormGroup>
+                    <input
+                      id = "warranty"
+                      type = "text"
+                      placeholder="Enter Warranty"
+                      ref={(input) => warranty = input}
+                    />
+                  </FormGroup>
+                </Col>
+                <Col xs={2} sm={1} md={1}>  <b> Material: </b> </Col>
+                <Col xs={4} md={4}>
+                  <FormGroup>
+                    <input
+                      id = "material"
+                      type = "text"
+                      placeholder="Enter Material"
+                      ref={(input) => material = input}
+                    />
+                  </FormGroup>
+                </Col>
+              </Row>
+
+
+
             <Row className = "generalnotes-addproject">
-              <Col xs={2} md={2}> <b> Priority Class: </b> </Col>
+            <Col xs={2} sm={1} md={1}>  <b> Priority Class: </b> </Col>
               <Col xs={10} md={4}>
                 <FormGroup>
                   <input
@@ -208,7 +212,7 @@ class PricingForm extends React.Component {
                   />
                 </FormGroup>
               </Col>
-              <Col xs={2} md={2}> <b> Serial ID: </b> </Col>
+              <Col xs={2} sm={1} md={1}> <b> Serial ID: </b> </Col>
               <Col xs={10} md={4}>
                 <FormGroup>
                   <input
@@ -219,54 +223,60 @@ class PricingForm extends React.Component {
                   />
                 </FormGroup>
               </Col>
-              <Col xs={2} md={2}> <b> AC Line: </b> </Col>
-              <Col xs={4} md={4}>
-                <FormGroup>
-                  <input
-                    id = "country"
-                    type = "text"
-                    placeholder="Enter Price Class"
-                    ref={(input) => AC_line = input}
-                  />
-                </FormGroup>
-              </Col>
-              <Row>
-              <Col xs={2} md={2}> <b> Minimum Order Quantity: </b> </Col>
-              <Col xs={4} md={4}>
-                <FormGroup>
-                  <input
-                    id = "country"
-                    type = "text"
-                    placeholder="Enter Quantity"
-                    ref={(input) => min_ord_qty = input}
-                  />
-                </FormGroup>
-              </Col>
-              <Col xs={2} md={2}> <b> Initial Order Quantity: </b> </Col>
-              <Col xs={4} md={4}>
-                <FormGroup>
-                  <input
-                    id = "country"
-                    type = "text"
-                    placeholder="Enter Initial Order Quantity"
-                    ref={(input) => ini_ord_qty= input}
-                  />
-                </FormGroup>
-              </Col>
               </Row>
+
               <Row>
-              <Col xs={2} md={2}> <b> Arrival Date: </b> </Col>
-              <Col xs={4} md={4}>
-                <FormGroup>
-                  <input
-                    id = "arrivaldate"
-                    type = "date"
-                    placeholder="Enter Arrival Date"
-                    ref={(input) => arrival_date = input}
+                <Col xs={2} sm={1} md={1}><b>AC Line:</b> </Col>
+                <Col xs={4} md={4}>
+                  <FormGroup>
+                    <input
+                      id = "country"
+                      type = "text"
+                      placeholder="Enter Price Class"
+                      ref={(input) => AC_line = input}
                     />
-                </FormGroup>
-              </Col>
-              <Col xs={2} md={2}> <b> Arrival Quantity: </b> </Col>
+                  </FormGroup>
+                </Col>
+                <Col xs={2} sm={1} md={1}><b>Minimum Order Quantity:</b></Col>
+                <Col xs={4} md={4}>
+                  <FormGroup>
+                    <input
+                      id = "country"
+                      type = "text"
+                      placeholder="Enter Quantity"
+                      ref={(input) => min_ord_qty = input}
+                    />
+                  </FormGroup>
+                </Col>
+              </Row>
+
+              <Row>
+                <Col xs={2} sm={1} md={1}><b> Initial Order Quantity</b></Col>
+                <Col xs={4} md={4}>
+                  <FormGroup>
+                    <input
+                      id = "country"
+                      type = "text"
+                      placeholder="Enter Initial Order Quantity"
+                      ref={(input) => ini_ord_qty= input}
+                    />
+                  </FormGroup>
+                </Col>
+                <Col xs={2} sm={1} md={1}> <b>Arrival Date:</b></Col>
+                <Col xs={4} md={4}>
+                  <FormGroup>
+                    <input
+                      id = "arrivaldate"
+                      type = "date"
+                      placeholder="Enter Arrival Date"
+                      ref={(input) => arrival_date = input}
+                      />
+                  </FormGroup>
+                </Col>
+              </Row>
+
+              <Row>
+              <Col xs={2} sm={1} md={1}><b>Arrival Quantity:</b></Col>
               <Col xs={4} md={4}>
                   <FormGroup>
                     <input
@@ -278,21 +288,25 @@ class PricingForm extends React.Component {
                   </FormGroup>
                 </Col>
               </Row>
-            </Row>
-            <Row className="submit-addproject">
-              <Col xs={5} md={5}>
+              <Row className="submit-addproject">
+              <Col xs={2} md={2}>
                 <FormGroup>
-                  <NavLink to='/'><Button onClick={this.props.handleClose}>Back to Projects</Button></NavLink>
+                  <NavLink to='/'>
+                    <Button onClick={this.props.handleClose} className="pricingFormButton">
+                    Back to Projects</Button>
+                  </NavLink>
                 </FormGroup>
               </Col>
-              <Col xs={5} md={5}>
+              <Col xs={2} md={2} mdOffset={8}>
                 <FormGroup>
-                  <Button type="submit" bsStyle="primary">Submit</Button>
+                  <Button 
+                    type="submit" bsStyle="primary" className="pricingFormButton">
+                    Submit
+                  </Button>
                 </FormGroup>
               </Col>
-            </Row>
+              </Row>
         </form>
-      </Modal.Dialog>
     </div>
     )
   };
