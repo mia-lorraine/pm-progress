@@ -83,6 +83,10 @@ class Pricing extends Component {
                 showSaveAlert();
                 setTimeout(showSaveAlert, 4000)
               }
+        componentDidMount() {
+            console.log(this.props.originName)
+            console.log(this.props.originId)
+        }
     render() { 
         var index = 0;
         for (index = 0; index < this.props.pricingData.length; index ++){
@@ -177,16 +181,13 @@ class Pricing extends Component {
                 <Col xs={6} md={3}>
                     <Button bsStyle="primary" onClick={this.toggleModal}>Create Product</Button>
                 </Col>
-                <Col xs={6} md={3}>
-                    <Button bsStyle="warning" onClick={this.showOriginProduct}>Show Origin Product</Button>
-                </Col>  
             </Row>
             <Row>
                 {data.map((item, index) => 
                 <Col xs={12} sm={6} md={6} key={index}>
                     <Panel>
                         <Panel.Heading>
-                            <Panel.Title componentClass="h3">Model Number: {item.bk_modelno}</Panel.Title>
+                            <Panel.Title componentClass="h3">BK Model Number: {item.bk_modelno}</Panel.Title>
                         </Panel.Heading>
                         <Panel.Body>
                                 <li><b>Product Notes:</b> {item.product_notes}</li>
@@ -217,7 +218,8 @@ class Pricing extends Component {
             <Col xs={2} md={2}>
                 <main>
                     <Modal
-                        originId={this.props.origin}
+                        originName={this.props.originName}
+                        originId={this.props.originId}
                         show={this.state.showModal} 
                         handleClose={this.hideModal}
                     >

@@ -58,7 +58,7 @@ class Home extends React.Component {
       selectedId: getId,
       show: !this.state.show
     });
-    console.log(getName);
+    console.log(getId);
   } 
   componentDidMount() {
     this.getData();

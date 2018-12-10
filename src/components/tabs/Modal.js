@@ -1,13 +1,14 @@
 import React from 'react'
 import PricingForm from './PricingForm'
 
-const Modal = ({ originId, handleClose, show }) => {
+const Modal = ({ originId, originName, handleClose, show }) => {
   const showHideClassName = show ? "modal display-block" : "modal display-none";
   return (
     <div className={showHideClassName}>
       <section className="modal-main">
         <PricingForm 
-          projectOrigin={originId}
+          originId={originId}
+          originName={originName}
           handleClose={handleClose} />
       </section>
     </div>

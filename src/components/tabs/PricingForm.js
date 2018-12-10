@@ -9,16 +9,16 @@ product_class, warranty, material, priority_class, serial_ID, AC_line, min_ord_q
 ini_ord_qty, arrival_date, arrival_qty;
 
 class PricingForm extends React.Component {
-  // Not needed yet.
   // constructor(props){
-  //   super(props);
-  //   }
+    // super(props);
+    // }
   submit = (e) => {
+    let projectOriginId = this.props.originId
     e.preventDefault();
 
     axios
       .post('http://localhost:3001/pricing', {
-        projectOrigin: "",
+        originId: projectOriginId,
         bk_modelno: bk_modelno.value,
         product_notes: product_notes.value,
         vendor: vendor.value,
@@ -47,15 +47,19 @@ class PricingForm extends React.Component {
     ini_ord_qty.value = arrival_date.value = arrival_qty.value = '';
   };
   componentDidMount() {
-    console.log(this.props.projectOrigin)
+    console.log(this.props.originName)
   }
   render(){
   return (
     <div className="static-modal">
       <Modal.Dialog>
         <form onSubmit={this.submit} className="form black-container">
-            <Row className = "name-addproject">
-              <Col xs={2} md={2}> <b> Project Name:</b> </Col>
+            <Row>
+              <Col xs={6} md={6}><b>Parent Series / Project:</b></Col>
+              <Col xs={6} md={6}> {this.props.originName}</Col>
+            </Row>
+            <Row className="name-addproject">
+              <Col xs={2} md={2}> <b> BK Model Number:</b> </Col>
               <Col xs={10} md={10}>
                 <FormGroup>
                   <input
@@ -69,7 +73,7 @@ class PricingForm extends React.Component {
               </Col>
             </Row>
             <Row>
-            <Col xs={2} md={2}> <b> Description </b></Col>
+            <Col xs={2} md={2}><b>Description</b></Col>
               <Col xs={10} md={10}>
                 <FormGroup>
                   <input
@@ -125,8 +129,8 @@ class PricingForm extends React.Component {
               <Col xs={4} md={4}>
                 <FormGroup>
                   <input
-                    id = "country"
-                    type = "text"
+                    id="country"
+                    type="text"
                     placeholder="Enter country"
                     ref={(input) => country = input}
                   />

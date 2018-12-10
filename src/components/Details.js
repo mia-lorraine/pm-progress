@@ -74,9 +74,10 @@ class Details extends React.Component {
   }
   showMeProject() {
     const a = this.props.projectId
+    const b = this.props.projectName
     console.log(a)
+    console.log(b)
   }
-
   render() {
     let project = this.props.data
     let pricing = this.props.pricing
@@ -90,7 +91,6 @@ class Details extends React.Component {
         <div className="detailsArea">
           <Grid>
             <Row className="details-overview">
-            <p></p>
               <Col xs={2} md={2}><b>Project Name:</b></Col>
               <Col xs={2} md={2}>{project.name}</Col>
               <Col xs={2} xsOffset={4} md={2} mdOffset={4}></Col>
@@ -100,12 +100,6 @@ class Details extends React.Component {
                   className="completeProjectButton" 
                   onClick ={(e) => {e.preventDefault();this.completed(project)}}> 
                   Complete Project
-                </Button>
-                <Button 
-                  bsStyle="warning"
-                  className="completeProjectButton" 
-                  onClick={this.showMeProject}> 
-                  Show Me the Project!
                 </Button>
               </Col>
             </Row>
@@ -162,7 +156,11 @@ class Details extends React.Component {
                     <Tooling progress={project}/>
                   </Tab>
                   <Tab eventKey={5} title="Pricing" className="tabsWrapInner">
-                    <Pricing progress={project} pricingData={pricing} origin={this.props.projectId}/>
+                    <Pricing progress={project} 
+                             pricingData={pricing} 
+                             originName={this.props.projectName}
+                             originId={this.props.projectId}
+                    />
                   </Tab>
                   <Tab eventKey={6} title="Promotion" className="tabsWrapInner">
                     <Promotion progress={project}/>
