@@ -2,7 +2,7 @@ import React  from 'react';
 import axios from 'axios';
 import '../../styles/App.css';
 import { NavLink } from 'react-router-dom';
-import { Button, Row, Col, FormGroup,  Modal } from 'react-bootstrap';
+import { Button, Row, Col, FormGroup } from 'react-bootstrap';
 import Success from '../Success';
 
 
