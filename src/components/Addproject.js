@@ -8,25 +8,20 @@ import Success from './Success';
 
 let name, supplier, manager, date, estimatedDate, generalNotes;
 
-
 class AddProject extends React.Component {
   constructor(){
     super();
     this.state = {
       show: true
     }
-
     this.submit=this.submit.bind(this)
   }
    
 submit(e){
     e.preventDefault();
-   
     this.setState({
       show: !this.state.show
     })
-
-
     axios
       .post('http://localhost:3001/projects', {
         name: name.value,
@@ -41,34 +36,28 @@ submit(e){
         console.log(response.data);
       });
     name.value = supplier.value = date.value = estimatedDate.value = manager.value = generalNotes.value = '';
-
   };
-
   render(){
     console.log(this.state.show)
   return (
     <div>
     <Navigation />
-
-    {this.state.show === false 
-        ?  
-    <div className= "projectConfirmation"> 
-    <Grid>
-    <Alert bsStyle = "success">
-    <Row>
-      <Col>
-    <h1> Project Submitted </h1>
-    <Success/>
-        </Col>
-        <Col>
-    <p>
-           Go back home to see your new project.
-    </p>
-        </Col>
-    </Row>
-    </Alert>
-    </Grid>
-   </div>
+    {this.state.show === false ?  
+      <div className="projectConfirmation"> 
+        <Grid>
+        <Alert bsStyle="success">
+        <Row>
+          <Col>
+            <h1> Project Submitted </h1>
+              <Success/>
+            </Col>
+          <Col>
+            <p>Go back home to see your new project.</p>
+          </Col>
+        </Row>
+        </Alert>
+        </Grid>
+    </div>
     :
     <div className="addProjectContainer">
         <form onSubmit={this.submit}>

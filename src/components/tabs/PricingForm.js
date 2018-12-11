@@ -3,6 +3,8 @@ import axios from 'axios';
 import '../../styles/App.css';
 import { NavLink } from 'react-router-dom';
 import { Button, Row, Col, FormGroup,  Modal } from 'react-bootstrap';
+import Success from '../Success';
+
 
 let bk_modelno, product_notes, vendor, desc, direct_cost, country, price, price_class,
 product_class, warranty, material, priority_class, serial_ID, AC_line, min_ord_qty,
@@ -11,11 +13,14 @@ ini_ord_qty, arrival_date, arrival_qty;
 class PricingForm extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      pricingFormHide: false
+  }
+    this.hidePricingForm = this.hidePricingForm.bind(this);
   }
   submit = (e) => {
     let projectOriginId = this.props.originId
     e.preventDefault();
-
     axios
       .post('http://localhost:3001/pricing', {
         originId: projectOriginId,
@@ -45,13 +50,33 @@ class PricingForm extends React.Component {
     bk_modelno.value = product_notes.value = desc.value = direct_cost.value = vendor.value = country.value = price.value = price_class.value = product_class.value =
     warranty.value = material.value = priority_class.value = serial_ID.value = AC_line.value = min_ord_qty.value =
     ini_ord_qty.value = arrival_date.value = arrival_qty.value = '';
+    this.setState({
+      pricingFormHide: !this.state.pricingFormHide
+    })
   };
+  hidePricingForm() {
+    
+  }
   componentDidMount() {
     console.log(this.props.originName)
   }
   render(){
   return (
     <div className="pricingModalForm">
+      {this.state.pricingFormHide ? 
+          <div>
+            <Row>
+              <Success />
+              <p>Product Submitted</p>
+              <NavLink to='/'>
+                <Col xs={2} md={2}>
+                  <Button onClick={this.props.handleClose} className="pricingBackButton">
+                  Back to Projects</Button>
+                </Col>
+              </NavLink>
+            </Row>
+          </div>
+           :
         <form onSubmit={this.submit}>
             <Row>
               <Col xs={1} md={1}><b>Parent Series / Project:</b></Col>
@@ -172,7 +197,6 @@ class PricingForm extends React.Component {
                 </FormGroup>
               </Col>
               </Row>
-
               <Row>
                 <Col xs={2} sm={1} md={1}>  <b> Warranty: </b> </Col>
                 <Col xs={4} md={4}>
@@ -197,9 +221,6 @@ class PricingForm extends React.Component {
                   </FormGroup>
                 </Col>
               </Row>
-
-
-
             <Row className = "generalnotes-addproject">
             <Col xs={2} sm={1} md={1}>  <b> Priority Class: </b> </Col>
               <Col xs={10} md={4}>
@@ -224,7 +245,6 @@ class PricingForm extends React.Component {
                 </FormGroup>
               </Col>
               </Row>
-
               <Row>
                 <Col xs={2} sm={1} md={1}><b>AC Line:</b> </Col>
                 <Col xs={4} md={4}>
@@ -249,7 +269,6 @@ class PricingForm extends React.Component {
                   </FormGroup>
                 </Col>
               </Row>
-
               <Row>
                 <Col xs={2} sm={1} md={1}><b> Initial Order Quantity</b></Col>
                 <Col xs={4} md={4}>
@@ -274,7 +293,6 @@ class PricingForm extends React.Component {
                   </FormGroup>
                 </Col>
               </Row>
-
               <Row>
               <Col xs={2} sm={1} md={1}><b>Arrival Quantity:</b></Col>
               <Col xs={4} md={4}>
@@ -307,6 +325,7 @@ class PricingForm extends React.Component {
               </Col>
               </Row>
         </form>
+    }
     </div>
     )
   };
