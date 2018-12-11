@@ -15,6 +15,7 @@ class Details extends React.Component {
     super(props);
     this.state = {
       activeTab: 0,
+      progressCount: 0,
       projects: [
         {
           progress: {}
@@ -82,7 +83,10 @@ class Details extends React.Component {
     let project = this.props.data
     let pricing = this.props.pricing
     let tabName = "Request From Supplier"
-  
+
+    // const result = this.state.pricing.filter(x => x.originId === 2).length
+    // console.log(result)
+
     if (!this.props.show) {
       return null;
     }
