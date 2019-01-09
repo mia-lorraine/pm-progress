@@ -1191,7 +1191,7 @@
     },
     {
       "id": 13,
-      "name": "3600 Series Hipot",
+      "name": "5000 Series HR",
       "supplier": "Biologic",
       "manager": "Bob Cool",
       "date": "2018-05-22",
@@ -1328,7 +1328,7 @@
     },
     {
       "id": 14,
-      "name": "BA8100",
+      "name": "RM1100",
       "manager": "Joe Donuts",
       "date": "2018-06-04",
       "status": "2",
