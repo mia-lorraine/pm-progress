@@ -10,7 +10,7 @@ const Navigation = () => {
         <Row>
           <Col xs={3} sm={3} md={3}>
             <a href="/">
-              <img src="https://s3-us-west-1.amazonaws.com/bkpmedia/images/bk-logo-white.png" alt="BK NPI Tool"></img>
+              <img src="" alt="NPI Tool"></img>
             </a>
           </Col>
           <Col xs={3} sm={6} md={6}>
