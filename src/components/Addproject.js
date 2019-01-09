@@ -94,14 +94,14 @@ submit(e){
                 <FormGroup>
                   <select ref ={(input) => manager = input}>
                     <option value='------'> --------  </option>
-                    <option value='David Holt'> David Holt </option>
-                    <option value='Greg VonRehder'> Greg VonRehder </option>
-                    <option value='Ryan Roth'> Ryan Roth </option>
-                    <option value='Jeremy Lo'> Jeremy Lo </option>
-                    <option value='Jorg Hesser'> Jorg Hesser </option>
-                    <option value='Ayumu Tokiwa'> Ayumu Tokiwa </option>
-                    <option value='Jamie Pedersen'> Jamie Pedersen </option>
-                    <option value='Aaron Fernando'> Aaron Fernando </option>
+                    <option value='Larry Fisherman'> Larry Fisherman </option>
+                    <option value='Ariana Grande'> Ariana Grande </option>
+                    <option value='Bob Cool'> Bob Cool </option>
+                    <option value='Joe Donuts'> Joe Donuts </option>
+                    <option value='Jim Halpert'> Jim Halpert </option>
+                    <option value='Reginald Top'> Reginald Top </option>
+                    <option value='Bob Brownie'> Bob Brownie </option>
+                    <option value='Nami Ol'> Nami Ol </option>
                   </select>
                 </FormGroup>
               </Col>

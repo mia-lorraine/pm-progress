@@ -154,13 +154,13 @@ class Promotion extends Component {
                 <Checkbox
                     onChange={this.po_handleChange4} 
                     checked={this.state.pricing02b}>
-                    Approved by David?
+                    Approved by Bob?
                     <Glyphicon glyph="exclamation-sign" />
                 </Checkbox>
             </Col>
           </Row>
           <Row>
-            <Col xs={3} md={3}>Inform Sefram (manual, data sheet, transfer price)</Col>
+            <Col xs={3} md={3}>Inform Sefram? </Col>
             <Col xs={2} md={2}>
               <Checkbox 
                   onChange={this.po_handleChange5} 

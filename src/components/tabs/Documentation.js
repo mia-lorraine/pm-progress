@@ -163,42 +163,42 @@ class Documentation extends Component {
               <Checkbox
                     onChange={this.do_handleChange2} 
                     checked={this.state.documentation01b}>
-                Ayumu T.
+                Ariana G.
               </Checkbox>
               <Checkbox
                     onChange={this.do_handleChange3} 
                     checked={this.state.documentation01c}>
-                Greg V.
+                Bob C.
               </Checkbox>
               <Checkbox
                     onChange={this.do_handleChange4} 
                     checked={this.state.documentation01d}>
-                Ryan R.
+                Joe D.
               </Checkbox>
               <Checkbox
                     onChange={this.do_handleChange5} 
                     checked={this.state.documentation01e}>
-                Jeremy L.
+                Larry F.
               </Checkbox>
               <Checkbox
                     onChange={this.do_handleChange6} 
                     checked={this.state.documentation01f}>
-                Jorg H.
+                Jim H.
               </Checkbox>
               <Checkbox
                     onChange={this.do_handleChange7} 
                     checked={this.state.documentation01g}>
-                David H.
+                Reginald T.
               </Checkbox>
               <Checkbox
                     onChange={this.do_handleChange8} 
                     checked={this.state.documentation01h}>
-                Jamie P.
+                Bob B.
               </Checkbox>
               <Checkbox
                     onChange={this.do_handleChange9} 
                     checked={this.state.documentation01i}>
-                Aaron F.
+                Nami O.
               </Checkbox>
             </Col>
             <Col xs={2} md={2}>
@@ -233,35 +233,35 @@ class Documentation extends Component {
             <Col xs={2} md={2}>
               <Checkbox 
                     onChange={this.do_handleChange13} 
-                    checked={this.state.documentation02b}>Ayumu T.
+                    checked={this.state.documentation02b}>Ariana G.
               </Checkbox>
               <Checkbox 
                     onChange={this.do_handleChange14} 
-                    checked={this.state.documentation02c}>Greg V.
+                    checked={this.state.documentation02c}>Bob C.
               </Checkbox>
               <Checkbox 
                     onChange={this.do_handleChange15} 
-                    checked={this.state.documentation02d}>Ryan R.
+                    checked={this.state.documentation02d}>Joe D.
               </Checkbox>
               <Checkbox 
                     onChange={this.do_handleChange16} 
-                    checked={this.state.documentation02e}>Jeremy L.
+                    checked={this.state.documentation02e}>Larry F.
               </Checkbox>
               <Checkbox 
                     onChange={this.do_handleChange17} 
-                    checked={this.state.documentation02f}>Jorg H.
+                    checked={this.state.documentation02f}>Jim H.
               </Checkbox>
               <Checkbox 
                     onChange={this.do_handleChange18} 
-                    checked={this.state.documentation02g}>David H.
+                    checked={this.state.documentation02g}>Reginald T.
               </Checkbox>
               <Checkbox 
                     onChange={this.do_handleChange19} 
-                    checked={this.state.documentation02h}>Jaime P.
+                    checked={this.state.documentation02h}>Bob B.
               </Checkbox>
               <Checkbox 
                     onChange={this.do_handleChange20} 
-                    checked={this.state.documentation02i}>Aaron F.
+                    checked={this.state.documentation02i}>Nami O.
               </Checkbox>
             </Col>
             <Col xs={2} md={2}>

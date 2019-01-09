@@ -165,7 +165,7 @@ class Pricing extends Component {
             </Col>
           </Row>
           <Row>
-            <Col xs={3} md={3}>Cost and Price info approved by Jorg</Col>
+            <Col xs={3} md={3}>Cost and Price info approved by Bob</Col>
             <Col xs={2} md={2}>
                 <Checkbox
                     onChange={this.pr_handleChange7} 
